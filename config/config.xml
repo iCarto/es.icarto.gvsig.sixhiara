@@ -5,7 +5,7 @@
 	<libraries library-dir="lib"/>
 	<resourceBundle name="text"/>
 	<extensions>
-		<extension class-name="es.icarto.gvsig.sixhiara.FountainFormExtension" active="true">
+		<extension class-name="es.icarto.gvsig.sixhiara.FountainsFormExtension" active="true">
 			<menu text="sixhiara_menu/fountains"
 				action-command="open-fountains"
 				position="1"/>
