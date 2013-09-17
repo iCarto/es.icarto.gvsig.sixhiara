@@ -2,10 +2,13 @@
 <plugin-config>
 	<depends plugin-name="com.iver.cit.gvsig"/>
 	<depends plugin-name="es.udc.cartolab.gvsig.navtable"/>
-	<depends plugin-name="es.icarto.gvsig.navtableforms"/>
 	<libraries library-dir="lib"/>
 	<resourceBundle name="text"/>
 	<extensions>
-
+		<extension class-name="es.icarto.gvsig.sixhiara.FountainFormExtension" active="true">
+			<menu text="sixhiara_menu/fountains"
+				action-command="open-fountains"
+				position="1"/>
+		</extension>
 	</extensions>
 </plugin-config>
