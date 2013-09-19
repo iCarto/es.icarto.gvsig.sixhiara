@@ -8,8 +8,8 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/appgvSIG"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libFMap"/>
 	<classpathentry kind="lib" path="lib/formsrt.jar"/>
-	<classpathentry kind="lib" path="lib/es.icarto.gvsig.navtableforms.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/libDriverManager"/>
+	<classpathentry kind="lib" path="lib/es.icarto.gvsig.navtableforms.jar" sourcepath="/extNavTableForms"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
