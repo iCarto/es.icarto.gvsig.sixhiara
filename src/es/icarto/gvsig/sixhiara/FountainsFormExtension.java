@@ -1,19 +1,10 @@
 package es.icarto.gvsig.sixhiara;
 
 import com.iver.andami.PluginServices;
-import com.iver.andami.plugins.Extension;
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
 
-import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 import es.icarto.gvsig.sixhiara.forms.FountainsForm;
-import es.icarto.gvsig.sixhiara.forms.SixhiaraFormFactory;
 
-public class FountainsFormExtension extends Extension {
-
-    @Override
-    public void initialize() {
-	SixhiaraFormFactory.registerFormFactory();
-    }
+public class FountainsFormExtension extends AbstractFormExtension {
 
     @Override
     public void execute(String actionCommand) {
@@ -24,21 +15,8 @@ public class FountainsFormExtension extends Extension {
     }
 
     @Override
-    public boolean isEnabled() {
-	if (getLayer() != null) {
-	    return true;
-	} else {
-	    return false;
-	}
-    }
-
-    @Override
-    public boolean isVisible() {
-	return true;
-    }
-
-    private FLyrVect getLayer() {
-	return new TOCLayerManager().getLayerByName(FountainsForm.LAYERNAME);
+    protected String getLayerName() {
+	return FountainsForm.LAYERNAME;
     }
 
 }
