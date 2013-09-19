@@ -6,12 +6,13 @@ import com.iver.cit.gvsig.fmap.layers.FLyrVect;
 
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 import es.icarto.gvsig.sixhiara.forms.FountainsForm;
+import es.icarto.gvsig.sixhiara.forms.SixhiaraFormFactory;
 
 public class FountainsFormExtension extends Extension {
 
     @Override
     public void initialize() {
-
+	SixhiaraFormFactory.registerFormFactory();
     }
 
     @Override
