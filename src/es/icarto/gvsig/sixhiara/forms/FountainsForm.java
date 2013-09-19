@@ -43,4 +43,14 @@ public class FountainsForm extends AbstractForm {
 	}
 	return formBody;
     }
+
+    @Override
+    protected void fillSpecificValues() {
+	super.fillSpecificValues();
+    }
+
+    @Override
+    protected String getPrimaryKeyValue() {
+	return getFormController().getValue(PKFIELD);
+    }
 }
