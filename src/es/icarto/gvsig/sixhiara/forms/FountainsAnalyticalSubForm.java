@@ -9,7 +9,7 @@ public class FountainsAnalyticalSubForm extends AbstractSubForm {
     public static String[] colNames = { "cod_fonte", "data_most", "ph",
 	    "oxigeno_d", "coli_tot" };
     public static String[] colAlias = { "Cod Fonte", "Fecha Muestra", "PH",
-	    "OD", "Coliformes Totales" };
+	    "OD", "Coliformes Totais" };
 
     @Override
     protected void fillSpecificValues() {

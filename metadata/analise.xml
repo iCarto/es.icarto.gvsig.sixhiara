@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <METADATA>
-
+	<FIELD>
+		<FIELDNAME>cod_fonte</FIELDNAME>
+		<NONEDITABLE/>
+		<VALIDATIONRULE>MANDATORY</VALIDATIONRULE>
+	</FIELD>
 </METADATA>
