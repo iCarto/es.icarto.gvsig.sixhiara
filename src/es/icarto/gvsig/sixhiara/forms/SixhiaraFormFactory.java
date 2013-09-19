@@ -51,6 +51,9 @@ public class SixhiaraFormFactory extends FormFactory {
 	if (tableName != null) {
 	    if (tableName.equals(FountainsAnalyticalSubForm.TABLENAME)) {
 		return new FountainsAnalyticalSubForm();
+	    } else if (tableName
+		    .equals(FountainsFlowrateGaugingSubForm.TABLENAME)) {
+		return new FountainsFlowrateGaugingSubForm();
 	    }
 	}
 	return null;

@@ -14,8 +14,8 @@ public class FountainsForm extends AbstractForm {
 
     public static final String LAYERNAME = "Fontes";
     public static final String PKFIELD = "cod_fonte";
-    public static final String ABEILLE = "forms/fountains.xml";
-    public static final String METADATA = "forms_metadata/fountains.xml";
+    public static final String ABEILLE = "ui/fountains.xml";
+    public static final String METADATA = "metadata/fountains.xml";
 
     public FountainsForm(FLyrVect layer) {
 	super(layer);
