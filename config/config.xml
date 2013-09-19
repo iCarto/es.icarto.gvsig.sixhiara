@@ -13,7 +13,12 @@
 		<extension class-name="es.icarto.gvsig.sixhiara.StationsFormExtension" active="true">
 			<menu text="sixhiara_menu/stations"
 				action-command="open-stations"
-				position="1"/>
+				position="2"/>
+		</extension>
+				<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
+			<menu text="sixhiara_menu/reservoirs"
+				action-command="open-reservoirs"
+				position="3"/>
 		</extension>
 	</extensions>
 </plugin-config>
