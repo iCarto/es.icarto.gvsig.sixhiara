@@ -23,6 +23,11 @@ public class FountainsForm extends AbstractForm {
 		FountainsAnalyticalSubForm.TABLENAME, getWidgetComponents(),
 		PKFIELD, FountainsAnalyticalSubForm.colNames,
 		FountainsAnalyticalSubForm.colAlias));
+	addTableHandler(new AlphanumericTableHandler(
+		FountainsFlowrateGaugingSubForm.TABLENAME,
+		getWidgetComponents(), PKFIELD,
+		FountainsFlowrateGaugingSubForm.colNames,
+		FountainsFlowrateGaugingSubForm.colAlias));
     }
 
     @Override
