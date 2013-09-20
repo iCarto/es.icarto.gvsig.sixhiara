@@ -15,10 +15,15 @@
 				action-command="open-stations"
 				position="2"/>
 		</extension>
-				<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
+		<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
 			<menu text="sixhiara_menu/reservoirs"
 				action-command="open-reservoirs"
 				position="3"/>
+		</extension>
+		<extension class-name="es.icarto.gvsig.sixhiara.AquifersFormExtension" active="true">
+			<menu text="sixhiara_menu/aquifers"
+				action-command="open-aquifers"
+				position="4"/>
 		</extension>
 	</extensions>
 </plugin-config>
