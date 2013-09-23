@@ -11,7 +11,7 @@ import es.icarto.gvsig.navtableforms.AbstractForm;
 @SuppressWarnings("serial")
 public class AquifersForm extends AbstractForm {
 
-    public static final String LAYERNAME = "Acuíferos";
+    public static final String LAYERNAME = "Acuiferos";
     public static final String PKFIELD = "cod_acuif";
     public static final String ABEILLE = "ui/aquifers.xml";
     public static final String METADATA = "metadata/aquifers.xml";

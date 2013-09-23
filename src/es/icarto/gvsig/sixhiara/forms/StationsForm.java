@@ -15,7 +15,7 @@ public class StationsForm extends AbstractForm {
 	super(layer);
     }
 
-    public static final String LAYERNAME = "Estaçoes";
+    public static final String LAYERNAME = "Estacoes";
     public static final String PKFIELD = "cod_estac";
     public static final String ABEILLE = "ui/stations.xml";
     public static final String METADATA = "metadata/stations.xml";

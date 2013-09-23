@@ -11,7 +11,7 @@ import es.icarto.gvsig.navtableforms.AbstractForm;
 @SuppressWarnings("serial")
 public class ReservoirsForm extends AbstractForm {
 
-    public static final String LAYERNAME = "Barragems";
+    public static final String LAYERNAME = "Barragem";
     public static final String PKFIELD = "cod_barra";
     public static final String ABEILLE = "ui/reservoirs.xml";
     public static final String METADATA = "metadata/reservoirs.xml";
