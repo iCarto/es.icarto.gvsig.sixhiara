@@ -54,8 +54,8 @@
           <at name="properties">
            <object classname="com.jeta.forms.store.support.PropertyMap">
             <at name="height">85</at>
+            <at name="name"/>
             <at name="width">6</at>
-            <at name="name"></at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
               <super classname="com.jeta.forms.store.properties.BorderProperty">
@@ -230,6 +230,7 @@
           <at name="classname">com.jeta.forms.components.border.TitledBorderLabel</at>
           <at name="properties">
            <object classname="com.jeta.forms.store.support.PropertyMap">
+            <at name="text"></at>
             <at name="height">6</at>
             <at name="width">565</at>
             <at name="name"></at>
@@ -479,8 +480,8 @@
               <at name="size">11</at>
              </object>
             </at>
+            <at name="name"/>
             <at name="width">565</at>
-            <at name="name"></at>
             <at name="titleColor" object="color">0,50,150</at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
@@ -857,8 +858,8 @@
           <at name="properties">
            <object classname="com.jeta.forms.store.support.PropertyMap">
             <at name="height">1</at>
+            <at name="name"/>
             <at name="width">565</at>
-            <at name="name"></at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
               <super classname="com.jeta.forms.store.properties.BorderProperty">
