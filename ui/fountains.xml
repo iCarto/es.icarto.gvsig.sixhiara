@@ -808,7 +808,6 @@
              </object>
             </at>
             <at name="disabledTextColor" object="color">80,80,80</at>
-            <at name="editable">false</at>
            </object>
           </at>
          </object>

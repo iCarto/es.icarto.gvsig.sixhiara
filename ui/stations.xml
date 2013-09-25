@@ -916,7 +916,6 @@
              </object>
             </at>
             <at name="disabledTextColor" object="color">80,80,80</at>
-            <at name="editable">false</at>
            </object>
           </at>
          </object>
@@ -957,8 +956,8 @@
               <at name="size">18</at>
              </object>
             </at>
+            <at name="name"/>
             <at name="width">278</at>
-            <at name="name"></at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
