@@ -7,12 +7,23 @@ import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
+import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
 
 @SuppressWarnings("serial")
 public class StationsForm extends AbstractForm {
 
     public StationsForm(FLyrVect layer) {
 	super(layer);
+	addTableHandler(new AlphanumericTableHandler(
+		StationsPluviometricDataSubForm.TABLENAME,
+		getWidgetComponents(), PKFIELD,
+		StationsPluviometricDataSubForm.colNames,
+		StationsPluviometricDataSubForm.colAlias));
+	addTableHandler(new AlphanumericTableHandler(
+		StationsHydrometricDataSubForm.TABLENAME,
+		getWidgetComponents(), PKFIELD,
+		StationsHydrometricDataSubForm.colNames,
+		StationsHydrometricDataSubForm.colAlias));
     }
 
     public static final String LAYERNAME = "Estacoes";
