@@ -457,7 +457,6 @@
             </at>
             <at name="width">124</at>
             <at name="name">FONTE</at>
-            <at name="background" object="color">236,233,216</at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
               <super classname="com.jeta.forms.store.properties.BorderProperty">
