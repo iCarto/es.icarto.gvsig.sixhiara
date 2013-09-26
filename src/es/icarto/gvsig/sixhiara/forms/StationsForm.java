@@ -12,24 +12,24 @@ import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler
 @SuppressWarnings("serial")
 public class StationsForm extends AbstractForm {
 
-    public StationsForm(FLyrVect layer) {
-	super(layer);
-	addTableHandler(new AlphanumericTableHandler(
-		StationsPluviometricDataSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD,
-		StationsPluviometricDataSubForm.colNames,
-		StationsPluviometricDataSubForm.colAlias));
-	addTableHandler(new AlphanumericTableHandler(
-		StationsHydrometricDataSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD,
-		StationsHydrometricDataSubForm.colNames,
-		StationsHydrometricDataSubForm.colAlias));
-    }
-
     public static final String LAYERNAME = "Estacoes";
     public static final String PKFIELD = "cod_estac";
     public static final String ABEILLE = "ui/stations.xml";
     public static final String METADATA = "metadata/stations.xml";
+
+    public StationsForm(FLyrVect layer) {
+	super(layer);
+	addTableHandler(new AlphanumericTableHandler(
+		StationsPluviometricDataSubForm.TABLENAME,
+		getWidgetComponents(), PKFIELD.toUpperCase(),
+		StationsPluviometricDataSubForm.colNames,
+		StationsPluviometricDataSubForm.colAlias));
+	addTableHandler(new AlphanumericTableHandler(
+		StationsHydrometricDataSubForm.TABLENAME,
+		getWidgetComponents(), PKFIELD.toUpperCase(),
+		StationsHydrometricDataSubForm.colNames,
+		StationsHydrometricDataSubForm.colAlias));
+    }
 
     @Override
     public String getXMLPath() {

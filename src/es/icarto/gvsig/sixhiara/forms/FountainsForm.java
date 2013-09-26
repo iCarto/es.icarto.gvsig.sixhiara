@@ -21,11 +21,11 @@ public class FountainsForm extends AbstractForm {
 	super(layer);
 	addTableHandler(new AlphanumericTableHandler(
 		FountainsAnalyticalSubForm.TABLENAME, getWidgetComponents(),
-		PKFIELD, FountainsAnalyticalSubForm.colNames,
+		PKFIELD.toUpperCase(), FountainsAnalyticalSubForm.colNames,
 		FountainsAnalyticalSubForm.colAlias));
 	addTableHandler(new AlphanumericTableHandler(
 		FountainsFlowrateGaugingSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD,
+		getWidgetComponents(), PKFIELD.toUpperCase(),
 		FountainsFlowrateGaugingSubForm.colNames,
 		FountainsFlowrateGaugingSubForm.colAlias));
     }
