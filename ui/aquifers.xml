@@ -1917,7 +1917,6 @@
             </at>
             <at name="width">124</at>
             <at name="name">cod_acuif</at>
-            <at name="background" object="color">240,240,240</at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
               <super classname="com.jeta.forms.store.properties.BorderProperty">
@@ -1939,7 +1938,6 @@
              </object>
             </at>
             <at name="disabledTextColor" object="color">80,80,80</at>
-            <at name="editable">false</at>
            </object>
           </at>
          </object>
