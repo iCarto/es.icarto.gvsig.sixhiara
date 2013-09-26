@@ -54,6 +54,12 @@ public class SixhiaraFormFactory extends FormFactory {
 	    } else if (tableName
 		    .equals(FountainsFlowrateGaugingSubForm.TABLENAME)) {
 		return new FountainsFlowrateGaugingSubForm();
+	    } else if (tableName
+		    .equals(StationsPluviometricDataSubForm.TABLENAME)) {
+		return new StationsPluviometricDataSubForm();
+	    } else if (tableName
+		    .equals(StationsHydrometricDataSubForm.TABLENAME)) {
+		return new StationsHydrometricDataSubForm();
 	    }
 	}
 	return null;
