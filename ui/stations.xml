@@ -1341,7 +1341,7 @@
              </object>
             </at>
             <at name="width">553</at>
-            <at name="name">aforos</at>
+            <at name="name">dados_hidrometricos</at>
             <at name="scollBars">
              <object classname="com.jeta.forms.store.properties.ScrollBarsProperty">
               <at name="name">scollBars</at>
@@ -1537,7 +1537,7 @@
              </object>
             </at>
             <at name="width">553</at>
-            <at name="name">analiticas</at>
+            <at name="name">dados_pluviometricos</at>
             <at name="scollBars">
              <object classname="com.jeta.forms.store.properties.ScrollBarsProperty">
               <at name="name">scollBars</at>
