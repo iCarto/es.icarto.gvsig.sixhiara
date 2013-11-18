@@ -6,22 +6,22 @@
 	<resourceBundle name="text"/>
 	<extensions>
 		<extension class-name="es.icarto.gvsig.sixhiara.FountainsFormExtension" active="true">
-			<menu text="sixhiara_menu/Fontes"
+			<menu text="SIXHIARA/Fontes"
 				action-command="open-fountains"
 				position="1"/>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.StationsFormExtension" active="true">
-			<menu text="sixhiara_menu/"Estações
+			<menu text="SIXHIARA/Estações"
 				action-command="open-stations"
 				position="2"/>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
-			<menu text="sixhiara_menu/Barragems"
+			<menu text="SIXHIARA/Barragems"
 				action-command="open-reservoirs"
 				position="3"/>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.AquifersFormExtension" active="true">
-			<menu text="sixhiara_menu/Acuiferos"
+			<menu text="SIXHIARA/Acuiferos"
 				action-command="open-aquifers"
 				position="4"/>
 		</extension>
