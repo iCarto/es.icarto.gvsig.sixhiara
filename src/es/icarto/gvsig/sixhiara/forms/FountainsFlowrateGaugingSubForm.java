@@ -6,9 +6,9 @@ import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 public class FountainsFlowrateGaugingSubForm extends AbstractSubForm {
 
     public static final String TABLENAME = "quantidade_agua";
-    public static String[] colNames = { "COD_FONTE", "DATA", "HORAS",
+    public static String[] colNames = { "COD_FONTE", "DATA", "HORA",
 	    "QUAN_AGUA", "Q_EXTRAER" };
-    public static String[] colAlias = { "Cod Fonte", "Data", "Horas",
+    public static String[] colAlias = { "Cod Fonte", "Data", "Hora",
 	    "Quantidade agua", "Caudal extraído" };
 
     @Override
