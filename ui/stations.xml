@@ -804,7 +804,7 @@
              </object>
             </at>
             <at name="width">538</at>
-            <at name="name">comentarios</at>
+            <at name="name">coment</at>
             <at name="scollBars">
              <object classname="com.jeta.forms.store.properties.ScrollBarsProperty">
               <at name="name">scollBars</at>
