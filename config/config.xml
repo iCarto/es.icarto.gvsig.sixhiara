@@ -6,24 +6,28 @@
 	<resourceBundle name="text"/>
 	<extensions>
 		<extension class-name="es.icarto.gvsig.sixhiara.FountainsFormExtension" active="true">
-			<menu text="SIXHIARA/Fontes"
-				action-command="open-fountains"
-				position="1"/>
+			<menu text="SIXHIARA/Fontes" action-command="open-fountains" position="30000" icon="images/fountains.png"/>
+			<tool-bar name="SIXHIARA_Tools" position="70">
+				<action-tool icon="images/fountains.png" tooltip="Fontes" action-command="open-fountains" position="1"/>
+			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.StationsFormExtension" active="true">
-			<menu text="SIXHIARA/Estações"
-				action-command="open-stations"
-				position="2"/>
+			<menu text="SIXHIARA/Estações" action-command="open-stations" position="30025" icon="images/stations.png"/>
+			<tool-bar name="SIXHIARA_Tools" position="70">
+				<action-tool icon="images/stations.png" tooltip="Estações" action-command="open-stations" position="2"/>
+			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
-			<menu text="SIXHIARA/Barragems"
-				action-command="open-reservoirs"
-				position="3"/>
+			<menu text="SIXHIARA/Barragems" action-command="open-reservoirs" position="30050" icon="images/reservoirs.png"/>
+			<tool-bar name="SIXHIARA_Tools" position="70">
+				<action-tool icon="images/reservoirs.png" tooltip="Barragems" action-command="open-reservoirs" position="3"/>
+			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.AquifersFormExtension" active="true">
-			<menu text="SIXHIARA/Acuiferos"
-				action-command="open-aquifers"
-				position="4"/>
+			<menu text="SIXHIARA/Acuiferos" action-command="open-aquifers" position="30075" icon="images/aquifers.png"/>
+			<tool-bar name="SIXHIARA_Tools" position="70">
+				<action-tool icon="images/aquifers.png" tooltip="Acuiferos" action-command="open-aquifers" position="4"/>
+			</tool-bar>
 		</extension>
 	</extensions>
 </plugin-config>
