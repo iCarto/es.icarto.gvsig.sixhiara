@@ -1,0 +1,29 @@
+From df91068798d9618cc63f5bab81d95425668417c1 Mon Sep 17 00:00:00 2001
+From: Francisco Puga <fpuga@icarto.es>
+Date: Wed, 13 Apr 2016 18:20:23 +0200
+Subject: [PATCH] Fix zoom to selected point
+
+---
+ .../appgvSIG/src/com/iver/cit/gvsig/ZoomToSelectExtension.java      | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/applications/appgvSIG/src/com/iver/cit/gvsig/ZoomToSelectExtension.java b/applications/appgvSIG/src/com/iver/cit/gvsig/ZoomToSelectExtension.java
+index a951505..4288566 100644
+--- a/applications/appgvSIG/src/com/iver/cit/gvsig/ZoomToSelectExtension.java
++++ b/applications/appgvSIG/src/com/iver/cit/gvsig/ZoomToSelectExtension.java
+@@ -80,6 +80,12 @@ public class ZoomToSelectExtension extends Extension {
+ 			Rectangle2D selectedExtent = mapa.getSelectionBounds();
+ 
+ 			if (selectedExtent != null) {
++			    if (selectedExtent.getWidth() < 200) {
++				selectedExtent.setFrameFromCenter(selectedExtent.getCenterX(),
++					selectedExtent.getCenterY(),
++					selectedExtent.getCenterX() + 100,
++					selectedExtent.getCenterY() + 100);
++			    }
+ 				mapa.getViewPort().setExtent(selectedExtent);
+ 				((ProjectDocument)vista.getModel()).setModified(true);
+ 			}
+-- 
+2.1.4
+
