@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <plugin-config>
-	<depends plugin-name="com.iver.cit.gvsig"/>
-	<depends plugin-name="es.udc.cartolab.gvsig.navtable"/>
+	<depends plugin-name="org.gvsig.app.mainplugin"/>
+	<depends plugin-name="org.gvsig.app.document.table.app.mainplugin" />
+	<depends plugin-name="org.gvsig.editing.app.mainplugin"/>
+	<depends plugin-name="es.icarto.gvsig.commons"/>
+	<depends plugin-name="es.icarto.gvsig.navtable"/>
+	<depends plugin-name="es.icarto.gvsig.navtableforms"/>
+	<depends plugin-name="es.udc.cartolab.gvsig.elle"/>
+	<depends plugin-name="es.udc.cartolab.gvsig.users"/>
 	<libraries library-dir="lib"/>
 	<resourceBundle name="text"/>
 	<extensions>
 		<extension class-name="es.icarto.gvsig.sixhiara.FountainsFormExtension" active="true">
-			<menu text="SIXHIARA/Fontes" action-command="open-fountains" position="30000" icon="images/fountains.png"/>
+			<menu text="SIXHIARA/Fontes" action-command="" position="30000" icon="es.icarto.gvsig.sixhiara.FountainsFormExtension"/>
 			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="images/fountains.png" tooltip="Fontes" action-command="open-fountains" position="1"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.FountainsFormExtension" tooltip="Fontes" action-command="" position="1"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.StationsFormExtension" active="true">
-			<menu text="SIXHIARA/Estações" action-command="open-stations" position="30025" icon="images/stations.png"/>
+			<menu text="SIXHIARA/Estações" action-command="" position="30025" icon="es.icarto.gvsig.sixhiara.StationsFormExtension"/>
 			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="images/stations.png" tooltip="Estações" action-command="open-stations" position="2"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.StationsFormExtension" tooltip="Estações" action-command="" position="2"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
-			<menu text="SIXHIARA/Barragems" action-command="open-reservoirs" position="30050" icon="images/reservoirs.png"/>
+			<menu text="SIXHIARA/Barragems" action-command="" position="30050" icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension"/>
 			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="images/reservoirs.png" tooltip="Barragems" action-command="open-reservoirs" position="3"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" tooltip="Barragems" action-command="" position="3"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.AquifersFormExtension" active="true">
-			<menu text="SIXHIARA/Acuiferos" action-command="open-aquifers" position="30075" icon="images/aquifers.png"/>
+			<menu text="SIXHIARA/Acuiferos" action-command="" position="30075" icon="es.icarto.gvsig.sixhiara.AquifersFormExtension"/>
 			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="images/aquifers.png" tooltip="Acuiferos" action-command="open-aquifers" position="4"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.AquifersFormExtension" tooltip="Acuiferos" action-command="" position="4"/>
 			</tool-bar>
 		</extension>
 	</extensions>
