@@ -1,16 +1,20 @@
 package es.icarto.gvsig.sixhiara;
 
-import com.iver.andami.plugins.Extension;
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
+import org.gvsig.andami.IconThemeHelper;
+import org.gvsig.andami.plugins.Extension;
+import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 import es.icarto.gvsig.sixhiara.forms.SixhiaraFormFactory;
+
 
 public abstract class AbstractFormExtension extends Extension {
 
     @Override
     public void initialize() {
 	SixhiaraFormFactory.registerFormFactory();
+	String id = this.getClass().getName();
+    IconThemeHelper.registerIcon("action", id, this);
     }
 
     @Override

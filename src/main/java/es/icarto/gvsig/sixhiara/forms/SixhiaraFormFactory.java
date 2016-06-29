@@ -1,12 +1,14 @@
 package es.icarto.gvsig.sixhiara.forms;
 
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
+
+import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
 import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
+import es.icarto.gvsig.navtableforms.utils.DBConnectionBaseFormFactory;
 import es.icarto.gvsig.navtableforms.utils.FormFactory;
 
-public class SixhiaraFormFactory extends FormFactory {
+public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
 
     private static SixhiaraFormFactory instance = null;
 
@@ -77,17 +79,7 @@ public class SixhiaraFormFactory extends FormFactory {
 	return false;
     }
 
-    @Override
-    public boolean checkLayerLoaded(String layerName) {
-	// TODO Auto-generated method stub
-	return false;
-    }
-
-    @Override
-    public boolean checkTableLoaded(String tableName) {
-	// TODO Auto-generated method stub
-	return false;
-    }
+    
 
     @Override
     public void loadLayer(String layerName) {
@@ -95,10 +87,13 @@ public class SixhiaraFormFactory extends FormFactory {
 
     }
 
-    @Override
-    public void loadTable(String tableName) {
-	// TODO Auto-generated method stub
-
-    }
-
+	@Override
+	public void loadTable(String tableName) {
+		/*
+		 * As nt formfactory only allows register one factory we should do this
+		 * ugly if instead of have a factory for each project
+		 */
+		String schema = "inventario";
+		loadTable(tableName, schema);
+	    }
 }

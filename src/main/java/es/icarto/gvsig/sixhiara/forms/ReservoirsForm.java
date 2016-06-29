@@ -2,7 +2,8 @@ package es.icarto.gvsig.sixhiara.forms;
 
 import java.io.InputStream;
 
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
+import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
@@ -13,8 +14,8 @@ public class ReservoirsForm extends AbstractForm {
 
     public static final String LAYERNAME = "Barragem";
     public static final String PKFIELD = "cod_barra";
-    public static final String ABEILLE = "ui/reservoirs.xml";
-    public static final String METADATA = "metadata/reservoirs.xml";
+    public static final String ABEILLE = "forms/reservoirs.xml";
+    public static final String METADATA = "rules/reservoirs.xml";
 
     public ReservoirsForm(FLyrVect layer) {
 	super(layer);

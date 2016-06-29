@@ -1,6 +1,7 @@
 package es.icarto.gvsig.sixhiara;
 
-import com.iver.andami.PluginServices;
+
+import org.gvsig.andami.PluginServices;
 
 import es.icarto.gvsig.sixhiara.forms.FountainsForm;
 

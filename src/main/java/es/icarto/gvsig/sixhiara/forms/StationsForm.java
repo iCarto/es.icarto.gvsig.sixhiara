@@ -2,7 +2,8 @@ package es.icarto.gvsig.sixhiara.forms;
 
 import java.io.InputStream;
 
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
+import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
@@ -14,19 +15,19 @@ public class StationsForm extends AbstractForm {
 
     public static final String LAYERNAME = "Estacoes";
     public static final String PKFIELD = "cod_estac";
-    public static final String ABEILLE = "ui/stations.xml";
-    public static final String METADATA = "metadata/stations.xml";
+    public static final String ABEILLE = "forms/stations.xml";
+    public static final String METADATA = "rules/stations.xml";
 
     public StationsForm(FLyrVect layer) {
 	super(layer);
 	addTableHandler(new AlphanumericTableHandler(
 		StationsPluviometricDataSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD.toUpperCase(),
+		getWidgetComponents(), PKFIELD,
 		StationsPluviometricDataSubForm.colNames,
 		StationsPluviometricDataSubForm.colAlias));
 	addTableHandler(new AlphanumericTableHandler(
 		StationsHydrometricDataSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD.toUpperCase(),
+		getWidgetComponents(), PKFIELD,
 		StationsHydrometricDataSubForm.colNames,
 		StationsHydrometricDataSubForm.colAlias));
     }

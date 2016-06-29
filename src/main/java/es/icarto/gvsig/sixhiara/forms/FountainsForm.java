@@ -2,7 +2,8 @@ package es.icarto.gvsig.sixhiara.forms;
 
 import java.io.InputStream;
 
-import com.iver.cit.gvsig.fmap.layers.FLyrVect;
+import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
@@ -14,18 +15,18 @@ public class FountainsForm extends AbstractForm {
 
     public static final String LAYERNAME = "Fontes";
     public static final String PKFIELD = "cod_fonte";
-    public static final String ABEILLE = "ui/fountains.xml";
-    public static final String METADATA = "metadata/fountains.xml";
+    public static final String ABEILLE = "forms/fountains.xml";
+    public static final String METADATA = "rules/fountains.xml";
 
     public FountainsForm(FLyrVect layer) {
 	super(layer);
 	addTableHandler(new AlphanumericTableHandler(
 		FountainsAnalyticalSubForm.TABLENAME, getWidgetComponents(),
-		PKFIELD.toUpperCase(), FountainsAnalyticalSubForm.colNames,
+		PKFIELD, FountainsAnalyticalSubForm.colNames,
 		FountainsAnalyticalSubForm.colAlias));
 	addTableHandler(new AlphanumericTableHandler(
 		FountainsFlowrateGaugingSubForm.TABLENAME,
-		getWidgetComponents(), PKFIELD.toUpperCase(),
+		getWidgetComponents(), PKFIELD,
 		FountainsFlowrateGaugingSubForm.colNames,
 		FountainsFlowrateGaugingSubForm.colAlias));
     }
