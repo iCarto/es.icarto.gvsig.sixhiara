@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<andami-config locale-language="pt" locale-country="" locale-variant="" lookAndFeel="com.sun.java.swing.plaf.windows.WindowsLookAndFeel" pluginsDirectory="gvSIG/extensiones">
+  <andami update="true"/>
+  <plugin name="org.gvsig.coreplugin.app.mainplugin" update="false"/>
+</andami-config>
