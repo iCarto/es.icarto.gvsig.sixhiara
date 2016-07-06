@@ -15,27 +15,27 @@
 		<extension class-name="es.icarto.gvsig.sixhiara.ConfigExtension" active="true">
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.FountainsFormExtension" active="true">
-			<menu text="SIXHIARA/Fontes" action-command="" position="30000" icon="es.icarto.gvsig.sixhiara.FountainsFormExtension"/>
-			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.FountainsFormExtension" tooltip="Fontes" action-command="" position="1"/>
+			<menu text="sixhiara/fountains" action-command="" position="30000" icon="es.icarto.gvsig.sixhiara.FountainsFormExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.FountainsFormExtension" tooltip="fountains" action-command="" position="1"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.StationsFormExtension" active="true">
-			<menu text="SIXHIARA/Estações" action-command="" position="30025" icon="es.icarto.gvsig.sixhiara.StationsFormExtension"/>
-			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.StationsFormExtension" tooltip="Estações" action-command="" position="2"/>
+			<menu text="sixhiara/stations" action-command="" position="30025" icon="es.icarto.gvsig.sixhiara.StationsFormExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.StationsFormExtension" tooltip="stations" action-command="" position="2"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" active="true">
-			<menu text="SIXHIARA/Barragems" action-command="" position="30050" icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension"/>
-			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" tooltip="Barragems" action-command="" position="3"/>
+			<menu text="sixhiara/reservoirs" action-command="" position="30050" icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.ReservoirsFormExtension" tooltip="reservoirs" action-command="" position="3"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.AquifersFormExtension" active="true">
-			<menu text="SIXHIARA/Acuiferos" action-command="" position="30075" icon="es.icarto.gvsig.sixhiara.AquifersFormExtension"/>
-			<tool-bar name="SIXHIARA_Tools" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.AquifersFormExtension" tooltip="Acuiferos" action-command="" position="4"/>
+			<menu text="sixhiara/aquifers" action-command="" position="30075" icon="es.icarto.gvsig.sixhiara.AquifersFormExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.AquifersFormExtension" tooltip="aquifers" action-command="" position="4"/>
 			</tool-bar>
 		</extension>
 	</extensions>
