@@ -7,6 +7,7 @@ import es.icarto.gvsig.navtableforms.AbstractForm;
 import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 import es.icarto.gvsig.navtableforms.utils.DBConnectionBaseFormFactory;
 import es.icarto.gvsig.navtableforms.utils.FormFactory;
+import es.icarto.gvsig.sixhiara.preferences.DBNames;
 
 public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
 
@@ -93,7 +94,6 @@ public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
 		 * As nt formfactory only allows register one factory we should do this
 		 * ugly if instead of have a factory for each project
 		 */
-		String schema = "inventario";
-		loadTable(tableName, schema);
+		loadTable(tableName, DBNames.SCHEMA);
 	    }
 }
