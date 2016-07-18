@@ -1,0 +1,14 @@
+%syntax-version=1.0.0
+%project=sixhiara
+%uri=https://github.com/icarto/sixhiara
+
+create_owner_user_and_permissions 2016-07-18T10:28:12Z Francisco Puga <fpuga@icarto.es> # Create db objects owner and fix public permissions
+create_roles_inventario 2016-07-18T16:10:32Z Francisco Puga <fpuga@icarto.es> # Create roles inventario_read, inventario_write
+create_postgis_extension 2016-07-18T11:54:45Z Francisco Puga <fpuga@icarto.es> # Create postgis extension and fix privileges
+create_elle 2016-07-18T12:27:46Z Francisco Puga <fpuga@icarto.es> # Create elle, schema, tables and users
+create_schema_cartografia_base 2016-07-18T15:24:16Z Francisco Puga <fpuga@icarto.es> # Creates schema cartografia_base and fixes privileges
+create_tables_cartogracia_base 2016-07-18T15:36:30Z Francisco Puga <fpuga@icarto.es> # Create the tables in the schema cbase
+create_schema_inventario_dominios 2016-07-18T15:50:24Z Francisco Puga <fpuga@icarto.es> # Create schema inventario_dominios
+create_schema_inventario 2016-07-18T16:02:08Z Francisco Puga <fpuga@icarto.es> # Create schema inventario
+
+create_user_inventario 2016-07-18T16:13:26Z Francisco Puga <fpuga@icarto.es> # Create user inventario
