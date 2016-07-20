@@ -430,7 +430,7 @@ gid SERIAL PRIMARY KEY,
 "d_chu_con" varchar(9),
 "d_no_chu" varchar(9));
 
-CREATE TABLE "inventario"."barragem" (
+CREATE TABLE "inventario"."barragens" (
 gid SERIAL PRIMARY KEY,
 "barragem" varchar(254),
 "cod_barra" varchar(254) UNIQUE,
@@ -475,7 +475,7 @@ gid SERIAL PRIMARY KEY,
 geom geometry('POINT', 32737)
 );
 
-CREATE INDEX ON "inventario"."barragem" USING GIST ("geom");
+CREATE INDEX ON "inventario"."barragens" USING GIST ("geom");
 
 
 
