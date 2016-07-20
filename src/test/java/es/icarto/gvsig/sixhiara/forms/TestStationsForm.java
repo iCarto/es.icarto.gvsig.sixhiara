@@ -4,12 +4,12 @@ public class TestStationsForm extends CommonMethodsForTestForms {
 
     @Override
     protected String getUIFile() {
-	return StationsForm.ABEILLE;
+	return EstacoesForm.ABEILLE;
     }
 
     @Override
     protected String getMetadataFile() {
-	return StationsForm.METADATA;
+	return EstacoesForm.METADATA;
     }
 
 }

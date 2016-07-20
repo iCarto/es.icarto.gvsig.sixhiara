@@ -4,12 +4,12 @@ public class TestAquifersForm extends CommonMethodsForTestForms {
 
     @Override
     protected String getUIFile() {
-	return AquifersForm.ABEILLE;
+	return AcuiferosForm.ABEILLE;
     }
 
     @Override
     protected String getMetadataFile() {
-	return AquifersForm.METADATA;
+	return AcuiferosForm.METADATA;
     }
 
 }

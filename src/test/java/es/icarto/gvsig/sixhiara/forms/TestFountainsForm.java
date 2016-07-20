@@ -4,12 +4,12 @@ public class TestFountainsForm extends CommonMethodsForTestForms {
 
     @Override
     protected String getUIFile() {
-	return FountainsForm.ABEILLE;
+	return FontesForm.ABEILLE;
     }
 
     @Override
     protected String getMetadataFile() {
-	return FountainsForm.METADATA;
+	return FontesForm.METADATA;
     }
 
 }

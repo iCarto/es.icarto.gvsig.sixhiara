@@ -3,7 +3,7 @@ package es.icarto.gvsig.sixhiara.forms;
 import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 
 @SuppressWarnings("serial")
-public class StationsHydrometricDataSubForm extends AbstractSubForm {
+public class DadosHidrometricosSubForm extends AbstractSubForm {
 
     public static final String TABLENAME = "dados_hidrometricos";
     public static String[] colNames = { "cod_estac", "ano", "n_med_ano", "q_med_ano", "e_med_ano" };

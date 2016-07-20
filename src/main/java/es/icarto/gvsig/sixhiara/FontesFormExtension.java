@@ -3,13 +3,13 @@ package es.icarto.gvsig.sixhiara;
 
 import org.gvsig.andami.PluginServices;
 
-import es.icarto.gvsig.sixhiara.forms.StationsForm;
+import es.icarto.gvsig.sixhiara.forms.FontesForm;
 
-public class StationsFormExtension extends AbstractFormExtension {
+public class FontesFormExtension extends AbstractFormExtension {
 
     @Override
     public void execute(String actionCommand) {
-	StationsForm form = new StationsForm(getLayer());
+	FontesForm form = new FontesForm(getLayer());
 	if (form != null && form.init()) {
 	    PluginServices.getMDIManager().addWindow(form);
 	}
@@ -17,6 +17,7 @@ public class StationsFormExtension extends AbstractFormExtension {
 
     @Override
     protected String getLayerName() {
-	return StationsForm.LAYERNAME;
+	return FontesForm.LAYERNAME;
     }
+
 }

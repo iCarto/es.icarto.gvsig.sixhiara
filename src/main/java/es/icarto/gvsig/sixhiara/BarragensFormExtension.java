@@ -3,13 +3,13 @@ package es.icarto.gvsig.sixhiara;
 
 import org.gvsig.andami.PluginServices;
 
-import es.icarto.gvsig.sixhiara.forms.ReservoirsForm;
+import es.icarto.gvsig.sixhiara.forms.BarragensForm;
 
-public class ReservoirsFormExtension extends AbstractFormExtension {
+public class BarragensFormExtension extends AbstractFormExtension {
 
     @Override
     public void execute(String actionCommand) {
-	ReservoirsForm form = new ReservoirsForm(getLayer());
+	BarragensForm form = new BarragensForm(getLayer());
 	if (form != null && form.init()) {
 	    PluginServices.getMDIManager().addWindow(form);
 	}
@@ -17,7 +17,7 @@ public class ReservoirsFormExtension extends AbstractFormExtension {
 
     @Override
     protected String getLayerName() {
-	return ReservoirsForm.LAYERNAME;
+	return BarragensForm.LAYERNAME;
     }
 
 }

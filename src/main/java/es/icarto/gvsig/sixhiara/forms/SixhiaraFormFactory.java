@@ -52,17 +52,17 @@ public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
     @Override
     public AbstractSubForm createSubForm(String tableName) {
 	if (tableName != null) {
-	    if (tableName.equals(FountainsAnalyticalSubForm.TABLENAME)) {
-		return new FountainsAnalyticalSubForm();
+	    if (tableName.equals(AnaliseSubForm.TABLENAME)) {
+		return new AnaliseSubForm();
 	    } else if (tableName
-		    .equals(FountainsFlowrateGaugingSubForm.TABLENAME)) {
-		return new FountainsFlowrateGaugingSubForm();
+		    .equals(QuantidadeAguaSubForm.TABLENAME)) {
+		return new QuantidadeAguaSubForm();
 	    } else if (tableName
-		    .equals(StationsPluviometricDataSubForm.TABLENAME)) {
-		return new StationsPluviometricDataSubForm();
+		    .equals(DadosPluviometricosSubForm.TABLENAME)) {
+		return new DadosPluviometricosSubForm();
 	    } else if (tableName
-		    .equals(StationsHydrometricDataSubForm.TABLENAME)) {
-		return new StationsHydrometricDataSubForm();
+		    .equals(DadosHidrometricosSubForm.TABLENAME)) {
+		return new DadosHidrometricosSubForm();
 	    }
 	}
 	return null;

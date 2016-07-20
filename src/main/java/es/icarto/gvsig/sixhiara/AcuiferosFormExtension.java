@@ -3,13 +3,13 @@ package es.icarto.gvsig.sixhiara;
 
 import org.gvsig.andami.PluginServices;
 
-import es.icarto.gvsig.sixhiara.forms.AquifersForm;
+import es.icarto.gvsig.sixhiara.forms.AcuiferosForm;
 
-public class AquifersFormExtension extends AbstractFormExtension {
+public class AcuiferosFormExtension extends AbstractFormExtension {
 
     @Override
     public void execute(String actionCommand) {
-	AquifersForm form = new AquifersForm(getLayer());
+	AcuiferosForm form = new AcuiferosForm(getLayer());
 	if (form != null && form.init()) {
 	    PluginServices.getMDIManager().addWindow(form);
 	}
@@ -17,7 +17,7 @@ public class AquifersFormExtension extends AbstractFormExtension {
 
     @Override
     protected String getLayerName() {
-	return AquifersForm.LAYERNAME;
+	return AcuiferosForm.LAYERNAME;
     }
 
 }
