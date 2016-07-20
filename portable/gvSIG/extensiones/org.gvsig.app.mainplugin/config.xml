@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    gvSIG. Desktop Geographic Information System.
+
+    Copyright (C) 2007-2013 gvSIG Association.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA  02110-1301, USA.
+
+    For any additional information, do not hesitate to contact us
+    at info AT gvsig.com, or visit our website www.gvsig.com.
+
+-->
+<plugin-config>
+
+  <depends plugin-name="org.gvsig.projection.app.mainplugin" />
+  <depends plugin-name="org.gvsig.geometry.app.mainplugin" />
+  <alternativeNames name="org.gvsig.app"/>
+  <icon src="gvsig-logo-icon" text="gvSIG"/>
+  <libraries library-dir="lib"/>
+  <resourceBundle name="text"/>
+  <label-set class-name="org.gvsig.app.project.documents.view.gui.DefaultViewPanel">
+    <label id="units" size="75"/>
+    <label id="x" size="120"/>
+    <label id="y" size="120"/>
+    <label id="4" size="110"/>
+    <label id="5" size="110"/>
+    <label id="distancearea" size="30"/>
+    <label id="projection" size="110"/>
+    <label id="azimut" size="110"/>
+  </label-set>
+
+  <!--
+  <popup-menus>
+    <popup-menu name="view.toc.context.menu">
+      <menu name="view-layer-add"/>
+    </popup-menu>
+  </popup-menus>
+  -->
+
+  <extensions>
+    <extension class-name="org.gvsig.app.extension.InitialWarningExtension"
+      description="Initial warning message"
+      active="true"
+      priority="1">
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.CheckSOAndArquitectureExtension"
+      description="Check OS and architecture of installed packages"
+      active="true"
+      priority="1">
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.InitializeApplicationExtension"
+      description="Initialize application extension"
+      active="true"
+      priority="99999">
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ProjectExtension"
+      description="Extensión encargada de gestionar los proyectos."
+      active="true"
+      priority="10">
+
+      <action
+        name= "application-project-new"
+        label="nuevo_proyecto"
+        tooltip="nuevo_tooltip"
+        action-command="application-project-new"
+        icon="application-project-new"
+        position="100100000"
+        accelerator="Ctrl+N"
+        />
+      <action
+        name="application-project-open"
+        label="abrir_proyecto"
+        tooltip="abrir_tooltip"
+        action-command="application-project-open"
+        icon="application-project-open"
+        position="100200000"
+        accelerator="Ctrl+O"
+        />
+      <action
+        name="application-project-save"
+        label="guardar_proyecto"
+        tooltip="guardar_tooltip"
+        action-command="application-project-save"
+        icon="application-project-save"
+        position="100300000"
+        accelerator="Ctrl+S"
+        />
+      <action
+        name="application-project-saveas"
+        label="guardar_como"
+        tooltip="guardar_como"
+        action-command="application-project-save-as"
+        icon="application-project-save-as"
+        position="100400000"
+        accelerator="Ctrl+Shift+S"
+        />
+
+
+
+      <menu text="File"
+        position="100000000"
+        is_separator="true"/>
+      <menu text="File/Export"
+        position="100900000"
+        is_separator="true"/>
+      <menu text="Edit"
+        position="200000000"
+        is_separator="true"/>
+      <menu text="Selection"
+        position="300000000"
+        is_separator="true"/>
+      <menu text="Show"
+        position="400000000"
+        is_separator="true"/>
+
+      <menu text="Layer"
+        position="600000000"
+        is_separator="true"/>
+      <menu text="Layer/Set_to"
+        position="600400000"
+        is_separator="true"/>
+
+      <menu text="View"
+        position="650000000"
+        is_separator="true"/>
+      <menu text="View/Navigation"
+        position="650100000"
+        is_separator="true"/>
+      <menu text="View/Query"
+        position="650700000"
+        is_separator="true"/>
+
+<!--
+      <menu text="tools"
+        position="900000000"
+        is_separator="true"/>
+      <menu text="tools/Development"
+        position="908500000"
+        is_separator="true"/>
+      <menu text="tools/Development/Disposables"
+        position="908500200"
+        is_separator="true"/>
+-->
+
+      <menu text="Window"
+        position="960000000"
+        is_separator="true"/>
+      <menu text="Help"
+        position="990000000"
+        is_separator="true"/>
+
+      <menu
+        text="File/nuevo_proyecto"
+        name= "application-project-new"
+        />
+      <menu
+        text="File/abrir_proyecto"
+        name="application-project-open"
+        />
+      <menu
+        text="File/guardar_proyecto"
+        name="application-project-save"
+        />
+      <menu
+        text="File/guardar_como"
+        name="application-project-saveas"
+        />
+
+      <tool-bar name="project" position="1">
+        <action-tool name="application-project-new"/>
+        <action-tool name="application-project-open"/>
+        <action-tool name="application-project-save"/>
+      </tool-bar>
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ViewProjectWindow"
+      description="Extensión encargada de abrir la ventana de gestión del proyecto."
+      active="true">
+
+      <action
+        name="show-project-manager"
+        label="_Show_project"
+        tooltip="_Show_project_window"
+        action-command="show-project-manager"
+        icon="show-project-manager"
+        position="400100000"
+        accelerator="Alt+P"
+        />
+
+      <menu
+        text="Show/_Project_manager"
+        name="show-project-manager"
+        />
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.AddLayerDropingFile"
+      description="Soporte para añadir capas arrastrando el fichero al TOC."
+      active="true"
+      priority="20">
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.AddLayer"
+      description="Extensión encargada de abrir las diferentes capas."
+      active="true"
+      priority="20">
+      <action
+        name="view-layer-add"
+        label="Add_layer"
+        tooltip="Add_layer"
+        action-command="view-layer-add"
+        icon="view-layer-add"
+        position="650300000"
+        accelerator="Alt+O"
+        />
+
+      <menu
+        name="view-layer-add"
+        text="View/Add_layer"
+        />
+      <tool-bar name="view" position="30010">
+        <action-tool name="view-layer-add"/>
+      </tool-bar>
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.BasicSymbologyExtension"
+      description="Enables the  symbology."
+      active="true"
+      priority="20">
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ZoomPrev"
+      description="Extensión encargada de gestionar los zooms previos al actual."
+      active="true">
+      <action
+        name="view-navigation-zoom-back"
+        label="Zoom_back"
+        tooltip="Zoom_back"
+        action-command="view-navigation-zoom-back"
+        icon="view-navigation-zoom-back"
+        position="650100700"
+        accelerator=""
+        />
+
+      <menu
+        name="view-navigation-zoom-back"
+        text="View/Navigation/Zoom_back"
+        />
+      <tool-bar name="view_navigation" position ="3">
+        <action-tool name="view-navigation-zoom-back"/>
+      </tool-bar>
+    </extension>    
+    
+    <extension class-name="org.gvsig.app.extension.ZoomNext"
+      description="Extensión encargada de gestionar los zooms siguientes al actual."
+      active="true">
+      <action
+        name="view-navigation-zoom-next"
+        label="Zoom_next"
+        tooltip="Zoom_next"
+        action-command="view-navigation-zoom-next"
+        icon="view-navigation-zoom-next"
+        position="650100710"
+        accelerator=""
+        />
+
+      <menu
+        name="view-navigation-zoom-next"
+        text="View/Navigation/Zoom_next"
+        />
+      <tool-bar name="view_navigation" position ="3">
+        <action-tool name="view-navigation-zoom-next"/>
+      </tool-bar>
+    </extension>
+    
+    <extension class-name="org.gvsig.app.extension.InfoToolExtension"
+      description="Extensión encargada de gestionar la herramienta de info."
+      active="true"
+      priority="29">
+      <action
+        name="layer-info-by-point"
+        label="_Information_by_point"
+        tooltip="_Information_by_point"
+        action-command="layer-info-by-point"
+        icon="layer-info-by-point"
+        position="600200000"
+        accelerator=""
+        />
+      <menu
+        name="layer-info-by-point"
+        text="Layer/Query/_Information_by_point"
+        />
+      <tool-bar name="view_tools_query" position="5">
+        <selectable-tool name="layer-info-by-point" />
+      </tool-bar>
+    </extension>
+
+
+    <extension class-name="org.gvsig.app.extension.MetadataPropertiesExtension"
+      description="Extensión encargada de mostrar los metadatos de la capa seleccionada."
+      active="true">
+    </extension>
+
+
+    <extension class-name="org.gvsig.app.extension.ViewControls"
+      description="Extensión encargada de gestionar la vista."
+      active="true"
+      priority="30">
+      <combo-scale name="view-change-scale"
+        label="1:"
+        elements="1000;2000;5000;10000;25000;50000;100000;200000;500000;1000000;2000000;5000000"
+          value="10000"
+          action-command="view-change-scale" />
+
+      <action
+        name="view-change-scale"
+        label="_Change_scale"
+        action-command="view-change-scale"
+        />
+
+      <action
+        name="view-navigation-zoom-in-topoint"
+        label="Zoom_in"
+        position="650100400"
+        action-command="view-navigation-zoom-in-topoint"
+        icon="view-navigation-zoom-in-topoint"
+        tooltip="Zoom_in"
+        accelerator=""
+        />
+      <action
+        name="view-navigation-zoom-out-topoint"
+        label="Zoom_out"
+        position="650100500"
+        action-command="view-navigation-zoom-out-topoint"
+        icon="view-navigation-zoom-out-topoint"
+        tooltip="Zoom_out"
+        accelerator=""
+        />
+      <action
+        name="view-navigation-zoom-all"
+        label="Zoom_all"
+        position="650100600"
+        action-command="view-navigation-zoom-all"
+        icon="view-navigation-zoom-all"
+        tooltip="Zoom_all"
+        accelerator=""
+        />
+        <!--
+      <action
+        name="view-navigation-zoom-in-center"
+        label="Zoom_in_to_center"
+        position="650100200"
+        action-command="view-navigation-zoom-in-center"
+        tooltip="Zoom_in_to_center"
+        icon="view-navigation-zoom-in-center"
+        accelerator=""
+        />
+      <action
+        name="view-navigation-zoom-out-center"
+        label="Zoom_out_to_center"
+        position="650100300"
+        action-command="view-navigation-zoom-out-center"
+        tooltip="Zoom_out_to_center"
+        icon="view-navigation-zoom-out-center"
+        accelerator=""
+        />
+        -->
+      <action
+        name="view-navigation-pan"
+        label="Pan"
+        position="650100100"
+        action-command="view-navigation-pan"
+        icon="view-navigation-pan"
+        tooltip="Pan"
+        accelerator=""
+        />
+        <!--
+      <action
+        name="view-navigation-frame-manager"
+        label="Frame_manager"
+        position="650109000"
+        action-command="view-navigation-frame-manager"
+        icon="view-navigation-frame-manager"
+        tooltip="Frame_manager"
+        accelerator=""
+        />
+-->
+
+      <action
+        name="layer-set-visible"
+        label="_Show_layers"
+        position="600400100"
+        action-command="layer-set-visible"
+        icon="layer-set-visible"
+        tooltip="_Show_layers"
+        accelerator=""
+        />
+      <action
+        name="layer-set-hide"
+        label="_Hide_layers"
+        position="600400200"
+        action-command="layer-set-hide"
+        icon="layer-set-hide"
+        tooltip="_Hide_layers"
+        accelerator=""
+        />
+      <action
+        name="layer-set-active"
+        label="_Set_Layers_active"
+        position="600400300"
+        action-command="layer-set-active"
+        icon="layer-set-active"
+        tooltip="_Set_Layers_active"
+        accelerator=""
+        />
+      <action
+        name="layer-set-inactive"
+        label="_Set_Layers_inactive"
+        position="600400400"
+        action-command="layer-set-inactive"
+        icon="layer-set-inactive"
+        tooltip="_Set_Layers_inactive"
+        accelerator=""
+        />
+
+      <action
+        name="view-locator-setup"
+        label="_Locator_setup"
+        position="658000000"
+        action-command="view-locator-setup"
+        icon="view-locator-setup"
+        tooltip="_Locator_setup"
+        accelerator=""
+        />
+
+      <menu
+        name="view-navigation-zoom-in-topoint"
+        text="View/Navigation/Zoom_in"
+        />
+      <menu
+        name="view-navigation-zoom-out-topoint"
+        text="View/Navigation/Zoom_out"
+        />
+      <menu
+        name="view-navigation-zoom-all"
+        text="View/Navigation/Zoom_all"
+        />
+        <!--
+      <menu
+        name="view-navigation-zoom-in-center"
+        text="View/Navigation/Zoom_in_to_center"
+        />
+      <menu
+        name="view-navigation-zoom-out-center"
+        text="View/Navigation/Zoom_out_to_center"
+        />
+        -->
+      <menu
+        name="view-navigation-pan"
+        text="View/Navigation/Pan"
+        />
+        <!--
+      <menu
+        name="view-navigation-frame-manager"
+        text="View/Navigation/Frame_manager"
+        />
+-->
+
+      <menu
+        name="layer-set-visible"
+        text="View/_Set_all_layers_to/visible"
+        />
+      <menu
+        name="layer-set-hide"
+        text="View/_Set_all_layers_to/Hidden"
+        />
+      <menu
+        name="layer-set-active"
+        text="View/_Set_all_layers_to/Active"
+        />
+      <menu
+        name="layer-set-inactive"
+        text="View/_Set_all_layers_to/Inactive"
+        />
+
+      <menu
+        name="view-locator-setup"
+        text="View/Locator_setup"
+        />
+
+
+      <tool-bar name="view_navigation" position="3">
+        <selectable-tool name="view-navigation-zoom-in-topoint" is-default="true" />
+        <selectable-tool name="view-navigation-zoom-out-topoint" />
+        <action-tool name="view-navigation-zoom-all"  />
+        <!--
+        <action-tool name="view-navigation-zoom-in-center"  />
+        <action-tool name="view-navigation-zoom-out-center"  />
+        -->
+      </tool-bar>
+
+
+      <tool-bar name="view_navigation" position ="4">
+        <selectable-tool name="view-navigation-pan"/>
+<!--        <action-tool name="view-navigation-frame-manager" /> -->
+      </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.MeasureExtension"
+      description="Extensión encargada de gestionar las operaciones de medir sobre la vista."
+      active="true"
+      priority="30">
+      <action
+        name="view-query-distance"
+        label="_Query_distance"
+        position="650700200"
+        action-command="view-query-distance"
+        icon="view-query-distance"
+        tooltip="_Query_distance"
+        accelerator=""
+        />
+      <action
+        name="view-query-area"
+        label="_Query_area"
+        position="650700100"
+        action-command="view-query-area"
+        icon="view-query-area"
+        tooltip="_Query_area"
+        accelerator=""
+        />
+
+
+      <menu
+        name="view-query-distance"
+        text="Layer/Query/Distance"
+        />
+      <menu
+        name="view-query-area"
+        text="Layer/Query/Area"
+        />
+
+      <tool-bar name="view_tools_query" position="5">
+        <selectable-tool name="view-query-distance" />
+        <selectable-tool name="view-query-area" />
+      </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ViewSelectionControls"
+      description="Extensión encargada de gestionar la vista."
+      active="true"
+      priority="30">
+
+      <action
+        name="selection-select-by-rectangle-view"
+        label="Select_by_rectangle"
+        position="300020000"
+        action-command="selection-select-by-rectangle-view"
+        icon="selection-select-by-rectangle"
+        tooltip="Select_by_rectangle"
+        accelerator=""
+        />
+      <action
+        name="selection-select-by-polygon"
+        label="Select_by_polygon"
+        position="300030000"
+        action-command="selection-select-by-polygon"
+        icon="selection-select-by-polygon"
+        tooltip="Select_by_polygon"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-select-by-rectangle-view"
+        text="Selection/Select_by_rectangle"
+        />
+   <!--
+      <menu
+        name="selection-select-by-polygon"
+        text="Selection/Select_by_polygon"
+        />
+    -->
+      <tool-bar name="view_selection" position="6">
+        <selectable-tool name="selection-select-by-rectangle-view" />
+       <!-- <selectable-tool name="selection-select-by-polygon" /> -->
+      </tool-bar>
+
+    </extension>
+
+
+
+    <extension class-name="org.gvsig.app.extension.ViewSimpleSelectionControl"
+      description="Extensión encargada de gestionar la herramienta de selección simple."
+      active="true"
+      priority="30">
+      <action
+        name="selection-simple-select-view"
+        label="_Simple_select"
+        position="300010000"
+        action-command="selection-simple-select-view"
+        icon="selection-simple-select"
+        tooltip="_Simple_select"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-simple-select-view"
+        text="Selection/Simple"
+        />
+
+      <tool-bar name="view_selection" position="6">
+        <selectable-tool name="selection-simple-select-view" />
+      </tool-bar>
+
+    </extension>
+
+<!--
+    <extension class-name="org.gvsig.app.extension.ViewSelectionByTheme"
+      description="Extensión encargada de la selección por tema."
+      active="true"
+      priority="30">
+      <action
+        name="selection-select-by-layer"
+        position="300070000"
+        label="_Select_by_layer"
+        action-command="selection-select-by-layer"
+        icon="selection-select-by-layer"
+        tooltip="_Select_by_layer"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-select-by-layer"
+        text="Selection/Select_by_layer"
+        />
+    </extension>
+-->
+
+    <extension class-name="org.gvsig.app.extension.ViewInvertSelection"
+      description="Extensión encargada de hacer la selección inversa."
+      active="true"
+      priority="30">
+      <action
+        name="selection-reverse-view"
+        label="_Reverse_selection"
+        position="300100000"
+        action-command="selection-reverse-view"
+        icon="selection-reverse"
+        tooltip="_Reverse_selection"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-reverse-view"
+        text="Selection/Reverse"
+        />
+
+      <tool-bar name="view_selection" position="6">
+          <action-tool name="selection-reverse-view" />
+      </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ViewPropertiesExtension"
+      description="Extensión encargada de gestionar el diálogo de propiedades de la vista."
+      active="true">
+      <action
+        name="view-properties"
+        label="_View_properties"
+        position="659000000"
+        action-command="view-properties"
+        icon="view-properties"
+        tooltip="_Show_view_properties"
+        accelerator=""
+        />
+
+
+      <menu
+        name="view-properties"
+        text="View/Properties"
+        />
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ZoomToSelectExtension"
+      description="Extensión encargada de gestionar los eventos realizados sobre una capa."
+      active="true">
+
+      <action
+        name="view-navigation-zoom-to-selection"
+        label="Zoom_to_selection"
+        position="650100900"
+        action-command="view-navigation-zoom-to-selection"
+        icon="view-navigation-zoom-to-selection"
+        tooltip="Zoom_to_selection"
+        accelerator=""
+        />
+
+      <menu
+        name="view-navigation-zoom-to-selection"
+        text="View/Navigation/Zoom_to_selection"
+        />
+
+      <tool-bar name="view_navigation" position="3">
+        <action-tool name="view-navigation-zoom-to-selection" />
+      </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ClearSelectionExtension"
+      description="Extensión encargada de limpiar la selección."
+      active="true">
+
+      <action
+        name="selection-clear-view"
+        label="_Clear_selection"
+        position="300110000"
+        action-command="selection-clear-view"
+        icon="edit-clear"
+        tooltip="_Clear_selection"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-clear-view"
+        text="Selection/_Clear"
+        />
+
+      <tool-bar name="view_selection" position="6">
+        <action-tool name="selection-clear-view" />
+      </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.SelectByAttributesExtension"
+      description="Extensión encargada de abrir el diálogo para filtrar una vista."
+      active="true">
+
+      <action
+        name="selection-by-attributes-layer"
+        label="_Select_by_attributes"
+        position="300080000"
+        icon="selection-by-attributes"
+        tooltip="_Select_by_attributes"
+        action-command="selection-by-attributes-layer"
+        accelerator=""
+        />
+
+      <menu
+        name="selection-by-attributes-layer"
+        text="Selection/_Select_by_attributes"
+        />
+
+      <tool-bar name="view_selection" position="12">
+        <action-tool name="selection-by-attributes-layer" />
+      </tool-bar>
+
+    </extension>
+
+<!--
+    <extension class-name="org.gvsig.app.extension.dispose.DisposableManagementExtension"
+      description="Extensión con información sobre disposables."
+      active="true"
+      priority="1000">
+
+      <action
+        name="tools-devel-disposables-show-pendings"
+        label="_Show_pendings_disposables"
+        position="908500200"
+        tooltip="_Show_pendings_disposables"
+        action-command="tools-devel-disposables-show-pendings"
+        icon="tools-devel-disposables-show-pendings"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-disposables-free-all"
+        label="_Free_all_disposables"
+        position="908500201"
+        action-command="tools-devel-disposables-free-all"
+        icon="tools-devel-disposables-free-all"
+        tooltip="_Free_all_disposables"
+        accelerator=""
+        />
+
+      <menu
+        name="tools-devel-disposables-show-pendings"
+        text="tools/Development/Disposables/Show_pendings"
+        />
+      <menu
+        name="tools-devel-disposables-free-all"
+        text="tools/Development/Disposables/Free_all"
+        />
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.TranslationsPackageExtension"
+      description="Extensión para la creacion de paquetes de traducciones."
+      active="true"
+      priority="1000">
+
+      <action
+        name="tools-devel-translations-package"
+        label="_Translations_package"
+        position="908500200"
+        tooltip="_Translations_package"
+        action-command="tools-devel-translations-package"
+        icon="tools-devel-translations-package"
+        accelerator=""
+        />
+
+
+      <menu
+        name="tools-devel-translations-package"
+        text="tools/Development/_Translations_package"
+        />
+
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.develtools.EditingListenerExtension"
+      description="Monitor de operaciones de edition."
+      active="true"
+      priority="1000">
+
+      <action
+        name="tools-devel-show-editing-listener"
+        label="Show editing monitor"
+        position="908500200"
+        tooltip="Show editing monitor"
+        action-command="tools-devel-show-editing-listener"
+        icon="tools-devel-show-editing-listener"
+        accelerator=""
+        />
+
+      <menu
+        name="tools-devel-show-editing-listener"
+        text="tools/Development/Show_editing_monitor"
+        />
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.ShowDevelInfoExtension"
+      description="Presenta informacion relevante para debug."
+      active="true"
+      priority="30">
+      <action
+        name="tools-devel-show-persistencefactories"
+        label="_Show_persistence_factories"
+        tooltip="_Show_persistence_factories"
+        position="908500400"
+        action-command="tools-devel-show-persistencefactories"
+        icon="tools-devel-show-persistencefactories"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-icontheme"
+        label="_Show_icon_theme_information"
+        tooltip="_Show_icon_theme_information"
+        position="908500300"
+        action-command="tools-devel-show-icontheme"
+        icon="tools-devel-show-icontheme"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-actions"
+        label="_Show_actions_information"
+        tooltip="_Show_actions_information"
+        position="908500100"
+        action-command="tools-devel-show-actions"
+        icon="tools-devel-show-actions"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-plugin-report"
+        label="_Show_plugin_report"
+        tooltip="_Show_plugin_report_of_actions_menus_and_icons"
+        position="908500100"
+        action-command="tools-devel-show-plugin-report"
+        icon="tools-devel-show-plugin-report"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-menus"
+        label="_Show_menu_information"
+        tooltip="_Show_menu_information"
+        position="908500200"
+        action-command="tools-devel-show-menus"
+        icon="tools-devel-show-menus"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-menus-by-plugin"
+        label="_Show_menu_by_plugin_information"
+        tooltip="_Show_menu_ordered_by_plugin_information"
+        position="908500300"
+        action-command="tools-devel-show-menus-by-plugin"
+        icon="tools-devel-show-menus-by-plugin"
+        accelerator=""
+        />
+      <menu
+        name="tools-devel-show-persistencefactories"
+        text="tools/Development/Show_persistence_factories"
+        />
+      <menu
+        name="tools-devel-show-icontheme"
+        text="tools/Development/Show_icon_theme_information"
+        />
+      <menu
+        name="tools-devel-show-plugin-report"
+        text="tools/Development/Show_plugin_report_of_actions_menus_and_icons"
+        />
+      <menu
+        name="tools-devel-show-actions"
+        text="tools/Development/Show_actions_information"
+        />
+      <menu
+        name="tools-devel-show-menus"
+        text="tools/Development/Show_menu_information"
+        />
+      <menu
+        name="tools-devel-show-menus-by-plugin"
+        text="tools/Development/Show_menu_by_plugin_information"
+        />
+
+    </extension>
+-->
+
+    <extension class-name="org.gvsig.app.extension.PaletteViewInfoExtension"
+      description="Extensión encargada transformar la ventana activa en palette."
+      active="true">
+
+      <action
+        name="window-convert-to-tool"
+        label="_Convert_to_tool"
+        tooltip="_Convert_regular_window_to_tool_window"
+        position="960300000"
+        action-command="window-convert-to-tool"
+        icon="window-convert-to-tool"
+        accelerator=""
+        />
+
+      <menu
+        name="window-convert-to-tool"
+        text="Window/Convert_to_tool"
+        />
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.RestoreViewInfoExtension"
+      description="Extensión encargada transformar la ventana palette en su original."
+      active="true">
+
+      <action
+        name="window-restore-from-tool"
+        label="_Restore_tool"
+        tooltip="_Restore_tool_window_to_regular_window"
+        position="960400000"
+        action-command="window-restore-from-tool"
+        icon="window-restore-from-tool"
+        accelerator=""
+        />
+
+
+      <menu
+        name="window-restore-from-tool"
+        text="Window/Restore_from_tool"
+        />
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.About"
+      description="Extensión encargada de abrir una ventana con la información relativa al programa."
+      active="true"
+      priority="90090">
+
+      <action
+        name="help-about"
+        label="_About"
+        tooltip="_Show_about"
+        position="999000000"
+        action-command="help-about"
+        icon="help-about"
+        accelerator=""
+        />
+
+      <menu
+        name="help-about"
+        text="Help/About"
+        />
+
+    </extension>
+<!--
+    <extension
+            class-name="org.gvsig.app.extension.BrowseSymbolsExtension"
+            description="" active="true">
+
+            <action
+                 name="tools-symbology-browse-symbols"
+                 label="_Browse_symbols"
+                 tooltip="_Browse_symbols"
+                 action-command="tools-symbology-browse-symbols"
+                 icon="tools-symbology-browse-symbols"
+                 position="900400050"
+                 accelerator=""
+            />
+            <menu
+                 name="tools-symbology-browse-symbols"
+                 text="tools/Symbols/Browse_symbols"
+            />
+        </extension>
+-->
+
+            <extension class-name="org.gvsig.app.extension.UndoViewExtension"
+      description="Extensión encargada de deshacer la edición sobre la capa activa."
+      active="true" >
+
+            <action
+                name="edit-undo-layer"
+                label="_Undo"
+                tooltip="_Undo_last_modification_in_the_active_layer"
+                position="200100000"
+                action-command="edit-undo-layer"
+                icon="edit-undo"
+                accelerator=""
+                />
+
+            <menu
+                name="edit-undo-layer"
+                text="Edit/_Undo"
+                />
+
+            <tool-bar name="edit_tools">
+                <action-tool name="edit-undo-layer"/>
+            </tool-bar>
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.RedoViewExtension"
+            description="Extensión encargada de rehacer la edición sobre la capa activa."
+            active="true">
+
+            <action
+                name="edit-redo-layer"
+                label="_Redo"
+                tooltip="_Redo_last_modification_in_the_active_layer"
+                position="200200000"
+                action-command="edit-redo-layer"
+                icon="edit-redo"
+                accelerator=""
+                />
+
+            <menu
+                name="edit-redo-layer"
+                text="Edit/_Redo"
+                />
+
+            <tool-bar name="edit_tools">
+                <action-tool name="edit-redo-layer"/>
+            </tool-bar>
+
+        </extension>
+
+    <extension class-name="org.gvsig.app.extension.ViewCommandStackExtension"
+      description="Extensión encargada de administrar la pila de comados de edición sobre una vista."
+      active="true">
+
+            <action
+                name="edit-undo-redo-actions-layer"
+                label="_Undo_redo_history"
+                tooltip="_Undo_redo_history"
+                position="200300000"
+                action-command="edit-undo-redo-actions-layer"
+                icon="edit-undo-redo-actions"
+                accelerator=""
+                />
+
+            <menu
+                name="edit-undo-redo-actions-layer"
+                text="Edit/_Undo_redo_history"
+                />
+
+            <tool-bar name="edit_tools">
+                <action-tool name="edit-undo-redo-actions-layer"/>
+            </tool-bar>
+
+    </extension>
+
+
+        <!--
+        ***********************************
+        Copy/paste features between layers
+        using system clipboard
+        ***********************************
+        -->
+
+        <extension class-name="org.gvsig.app.extension.clipboard.CopyFeaturesToClipboardExtension"
+            description="Copy selected features to system clipboard"
+            active="true">
+
+            <action
+                name="layer-modify-clipboard-copy"
+                label="_Copy_selected_features_to_clipboard"
+                tooltip="_Copy_selected_features_to_clipboard"
+                position="601105000"
+                action-command="layer-modify-clipboard-copy"
+                icon="layer-modify-clipboard-copy"
+                accelerator=""
+                />
+
+            <menu
+                name="layer-modify-clipboard-copy"
+                text="Layer/Modify/_Copy_selected_features_to_clipboard"
+                />
+
+            <tool-bar name="layer_modify">
+                <action-tool
+                    name="layer-modify-clipboard-copy"
+                    />
+            </tool-bar>
+        </extension>
+
+        <extension class-name="org.gvsig.app.extension.clipboard.PasteFeaturesFromClipboardExtension"
+            description="Paste features from system clipboard into editing layer"
+            active="true">
+
+            <action
+                name="layer-modify-clipboard-paste"
+                label="_Paste_features_from_clipboard"
+                tooltip="_Paste_features_from_clipboard"
+                position="601105100"
+                action-command="layer-modify-clipboard-paste"
+                icon="layer-modify-clipboard-paste"
+                accelerator=""
+                />
+
+            <menu
+                name="layer-modify-clipboard-paste"
+                text="Layer/Modify/_Paste_features_from_clipboard"
+                />
+
+            <tool-bar name="layer_modify">
+                <action-tool
+                    name="layer-modify-clipboard-paste"
+                    />
+            </tool-bar>
+        </extension>
+
+        <extension class-name="org.gvsig.app.extension.LayerPropertiesExtension"
+            description=""
+            active="true">
+
+            <action
+                name="layer-properties"
+                label="propiedades"
+                tooltip="_Layer_properties"
+                position="609000000"
+                action-command="layer-properties"
+                icon="layer-properties"
+                accelerator=""
+                />
+
+            <menu
+                name="layer-properties"
+                text="Layer/propiedades"
+                />
+
+        </extension>
+  </extensions>
+
+</plugin-config>

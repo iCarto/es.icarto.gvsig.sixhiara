@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    gvSIG. Desktop Geographic Information System.
+
+    Copyright (C) 2007-2013 gvSIG Association.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA  02110-1301, USA.
+
+    For any additional information, do not hesitate to contact us
+    at info AT gvsig.com, or visit our website www.gvsig.com.
+
+-->
+<plugin-config>
+    <alternativeNames name="org.gvsig.installer.app.extension"/>
+	<libraries library-dir="lib"/>
+	<resourceBundle name="text"/>
+	<extensions>
+	<!--
+		<extension class-name="org.gvsig.installer.app.extension.creation.MakePluginPackageExtension"
+			description="This extension is used to create a bundle for a plugin package from the current gvSIG application."
+			active="true">
+			<action 
+			    name= "tools-devel-create-package"
+				label="Create_installation_package"
+				tooltip="Create_installation_package"
+				action-command="tools-devel-create-package" 
+				icon="tools-devel-create-package"
+				position="908500600"/>
+
+			<menu
+				name="tools-devel-create-package" 
+				text="tools/Development/Create_installation_package"
+				 />			
+		</extension>
+	-->	
+			<extension class-name="org.gvsig.installer.app.extension.execution.InstallPackageExtension"
+			description="This extension is used to install a package from a bundle in gvSIG"
+			active="true">
+
+			<action 
+			    name= "tools-addonsmanager"
+				label="_addons_manager"
+				tooltip="_show_the_addons_manager"
+				action-command="tools-addonsmanager" 
+				icon="tools-addonsmanager"
+				position="900100000"/>
+
+			<menu
+				name="tools-addonsmanager" 
+				text="tools/addons_manager"
+				/>			
+		</extension>
+	</extensions>
+</plugin-config>

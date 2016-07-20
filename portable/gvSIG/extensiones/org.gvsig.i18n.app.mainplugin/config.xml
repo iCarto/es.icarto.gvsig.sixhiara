@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    gvSIG. Desktop Geographic Information System.
+
+    Copyright (C) 2007-2013 gvSIG Association.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA  02110-1301, USA.
+
+    For any additional information, do not hesitate to contact us
+    at info AT gvsig.com, or visit our website www.gvsig.com.
+
+-->
+<plugin-config>
+    <alternativeNames name="org.gvsig.i18n.extension"/>
+    <depends plugin-name="org.gvsig.app.mainplugin" />
+    <depends plugin-name="org.gvsig.coreplugin.app.mainplugin" />
+    <resourceBundle name="text" />
+    <libraries library-dir="lib" />
+    <extensions>
+        <extension class-name="org.gvsig.i18n.extension.I18nExtension"
+                           description="Extensión de gestión de traducciones multiidioma" 
+                           active="true" 
+                           priority="1">
+        </extension>
+        <!--
+        <extension class-name="org.gvsig.i18n.extension.ConsolideTranslationsExtension"
+                           description="Extensión para consolidar en andami todas las traducciones" 
+                           active="true" 
+                           priority="1">
+            <action 
+                name="tools-devel-consolidate-translations"
+                label="_Consolidate_all_translations" 
+                position="908500201" 
+                action-command="tools-devel-consolidate-translations"
+                icon="tools-devel-consolidate-translations"
+                tooltip="_Consolidate_all_translations" 
+                accelerator=""
+            />
+            <action 
+                name="tools-devel-not-translated-keys"
+                label="__Dump_not_translated_keys" 
+                position="908500202" 
+                action-command="tools-devel-not-translated-keys"
+                icon="tools-devel-not-translated-keys"
+                tooltip="_Dump_not_translated_keys" 
+                accelerator=""
+            />
+            <menu 
+                name="tools-devel-consolidate-translations"
+                text="tools/Development/_Consolidate_all_translations" 
+            />
+            <menu 
+                name="tools-devel-not-translated-keys"
+                text="tools/Development/_Dump_not_translated_keys" 
+            />
+        </extension>
+        -->
+    </extensions>
+</plugin-config>
