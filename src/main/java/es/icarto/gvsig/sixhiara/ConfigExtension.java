@@ -10,6 +10,8 @@ import es.udc.cartolab.gvsig.tools.CopyFeaturesExtension;
 
 public class ConfigExtension extends Extension {
 
+	public static final String NAME = "SIXHIARA";
+
 	@Override
 	public void initialize() {
 		SixhiaraFormFactory.registerFormFactory();
