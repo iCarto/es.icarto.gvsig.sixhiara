@@ -12,4 +12,5 @@ create_schema_inventario_dominios 2016-07-18T15:50:24Z Francisco Puga <fpuga@ica
 create_schema_inventario 2016-07-18T16:02:08Z Francisco Puga <fpuga@icarto.es> # Create schema inventario
 
 create_user_inventario 2016-07-18T16:13:26Z Francisco Puga <fpuga@icarto.es> # Create user inventario
-populate_elle_data 2016-07-20T15:02:52Z Francisco Puga <fpuga@icarto.es> # Populates ELLE data
+populate_elle_map_sixhiara 2016-07-20T15:02:52Z Francisco Puga <fpuga@icarto.es> # Populates tables and simbology for map SIXHIARA
+populate_elle_map_todas 2016-07-22T15:04:04Z Francisco Puga <fpuga@icarto.es> # Populates tables and simbology for map TODAS

@@ -2,35 +2,44 @@
 
 BEGIN;
 
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'acuiferos', 'acuiferos', 25, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'albufeiras', 'albufeiras', 26, true, '999999', NULL, 'BDD_Técnica', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'aldeias', 'aldeias', 23, true, '500000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'bacias', 'bacias', 19, true, NULL, '500000', 'Hidrologia', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'barragens', 'barragens', 27, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'batimetria', 'batimetria', 2, true, NULL, NULL, 'Limites Administrativos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'bombas_combustivel', 'bombas_combustivel', 14, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'cemiterios', 'cemiterios', 15, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'centro_educacional', 'centro_educacional', 16, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'centros_saude', 'centros_saude', 17, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'cidades_vilas', 'cidades_vilas', 24, true, '600000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
+
+
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'curvas_nivel_10m', 'curvas_nivel_10m', 1, false, NULL, NULL, 'Elevações', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'distritos', 'distritos', 7, true, NULL, '500000', 'Limites Administrativos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estacoes', 'estacoes', 29, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estradas', 'estradas', 22, true, '199999', NULL, 'Estradas', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'fontes', 'fontes', 28, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'grandes_lagos', 'grandes_lagos', 5, true, NULL, '200000', 'Limites Administrativos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'hoteis', 'hoteis', 18, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'lagos_embalses', 'lagos_embalses', 20, true, '999999', NULL, 'Hidrologia', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'lixeira', 'lixeira', 13, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'paises_limitrofes', 'paises_limitrofes', 4, true, NULL, NULL, 'Limites Administrativos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'postos_administrativos', 'postos_administrativos', 6, true, '500000', NULL, 'Limites Administrativos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'batimetria', 'batimetria', 2, true, NULL, NULL, 'Limites Administrativos', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'provinces', 'provinces', 3, true, NULL, NULL, 'Limites Administrativos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'paises_limitrofes', 'paises_limitrofes', 4, true, NULL, NULL, 'Limites Administrativos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'grandes_lagos', 'grandes_lagos', 5, true, NULL, '200000', 'Limites Administrativos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'postos_administrativos', 'postos_administrativos', 6, true, '500000', NULL, 'Limites Administrativos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'distritos', 'distritos', 7, true, NULL, '500000', 'Limites Administrativos', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'provincia', 'provincia', 8, true, NULL, '1500000', 'Limites Administrativos', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'rios', 'rios', 21, true, '500000', NULL, 'Hidrologia', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'zp_albufeiras', 'zp_albufeiras', 9, false, NULL, NULL, 'Zonas Protecção', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'zp_costa', 'zp_costa', 10, false, NULL, NULL, 'Zonas Protecção', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'zp_fontes', 'zp_fontes', 11, false, NULL, NULL, 'Zonas Protecção', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'zp_nascentes', 'zp_nascentes', 12, false, NULL, NULL, 'Zonas Protecção', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'lixeira', 'lixeira', 13, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'bombas_combustivel', 'bombas_combustivel', 14, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'cemiterios', 'cemiterios', 15, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'centro_educacional', 'centro_educacional', 16, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'centros_saude', 'centros_saude', 17, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'hoteis', 'hoteis', 18, false, NULL, NULL, 'Equipamentos', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'subbacias', 'bacias', 19, true, '500000', NULL, 'Hidrologia', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'bacias', 'bacias', 20, true, NULL, '500000', 'Hidrologia', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'lagos_embalses', 'lagos_embalses', 21, true, '999999', NULL, 'Hidrologia', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'rios', 'rios', 22, true, '500000', NULL, 'Hidrologia', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estradas', 'estradas', 23, true, '199999', NULL, 'Estradas', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'aldeias', 'aldeias', 24, false, '500000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'cidades_vilas', 'cidades_vilas', 25, true, '600000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'acuiferos', 'acuiferos', 26, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'albufeiras', 'albufeiras', 27, true, '999999', NULL, 'BDD_Técnica', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'barragens', 'barragens', 28, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'fontes', 'fontes', 29, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estacoes', 'estacoes', 30, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+
+
+
+
+
+
 
 
 --
@@ -1512,8 +1521,8 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <itemStringArray type="list">
       <item type="string">tip_estac = ''Hidrométrica'' and estado = ''Bo''</item>
       <item type="string">tip_estac = ''Pluviométrica'' and estado = ''Bo''</item>
-      <item type="string">tip_estac = ''Hidrométrica'' and estado = ''Nao operacional''</item>
-      <item type="string">tip_estac = ''Pluviométrica'' and estado = ''Nao operacional''</item>
+      <item type="string">tip_estac = ''Hidrométrica'' and estado = ''Não operacional''</item>
+      <item type="string">tip_estac = ''Pluviométrica'' and estado = ''Não operacional''</item>
       <item type="string">tip_estac = ''Pluviométrica'' and estado Is Null  </item>
     </itemStringArray>
     <itemSymbolArray type="list">
@@ -1577,7 +1586,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
         <reference id_state="7660" xlink:type="simple" xlink:href="states#id(''7660'')" />
     </color>
     <rotation type="double">0.0</rotation>
-    <description type="string"></description>
+    <description type="string">Hidrométrica - Bo</description>
     <referenceSystem type="integer">0</referenceSystem>
     <mask type="null"></mask>
     <isShapeVisible type="boolean">true</isShapeVisible>
@@ -1625,16 +1634,16 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7663">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7664">
     <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water.png</source>
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7665">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__PictureMarkerSymbol id="7666">
     <unit type="integer">-1</unit>
@@ -1649,7 +1658,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
         <reference id_state="7660" xlink:type="simple" xlink:href="states#id(''7660'')" />
     </color>
     <rotation type="double">0.0</rotation>
-    <description type="string"></description>
+    <description type="string">Pluviométrica - Bo</description>
     <referenceSystem type="integer">0</referenceSystem>
     <mask type="null"></mask>
     <isShapeVisible type="boolean">true</isShapeVisible>
@@ -1691,16 +1700,16 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7669">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7670">
     <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower.png</source>
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7671">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__PictureMarkerSymbol id="7672">
     <unit type="integer">-1</unit>
@@ -1715,7 +1724,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
         <reference id_state="7660" xlink:type="simple" xlink:href="states#id(''7660'')" />
     </color>
     <rotation type="double">0.0</rotation>
-    <description type="string"></description>
+    <description type="string">Hidrométrica - Não operacional</description>
     <referenceSystem type="integer">0</referenceSystem>
     <mask type="null"></mask>
     <isShapeVisible type="boolean">true</isShapeVisible>
@@ -1757,16 +1766,16 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7675">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7676">
     <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water.png</source>
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7677">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/poi_tower_water_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/poi_tower_water_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__PictureMarkerSymbol id="7678">
     <unit type="integer">-1</unit>
@@ -1781,7 +1790,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
         <reference id_state="7660" xlink:type="simple" xlink:href="states#id(''7660'')" />
     </color>
     <rotation type="double">0.0</rotation>
-    <description type="string"></description>
+    <description type="string">Pluviométrica - Não operacional</description>
     <referenceSystem type="integer">0</referenceSystem>
     <mask type="null"></mask>
     <isShapeVisible type="boolean">true</isShapeVisible>
@@ -1823,16 +1832,16 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7681">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7682">
     <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower.png</source>
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7683">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__PictureMarkerSymbol id="7684">
     <unit type="integer">-1</unit>
@@ -1847,7 +1856,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
         <reference id_state="7660" xlink:type="simple" xlink:href="states#id(''7660'')" />
     </color>
     <rotation type="double">0.0</rotation>
-    <description type="string"></description>
+    <description type="string">Pluviométrica - Não operacional</description>
     <referenceSystem type="integer">0</referenceSystem>
     <mask type="null"></mask>
     <isShapeVisible type="boolean">true</isShapeVisible>
@@ -1889,16 +1898,16 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7687">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7688">
     <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower.png</source>
     <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
   <Persistence__ImageStyle id="7689">
-    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.jpg</source>
-    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.jpg</sourceSymbolInLibrary>
+    <source type="url">file:/C:/gvsig-desktop-2.2.0-2313-final-win-x86/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/Simbologia_SIXHIARA/water_tower_sel.png</source>
+    <sourceSymbolInLibrary type="string">Simbologia_SIXHIARA/water_tower_sel.png</sourceSymbolInLibrary>
   </Persistence__ImageStyle>
 </states>
 </XMLPersitence>
@@ -3180,7 +3189,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
 </states>
 </XMLPersitence>
 ');
-INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('barragens', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="windows-1252"?>
+INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('barragens', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="utf-8"?>
 <XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
 <persistence_xml_version>2.0.0</persistence_xml_version>
   <rootState id_state="7820" xlink:type="simple" xlink:href="states#id(''7820'')" />
@@ -3203,7 +3212,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
       </mapitem>
 
       <mapitem>
-        <key type="string">N�o operacional</key>
+        <key type="string">Não operacional</key>
         <value type="reference">
         <reference id_state="7937" xlink:type="simple" xlink:href="states#id(''7937'')" />
     </value>
@@ -3213,7 +3222,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
     <keys type="list">
       <item type="string">Bo</item>
       <item type="string">Em carteira</item>
-      <item type="string">N�o operacional</item>
+      <item type="string">Não operacional</item>
     </keys>
     <fieldNames type="list">
       <item type="string">estado</item>
@@ -5072,6 +5081,172 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
 </states>
 </XMLPersitence>
 ', NULL);
+
+INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('subbacias', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="UTF-8"?>
+<XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
+<persistence_xml_version>2.0.0</persistence_xml_version>
+  <rootState id_state="120" xlink:type="simple" xlink:href="states#id(''120'')" />
+<states>
+  <Persistence__SimgleSymbolLegend id="120">
+    <shapeType type="integer">9</shapeType>
+    <hasZSort type="boolean">false</hasZSort>
+    <defaultSymbol type="reference">
+        <reference id_state="121" xlink:type="simple" xlink:href="states#id(''121'')" />
+    </defaultSymbol>
+  </Persistence__SimgleSymbolLegend>
+  <Persistence__SimpleFillSymbol id="121">
+    <hasFill type="boolean">false</hasFill>
+    <unit type="integer">-1</unit>
+    <symbolForSelection type="null"></symbolForSelection>
+    <color type="reference">
+        <reference id_state="122" xlink:type="simple" xlink:href="states#id(''122'')" />
+    </color>
+    <description type="string"></description>
+    <referenceSystem type="integer">0</referenceSystem>
+    <isShapeVisible type="boolean">true</isShapeVisible>
+    <outline type="reference">
+        <reference id_state="123" xlink:type="simple" xlink:href="states#id(''123'')" />
+    </outline>
+    <hasOutline type="boolean">true</hasOutline>
+  </Persistence__SimpleFillSymbol>
+  <Persistence__AwtColor id="122">
+    <red type="integer">169</red>
+    <blue type="integer">205</blue>
+    <green type="integer">213</green>
+    <alpha type="integer">255</alpha>
+  </Persistence__AwtColor>
+  <Persistence__SimpleLineSymbol id="123">
+    <unit type="integer">-1</unit>
+    <color type="reference">
+        <reference id_state="124" xlink:type="simple" xlink:href="states#id(''124'')" />
+    </color>
+    <description type="null"></description>
+    <lineStyle type="reference">
+        <reference id_state="125" xlink:type="simple" xlink:href="states#id(''125'')" />
+    </lineStyle>
+    <referenceSystem type="integer">0</referenceSystem>
+    <isShapeVisible type="boolean">true</isShapeVisible>
+  </Persistence__SimpleLineSymbol>
+  <Persistence__AwtColor id="124">
+    <red type="integer">64</red>
+    <blue type="integer">64</blue>
+    <green type="integer">64</green>
+    <alpha type="integer">255</alpha>
+  </Persistence__AwtColor>
+  <Persistence__SimpleLineStyle id="125">
+    <lineJoin type="integer">2</lineJoin>
+    <unit type="integer">0</unit>
+    <arrowDecorator type="null"></arrowDecorator>
+    <description type="null"></description>
+    <miterLimit type="float">10.0</miterLimit>
+    <endCap type="integer">0</endCap>
+    <lineWidth type="float">2.0</lineWidth>
+    <dashPhase type="float">0.0</dashPhase>
+    <tempDashArray type="null"></tempDashArray>
+    <dashArray type="null"></dashArray>
+    <offset type="double">0.0</offset>
+  </Persistence__SimpleLineStyle>
+</states>
+</XMLPersitence>
+', '<?xml version="1.0" encoding="UTF-8"?>
+<XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
+<persistence_xml_version>2.0.0</persistence_xml_version>
+  <rootState id_state="126" xlink:type="simple" xlink:href="states#id(''126'')" />
+<states>
+  <Persistence__GENERAL_LABEL_STRATEGY_PERSISTENCE_NAME id="126">
+    <zoomConstraints type="reference">
+        <reference id_state="134" xlink:type="simple" xlink:href="states#id(''134'')" />
+    </zoomConstraints>
+    <unit type="integer">-1</unit>
+    <allowOverlapping type="boolean">false</allowOverlapping>
+    <placementConstraints type="reference">
+        <reference id_state="133" xlink:type="simple" xlink:href="states#id(''133'')" />
+    </placementConstraints>
+    <referenceSystem type="integer">0</referenceSystem>
+    <labelingMethod type="reference">
+        <reference id_state="127" xlink:type="simple" xlink:href="states#id(''127'')" />
+    </labelingMethod>
+  </Persistence__GENERAL_LABEL_STRATEGY_PERSISTENCE_NAME>
+  <Persistence__DefaultLabelingMethod id="127">
+    <defaultLabel type="reference">
+        <reference id_state="128" xlink:type="simple" xlink:href="states#id(''128'')" />
+    </defaultLabel>
+  </Persistence__DefaultLabelingMethod>
+  <Persistence__LabelClass id="128">
+    <texts type="list">
+      <item type="string">Sinheu / Mutamba</item>
+    </texts>
+    <unit type="integer">-1</unit>
+    <scale type="double">1.3333333333333333</scale>
+    <sqlQuery type="string"></sqlQuery>
+    <visible type="boolean">true</visible>
+    <labelExpressions type="list">
+      <item type="string">subacia</item>
+    </labelExpressions>
+    <priority type="integer">0</priority>
+    <referenceSystem type="integer">0</referenceSystem>
+    <name type="string"></name>
+    <textSymbol type="reference">
+        <reference id_state="129" xlink:type="simple" xlink:href="states#id(''129'')" />
+    </textSymbol>
+    <useSQL type="boolean">false</useSQL>
+  </Persistence__LabelClass>
+  <Persistence__SimpleTextSymbol id="129">
+    <haloWidth type="float">2.0</haloWidth>
+    <unit type="integer">-1</unit>
+    <textColor type="reference">
+        <reference id_state="131" xlink:type="simple" xlink:href="states#id(''131'')" />
+    </textColor>
+    <text type="string">Sinheu / Mutamba</text>
+    <hasHalo type="boolean">true</hasHalo>
+    <rotation type="double">0.0</rotation>
+    <font type="reference">
+        <reference id_state="130" xlink:type="simple" xlink:href="states#id(''130'')" />
+    </font>
+    <description type="null"></description>
+    <autoResize type="boolean">false</autoResize>
+    <referenceSystem type="integer">0</referenceSystem>
+    <haloColor type="reference">
+        <reference id_state="132" xlink:type="simple" xlink:href="states#id(''132'')" />
+    </haloColor>
+    <isShapeVisible type="boolean">true</isShapeVisible>
+  </Persistence__SimpleTextSymbol>
+  <Persistence__AwtFont id="130">
+    <style type="integer">0</style>
+    <name type="string">Tahoma</name>
+    <size type="integer">10</size>
+  </Persistence__AwtFont>
+  <Persistence__AwtColor id="131">
+    <red type="integer">64</red>
+    <blue type="integer">64</blue>
+    <green type="integer">64</green>
+    <alpha type="integer">255</alpha>
+  </Persistence__AwtColor>
+  <Persistence__AwtColor id="132">
+    <red type="integer">255</red>
+    <blue type="integer">255</blue>
+    <green type="integer">255</green>
+    <alpha type="integer">255</alpha>
+  </Persistence__AwtColor>
+  <Persistence__POLYGON_PLACE_CONSTRAINTS id="133">
+    <aboveTheLine type="boolean">false</aboveTheLine>
+    <duplicateLabelsMode type="integer">2</duplicateLabelsMode>
+    <belowTheLine type="boolean">false</belowTheLine>
+    <fitInsidePolygon type="boolean">true</fitInsidePolygon>
+    <onTheLine type="boolean">false</onTheLine>
+    <locationAlongLine type="integer">0</locationAlongLine>
+    <pageOriented type="boolean">false</pageOriented>
+    <placementMode type="integer">9</placementMode>
+  </Persistence__POLYGON_PLACE_CONSTRAINTS>
+  <Persistence__ZoomConstraintsImpl id="134">
+    <minScale type="long">-1</minScale>
+    <maxScale type="long">-1</maxScale>
+    <mode type="integer">0</mode>
+  </Persistence__ZoomConstraintsImpl>
+</states>
+</XMLPersitence>
+');
+
 INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('bacias', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="windows-1252"?>
 <XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
 <persistence_xml_version>2.0.0</persistence_xml_version>
