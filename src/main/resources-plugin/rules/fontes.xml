@@ -26,7 +26,7 @@
 	    <DRDBTABLE>red_monit</DRDBTABLE>
 	    <DRDBCOLUMNALIAS>key</DRDBCOLUMNALIAS>
 	    <DRDBCOLUMNVALUE>key</DRDBCOLUMNVALUE>
-	    <DRADDVOIDVALUE>true</DRADDVOIDVALUE>
+	    <!-- El valor por defecto debe ser NO, no un valor en blanco -->
 	  </DOMAINREADER>
 	</FIELD>
 
