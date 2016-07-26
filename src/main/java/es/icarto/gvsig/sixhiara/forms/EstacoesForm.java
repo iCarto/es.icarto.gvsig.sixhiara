@@ -3,6 +3,8 @@ package es.icarto.gvsig.sixhiara.forms;
 import java.io.InputStream;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
@@ -13,6 +15,8 @@ import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler
 @SuppressWarnings("serial")
 public class EstacoesForm extends AbstractForm {
 
+	private static final Logger logger = LoggerFactory
+			.getLogger(EstacoesForm.class);
 	public static final String LAYERNAME = "Estacoes";
 	public static final String PKFIELD = "cod_estac";
 	public static final String ABEILLE = "forms/estacoes.xml";
@@ -21,14 +25,12 @@ public class EstacoesForm extends AbstractForm {
 	public EstacoesForm(FLyrVect layer) {
 		super(layer);
 		addTableHandler(new AlphanumericTableHandler(
-				DadosPluviometricosSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD,
-				DadosPluviometricosSubForm.colNames,
+				DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, DadosPluviometricosSubForm.colNames,
 				DadosPluviometricosSubForm.colAlias));
 		addTableHandler(new AlphanumericTableHandler(
-				DadosHidrometricosSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD,
-				DadosHidrometricosSubForm.colNames,
+				DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, DadosHidrometricosSubForm.colNames,
 				DadosHidrometricosSubForm.colAlias));
 	}
 
@@ -45,7 +47,7 @@ public class EstacoesForm extends AbstractForm {
 			try {
 				formBody = new FormPanel(stream);
 			} catch (FormException e) {
-				e.printStackTrace();
+				logger.error(e.getMessage(), e);
 			}
 		}
 		return formBody;

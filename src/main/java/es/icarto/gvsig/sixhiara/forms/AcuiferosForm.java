@@ -3,6 +3,8 @@ package es.icarto.gvsig.sixhiara.forms;
 import java.io.InputStream;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
@@ -11,6 +13,9 @@ import es.icarto.gvsig.navtableforms.AbstractForm;
 
 @SuppressWarnings("serial")
 public class AcuiferosForm extends AbstractForm {
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(AcuiferosForm.class);
 
 	public static final String LAYERNAME = "Acuiferos";
 	public static final String PKFIELD = "cod_acuif";
@@ -29,7 +34,7 @@ public class AcuiferosForm extends AbstractForm {
 			try {
 				formBody = new FormPanel(stream);
 			} catch (FormException e) {
-				e.printStackTrace();
+				logger.error(e.getMessage(), e);
 			}
 		}
 		return formBody;

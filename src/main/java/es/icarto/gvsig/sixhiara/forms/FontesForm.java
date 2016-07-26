@@ -3,6 +3,8 @@ package es.icarto.gvsig.sixhiara.forms;
 import java.io.InputStream;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
@@ -13,6 +15,8 @@ import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler
 @SuppressWarnings("serial")
 public class FontesForm extends AbstractForm {
 
+	private static final Logger logger = LoggerFactory
+			.getLogger(FontesForm.class);
 	public static final String LAYERNAME = "Fontes";
 	public static final String PKFIELD = "cod_fonte";
 	public static final String ABEILLE = "forms/fontes.xml";
@@ -20,14 +24,12 @@ public class FontesForm extends AbstractForm {
 
 	public FontesForm(FLyrVect layer) {
 		super(layer);
-		addTableHandler(new AlphanumericTableHandler(
-				AnaliseSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, AnaliseSubForm.colNames,
+		addTableHandler(new AlphanumericTableHandler(AnaliseSubForm.TABLENAME,
+				getWidgetComponents(), PKFIELD, AnaliseSubForm.colNames,
 				AnaliseSubForm.colAlias));
 		addTableHandler(new AlphanumericTableHandler(
-				QuantidadeAguaSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD,
-				QuantidadeAguaSubForm.colNames,
+				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, QuantidadeAguaSubForm.colNames,
 				QuantidadeAguaSubForm.colAlias));
 	}
 
@@ -44,7 +46,7 @@ public class FontesForm extends AbstractForm {
 			try {
 				formBody = new FormPanel(stream);
 			} catch (FormException e) {
-				e.printStackTrace();
+				logger.error(e.getMessage(), e);
 			}
 		}
 		return formBody;
