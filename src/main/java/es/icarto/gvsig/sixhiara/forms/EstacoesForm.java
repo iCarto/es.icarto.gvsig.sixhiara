@@ -24,6 +24,8 @@ public class EstacoesForm extends AbstractForm {
 
 	public EstacoesForm(FLyrVect layer) {
 		super(layer);
+		addChained("distrito", "provincia");
+		addChained("posto", "distrito");
 		addTableHandler(new AlphanumericTableHandler(
 				DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosPluviometricosSubForm.colNames,

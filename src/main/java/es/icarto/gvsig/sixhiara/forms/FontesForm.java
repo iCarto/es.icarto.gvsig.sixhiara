@@ -24,6 +24,8 @@ public class FontesForm extends AbstractForm {
 
 	public FontesForm(FLyrVect layer) {
 		super(layer);
+		addChained("distrito", "provincia");
+		addChained("posto", "distrito");
 		addTableHandler(new AlphanumericTableHandler(AnaliseSubForm.TABLENAME,
 				getWidgetComponents(), PKFIELD, AnaliseSubForm.colNames,
 				AnaliseSubForm.colAlias));

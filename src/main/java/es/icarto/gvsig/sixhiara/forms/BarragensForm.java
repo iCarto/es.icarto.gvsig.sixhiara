@@ -23,6 +23,8 @@ public class BarragensForm extends AbstractForm {
 
 	public BarragensForm(FLyrVect layer) {
 		super(layer);
+		addChained("distrito", "provincia");
+		addChained("posto", "distrito");
 	}
 
 	@Override
