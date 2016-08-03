@@ -4,6 +4,45 @@ BEGIN;
 
 CREATE SCHEMA inventario_dominios AUTHORIZATION sixhiara_owner;
 
+CREATE TABLE inventario_dominios.tip_fonte (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+INSERT INTO inventario_dominios.tip_fonte (key, ordering) VALUES ('Albufeira', 0), ('Furo', 1), ('Nascente', 2), ('Poço', 3), ('Poço aberto', 4);
+
+CREATE TABLE inventario_dominios.red_monit (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+INSERT INTO inventario_dominios.red_monit (key, ordering) VALUES ('NO', 0), ('Base', 1), ('Base - 2014', 2), ('Base e qualidade', 3), ('Base e qualidade - 2014', 4), ('Velho-Sustituído', 5);
+
+CREATE TABLE inventario_dominios.propiedad (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+INSERT INTO inventario_dominios.propiedad (key, ordering) VALUES ('Público', 0), ('Privado', 1);
+
+CREATE TABLE inventario_dominios.tipo_pozo (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+INSERT INTO inventario_dominios.tipo_pozo (key, ordering) VALUES ('Escavado', 0), ('Perfurado', 1);
 
 CREATE TABLE inventario_dominios.cond_most (
     category text,
@@ -50,50 +89,6 @@ CREATE TABLE inventario_dominios.tipo_poro (
 
 INSERT INTO inventario_dominios.tipo_poro (key, ordering) VALUES ('Poros', 0), ('Fracturas', 1), ('Karst', 2);
 
-CREATE TABLE inventario_dominios.tip_fonte (
-    category text,
-    key text UNIQUE,
-    value text,
-    ordering integer,
-    parent text,
-    tooltip text
-);
-
-INSERT INTO inventario_dominios.tip_fonte (key, ordering) VALUES ('Albufeira', 0), ('Furo', 1), ('Nascente', 2), ('Poço', 3), ('Poço aberto', 4);
-
-CREATE TABLE inventario_dominios.red_monit (
-    category text,
-    key text UNIQUE,
-    value text,
-    ordering integer,
-    parent text,
-    tooltip text
-);
-
-INSERT INTO inventario_dominios.red_monit (key, ordering) VALUES ('NO', 0), ('Base', 1), ('Base - 2014', 2), ('Base e qualidade', 3), ('Base e qualidade - 2014', 4), ('Velho-Sustituído', 5);
-
-CREATE TABLE inventario_dominios.propiedad (
-    category text,
-    key text UNIQUE,
-    value text,
-    ordering integer,
-    parent text,
-    tooltip text
-);
-
-INSERT INTO inventario_dominios.propiedad (key, ordering) VALUES ('Público', 0), ('Privado', 1);
-
-CREATE TABLE inventario_dominios.tipo_pozo (
-    category text,
-    key text UNIQUE,
-    value text,
-    ordering integer,
-    parent text,
-    tooltip text
-);
-
-INSERT INTO inventario_dominios.tipo_pozo (key, ordering) VALUES ('Escavado', 0), ('Perfurado', 1);
-
 CREATE TABLE inventario_dominios.estado (
     category text,
     key text UNIQUE,
@@ -137,18 +132,6 @@ CREATE TABLE inventario_dominios.fiab_info (
 );
 
 INSERT INTO inventario_dominios.fiab_info (key, ordering) VALUES ('Boa', 0), ('Regular', 1), ('Má', 2);
-
-CREATE TABLE inventario_dominios.tip_bar_2 (
-    category text,
-    key text UNIQUE,
-    value text,
-    ordering integer,
-    parent text,
-    tooltip text
-);
-
--- INSERT INTO inventario_dominios.tip_bar_2 (key, ordering) VALUES ('', 0), ('', 1);
-
 
 CREATE TABLE inventario_dominios.tip_pluvi (
     category text,
@@ -204,6 +187,17 @@ CREATE TABLE inventario_dominios.tip_estac (
 );
 
 INSERT INTO inventario_dominios.tip_estac (key, ordering) VALUES ('Hidrométrica', 0), ('Pluviométrica', 1);
+
+CREATE TABLE inventario_dominios.c_nitrat (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+
+INSERT INTO inventario_dominios.c_nitrat (key, ordering) VALUES ('< 10', 0), ('10 - 25', 1), ('25 - 50', 2), ('50 - 100', 3), ('100 - 250', 4), ('> 250', 5);
 
 
 GRANT USAGE ON SCHEMA inventario_dominios TO inventario_read;

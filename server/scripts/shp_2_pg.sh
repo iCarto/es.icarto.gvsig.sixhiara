@@ -130,13 +130,28 @@ echo 'BEGIN;' > $OUTPUT
 for shp in `find $DBF_FOLDER -iname '*.dbf'` ; do
     TABLE=`basename ${shp%.dbf}`
     SCHEMA=inventario
+    if [[ ${TABLE} == 'quantidade_agua' ]] ; then
+	TABLE=quantidade_agua2
+	SCHEMA_BASE=public
+    fi
+
     shp2pgsql -a -n -W ISO8859-1 $shp ${SCHEMA}.${TABLE} \
     | sed 's/BEGIN;//' \
     | sed 's/COMMIT;//' \
     | sed 's/^SET.*//' >> $OUTPUT
 done
+
+echo "INSERT INTO inventario.quantidade_agua (cod_fonte, data, hora, quan_agua, q_extraer) SELECT cod_fonte, to_date(data, 'DD/MM/YYYY'), hora, replace(quan_agua, ',', '.'), q_extraer FROM public.quantidade_agua2;" >>  $OUTPUT
+echo "UPDATE inventario.quantidade_agua SET data=data + interval '2000 year' were data < date '2000-01-01'";
+echo "DROP TABLE public.quantidade_agua2;" >> $OUTPUT
+
 echo 'COMMIT;' >> $OUTPUT
 
 # bug #1184
 mv $OUTPUT $OUTPUT.BORRAR
 grep -v 'MU-31' $OUTPUT.BORRAR > $OUTPUT
+
+
+data_most = to_date(data_most, 'DD/MM/YYYY')
+data_anal = to_date(data_anal, 'DD/MM/YYYY')
+echo "UPDATE inventario.analise SET data_most=data_most + interval '2000 year' were data_most < date '2000-01-01'";
