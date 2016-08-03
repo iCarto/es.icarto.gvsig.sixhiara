@@ -10,7 +10,7 @@ create_schema_cartografia_base 2016-07-18T15:24:16Z Francisco Puga <fpuga@icarto
 create_tables_cartografia_base 2016-07-18T15:36:30Z Francisco Puga <fpuga@icarto.es> # Create the tables in the schema cbase
 create_schema_inventario_dominios 2016-07-18T15:50:24Z Francisco Puga <fpuga@icarto.es> # Create schema inventario_dominios
 create_schema_inventario 2016-07-18T16:02:08Z Francisco Puga <fpuga@icarto.es> # Create schema inventario
-
+create_tables_inventario_imagenes 2016-07-26T17:40:18Z Francisco Puga <fpuga@icarto.es> # Creates the images tables for inventario elements
 create_user_inventario 2016-07-18T16:13:26Z Francisco Puga <fpuga@icarto.es> # Create user inventario
 populate_elle_map_sixhiara 2016-07-20T15:02:52Z Francisco Puga <fpuga@icarto.es> # Populates tables and simbology for map SIXHIARA
 populate_elle_map_todas 2016-07-22T15:04:04Z Francisco Puga <fpuga@icarto.es> # Populates tables and simbology for map TODAS
