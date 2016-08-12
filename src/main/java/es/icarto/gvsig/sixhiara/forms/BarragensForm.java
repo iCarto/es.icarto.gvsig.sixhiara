@@ -10,6 +10,7 @@ import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
+import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 
 @SuppressWarnings("serial")
 public class BarragensForm extends AbstractForm {
@@ -20,11 +21,14 @@ public class BarragensForm extends AbstractForm {
 	public static final String PKFIELD = "cod_barra";
 	public static final String ABEILLE = "forms/barragens.xml";
 	public static final String METADATA = "rules/barragens.xml";
+	private ImagesInForms images;
 
 	public BarragensForm(FLyrVect layer) {
 		super(layer);
 		addChained("distrito", "provincia");
 		addChained("posto", "distrito");
+		images = new ImagesInForms(this.getFormPanel(), "inventario",
+				"barragems_imagenes", PKFIELD);
 	}
 
 	@Override
@@ -49,10 +53,23 @@ public class BarragensForm extends AbstractForm {
 	@Override
 	protected void fillSpecificValues() {
 		super.fillSpecificValues();
+		images.fillSpecificValues(getPrimaryKeyValue());
 	}
 
 	@Override
 	protected String getPrimaryKeyValue() {
 		return getFormController().getValue(PKFIELD);
+	}
+
+	@Override
+	protected void setListeners() {
+		super.setListeners();
+		images.setListeners();
+	}
+
+	@Override
+	protected void removeListeners() {
+		super.removeListeners();
+		images.removeListeners();
 	}
 }

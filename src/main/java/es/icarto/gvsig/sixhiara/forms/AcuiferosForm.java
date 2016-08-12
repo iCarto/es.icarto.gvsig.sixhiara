@@ -10,6 +10,7 @@ import com.jeta.forms.components.panel.FormPanel;
 import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
+import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 
 @SuppressWarnings("serial")
 public class AcuiferosForm extends AbstractForm {
@@ -21,9 +22,12 @@ public class AcuiferosForm extends AbstractForm {
 	public static final String PKFIELD = "cod_acuif";
 	public static final String ABEILLE = "forms/acuiferos.xml";
 	public static final String METADATA = "rules/acuiferos.xml";
+	private ImagesInForms images;
 
 	public AcuiferosForm(FLyrVect layer) {
 		super(layer);
+		images = new ImagesInForms(this.getFormPanel(), "inventario",
+				"acuiferos_imagenes", PKFIELD);
 	}
 
 	@Override
@@ -48,10 +52,23 @@ public class AcuiferosForm extends AbstractForm {
 	@Override
 	protected void fillSpecificValues() {
 		super.fillSpecificValues();
+		images.fillSpecificValues(getPrimaryKeyValue());
 	}
 
 	@Override
 	protected String getPrimaryKeyValue() {
 		return getFormController().getValue(PKFIELD);
+	}
+
+	@Override
+	protected void setListeners() {
+		super.setListeners();
+		images.setListeners();
+	}
+
+	@Override
+	protected void removeListeners() {
+		super.removeListeners();
+		images.removeListeners();
 	}
 }

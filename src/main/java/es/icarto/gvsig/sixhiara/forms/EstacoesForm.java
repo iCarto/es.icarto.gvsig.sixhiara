@@ -11,6 +11,7 @@ import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
 import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
+import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 
 @SuppressWarnings("serial")
 public class EstacoesForm extends AbstractForm {
@@ -21,6 +22,7 @@ public class EstacoesForm extends AbstractForm {
 	public static final String PKFIELD = "cod_estac";
 	public static final String ABEILLE = "forms/estacoes.xml";
 	public static final String METADATA = "rules/estacoes.xml";
+	private ImagesInForms images;
 
 	public EstacoesForm(FLyrVect layer) {
 		super(layer);
@@ -34,6 +36,8 @@ public class EstacoesForm extends AbstractForm {
 				DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosHidrometricosSubForm.colNames,
 				DadosHidrometricosSubForm.colAlias));
+		images = new ImagesInForms(this.getFormPanel(), "inventario",
+				"estacoes_imagenes", PKFIELD);
 	}
 
 	@Override
@@ -58,11 +62,24 @@ public class EstacoesForm extends AbstractForm {
 	@Override
 	protected void fillSpecificValues() {
 		super.fillSpecificValues();
+		images.fillSpecificValues(getPrimaryKeyValue());
 	}
 
 	@Override
 	protected String getPrimaryKeyValue() {
 		return getFormController().getValue(PKFIELD);
+	}
+
+	@Override
+	protected void setListeners() {
+		super.setListeners();
+		images.setListeners();
+	}
+
+	@Override
+	protected void removeListeners() {
+		super.removeListeners();
+		images.removeListeners();
 	}
 
 }

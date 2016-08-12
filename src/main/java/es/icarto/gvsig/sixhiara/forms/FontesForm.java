@@ -11,6 +11,7 @@ import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.navtableforms.AbstractForm;
 import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
+import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 
 @SuppressWarnings("serial")
 public class FontesForm extends AbstractForm {
@@ -21,6 +22,7 @@ public class FontesForm extends AbstractForm {
 	public static final String PKFIELD = "cod_fonte";
 	public static final String ABEILLE = "forms/fontes.xml";
 	public static final String METADATA = "rules/fontes.xml";
+	private ImagesInForms images;
 
 	public FontesForm(FLyrVect layer) {
 		super(layer);
@@ -33,6 +35,8 @@ public class FontesForm extends AbstractForm {
 				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, QuantidadeAguaSubForm.colNames,
 				QuantidadeAguaSubForm.colAlias));
+		images = new ImagesInForms(this.getFormPanel(), "inventario",
+				"fontes_imagenes", PKFIELD);
 	}
 
 	@Override
@@ -57,10 +61,23 @@ public class FontesForm extends AbstractForm {
 	@Override
 	protected void fillSpecificValues() {
 		super.fillSpecificValues();
+		images.fillSpecificValues(getPrimaryKeyValue());
 	}
 
 	@Override
 	protected String getPrimaryKeyValue() {
 		return getFormController().getValue(PKFIELD);
+	}
+
+	@Override
+	protected void setListeners() {
+		super.setListeners();
+		images.setListeners();
+	}
+
+	@Override
+	protected void removeListeners() {
+		super.removeListeners();
+		images.removeListeners();
 	}
 }
