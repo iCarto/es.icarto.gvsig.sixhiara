@@ -516,23 +516,23 @@ ALTER TABLE "cbase"."industria_agro_pecuarias" ADD PRIMARY KEY (gid);
 SELECT AddGeometryColumn('cbase','industria_agro_pecuarias','geom','32737','MULTIPOLYGON',2);
 CREATE INDEX ON "cbase"."industria_agro_pecuarias" USING GIST ("geom");
 
-CREATE TABLE "cbase"."areas_exploraçao_petroleo_gas" (gid serial,
+CREATE TABLE "cbase"."areas_exploracao_petroleo_gas" (gid serial,
 "nome" varchar(50),
 "tipo" varchar(250),
 "recurso" varchar(50),
 "recurso_a" varchar(50));
-ALTER TABLE "cbase"."areas_exploraçao_petroleo_gas" ADD PRIMARY KEY (gid);
-SELECT AddGeometryColumn('cbase','areas_exploraçao_petroleo_gas','geom','32737','MULTIPOLYGON',2);
-CREATE INDEX ON "cbase"."areas_exploraçao_petroleo_gas" USING GIST ("geom");
+ALTER TABLE "cbase"."areas_exploracao_petroleo_gas" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('cbase','areas_exploracao_petroleo_gas','geom','32737','MULTIPOLYGON',2);
+CREATE INDEX ON "cbase"."areas_exploracao_petroleo_gas" USING GIST ("geom");
 
-CREATE TABLE "cbase"."areas_exploraçao_mineira" (gid serial,
+CREATE TABLE "cbase"."areas_exploracao_mineira" (gid serial,
 "nome" varchar(50),
 "tipo" varchar(250),
 "estado" varchar(50),
 "mineral" varchar(50));
-ALTER TABLE "cbase"."areas_exploraçao_mineira" ADD PRIMARY KEY (gid);
-SELECT AddGeometryColumn('cbase','areas_exploraçao_mineira','geom','32737','MULTIPOLYGON',2);
-CREATE INDEX ON "cbase"."areas_exploraçao_mineira" USING GIST ("geom");
+ALTER TABLE "cbase"."areas_exploracao_mineira" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('cbase','areas_exploracao_mineira','geom','32737','MULTIPOLYGON',2);
+CREATE INDEX ON "cbase"."areas_exploracao_mineira" USING GIST ("geom");
 
 CREATE TABLE "cbase"."industria_agro_pecuarias_menor" (gid serial,
 "nome" varchar(250),
@@ -687,16 +687,16 @@ ALTER TABLE "cbase"."grandes_lagos" ADD PRIMARY KEY (gid);
 SELECT AddGeometryColumn('cbase','grandes_lagos','geom','32737','MULTIPOLYGON',2);
 CREATE INDEX ON "cbase"."grandes_lagos" USING GIST ("geom");
 
-CREATE TABLE "cbase"."estaçoes_evaporacion" (gid serial,
+CREATE TABLE "cbase"."estacoes_evaporacion" (gid serial,
 "stn_name" varchar(254),
 "stn_qual" varchar(254),
 "eleva" float8,
 "begin_date" date,
 "end_date" date,
 "province" varchar(254));
-ALTER TABLE "cbase"."estaçoes_evaporacion" ADD PRIMARY KEY (gid);
-SELECT AddGeometryColumn('cbase','estaçoes_evaporacion','geom','32737','POINT',2);
-CREATE INDEX ON "cbase"."estaçoes_evaporacion" USING GIST ("geom");
+ALTER TABLE "cbase"."estacoes_evaporacion" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('cbase','estacoes_evaporacion','geom','32737','POINT',2);
+CREATE INDEX ON "cbase"."estacoes_evaporacion" USING GIST ("geom");
 
 CREATE TABLE "cbase"."lagos_embalses" (gid serial,
 "toponimo" varchar(50),
@@ -733,12 +733,12 @@ SELECT AddGeometryColumn('cbase','areas_conservacao','geom','32737','MULTIPOLYGO
 CREATE INDEX ON "cbase"."areas_conservacao" USING GIST ("geom");
 
 
-CREATE TABLE "cbase"."reserva_zona_tampão" (gid serial,
+CREATE TABLE "cbase"."reserva_zona_tampao" (gid serial,
 "nomes" varchar(60),
 "shape_area" numeric);
-ALTER TABLE "cbase"."reserva_zona_tampão" ADD PRIMARY KEY (gid);
-SELECT AddGeometryColumn('cbase','reserva_zona_tampão','geom','32737','MULTIPOLYGON',2);
-CREATE INDEX ON "cbase"."reserva_zona_tampão" USING GIST ("geom");
+ALTER TABLE "cbase"."reserva_zona_tampao" ADD PRIMARY KEY (gid);
+SELECT AddGeometryColumn('cbase','reserva_zona_tampao','geom','32737','MULTIPOLYGON',2);
+CREATE INDEX ON "cbase"."reserva_zona_tampao" USING GIST ("geom");
 
 
 GRANT SELECT ON ALL TABLES IN SCHEMA cbase TO cbase_read;

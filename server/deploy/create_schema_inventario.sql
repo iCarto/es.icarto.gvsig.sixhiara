@@ -2,6 +2,10 @@
 
 BEGIN;
 
+SET client_min_messages TO error;
+\set ECHO none
+\set QUIET 1
+
 CREATE SCHEMA inventario AUTHORIZATION sixhiara_owner;
 
 CREATE TABLE "inventario"."fontes" (
@@ -56,10 +60,10 @@ gid SERIAL PRIMARY KEY,
 "tip_motor" varchar(254),
 "marca" varchar(254),
 "alt_bomba" numeric(10,2),
-"caudal" numeric(10,2)
+"caudal" numeric(10,2),
 "t_bombeo" integer,
 "potencia" numeric(10,2),
-"estado" varchar(254) REFERENCES inventario_dominios.estado(key)
+"estado" varchar(254) REFERENCES inventario_dominios.estado_ampliado(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
 "reperfor" boolean,
@@ -81,30 +85,32 @@ CREATE INDEX ON "inventario"."fontes" USING GIST ("geom");
 
 CREATE TABLE "inventario"."analise" (
 gid SERIAL PRIMARY KEY,
-"cod_fonte" varchar(50) NOT NULL REFERENCES inventario.fontes(cod_fonte)
+"cod_fonte" text NOT NULL REFERENCES inventario.fontes(cod_fonte)
 	    ON UPDATE CASCADE
 	    ON DELETE CASCADE,
-"fonte" varchar(50),
+"fonte" text,
 "data_most" date NOT NULL,
 "hora_most" varchar(6),
 "c_tempera" numeric(10,2),
 "c_conduct" numeric(10,2),
 "c_cor" integer,
-"c_cheiro" varchar(50),
+"c_cheiro" text,
 "c_ph" numeric(10,2),
 "c_nitrat" text REFERENCES inventario_dominios.c_nitrat(key)
 	   ON UPDATE CASCADE
 	   ON DELETE NO ACTION,
-"c_nitrit" numeric(10,2),
+"c_nitrit" text REFERENCES inventario_dominios.c_nitrit(key)
+	   ON UPDATE CASCADE
+	   ON DELETE NO ACTION,
 "par_rango" boolean,
 "cond_most" text REFERENCES inventario_dominios.cond_most(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
 "com_most" text,
-"laborator" varchar(254),
+"laborator" text,
 "data_anal" date,
 "temperat" numeric(10,2),
-"cor" numeric(10,2),
+"cor" text,
 "turbidez" numeric(10,2),
 "conductiv" numeric(10,2),
 "ph" numeric(10,2),
@@ -206,9 +212,9 @@ gid SERIAL PRIMARY KEY,
 "bacia" varchar(254) REFERENCES inventario_dominios.bacia(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
-"cod_bacia" varchar(254),
+subacia text,
 "rio" varchar(254),
-"estado" varchar(254) REFERENCES inventario_dominios.estado(key)
+"estado" varchar(254) REFERENCES inventario_dominios.estado_ampliado(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
 "ano_const" integer,
@@ -258,7 +264,11 @@ FOREIGN KEY (provincia, distrito) REFERENCES inventario_dominios.distrito (paren
     ON DELETE NO ACTION,
    FOREIGN KEY (distrito, posto_adm) REFERENCES inventario_dominios.posto (parent, key)
     ON UPDATE CASCADE
+    ON DELETE NO ACTION,
+FOREIGN KEY (bacia, subacia) REFERENCES inventario_dominios.subacia (parent, key)
+    ON UPDATE CASCADE
     ON DELETE NO ACTION
+    
 );
 CREATE INDEX ON "inventario"."estacoes" USING GIST ("geom");
 
@@ -411,8 +421,8 @@ gid SERIAL PRIMARY KEY,
 "d_chuv_ma" integer,
 "media_ma" numeric(10,2),
 "max_d_ma" numeric(10,2),
-"to_mes_ab" integer,
-"d_chuv_ab" numeric(10,2),
+"to_mes_ab" numeric(10,2),
+"d_chuv_ab" integer,
 "media_ab" numeric(10,2),
 "max_d_ab" numeric(10,2),
 "to_mes_mo" numeric(10,2),
@@ -472,9 +482,9 @@ gid SERIAL PRIMARY KEY,
 "bacia" varchar(254) REFERENCES inventario_dominios.bacia(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
-"cod_bacia" varchar(254),
+subacia text,
 "rio" varchar(254),
-"estado" varchar(254) REFERENCES inventario_dominios.estado(key)
+"estado" varchar(254) REFERENCES inventario_dominios.estado_ampliado(key)
 	    ON UPDATE CASCADE
 	    ON DELETE NO ACTION,
 "ano_const" integer,
@@ -504,6 +514,9 @@ FOREIGN KEY (provincia, distrito) REFERENCES inventario_dominios.distrito (paren
     ON UPDATE CASCADE
     ON DELETE NO ACTION,
    FOREIGN KEY (distrito, posto_adm) REFERENCES inventario_dominios.posto (parent, key)
+    ON UPDATE CASCADE
+    ON DELETE NO ACTION,
+FOREIGN KEY (bacia, subacia) REFERENCES inventario_dominios.subacia (parent, key)
     ON UPDATE CASCADE
     ON DELETE NO ACTION
 );

@@ -98,7 +98,18 @@ CREATE TABLE inventario_dominios.estado (
     tooltip text
 );
 
-INSERT INTO inventario_dominios.estado (key, ordering) VALUES ('Bo', 0), ('Regular', 1), ('Mau', 2), ('Não operacional', 3), ('Em carteira', 4);
+INSERT INTO inventario_dominios.estado (key, ordering) VALUES ('Bo', 0), ('Regular', 1), ('Mau', 2), ('Não operacional', 3);
+
+CREATE TABLE inventario_dominios.estado_ampliado (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+
+INSERT INTO inventario_dominios.estado_ampliado (key, ordering) VALUES ('Bo', 0), ('Regular', 1), ('Mau', 2), ('Não operacional', 3), ('Em carteira', 4);
 
 CREATE TABLE inventario_dominios.tip_barra (
     category text,
@@ -198,6 +209,17 @@ CREATE TABLE inventario_dominios.c_nitrat (
 );
 
 INSERT INTO inventario_dominios.c_nitrat (key, ordering) VALUES ('< 10', 0), ('10 - 25', 1), ('25 - 50', 2), ('50 - 100', 3), ('100 - 250', 4), ('> 250', 5);
+
+CREATE TABLE inventario_dominios.c_nitrit (
+    category text,
+    key text UNIQUE,
+    value text,
+    ordering integer,
+    parent text,
+    tooltip text
+);
+
+INSERT INTO inventario_dominios.c_nitrit (key, ordering) VALUES ('< 10', 0), ('10 - 25', 1), ('25 - 50', 2), ('50 - 100', 3), ('100 - 250', 4), ('> 250', 5);
 
 
 GRANT USAGE ON SCHEMA inventario_dominios TO inventario_read;

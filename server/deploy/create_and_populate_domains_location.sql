@@ -25,11 +25,12 @@ INSERT INTO inventario_dominios.bacia (category, key, value, ordering, parent, t
 
 CREATE TABLE inventario_dominios.distrito (
     category text,
-    key text UNIQUE,
+    key text,
     value text,
     ordering integer,
     parent text,
-    tooltip text
+    tooltip text,
+    UNIQUE (key, parent)
 );
 GRANT SELECT ON inventario_dominios.distrito TO inventario_read;
 
@@ -72,11 +73,12 @@ INSERT INTO inventario_dominios.distrito (category, key, value, ordering, parent
 
 CREATE TABLE inventario_dominios.posto (
     category text,
-    key text UNIQUE,
+    key text,
     value text,
     ordering integer,
     parent text,
-    tooltip text
+    tooltip text,
+    UNIQUE (key, parent)
 );
 GRANT SELECT ON inventario_dominios.posto TO inventario_read;
 
@@ -226,11 +228,12 @@ INSERT INTO inventario_dominios.provincia (category, key, value, ordering, paren
 
 CREATE TABLE inventario_dominios.subacia (
     category text,
-    key text UNIQUE,
+    key text,
     value text,
     ordering integer,
     parent text,
-    tooltip text
+    tooltip text,
+    UNIQUE (key, parent)
 );
 GRANT SELECT ON inventario_dominios.subacia TO inventario_read;
 

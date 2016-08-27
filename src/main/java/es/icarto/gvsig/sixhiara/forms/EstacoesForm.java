@@ -18,7 +18,7 @@ public class EstacoesForm extends AbstractForm {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(EstacoesForm.class);
-	public static final String LAYERNAME = "Estacoes";
+	public static final String LAYERNAME = "estacoes";
 	public static final String PKFIELD = "cod_estac";
 	public static final String ABEILLE = "forms/estacoes.xml";
 	public static final String METADATA = "rules/estacoes.xml";
@@ -27,7 +27,8 @@ public class EstacoesForm extends AbstractForm {
 	public EstacoesForm(FLyrVect layer) {
 		super(layer);
 		addChained("distrito", "provincia");
-		addChained("posto", "distrito");
+		addChained("posto_adm", "distrito");
+		addChained("subacia", "bacia");
 		addTableHandler(new AlphanumericTableHandler(
 				DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosPluviometricosSubForm.colNames,

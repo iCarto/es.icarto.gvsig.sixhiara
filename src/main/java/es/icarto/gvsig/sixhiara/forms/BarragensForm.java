@@ -17,7 +17,7 @@ public class BarragensForm extends AbstractForm {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(BarragensForm.class);
-	public static final String LAYERNAME = "Barragens";
+	public static final String LAYERNAME = "barragens";
 	public static final String PKFIELD = "cod_barra";
 	public static final String ABEILLE = "forms/barragens.xml";
 	public static final String METADATA = "rules/barragens.xml";
@@ -26,9 +26,10 @@ public class BarragensForm extends AbstractForm {
 	public BarragensForm(FLyrVect layer) {
 		super(layer);
 		addChained("distrito", "provincia");
-		addChained("posto", "distrito");
+		addChained("posto_adm", "distrito");
+		addChained("subacia", "bacia");
 		images = new ImagesInForms(this.getFormPanel(), "inventario",
-				"barragems_imagenes", PKFIELD);
+				"barragens_imagenes", PKFIELD);
 	}
 
 	@Override

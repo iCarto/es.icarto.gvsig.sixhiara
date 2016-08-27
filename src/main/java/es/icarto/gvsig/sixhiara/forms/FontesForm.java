@@ -18,7 +18,7 @@ public class FontesForm extends AbstractForm {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(FontesForm.class);
-	public static final String LAYERNAME = "Fontes";
+	public static final String LAYERNAME = "fontes";
 	public static final String PKFIELD = "cod_fonte";
 	public static final String ABEILLE = "forms/fontes.xml";
 	public static final String METADATA = "rules/fontes.xml";
@@ -27,7 +27,7 @@ public class FontesForm extends AbstractForm {
 	public FontesForm(FLyrVect layer) {
 		super(layer);
 		addChained("distrito", "provincia");
-		addChained("posto", "distrito");
+		addChained("posto_adm", "distrito");
 		addTableHandler(new AlphanumericTableHandler(AnaliseSubForm.TABLENAME,
 				getWidgetComponents(), PKFIELD, AnaliseSubForm.colNames,
 				AnaliseSubForm.colAlias));

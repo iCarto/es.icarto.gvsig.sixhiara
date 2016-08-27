@@ -46,5 +46,13 @@
 				<action-tool icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" tooltip="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="7"/>
 			</tool-bar>
 		</extension>
+		
+		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracaosExtension" active="true">
+			<menu text="sixhiara" is_separator="true" position="30100"/>			
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracaosExtension" action-command="" position="30110" icon="es.icarto.gvsig.sixhiara.ImportExploracaosExtension"/>
+		</extension>
+		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">	
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30120" />
+		</extension>
 	</extensions>
 </plugin-config>
