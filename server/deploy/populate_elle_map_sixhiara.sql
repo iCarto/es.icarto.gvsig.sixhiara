@@ -29,11 +29,12 @@ INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_e
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estradas', 'estradas', 23, true, '199999', NULL, 'Estradas', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'aldeias', 'aldeias', 24, false, '500000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
 INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'cidades_vilas', 'cidades_vilas', 25, true, '600000', NULL, 'Assentamentos populacionais', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'acuiferos', 'acuiferos', 26, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'albufeiras', 'albufeiras', 27, true, '999999', NULL, 'BDD_Técnica', 'cbase', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'barragens', 'barragens', 28, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'fontes', 'fontes', 29, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
-INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estacoes', 'estacoes', 30, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'exploracaos', 'exploracaos', 26, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'acuiferos', 'acuiferos', 27, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'albufeiras', 'albufeiras', 28, true, '999999', NULL, 'BDD_Técnica', 'cbase', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'barragens', 'barragens', 29, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'fontes', 'fontes', 30, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
+INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('SIXHIARA', 'estacoes', 'estacoes', 31, true, '199999', NULL, 'BDD_Técnica', 'inventario', NULL);
 
 
 
@@ -1439,7 +1440,7 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
       <item type="string">nucleo</item>
       <item type="string">altitude</item>
       <item type="string">bacia</item>
-      <item type="string">cod_bacia</item>
+      <item type="string">subacia</item>
       <item type="string">rio</item>
       <item type="string">estado</item>
       <item type="string">ano_const</item>
@@ -4536,6 +4537,75 @@ INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label
 </states>
 </XMLPersitence>
 ', NULL);
+
+INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('exploracaos', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="windows-1252"?>
+<XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
+<persistence_xml_version>2.0.0</persistence_xml_version>
+  <rootState id_state="7958" xlink:type="simple" xlink:href="states#id(''7958'')" />
+<states>
+  <Persistence__SimgleSymbolLegend id="7958">
+    <shapeType type="integer">9</shapeType>
+    <hasZSort type="boolean">false</hasZSort>
+    <defaultSymbol type="reference">
+        <reference id_state="7959" xlink:type="simple" xlink:href="states#id(''7959'')" />
+    </defaultSymbol>
+  </Persistence__SimgleSymbolLegend>
+  <Persistence__SimpleFillSymbol id="7959">
+    <hasFill type="boolean">true</hasFill>
+    <unit type="integer">-1</unit>
+    <symbolForSelection type="null"></symbolForSelection>
+    <color type="reference">
+        <reference id_state="7960" xlink:type="simple" xlink:href="states#id(''7960'')" />
+    </color>
+    <description type="string"></description>
+    <referenceSystem type="integer">0</referenceSystem>
+    <isShapeVisible type="boolean">true</isShapeVisible>
+    <outline type="reference">
+        <reference id_state="7961" xlink:type="simple" xlink:href="states#id(''7961'')" />
+    </outline>
+    <hasOutline type="boolean">true</hasOutline>
+  </Persistence__SimpleFillSymbol>
+  <Persistence__AwtColor id="7960">
+    <red type="integer">0</red>
+    <blue type="integer">51</blue>
+    <green type="integer">255</green>
+    <alpha type="integer">78</alpha>
+  </Persistence__AwtColor>
+  <Persistence__SimpleLineSymbol id="7961">
+    <unit type="integer">-1</unit>
+    <color type="reference">
+        <reference id_state="7962" xlink:type="simple" xlink:href="states#id(''7962'')" />
+    </color>
+    <description type="null"></description>
+    <lineStyle type="reference">
+        <reference id_state="7963" xlink:type="simple" xlink:href="states#id(''7963'')" />
+    </lineStyle>
+    <referenceSystem type="integer">0</referenceSystem>
+    <isShapeVisible type="boolean">true</isShapeVisible>
+  </Persistence__SimpleLineSymbol>
+  <Persistence__AwtColor id="7962">
+    <red type="integer">0</red>
+    <blue type="integer">51</blue>
+    <green type="integer">255</green>
+    <alpha type="integer">255</alpha>
+  </Persistence__AwtColor>
+  <Persistence__SimpleLineStyle id="7963">
+    <lineJoin type="integer">2</lineJoin>
+    <unit type="integer">0</unit>
+    <arrowDecorator type="null"></arrowDecorator>
+    <description type="null"></description>
+    <miterLimit type="float">10.0</miterLimit>
+    <endCap type="integer">0</endCap>
+    <lineWidth type="float">1.0</lineWidth>
+    <dashPhase type="float">0.0</dashPhase>
+    <tempDashArray type="null"></tempDashArray>
+    <dashArray type="null"></dashArray>
+    <offset type="double">0.0</offset>
+  </Persistence__SimpleLineStyle>
+</states>
+</XMLPersitence>
+', NULL);
+
 INSERT INTO elle._map_style (nombre_capa, nombre_estilo, type, definicion, label) VALUES ('acuiferos', 'SIXHIARA', 'gvl', '<?xml version="1.0" encoding="windows-1252"?>
 <XMLPersitence xmlns:xlink="http://www.w3.org/1999/xlink" >
 <persistence_xml_version>2.0.0</persistence_xml_version>

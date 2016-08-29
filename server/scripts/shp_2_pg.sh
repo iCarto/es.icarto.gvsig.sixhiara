@@ -111,6 +111,7 @@ echo 'COMMIT;' >> $ESTACOES
 echo 'UPDATE inventario.fontes SET estado_fon = estado;' >> $FONTES
 echo 'UPDATE inventario.fontes SET estado = NULL;' >> $FONTES
 
+ALL_TABLES+=("exploracaos")
 IFS=$'\n' ALL_TABLES=($(sort -r <<<"${ALL_TABLES[*]}"))
 unset IFS
 
@@ -125,7 +126,7 @@ do
     LAYERNAME=${ALL_TABLES[$i]}
     TABLENAME=${ALL_TABLES[$i]}
     SCHEMA='cbase'
-    if [[ ${LAYERNAME} == 'acuiferos' ]] || [[ ${LAYERNAME} == 'fontes' ]] || [[ ${LAYERNAME} == 'barragens' ]] ||[[ ${LAYERNAME} == 'estacoes' ]] ; then
+    if [[ ${LAYERNAME} == 'acuiferos' ]] || [[ ${LAYERNAME} == 'fontes' ]] || [[ ${LAYERNAME} == 'barragens' ]] ||[[ ${LAYERNAME} == 'estacoes' ]] ||[[ ${LAYERNAME} == 'exploracaos' ]]; then
 	SCHEMA='inventario'
     fi
     echo "INSERT INTO elle._map (mapa, nombre_capa, nombre_tabla, posicion, visible, max_escala, min_escala, grupo, schema, localizador) VALUES ('TODAS', '${LAYERNAME}', '${TABLENAME}', $i, true, NULL, NULL, NULL, '$SCHEMA', NULL);" >> $MAP
