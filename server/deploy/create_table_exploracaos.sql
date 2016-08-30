@@ -17,6 +17,7 @@ CREATE TABLE inventario.exploracaos (
        loc_bacia text REFERENCES inventario_dominios.bacia (key)
            ON UPDATE CASCADE
 	   ON DELETE NO ACTION,
+       loc_subaci text,
        rio text,
        utente text,
        uten_nuit text,
