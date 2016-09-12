@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    gvSIG. Desktop Geographic Information System.
+
+    Copyright (C) 2007-2013 gvSIG Association.
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 3
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+    MA  02110-1301, USA.
+
+    For any additional information, do not hesitate to contact us
+    at info AT gvsig.com, or visit our website www.gvsig.com.
+
+-->
+<plugin-config>
+  <alternativeNames name="org.gvsig.coreplugin"/>
+  <libraries library-dir="lib"/>
+  <resourceBundle name="text"/>
+  <extensions>
+    <extension class-name="org.gvsig.coreplugin.menus.ToolbarMenus"
+      description="Active toolbar menues"
+      active="true"
+      priority="99999">
+    </extension>
+    <extension class-name="org.gvsig.coreplugin.Consola"
+      description="Extensión encargada de abrir la ventana de la consola."
+      active="true" priority="1">
+      <action 
+        name= "show-console"
+        label="Console"
+        tooltip="_Show_console_error_messages"
+        action-command="show-console" 
+        icon="show-console"
+        accelerator="Alt+S"
+        position="400200000"
+        />
+        
+      <menu
+        name="show-console"
+        text="Show/Console" 
+        />
+        
+      <tool-bar name="core" position="20">
+        <action-tool name="show-console" last="true" />
+      </tool-bar>
+      
+    </extension>
+    <extension class-name="org.gvsig.coreplugin.PreferencesExtension"
+      description="Extensión encargada de abrir la ventana de preferencias de ANDAMI."
+      active="true" priority="3">
+      <action 
+        name= "edit-setup"
+        label="preferencias"
+        tooltip="preferencias"
+        action-command="edit-setup" 
+        icon="edit-setup"
+        accelerator=""
+        position="401000000"
+        />
+      <action 
+        name="application-exit"
+        label="salir"
+        tooltip="salir_tooltip"
+        action-command="application-exit" 
+        icon="application-exit"
+        position="109000000"
+        accelerator="Ctrl+Q"
+        />        
+
+      <menu
+        name="edit-setup" 
+        text="Show/preferencias" 
+        />
+      <menu 
+        name="application-exit"
+        text="File/salir"
+        />
+<!--
+      <tool-bar name="core" position="20">
+        <action-tool name="edit-setup"/>
+      </tool-bar>
+-->      
+    </extension>
+    
+    
+    <extension class-name="org.gvsig.coreplugin.StatusBar"
+      description="Recoge los mensajes del NotificationManager y los muestra por la StatusBar"
+      active="true">
+    </extension>
+    <skin-extension class-name="org.gvsig.coreplugin.mdiManager.NewSkin">
+      <action 
+        name= "window-cascade"
+        label="cascade"
+        tooltip="_Show_windows_in_cascade"
+        action-command="window-cascade" 
+        icon="window-cascade"
+        position="960100000"
+        accelerator="Alt+C"
+        />
+      <action 
+        name= "window-tile"
+        label="tile"
+        tooltip="_Show_windows_tile"
+        action-command="window-tile" 
+        icon="window-tile"
+        position="960200000"
+        accelerator="Alt+T"
+        />
+        
+      <menu
+        name="window-cascade" 
+        text="Window/Cascada"
+        />
+      <menu
+        name="window-tile" 
+        text="Window/Tile"
+        />
+    </skin-extension>
+  </extensions>
+</plugin-config>

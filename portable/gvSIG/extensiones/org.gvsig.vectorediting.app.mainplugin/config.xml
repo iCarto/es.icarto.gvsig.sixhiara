@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- gvSIG. Desktop Geographic Information System. Copyright (C) 2007-2013 gvSIG
+  Association. This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by the Free Software
+  Foundation; either version 3 of the License, or (at your option) any later version.
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+  PURPOSE. See the GNU General Public License for more details. You should have received
+  a copy of the GNU General Public License along with this program; if not, write to
+  the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
+  USA. For any additional information, do not hesitate to contact us at info AT gvsig.com,
+  or visit our website www.gvsig.com. -->
+<plugin-config>
+  <depends plugin-name="org.gvsig.app.mainplugin" />
+  <resourceBundle name="text" />
+  <libraries library-dir="lib" />
+  <extensions>
+    <extension class-name="org.gvsig.vectorediting.app.mainplugin.EditingExtension"
+      description="" active="true" priority="1">
+
+      <action name="start-editing" label="start_editing" tooltip="start_editing"
+        position="600800000" action-command="start-editing" icon="vector-editing"
+        accelerator="" />
+
+      <action name="end-editing" label="end_editing" tooltip="end_editing"
+        position="600800000" action-command="end-editing" icon="vector-editing"
+        accelerator="" />
+
+      <menu text="Layer/start_editing" name="start-editing" />
+      <menu text="Layer/end_editing" name="end-editing" />
+
+<!--
+      <tool-bar name="vector_editing" position="600800000">
+        <action-tool name="start-editing" />
+        <action-tool name="end-editing" />
+      </tool-bar>
+-->
+    </extension>
+
+    <extension class-name="org.gvsig.vectorediting.app.mainplugin.ServiceExtension"
+      description="" active="true" priority="1">
+
+      <action name="remove" label="remove" tooltip="remove"
+        action-command="remove" icon="remove" position="601002000"
+        accelerator="delete" />
+        <!-- accelerator="" /> -->
+
+      <action name="insert-point" label="insert_point" tooltip="insert_point"
+        action-command="insert-point" icon="insert-point" position="601002010"
+        accelerator="" />
+
+      <action name="insert-multipoint" label="insert_multipoint" tooltip="insert_multipoint"
+        action-command="insert-multipoint" icon="insert-multipoint" position="601002025"
+        accelerator="" />
+
+      <action name="insert-line" label="insert_line" tooltip="insert_line"
+        position="601002050" action-command="insert-line" icon="insert-line"
+        accelerator="" />
+
+      <action name="insert-arc" label="insert_arc" tooltip="insert_arc"
+        position="601002060" action-command="insert-arc" icon="insert-arc"
+        accelerator="" />
+
+      <action name="insert-circle-cr" label="insert_circle_cr" tooltip="insert_circle_cr"
+        position="601002100" action-command="insert-circle-cr" icon="insert-circle-cr"
+        accelerator="" />
+
+      <action name="insert-circumference-cr" label="insert_circumference_cr"
+        tooltip="insert_circumference_cr" position="601002101" action-command="insert-circumference-cr"
+        icon="insert-circumference-cr" accelerator="" />
+
+      <action name="insert-circle-3p" label="insert_circle_3p" tooltip="insert_circle_3p"
+        position="601002125" action-command="insert-circle-3p" icon="insert-circle-3p"
+        accelerator="" />
+
+      <action name="insert-circumference-3p" label="insert_circumference_3p"
+        tooltip="insert_circumference_3p" position="601002126" action-command="insert-circumference-3p"
+        icon="insert-circumference-3p" accelerator="" />
+
+      <action name="insert-ellipse" label="insert_ellipse" tooltip="insert_ellipse"
+        position="601002150" action-command="insert-ellipse" icon="insert-ellipse"
+        accelerator="" />
+
+      <action name="insert-filled-ellipse" label="insert_filled_ellipse"
+        tooltip="insert_filled_ellipse" position="601002160" action-command="insert-filled-ellipse"
+        icon="insert-filled-ellipse" accelerator="" />
+
+      <action name="insert-polygon" label="insert_polygon" tooltip="insert_polygon"
+        position="601002200" action-command="insert-polygon" icon="insert-polygon"
+        accelerator="" />
+
+      <action name="insert-polyline" label="insert_polyline" tooltip="insert_polyline"
+        position="601002201" action-command="insert-polyline" icon="insert-polyline"
+        accelerator="" />
+
+      <action name="insert-filled-regular-polygon" label="insert_filled_regular_polygon"
+        tooltip="insert_filled_regular_polygon" position="601002300"
+        action-command="insert-filled-regular-polygon" icon="insert-filled-regular-polygon"
+        accelerator="" />
+
+      <action name="insert-regular-polygon" label="insert_regular_polygon"
+        tooltip="insert_regular_polygon" position="601002301" action-command="insert-regular-polygon"
+        icon="insert-regular-polygon" accelerator="" />
+
+      <action name="insert-filled-rectangle" label="insert_filled_rectangle"
+        tooltip="insert_filled_rectangle" position="601002350" action-command="insert-filled-rectangle"
+        icon="insert-filled-rectangle" accelerator="" />
+
+      <action name="insert-rectangle" label="insert_rectangle" tooltip="insert_rectangle"
+        position="601002351" action-command="insert-rectangle" icon="insert-rectangle"
+        accelerator="" />
+
+      <action name="insert-filled-spline" label="insert_filled_spline"
+        tooltip="insert_filled_spline" position="601002370" action-command="insert-filled-spline"
+        icon="insert-filled-spline" accelerator="" />
+
+      <action name="insert-spline" label="insert_spline" tooltip="insert_spline"
+        position="601002371" action-command="insert-spline" icon="insert-spline"
+        accelerator="" />
+
+      <action name="modify-internal-polygon" label="modify_internal_polygon"
+        tooltip="modify_internal_polygon" position="601002500" action-command="modify-internal-polygon"
+        icon="modify-internal-polygon" accelerator="" />
+
+      <action name="modify-explode-geometry" label="modify_explode_geometry"
+        tooltip="modify_explode_geometry" position="601002600" action-command="modify-explode-geometry"
+        icon="modify-explode-geometry" accelerator="" />
+
+      <action name="modify-move" label="modify_move" tooltip="modify_move"
+        position="601002700" action-command="modify-move" icon="modify-move"
+        accelerator="" />
+
+      <action name="modify-rotate" label="modify_rotate" tooltip="modify_rotate"
+        position="601002800" action-command="modify-rotate" icon="modify-rotate"
+        accelerator="" />
+
+      <action name="modify-duplicate" label="modify_duplicate" tooltip="modify_duplicate"
+        position="601002900" action-command="modify-duplicate" icon="modify-duplicate"
+        accelerator="" />
+
+      <action name="modify-split" label="modify_split" tooltip="modify_split"
+        position="601003000" action-command="modify-split" icon="modify-split"
+        accelerator="" />
+
+      <action name="modify-split-line" label="modify_split_line" tooltip="modify_split_line"
+        position="601003050" action-command="modify-split-line" icon="modify-split-line"
+        accelerator="" />
+
+      <action name="modify-scale" label="modify_scale" tooltip="modify_scale"
+        position="601003100" action-command="modify-scale" icon="modify-scale"
+        accelerator="" />
+
+      <action name="modify-simplify" label="modify_simplify" tooltip="modify_simplify"
+        position="601003200" action-command="modify-simplify" icon="modify-simplify"
+        accelerator="" />
+
+      <action name="modify-join" label="modify_join" tooltip="modify_join"
+        position="601003300" action-command="modify-join" icon="modify-join"
+        accelerator="" />
+
+      <action name="insert-autopolygon" label="insert_autopolygon"
+        tooltip="insert_autopolygon" position="601003400" action-command="insert-autopolygon"
+        icon="insert-autopolygon" accelerator="" />
+
+      <action name="modify-stretch" label="modify_stretch" tooltip="modify_stretch"
+        position="601003500" action-command="modify-stretch" icon="modify-stretch"
+        accelerator="" />
+
+      <action name="modify-extend-line" label="modify_extend_line"
+        tooltip="modify_extend_line" position="601003600" action-command="modify-extend-line"
+        icon="modify-extend-line" accelerator="" />
+
+      <action name="modify-trim-line" label="modify_trim_line" tooltip="modify_trim_line"
+        position="601003700" action-command="modify-trim-line" icon="modify-trim-line"
+        accelerator="" />
+
+      <action name="modify-smooth-line" label="modify_smooth_line"
+        tooltip="modify_smooth_line" position="601003800" action-command="modify-smooth-line"
+        icon="modify-smooth-line" accelerator="" />
+
+      <action name="modify-edit-vertex" label="modify_edit_vertex"
+        tooltip="modify_edit_vertex" position="601003900" action-command="modify-edit-vertex"
+        icon="modify-edit-vertex" accelerator="" />
+
+      <action name="insert-rectangular-matrix" label="insert_rectangular_matrix"
+        tooltip="insert_rectangular_matrix" position="601004000" action-command="insert-rectangular-matrix"
+        icon="insert-rectangular-matrix" accelerator="" />
+
+      <action name="insert-polar-matrix" label="insert_polar_matrix"
+        tooltip="insert_polar_matrix" position="601004100" action-command="insert-polar-matrix"
+        icon="insert-polar-matrix" accelerator="" />
+        
+      <action name="modify-convert-to-polyline" label="modify_convert_to_polyline"
+        tooltip="modify_convert_to_polyline" position="601004200" action-command="modify-convert-to-polyline"
+        icon="modify-convert-to-polyline" accelerator="" />
+        
+      <action name="modify-reverse-direction" label="modify_reverse_direction"
+        tooltip="modify_reverse_direction" position="601004300" action-command="modify-reverse-direction"
+        icon="modify-reverse-direction" accelerator="" />
+
+      <menu text="Layer/Remove/remove" name="remove" />
+      <menu text="Layer/Insert/insert_point" name="insert-point" />
+      <menu text="Layer/Insert/insert_multipoint" name="insert-multipoint" />
+      <menu text="Layer/Insert/insert_line" name="insert-line" />
+      <menu text="Layer/Insert/insert_arc" name="insert-arc" />
+      <menu text="Layer/Insert/insert_circle_cr" name="insert-circle-cr" />
+      <menu text="Layer/Insert/insert_circumference_cr" name="insert-circumference-cr" />
+      <menu text="Layer/Insert/insert_circle_3p" name="insert-circle-3p" />
+      <menu text="Layer/Insert/insert_circumference_3p" name="insert-circumference-3p" />
+      <menu text="Layer/Insert/insert_ellipse" name="insert-ellipse" />
+      <menu text="Layer/Insert/insert_filled_ellipse" name="insert-filled-ellipse" />
+      <menu text="Layer/Insert/insert_polyline" name="insert-polyline" />
+      <menu text="Layer/Insert/insert_polygon" name="insert-polygon" />
+      <menu text="Layer/Insert/insert_regular_polygon" name="insert-regular-polygon" />
+      <menu text="Layer/Insert/insert_filled_regular_polygon" name="insert-filled-regular-polygon" />
+      <menu text="Layer/Insert/insert_rectangle" name="insert-rectangle" />
+      <menu text="Layer/Insert/insert_filled_rectangle" name="insert-filled-rectangle" />
+      <menu text="Layer/Insert/insert_spline" name="insert-spline" />
+      <menu text="Layer/Insert/insert_filled_spline" name="insert-filled-spline" />
+      <menu text="Layer/Insert/insert_rectangular_matrix" name="insert-rectangular-matrix" />
+      <menu text="Layer/Insert/insert_polar_matrix" name="insert-polar-matrix" />
+      <menu text="Layer/Insert/insert_autopolygon" name="insert-autopolygon" />
+      <menu text="Layer/Modify/modify_internal_polygon" name="modify-internal-polygon" />
+      <menu text="Layer/Modify/modify_explode_geometry" name="modify-explode-geometry" />
+      <menu text="Layer/Modify/modify_move" name="modify-move" />
+      <menu text="Layer/Modify/modify_rotate" name="modify-rotate" />
+      <menu text="Layer/Modify/modify_duplicate" name="modify-duplicate" />
+      <menu text="Layer/Modify/modify_split_line" name="modify-split-line" />
+      <menu text="Layer/Modify/modify_split" name="modify-split" />
+      <menu text="Layer/Modify/modify_scale" name="modify-scale" />
+      <menu text="Layer/Modify/modify_simplify" name="modify-simplify" />
+      <menu text="Layer/Modify/modify_join" name="modify-join" />
+      <menu text="Layer/Modify/modify_stretch" name="modify-stretch" />
+      <menu text="Layer/Modify/modify_extend_line" name="modify-extend-line" />
+      <menu text="Layer/Modify/modify_trim_line" name="modify-extend-line" />
+      <menu text="Layer/Modify/modify_smooth_line" name="modify-smooth-line" />
+      <menu text="Layer/Modify/modify_edit_vertex" name="modify-edit-vertex" />
+      <menu text="Layer/Modify/modify_convert_to_polyline" name="modify-convert-to-polyline" />
+      <menu text="Layer/Modify/modify_reverse_direction" name="modify-reverse-direction" />
+
+      <tool-bar name="vector_editing" position="600800000">
+        <selectable-tool name="remove" />
+        <selectable-tool name="insert-point" />
+        <selectable-tool name="insert-multipoint" />
+        <selectable-tool name="insert-line" />
+        <selectable-tool name="insert-arc" />
+        <selectable-tool name="insert-circumference-cr" dropdowngroup="circle" />
+        <selectable-tool name="insert-circle-cr" dropdowngroup="circle" />
+        <selectable-tool name="insert-circumference-3p" dropdowngroup="circle" />
+        <selectable-tool name="insert-circle-3p" dropdowngroup="circle" />
+        <selectable-tool name="insert-ellipse" dropdowngroup="ellipse" />
+        <selectable-tool name="insert-filled-ellipse" dropdowngroup="ellipse" />
+        <selectable-tool name="insert-polyline" dropdowngroup="polygon"/>
+        <selectable-tool name="insert-polygon" dropdowngroup="polygon"/>
+        <selectable-tool name="insert-regular-polygon" dropdowngroup="regularpolygon"/>
+        <selectable-tool name="insert-filled-regular-polygon" dropdowngroup="regularpolygon"/>
+        <selectable-tool name="insert-rectangle" dropdowngroup="rectangle"/>
+        <selectable-tool name="insert-filled-rectangle" dropdowngroup="rectangle"/>
+        <selectable-tool name="insert-filled-spline" dropdowngroup="spline"/>
+        <selectable-tool name="insert-spline" dropdowngroup="spline"/>
+        <selectable-tool name="modify-internal-polygon" />
+        <selectable-tool name="modify-explode-geometry" />
+        <selectable-tool name="modify-move" />
+        <selectable-tool name="modify-rotate" />
+        <selectable-tool name="modify-duplicate" />
+        <selectable-tool name="modify-split" />
+        <selectable-tool name="modify-split-line" />
+        <selectable-tool name="modify-scale" />
+        <selectable-tool name="modify-simplify" />
+        <selectable-tool name="insert-autopolygon" />
+        <selectable-tool name="modify-join" />
+        <selectable-tool name="modify-stretch" />
+        <selectable-tool name="modify-extend-line" />
+        <selectable-tool name="modify-trim-line" />
+        <selectable-tool name="modify-smooth-line" />
+        <selectable-tool name="insert-rectangular-matrix" dropdowngroup="matrix" />
+        <selectable-tool name="insert-polar-matrix" dropdowngroup="matrix" />
+        <selectable-tool name="modify-edit-vertex" />
+        <selectable-tool name="modify-convert-to-polyline" />
+        <selectable-tool name="modify-reverse-direction" />
+      </tool-bar>
+
+    </extension>
+  </extensions>
+</plugin-config>

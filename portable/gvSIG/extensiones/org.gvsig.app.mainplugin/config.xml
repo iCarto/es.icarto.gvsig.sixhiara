@@ -162,9 +162,11 @@
       <menu text="Window"
         position="960000000"
         is_separator="true"/>
+<!--
       <menu text="Help"
         position="990000000"
         is_separator="true"/>
+-->
 
       <menu
         text="File/nuevo_proyecto"
@@ -984,6 +986,7 @@
 
     </extension>
 
+<!--
     <extension class-name="org.gvsig.app.extension.About"
       description="Extensión encargada de abrir una ventana con la información relativa al programa."
       active="true"
@@ -1005,7 +1008,7 @@
         />
 
     </extension>
-<!--
+
     <extension
             class-name="org.gvsig.app.extension.BrowseSymbolsExtension"
             description="" active="true">

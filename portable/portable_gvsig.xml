@@ -1,0 +1,61 @@
+<!--
+
+http://docs.geoserver.org/2.5.x/en/user/data/raster/gdal.html
+http://gis.stackexchange.com/questions/162984/unsatisfiedlinkerror-caused-by-org-gdal-ogr-ogrjni-getdrivercount
+http://gis.stackexchange.com/questions/141058/gdal-jar-and-dll-placement-with-gdal-allregister
+http://stackoverflow.com/questions/28239738/install-gdal-java-on-windows-7
+-->
+
+<launch4jConfig>
+  <dontWrapJar>true</dontWrapJar>
+  <headerType>gui</headerType>
+  <outfile>./gvSIG/gvsig-desktop.exe</outfile>
+  
+  <cmdLine>gvSIG gvSIG/extensiones</cmdLine>
+  <chdir>.</chdir>
+  <icon>./ico-gvSIG.ico</icon>
+
+  <!--
+  <jar>./andami.jar</jar>
+  <errTitle>gvSIG launch error</errTitle>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl>http://www.gvsig.org/web/home/community/mailing-lists</supportUrl>
+  <customProcName>true</customProcName>
+  <stayAlive>false</stayAlive>
+  <manifest></manifest>
+  -->
+  
+  <var>GDAL_DATA="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal-data"</var>
+  <var>GDAL_DRIVER_PATH="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\plugins;%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\plugins-optional"</var>
+  <var>PYTHONPATH="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\python;%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\ms\python"</var>
+  <var>PROJ_LIB="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\proj\SHARE"</var>
+  <var>PATH="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin;%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\java;%PATH%"</var>
+    
+  <classPath>
+    <mainClass>org.gvsig.andamiupdater.Updater</mainClass>
+    <cp>%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\java\gdal.jar;%EXEDIR%\lib\*</cp>
+  </classPath>
+  
+  <jre>
+    <path>%EXEDIR%/gvSIG/extensiones/jre</path>
+    <minVersion>1.6.0</minVersion>
+    <initialHeapSize>256</initialHeapSize>
+    <maxHeapSize>1024</maxHeapSize>
+    <opt>-XX:MaxPermSize=128M</opt>
+    <opt>-Djava.library.path="%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin;%EXEDIR%\gvSIG\extensiones\org.gvsig.gdal.app.mainplugin\gdal\bin\gdal\java"</opt>
+    <opt>-DgvSIG.home="%EXEDIR%\home"</opt>
+    <!--     <opt>-Dlaunch4j.exedir="%EXEDIR%"</opt> -->
+  </jre>
+  <versionInfo>
+    <fileVersion>2.3.2444.0</fileVersion>
+    <txtFileVersion>2.3RC4</txtFileVersion>
+    <fileDescription>2.3RC4</fileDescription>
+    <copyright>(c) 2009-2016 gvSIG Association</copyright>
+    <productVersion>2.3.2444.0</productVersion>
+    <txtProductVersion>2.3RC4</txtProductVersion>
+    <productName>gvSIG desktop</productName>
+    <internalName>gvsig-desktop</internalName>
+    <originalFilename>gvsig-desktop.exe</originalFilename>
+  </versionInfo>
+</launch4jConfig>
