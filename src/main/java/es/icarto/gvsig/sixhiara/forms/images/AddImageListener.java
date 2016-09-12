@@ -3,6 +3,7 @@ package es.icarto.gvsig.sixhiara.forms.images;
 import static es.icarto.gvsig.commons.i18n.I18n._;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -99,15 +100,22 @@ public class AddImageListener implements ActionListener {
 	}
 
 	private BufferedImage resizeImage(BufferedImage image) {
+		int width = imageComponent.getWidth();
+		int height = imageComponent.getHeight();
+		Dimension scaledDim = ImageUtils.getScaledDimension(
+				new Dimension(image.getWidth(), image.getHeight()),
+				new Dimension(width, height));
 		BufferedImage imageResized;
-		if ((image.getWidth() < 411) && (image.getHeight() < 241)) {
+		if ((image.getWidth() < width) && (image.getHeight() < height)) {
 			return image;
 		}
-		if (image.getWidth() > image.getHeight()) {
-			imageResized = ImageUtils.resizeImageWithHint(image, 411, 241);
-		} else {
-			imageResized = ImageUtils.resizeImageWithHint(image, 136, 241);
-		}
+
+		imageResized = ImageUtils.resizeImageWithHint(image,
+				(int) scaledDim.getWidth(), (int) scaledDim.getHeight());
+		// if (image.getWidth() > image.getHeight()) {
+		// } else {
+		// imageResized = ImageUtils.resizeImageWithHint(image, 136, 241);
+		// }
 		return imageResized;
 	}
 
