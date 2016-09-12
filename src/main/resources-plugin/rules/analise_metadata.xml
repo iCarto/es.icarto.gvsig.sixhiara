@@ -64,7 +64,7 @@
 	</FIELD>
 
 <FIELD>
-	<FIELDNAME>c_nitrat</FIELDNAME>
+	<FIELDNAME>c_nitrit</FIELDNAME>
 	<DOMAINREADER>
 		<DRTYPE>db</DRTYPE>
 	    <DRDBSCHEMA>inventario_dominios</DRDBSCHEMA>

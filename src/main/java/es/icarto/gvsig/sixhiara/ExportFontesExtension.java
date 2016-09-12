@@ -27,6 +27,11 @@ public class ExportFontesExtension extends AbstractExtension {
 	private FLyrVect layer;
 
 	@Override
+	public void initialize() {
+		// override super
+	}
+
+	@Override
 	public void execute(String actionCommand) {
 		ChooseFolder chooseFolder = new ChooseFolder();
 		chooseFolder.openDialog();
@@ -53,7 +58,7 @@ public class ExportFontesExtension extends AbstractExtension {
 	}
 
 	private final class ChooseFolder extends AbstractIWindow implements
-			ActionListener {
+	ActionListener {
 
 		private FolderChooser chooser;
 		private String folderPath;

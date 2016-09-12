@@ -32,7 +32,6 @@ import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.gui.WidgetFactory;
 import es.icarto.gvsig.commons.utils.Unzip;
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
-import es.icarto.gvsig.sixhiara.forms.ExploracaosForm;
 
 public class ImportExploracaosExtension extends AbstractExtension {
 
@@ -40,6 +39,11 @@ public class ImportExploracaosExtension extends AbstractExtension {
 			.getLogger(ImportExploracaosExtension.class);
 
 	private FLyrVect layer;
+
+	@Override
+	public void initialize() {
+		// override super
+	}
 
 	@Override
 	public void execute(String actionCommand) {
@@ -131,7 +135,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 
 	@Override
 	public boolean isEnabled() {
-		layer = new TOCLayerManager().getLayerByName(ExploracaosForm.LAYERNAME);
+		layer = new TOCLayerManager().getLayerByName("exploracaos");
 		return layer != null;
 	}
 
