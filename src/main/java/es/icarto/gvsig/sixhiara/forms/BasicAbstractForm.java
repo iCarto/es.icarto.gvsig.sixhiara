@@ -47,11 +47,9 @@ public abstract class BasicAbstractForm extends AbstractForm {
 		jButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				URL resource = BasicAbstractForm.this.getClass()
-						.getClassLoader().getResource("columns.properties");
-				List<Field> fields = FieldUtils.getFields(resource.getPath(),
-						getSchema(), getBasicName());
 
+				List<Field> fields = getFields(getSchema(), getBasicName(),
+						null);
 				ChooseSortFieldDialog dialog = new ChooseSortFieldDialog(fields);
 
 				if (dialog.open().equals(OkCancelPanel.OK_ACTION_COMMAND)) {
@@ -61,6 +59,21 @@ public abstract class BasicAbstractForm extends AbstractForm {
 			}
 		});
 		getActionsToolBar().add(jButton);
+	}
+
+	protected List<Field> getFields(String schema, String table,
+			List<String> ignoreColumns) {
+		URL resource = BasicAbstractForm.this.getClass().getClassLoader()
+				.getResource("columns.properties");
+		List<Field> fields;
+		if (ignoreColumns != null) {
+			fields = FieldUtils.getFields(resource.getPath(), schema, table,
+					ignoreColumns);
+		} else {
+			fields = FieldUtils.getFields(resource.getPath(), schema, table);
+		}
+
+		return fields;
 	}
 
 	@Override
