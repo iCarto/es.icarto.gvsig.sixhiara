@@ -46,9 +46,9 @@
 			</tool-bar>
 		</extension>
 		
-		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracaosExtension" active="true">
+		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" active="true">
 			<menu text="sixhiara" is_separator="true" position="30100"/>			
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracaosExtension" action-command="" position="30110" />
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30110" />
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">	
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30120" />

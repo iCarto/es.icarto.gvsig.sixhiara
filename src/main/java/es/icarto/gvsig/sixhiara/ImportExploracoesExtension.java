@@ -33,10 +33,10 @@ import es.icarto.gvsig.commons.gui.WidgetFactory;
 import es.icarto.gvsig.commons.utils.Unzip;
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 
-public class ImportExploracaosExtension extends AbstractExtension {
+public class ImportExploracoesExtension extends AbstractExtension {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(ImportExploracaosExtension.class);
+			.getLogger(ImportExploracoesExtension.class);
 
 	private FLyrVect layer;
 
@@ -62,7 +62,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 
 			long nfeats = doImport(layer);
 
-			String msg = String.format("Importadas %d exploracaos", nfeats);
+			String msg = String.format("Importadas %d explorações", nfeats);
 			layer.reload();
 			JOptionPane.showMessageDialog(mainFrame, msg);
 		} catch (Exception e) {
@@ -73,7 +73,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 	}
 
 	private long doImport(FLyrVect layer) throws Exception {
-		File shpFile = new File("/tmp/exploracaos/exploracaos.shp");
+		File shpFile = new File("/tmp/exploracoes/exploracoes.shp");
 		FeatureStore shpStore = SHPFactory
 				.getFeatureStore(shpFile, "EPSG:4326");
 		FeatureSet shpSet = null;
@@ -135,7 +135,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 
 	@Override
 	public boolean isEnabled() {
-		layer = new TOCLayerManager().getLayerByName("exploracaos");
+		layer = new TOCLayerManager().getLayerByName("exploracoes");
 		return layer != null;
 	}
 
@@ -158,7 +158,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 
 	@SuppressWarnings("serial")
 	private final class ChooseFile extends AbstractIWindow implements
-	ActionListener {
+			ActionListener {
 
 		private FileChooser chooser;
 		private File file;
@@ -167,7 +167,7 @@ public class ImportExploracaosExtension extends AbstractExtension {
 		public ChooseFile() {
 			String initFile = System.getProperty("user.home");
 			ok = WidgetFactory.okCancelPanel(this, this, this);
-			chooser = new FileChooser(this, "Escolha o zip coas exploracaos",
+			chooser = new FileChooser(this, "Escolha o zip coas explorações",
 					initFile);
 		}
 
