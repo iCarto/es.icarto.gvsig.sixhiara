@@ -1,10 +1,13 @@
 #!/bin/bash
 
 VERSION=gvSIG_SIXHIARA_`date +%Y%m%d`
-EXT=/home/fpuga/development/gvsig-desktop2.3.0RC4-2444/org.gvsig.desktop-2.0.151/target/product/gvSIG/extensiones
+
+EXT=/home/fpuga/development/gvsig-desktop2.2.0-2312/org.gvsig.desktop-2.0.100/target/product/gvSIG/extensiones
+# EXT=/home/fpuga/development/gvsig-desktop2.3.0RC4-2444/org.gvsig.desktop-2.0.151/target/product/gvSIG/extensiones
 # unzip /var/tmp/gvsig-desktop-2.2.0-2313-final-win-x86.zip -d /tmp
-# mv /tmp/gvsig-desktop-2.2.0-2313-final-win-x86/ /tmp/${VERSION}
-cp -r /var/tmp/gvSIG-desktop-2.3.0-2444-RC4-win-x86_64/ /tmp/${VERSION}
+cp -r /var/tmp/gvsig-desktop-2.2.0-2313-final-win-x86/ /tmp/${VERSION}
+# cp -r /var/tmp/gvSIG-desktop-2.3.0-2444-RC4-win-x86_64/ /tmp/${VERSION}
+
 
 rm -rf /tmp/${VERSION}/install/*
 rm -rf /tmp/${VERSION}/gvSIG/extensiones/CSVWizard
@@ -68,6 +71,7 @@ cp -R ${EXT}/es.udc.cartolab.gvsig.users /tmp/${VERSION}/gvSIG/extensiones/
 cp -R portable/home /tmp/${VERSION}/
 cp -R portable/gvSIG /tmp/${VERSION}/
 
+cp -R portable/i18n/ /tmp/${VERSION}/
 # cd /tmp
 # zip -r ${VERSION} /tmp/${VERSION}
 

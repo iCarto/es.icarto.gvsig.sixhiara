@@ -17,7 +17,7 @@
 				position="30060"/> 
 			<tool-bar name="sixhiara" position="70">
 				<action-tool icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" tooltip="copy_features"
-					action-command="" position="6"/> 
+					action-command="" position="15"/> 
 			</tool-bar>
 		</extension>		
 	</extensions>
