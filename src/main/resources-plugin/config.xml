@@ -38,6 +38,12 @@
 				<action-tool icon="es.icarto.gvsig.sixhiara.AcuiferosFormExtension" tooltip="aquifers" action-command="" position="5"/>
 			</tool-bar>
 		</extension>
+		<extension class-name="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" active="true">
+			<menu text="sixhiara/exploracaoes" action-command="" position="30041" icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" tooltip="exploracaoes" action-command="" position="6"/>
+			</tool-bar>
+		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" active="true">
 			<menu text="sixhiara" is_separator="true" position="30070"/>			
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="30080" icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension"/>
