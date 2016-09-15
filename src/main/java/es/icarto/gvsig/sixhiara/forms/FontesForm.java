@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
 import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
-import es.icarto.gvsig.sixhiara.forms.plots.AnalyticActionListener;
+import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
 public class FontesForm extends BasicAbstractForm {

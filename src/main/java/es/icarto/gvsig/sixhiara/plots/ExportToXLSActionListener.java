@@ -98,7 +98,7 @@ public class ExportToXLSActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		SaveFileDialog dialog = new SaveFileDialog("Ficheiros Excel", "xlsx");
+		SaveFileDialog dialog = new SaveFileDialog("Ficheiros Excel", "xls");
 		File file = dialog.showDialog();
 		if (file == null) {
 			return;

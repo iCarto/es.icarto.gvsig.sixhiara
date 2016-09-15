@@ -1,4 +1,4 @@
-package es.icarto.gvsig.sixhiara.forms.plots;
+package es.icarto.gvsig.sixhiara.plots;
 
 import static es.icarto.gvsig.commons.i18n.I18n._;
 
@@ -33,9 +33,6 @@ import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
 import es.icarto.gvsig.navtableforms.utils.TOCTableManager;
 import es.icarto.gvsig.sixhiara.forms.FieldUtils;
-import es.icarto.gvsig.sixhiara.plots.AnalyticsChartPanel;
-import es.icarto.gvsig.sixhiara.plots.ChooseFieldDialog;
-import es.icarto.gvsig.sixhiara.plots.MaxValues;
 import es.icarto.gvsig.sixhiara.plots.MaxValues.MaxValue;
 
 public class AnalyticActionListener implements ActionListener {
@@ -143,7 +140,8 @@ public class AnalyticActionListener implements ActionListener {
 						Calendar cal = Calendar.getInstance();
 						cal.setTime(date);
 						int year = cal.get(Calendar.YEAR);
-						list[year - firstYear] = feat.getDouble(field.getKey());
+						double v = feat.getDouble(field.getKey());
+						list[year - firstYear] = v;
 					}
 				}
 

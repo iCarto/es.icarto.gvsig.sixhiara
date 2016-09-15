@@ -23,8 +23,8 @@ public class MaxValues {
 		maxValues = new ArrayList<MaxValue>();
 		add("c_conduct", 2000, 50);
 		add("c_ph", 8.5, 6.5);
-		add("c_nitrat", 50, null);
-		add("c_nitrit", 3, null);
+		// add("c_nitrat", 50, null);
+		// add("c_nitrit", 3, null);
 		add("turbidez", 5, null);
 		add("conductiv", 2000, 50);
 		add("ph", 8.5, 6.5);
