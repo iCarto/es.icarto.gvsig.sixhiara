@@ -1,0 +1,21 @@
+#
+#Fri Jul 22 12:17:47 CEST 2016
+owner=gvSIG association
+code=translations.all
+java-version=j1_6
+official=true
+type=translations
+version=1.0.0-220
+state=testing
+operating-system=all
+dependencies=
+sources-url=
+web-url=
+architecture=all
+model-version=1.0.1
+categories=Internationalization
+description=
+owner-url=
+buildNumber=220
+gvSIG-version=2.3.0
+name=Translations
