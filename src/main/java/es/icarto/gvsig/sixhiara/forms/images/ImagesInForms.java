@@ -2,6 +2,8 @@ package es.icarto.gvsig.sixhiara.forms.images;
 
 import static es.icarto.gvsig.commons.i18n.I18n._;
 
+import java.awt.Dimension;
+
 import javax.swing.JButton;
 
 import com.jeta.forms.components.image.ImageComponent;
@@ -44,6 +46,7 @@ public class ImagesInForms {
 		if (addImageListener == null) {
 			addImageListener = new AddImageListener(imageComponent,
 					addImageButton, schema, tablename, fk);
+			addImageButton.setText(_("add_image"));
 			addImageButton.addActionListener(addImageListener);
 		}
 
@@ -53,6 +56,24 @@ public class ImagesInForms {
 			deleteImageButton.setText(_("delete_image"));
 			deleteImageButton.addActionListener(deleteImageListener);
 		}
+
+		setBiggestWidthForBut();
+	}
+
+	private void setBiggestWidthForBut() {
+		Dimension addSize = addImageButton.getPreferredSize();
+		Dimension delSize = deleteImageButton.getPreferredSize();
+		if (addSize.getWidth() > delSize.getWidth()) {
+			delSize = new Dimension(addSize.width, delSize.height);
+		} else {
+			addSize = new Dimension(delSize.width, addSize.height);
+		}
+
+		addImageButton.setSize(addSize);
+		addImageButton.setPreferredSize(addSize);
+
+		deleteImageButton.setSize(delSize);
+		deleteImageButton.setPreferredSize(delSize);
 	}
 
 	public void removeListeners() {

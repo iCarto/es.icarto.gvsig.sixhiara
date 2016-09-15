@@ -24,9 +24,9 @@
     </at>
     <at name="componentclass">com.jeta.forms.gui.form.FormComponent</at>
    </super>
-   <at name="id">/home/fpuga/development/sixhiara-gvsig/sixhiara/src/main/resources-plugin/forms/acuiferos.xml</at>
+   <at name="id">/home/fpuga/development/sixhiara/es.icarto.gvsig.sixhiara/src/main/resources-plugin/forms/acuiferos.xml</at>
    <at name="rowspecs">CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE</at>
-   <at name="colspecs">FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:73DLU:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:3DLU:NONE</at>
+   <at name="colspecs">FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:73DLU:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:DEFAULT:NONE,FILL:74DLU:NONE,FILL:3DLU:NONE</at>
    <at name="components">
     <object classname="java.util.LinkedList">
      <item >
@@ -1964,7 +1964,7 @@
           <at name="properties">
            <object classname="com.jeta.forms.store.support.PropertyMap">
             <at name="height">234</at>
-            <at name="width">411</at>
+            <at name="width">412</at>
             <at name="name">element_image</at>
             <at name="border">
              <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
@@ -1999,7 +1999,7 @@
         <super classname="com.jeta.forms.store.memento.ComponentMemento">
          <at name="cellconstraints">
           <object classname="com.jeta.forms.store.memento.CellConstraintsMemento">
-           <at name="column">48</at>
+           <at name="column">47</at>
            <at name="row">29</at>
            <at name="colspan">1</at>
            <at name="rowspan">1</at>
@@ -2019,7 +2019,7 @@
            <object classname="com.jeta.forms.store.support.PropertyMap">
             <at name="text">Engadir imagem</at>
             <at name="height">22</at>
-            <at name="width">125</at>
+            <at name="width">124</at>
             <at name="name">add_image_button</at>
             <at name="actionCommand">JButton</at>
             <at name="border">
@@ -2055,7 +2055,7 @@
         <super classname="com.jeta.forms.store.memento.ComponentMemento">
          <at name="cellconstraints">
           <object classname="com.jeta.forms.store.memento.CellConstraintsMemento">
-           <at name="column">50</at>
+           <at name="column">49</at>
            <at name="row">29</at>
            <at name="colspan">1</at>
            <at name="rowspan">1</at>
@@ -2112,7 +2112,7 @@
      <at name="classname">com.jeta.forms.gui.form.GridView</at>
      <at name="properties">
       <object classname="com.jeta.forms.store.support.PropertyMap">
-       <at name="name"/>
+       <at name="name"></at>
        <at name="fill">
         <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
          <at name="name">fill</at>
