@@ -48,10 +48,16 @@
 		
 		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" active="true">
 			<menu text="sixhiara" is_separator="true" position="30100"/>			
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30110" />
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30110" icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" tooltip="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="8"/>
+			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">	
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30120" />
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30120" icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" />
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" tooltip="es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="9"/>
+			</tool-bar>
 		</extension>
 	</extensions>
 </plugin-config>

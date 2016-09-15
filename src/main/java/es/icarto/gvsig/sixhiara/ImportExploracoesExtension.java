@@ -41,11 +41,6 @@ public class ImportExploracoesExtension extends AbstractExtension {
 	private FLyrVect layer;
 
 	@Override
-	public void initialize() {
-		// override super
-	}
-
-	@Override
 	public void execute(String actionCommand) {
 		final Component mainFrame = (Component) PluginServices.getMainFrame();
 		ChooseFile chooseFile = new ChooseFile();
@@ -60,7 +55,7 @@ public class ImportExploracoesExtension extends AbstractExtension {
 			Unzip.unzip(zipFile, new File(tmpDir));
 			// Comprobar que tiene el formato correcto
 
-			long nfeats = doImport(layer);
+			long nfeats = doImport(tmpDir, layer);
 
 			String msg = String.format("Importadas %d explorações", nfeats);
 			layer.reload();
@@ -72,8 +67,9 @@ public class ImportExploracoesExtension extends AbstractExtension {
 		}
 	}
 
-	private long doImport(FLyrVect layer) throws Exception {
-		File shpFile = new File("/tmp/exploracoes/exploracoes.shp");
+	private long doImport(String tmpDir, FLyrVect layer) throws Exception {
+		File shpFile = new File(tmpDir + File.separator + "exploracoes"
+				+ File.separator + "exploracoes.shp");
 		FeatureStore shpStore = SHPFactory
 				.getFeatureStore(shpFile, "EPSG:4326");
 		FeatureSet shpSet = null;
