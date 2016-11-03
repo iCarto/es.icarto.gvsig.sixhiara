@@ -9,7 +9,7 @@ http://stackoverflow.com/questions/28239738/install-gdal-java-on-windows-7
 <launch4jConfig>
   <dontWrapJar>true</dontWrapJar>
   <headerType>gui</headerType>
-  <outfile>./gvSIG/gvsig-desktop.exe</outfile>
+  <outfile>./gvSIG/sirhan.exe</outfile>
   
   <cmdLine>gvSIG gvSIG/extensiones</cmdLine>
   <chdir>.</chdir>

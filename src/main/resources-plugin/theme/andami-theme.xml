@@ -31,7 +31,7 @@
                 timer="10000"
                 x="225" y="50"
                 fontsize="16" color="80,170,240"
-                version="${version}.${buildNumber} ${state}"/>
+                version=""/>
         </SplashImages>
         <!--
         <BackgroundImage path="gvsig-proj-black-wallpaper.png"/>
@@ -40,6 +40,6 @@
         <WallpaperType value="CENTERED"/>
         <Icon path="gvsig-icon16x16.png"/>
     </ApplicationImages>
-    <ApplicationName value="gvSIG-SIXHIARA"/>
+    <ApplicationName value="SIRHAN: Inventario"/>
     <priority value="1000"/>
 </AndamiProperties>

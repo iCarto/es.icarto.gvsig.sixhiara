@@ -10,6 +10,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JButton;
@@ -20,22 +22,22 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.annotations.XYTitleAnnotation;
 import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.block.BlockBorder;
-import org.jfree.chart.block.BlockContainer;
-import org.jfree.chart.block.BorderArrangement;
-import org.jfree.chart.block.EmptyBlock;
+import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.labels.StandardXYItemLabelGenerator;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
-import org.jfree.chart.title.CompositeTitle;
 import org.jfree.chart.title.LegendTitle;
+import org.jfree.chart.title.TextTitle;
+import org.jfree.data.Range;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.RectangleEdge;
-import org.jfree.ui.RectangleInsets;
+import org.jfree.ui.VerticalAlignment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -71,6 +73,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		this.field = field;
 		final XYDataset dataset = createDataset();
 		chart = createChart(dataset);
+		customizeLimits();
 		final ChartPanel chartPanel = new ChartPanel(chart, true, true, true,
 				true, true);
 		chartPanel.setPreferredSize(CHART_SIZE);
@@ -161,6 +164,37 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 	}
 
+	private void customizeLimits() {
+		XYPlot plot = chart.getXYPlot();
+		if (maxSeries != null) {
+			TextTitle textTitle = new TextTitle("Máximo");
+			textTitle.setPaint(Color.RED);
+			textTitle.setPadding(0, 0, 5, 0);
+			double yyy = relativeRangeValue(maxSeries.getMaxY());
+			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5,
+					yyy, textTitle, RectangleAnchor.BOTTOM);
+			plot.addAnnotation(xyTitleAnnotation);
+		}
+
+		if (minSeries != null) {
+			TextTitle textTitle = new TextTitle("Mínimo");
+			textTitle.setPaint(Color.BLUE);
+			textTitle.setPadding(5, 0, 0, 0);
+			double yyy = relativeRangeValue(minSeries.getMinY());
+
+			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5,
+					yyy, textTitle, RectangleAnchor.TOP);
+			plot.addAnnotation(xyTitleAnnotation);
+		}
+	}
+
+	private double relativeRangeValue(double value) {
+		XYPlot plot = chart.getXYPlot();
+		ValueAxis rangeAxis = plot.getRangeAxis();
+		Range yRange = rangeAxis.getRange();
+		return (value - yRange.getLowerBound()) / yRange.getLength();
+	}
+
 	private Integer[] getYears() {
 		Number[] next = data.values().iterator().next();
 		Integer[] years = new Integer[next.length];
@@ -175,7 +209,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 	private JFreeChart createChart(final XYDataset dataset) {
 
-		// create the chart...
 		final JFreeChart chart = ChartFactory.createXYLineChart(
 				field.getLongName(), // chart title
 				"Ano", // x axis label
@@ -185,17 +218,13 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 				true, // tooltips
 				false // urls
 				);
+		initLegend(chart);
 
-		// NOW DO SOME OPTIONAL CUSTOMISATION OF THE CHART...
 		chart.setBackgroundPaint(Color.white);
 
-		// final StandardLegend legend = (StandardLegend) chart.getLegend();
-		// legend.setDisplaySeriesShapes(true);
-
-		// get a reference to the plot for further customisation...
 		final XYPlot plot = chart.getXYPlot();
+
 		plot.setBackgroundPaint(Color.lightGray);
-		// plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
 		plot.setDomainGridlinePaint(Color.white);
 		plot.setRangeGridlinePaint(Color.white);
 
@@ -203,15 +232,39 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		renderer.setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
 		renderer.setBaseItemLabelsVisible(true);
 
+		int firstSeriesData = 0;
 		if (maxSeries != null) {
 			renderer.setSeriesShapesVisible(0, false);
 			renderer.setSeriesStroke(0, new BasicStroke(3));
 			renderer.setSeriesItemLabelsVisible(0, false);
+			renderer.setSeriesVisibleInLegend(0, Boolean.FALSE);
+			renderer.setSeriesPaint(0, Color.RED);
+			firstSeriesData++;
 		}
 		if (minSeries != null) {
 			renderer.setSeriesShapesVisible(1, false);
 			renderer.setSeriesStroke(1, new BasicStroke(3));
 			renderer.setSeriesItemLabelsVisible(1, false);
+			renderer.setSeriesVisibleInLegend(1, Boolean.FALSE);
+			renderer.setSeriesPaint(1, Color.BLUE);
+			firstSeriesData++;
+		}
+
+		List<Color> colors = new ArrayList<Color>();
+		colors.add(new Color(153, 112, 171));
+		colors.add(new Color(140, 81, 10));
+		colors.add(new Color(244, 109, 67));
+		colors.add(new Color(253, 174, 97));
+		colors.add(new Color(254, 224, 144));
+		colors.add(new Color(255, 255, 191));
+		colors.add(new Color(224, 243, 248));
+		colors.add(new Color(171, 217, 233));
+		colors.add(new Color(116, 173, 209));
+		colors.add(new Color(26, 152, 80));
+
+		for (int i = firstSeriesData; i < data.keySet().size()
+				+ firstSeriesData; i++) {
+			renderer.setSeriesPaint(i, colors.get(i - firstSeriesData));
 		}
 
 		plot.setRenderer(renderer);
@@ -219,16 +272,16 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
 		rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
 		initXAxis(plot);
-		// splitLegends(plot);
-		// addLabelsToPoints(plot);
 
 		return chart;
 	}
 
-	// private void addLabelsToPoints(XYPlot plot) {
-	// plot.renderer.baseItemLabelGenerator =
-	// plot.renderer.baseItemLabelsVisible = true
-	// }
+	private void initLegend(JFreeChart chart) {
+		LegendTitle legend = chart.getLegend();
+		legend.setPosition(RectangleEdge.RIGHT);
+		legend.setVerticalAlignment(VerticalAlignment.TOP);
+		legend.setMargin(7, 5, 0, 7);
+	}
 
 	/**
 	 * X Axis shows only integers without miles separator
@@ -239,26 +292,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		NumberFormat format = NumberFormat.getIntegerInstance();
 		format.setGroupingUsed(false);
 		domainAxis.setNumberFormatOverride(format);
-	}
-
-	private void splitLegends(XYPlot plot) {
-		LegendTitle legend1 = new LegendTitle(plot.getRenderer(0));
-		legend1.setMargin(new RectangleInsets(2, 2, 2, 2));
-		legend1.setFrame(new BlockBorder());
-
-		LegendTitle legend2 = new LegendTitle(plot.getRenderer(1));
-		legend2.setMargin(new RectangleInsets(2, 2, 2, 2));
-		legend2.setFrame(new BlockBorder());
-
-		BlockContainer container = new BlockContainer(new BorderArrangement());
-		container.add(legend1, RectangleEdge.LEFT);
-		container.add(legend2, RectangleEdge.RIGHT);
-		container.add(new EmptyBlock(2000, 0));
-		CompositeTitle legends = new CompositeTitle(container);
-		legends.setPosition(RectangleEdge.BOTTOM);
-		chart.addSubtitle(legends);
-
-		ChartUtilities.applyCurrentTheme(chart);
 	}
 
 }

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=gvSIG_SIXHIARA_`date +%Y%m%d`
+VERSION=`date +%g%m%d`_SIRHAN_Inventario
 
 EXT=/home/fpuga/development/gvsig-desktop2.2.0-2312/org.gvsig.desktop-2.0.100/target/product/gvSIG/extensiones
 # EXT=/home/fpuga/development/gvsig-desktop2.3.0RC4-2444/org.gvsig.desktop-2.0.151/target/product/gvSIG/extensiones
@@ -72,6 +72,8 @@ cp -R portable/home /tmp/${VERSION}/
 cp -R portable/gvSIG /tmp/${VERSION}/
 
 cp -R portable/i18n/ /tmp/${VERSION}/
+
+mv /tmp/${VERSION}/gvsig-desktop.exe /tmp/${VERSION}/SIRHAN_Inventario.exe
 # cd /tmp
 # zip -r ${VERSION} /tmp/${VERSION}
 
