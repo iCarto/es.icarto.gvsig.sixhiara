@@ -1,3 +1,3 @@
-cod_barrac=name
-altitude=elev
+cod_barra=name
+altitude=ele
 

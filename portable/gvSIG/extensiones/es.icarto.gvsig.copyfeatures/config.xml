@@ -14,10 +14,10 @@
 				name="_copy_features_menu"
 				action-command=""
 				icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" 
-				position="30060"/> 
+				position="30052"/> 
 			<tool-bar name="sixhiara" position="70">
 				<action-tool icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" tooltip="copy_features"
-					action-command="" position="15"/> 
+					action-command="" position="16"/> 
 			</tool-bar>
 		</extension>		
 	</extensions>

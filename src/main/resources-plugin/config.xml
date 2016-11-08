@@ -44,6 +44,12 @@
 				<action-tool icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" tooltip="exploracaoes" action-command="" position="6"/>
 			</tool-bar>
 		</extension>
+		<extension class-name="es.icarto.gvsig.sixhiara.LoadGPXExtension" active="true">
+			<menu text="sixhiara/loadgpxextension" action-command="" position="30051" icon="es.icarto.gvsig.sixhiara.LoadGPXExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.LoadGPXExtension" tooltip="loadgpxextension" action-command="" position="15"/>
+			</tool-bar>
+		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" active="true">
 			<menu text="sixhiara" is_separator="true" position="30070"/>			
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="30080" icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension"/>
