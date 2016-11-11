@@ -27,14 +27,21 @@ public class FieldUtils {
 	}
 
 	public static List<Field> getFields(String filePath, String schema,
-			String table, List<String> ignoreColumns) {
+			String table, List<String> ignoreColumns, boolean notNull) {
 		List<Field> fields = new ArrayList<Field>();
 		try {
 			DBSession session = DBSession.getCurrentSession();
 			InputStream input = new FileInputStream(filePath);
 			Properties props = new Properties();
 			props.load(input);
-			String[] columns = session.getColumns(schema, table);
+			String[] columns;
+			if (notNull) {
+				List<String> columnList = session.getColumnsWithNotNulls(
+						schema, table);
+				columns = columnList.toArray(new String[0]);
+			} else {
+				columns = session.getColumns(schema, table);
+			}
 			List<String> asList = Arrays.asList(columns);
 
 			for (String c : asList) {
@@ -57,6 +64,6 @@ public class FieldUtils {
 
 	public static List<Field> getFields(String filePath, String schema,
 			String table) {
-		return getFields(filePath, schema, table, reservedColumns);
+		return getFields(filePath, schema, table, reservedColumns, false);
 	}
 }

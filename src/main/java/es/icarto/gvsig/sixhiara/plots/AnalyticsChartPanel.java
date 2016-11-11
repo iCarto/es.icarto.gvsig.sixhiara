@@ -113,8 +113,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		this.add(toolbar, "dock south");
 	}
 
-	public void load() {
-	}
 
 	@Override
 	protected JButton getDefaultButton() {
