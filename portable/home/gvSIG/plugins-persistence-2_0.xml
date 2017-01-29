@@ -5,7 +5,7 @@
     	<property key="com.iver.andami.pluginName" value="es.udc.cartolab.gvsig.users"/>
     	<property key="host" value="127.0.0.1"/>
     	<property key="port" value="5432"/>
-    	<property key="database" value="sixhiara"/>
+    	<property key="database" value="aranorte"/>
     	<property key="user" value="postgres"/>
     	<property key="pwd" value="postgres"/>
     	<property key="schema" value=""/>
