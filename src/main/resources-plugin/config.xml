@@ -13,23 +13,33 @@
 	<extensions>
 		<extension class-name="es.icarto.gvsig.sixhiara.ConfigExtension" active="true">
 		</extension>
-		
+
+		<extension class-name="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" active="true">
+
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="30000" icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension"/>
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" tooltip="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="30000"/>
+			</tool-bar>
+
+			<menu text="sixhiara" is_separator="true" position="30001"/>
+		</extension>
+
 		<extension class-name="es.icarto.gvsig.sixhiara.FontesFormExtension" active="true">
 			<menu text="sixhiara/fountains" action-command="" position="30010" icon="es.icarto.gvsig.sixhiara.FontesFormExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.FontesFormExtension" tooltip="fountains" action-command="" position="2"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.FontesFormExtension" tooltip="fountains" action-command="" position="30010"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.EstacoesFormExtension" active="true">
 			<menu text="sixhiara/stations" action-command="" position="30020" icon="es.icarto.gvsig.sixhiara.EstacoesFormExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.EstacoesFormExtension" tooltip="stations" action-command="" position="3"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.EstacoesFormExtension" tooltip="stations" action-command="" position="30020"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.BarragensFormExtension" active="true">
 			<menu text="sixhiara/reservoirs" action-command="" position="30030" icon="es.icarto.gvsig.sixhiara.BarragensFormExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.BarragensFormExtension" tooltip="reservoirs" action-command="" position="4"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.BarragensFormExtension" tooltip="reservoirs" action-command="" position="30030"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.AcuiferosFormExtension" active="true">
@@ -39,36 +49,34 @@
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" active="true">
-			<menu text="sixhiara/exploracaoes" action-command="" position="30041" icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension"/>
+			<menu text="sixhiara/exploracaoes" action-command="" position="30050" icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" tooltip="exploracaoes" action-command="" position="6"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" tooltip="exploracaoes" action-command="" position="30050"/>
 			</tool-bar>
 		</extension>
+
 		<extension class-name="es.icarto.gvsig.sixhiara.LoadGPXExtension" active="true">
-			<menu text="sixhiara/loadgpxextension" action-command="" position="30051" icon="es.icarto.gvsig.sixhiara.LoadGPXExtension"/>
+
+			<menu text="sixhiara" is_separator="true" position="30060"/>
+
+			<menu text="sixhiara/loadgpxextension" action-command="" position="30061" icon="es.icarto.gvsig.sixhiara.LoadGPXExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.LoadGPXExtension" tooltip="loadgpxextension" action-command="" position="15"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.LoadGPXExtension" tooltip="loadgpxextension" action-command="" position="30061"/>
 			</tool-bar>
 		</extension>
-		<extension class-name="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" active="true">
-			<menu text="sixhiara" is_separator="true" position="30070"/>			
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="30080" icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension"/>
-			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" tooltip="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" action-command="" position="7"/>
-			</tool-bar>
-		</extension>
-		
+
 		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" active="true">
-			<menu text="sixhiara" is_separator="true" position="30100"/>			
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30110" icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension"/>
+			<menu text="sixhiara" is_separator="true" position="30080"/>
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30081" icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" tooltip="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="8"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" tooltip="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30081"/>
 			</tool-bar>
 		</extension>
-		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">	
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30120" icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" />
+
+		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30090" icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" />
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" tooltip="es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="9"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" tooltip="es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30090"/>
 			</tool-bar>
 		</extension>
 	</extensions>

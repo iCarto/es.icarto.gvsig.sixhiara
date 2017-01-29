@@ -8,17 +8,11 @@
 	<libraries library-dir="lib"/>
 	<extensions>
 		<extension class-name="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" active="true">
-		
-			<menu text="sixhiara" is_separator="true" position="30050"/>			
-			<menu text="sixhiara/copy_features"
-				name="_copy_features_menu"
-				action-command=""
-				icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" 
-				position="30052"/> 
+
+			<menu text="sixhiara/copy_features" name="_copy_features_menu" action-command="" position="30070" icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" />
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" tooltip="copy_features"
-					action-command="" position="16"/> 
+				<action-tool icon="es.udc.cartolab.gvsig.tools.CopyFeaturesExtension" tooltip="copy_features" action-command="" position="30070"/>
 			</tool-bar>
-		</extension>		
+		</extension>
 	</extensions>
 </plugin-config>
