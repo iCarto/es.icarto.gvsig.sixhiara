@@ -26,12 +26,12 @@ public class ExportToXLSActionListener implements ActionListener {
 	private static final Logger logger = LoggerFactory
 			.getLogger(ExportToXLSActionListener.class);
 
-	private final Map<String, Number[]> data;
+	private final Map<String, Object[]> data;
 	private final int firstYear;
 	private final int currentYear;
 	private final Field field;
 
-	public ExportToXLSActionListener(Map<String, Number[]> selectedFontes,
+	public ExportToXLSActionListener(Map<String, Object[]> selectedFontes,
 			int firstYear, int currentYear, Field field) {
 		this.data = selectedFontes;
 		this.firstYear = firstYear;
@@ -55,12 +55,17 @@ public class ExportToXLSActionListener implements ActionListener {
 		for (String key : data.keySet()) {
 			Row row = sheet.createRow(rowIdx++);
 			row.createCell(0).setCellValue(key);
-			Number[] values = data.get(key);
+			Object[] values = data.get(key);
 			for (int i = 0; i < years.length; i++) {
 				Cell cell = row.createCell(i + 1);
-				Number value = values[i];
+				Object value = values[i];
 				if (value != null) {
-					cell.setCellValue(value.doubleValue());
+					if (value instanceof String) {
+						cell.setCellValue(value.toString());
+					} else if (value instanceof Number) {
+						cell.setCellValue(((Number) value).doubleValue());
+					}
+
 				}
 			}
 
@@ -85,7 +90,7 @@ public class ExportToXLSActionListener implements ActionListener {
 	}
 
 	private String[] getYears() {
-		Number[] next = data.values().iterator().next();
+		Object[] next = data.values().iterator().next();
 		String[] years = new String[next.length];
 
 		int year = firstYear;

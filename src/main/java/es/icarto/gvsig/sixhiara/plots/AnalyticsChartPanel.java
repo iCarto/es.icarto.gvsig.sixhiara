@@ -5,10 +5,6 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +16,10 @@ import javax.swing.JPanel;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.annotations.XYTitleAnnotation;
 import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.SymbolAxis;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.labels.StandardXYItemLabelGenerator;
 import org.jfree.chart.plot.PlotOrientation;
@@ -35,6 +31,7 @@ import org.jfree.data.Range;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.HorizontalAlignment;
 import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.RectangleEdge;
 import org.jfree.ui.VerticalAlignment;
@@ -42,7 +39,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.icarto.gvsig.commons.gui.AbstractIWindow;
-import es.icarto.gvsig.commons.gui.SaveFileDialog;
 import es.icarto.gvsig.commons.utils.Field;
 import es.icarto.gvsig.sixhiara.plots.MaxValues.MaxValue;
 
@@ -55,22 +51,23 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 			.getLogger(AnalyticsChartPanel.class);
 
 	private final Field field;
-	private final Map<String, Number[]> data;
+	private final MaxValue maxValue;
+	private final Map<String, Object[]> data;
 	private final int firstYear;
 	private final int currentYear;
 	private final JFreeChart chart;
 
 	private XYSeries maxSeries = null;
-
 	private XYSeries minSeries;
 
-	public AnalyticsChartPanel(Map<String, Number[]> selectedFontes,
+	public AnalyticsChartPanel(Map<String, Object[]> selectedFontes,
 			int firstYear, int currentYear, Field field) {
 		super();
 		this.data = selectedFontes;
 		this.firstYear = firstYear;
 		this.currentYear = currentYear;
 		this.field = field;
+		maxValue = new MaxValues().getMaxFor(field.getKey());
 		final XYDataset dataset = createDataset();
 		chart = createChart(dataset);
 		customizeLimits();
@@ -86,25 +83,8 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		JLabel label = new JLabel("Gravar em formato: ");
 		toolbar.add(label);
 		JButton pngBt = new JButton("PNG");
-		pngBt.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				SaveFileDialog dialog = new SaveFileDialog("Ficheiros PNG",
-						"png");
-				File file = dialog.showDialog();
-				if (file == null) {
-					return;
-				}
-
-				try {
-					ChartUtilities.saveChartAsPNG(file, chart,
-							CHART_SIZE.width, CHART_SIZE.height);
-				} catch (IOException e1) {
-					logger.error(e1.getMessage(), e1);
-				}
-			}
-		});
+		pngBt.addActionListener(new ExportToPNGActionListener(chart,
+				CHART_SIZE.width, CHART_SIZE.height));
 		JButton xlsBt = new JButton("XLS");
 		xlsBt.addActionListener(new ExportToXLSActionListener(data, firstYear,
 				currentYear, field));
@@ -112,7 +92,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		toolbar.add(xlsBt);
 		this.add(toolbar, "dock south");
 	}
-
 
 	@Override
 	protected JButton getDefaultButton() {
@@ -131,8 +110,14 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		for (String key : data.keySet()) {
 			final XYSeries series = new XYSeries(key);
 			for (int i = 0; i < years.length; i++) {
-				if ((data.get(key)[i]) != null) {
-					series.add(years[i], data.get(key)[i]);
+				Object value = data.get(key)[i];
+				if (value != null) {
+					if (value instanceof Number) {
+						series.add(years[i], (Number) value);
+					} else if (value instanceof String) {
+						Integer v = maxValue.stringToIndex(value.toString());
+						series.add(years[i], v);
+					}
 				}
 			}
 			dataset.addSeries(series);
@@ -141,7 +126,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 	}
 
 	private void initMaxMin(XYSeriesCollection dataset, Integer[] years) {
-		MaxValue maxValue = new MaxValues().getMaxFor(field.getKey());
 
 		if (maxValue != null) {
 			if (maxValue.max != null) {
@@ -194,7 +178,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 	}
 
 	private Integer[] getYears() {
-		Number[] next = data.values().iterator().next();
+		Object[] next = data.values().iterator().next();
 		Integer[] years = new Integer[next.length];
 
 		Integer year = Integer.valueOf(firstYear);
@@ -228,7 +212,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 		final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
 		renderer.setBaseItemLabelGenerator(new StandardXYItemLabelGenerator());
-		renderer.setBaseItemLabelsVisible(true);
+		renderer.setBaseItemLabelsVisible(!maxValue.isString());
 
 		int firstSeriesData = 0;
 		if (maxSeries != null) {
@@ -252,13 +236,13 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		colors.add(new Color(153, 112, 171));
 		colors.add(new Color(140, 81, 10));
 		colors.add(new Color(244, 109, 67));
+		colors.add(new Color(15, 206, 200));
+		colors.add(new Color(245, 63, 154));
+		colors.add(new Color(26, 152, 80));
 		colors.add(new Color(253, 174, 97));
-		colors.add(new Color(254, 224, 144));
+		colors.add(new Color(116, 173, 209));
 		colors.add(new Color(255, 255, 191));
 		colors.add(new Color(224, 243, 248));
-		colors.add(new Color(171, 217, 233));
-		colors.add(new Color(116, 173, 209));
-		colors.add(new Color(26, 152, 80));
 
 		for (int i = firstSeriesData; i < data.keySet().size()
 				+ firstSeriesData; i++) {
@@ -266,9 +250,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		}
 
 		plot.setRenderer(renderer);
-		// change the auto tick unit selection to integer units only...
-		final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-		rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+		initYAxis(plot);
 		initXAxis(plot);
 
 		return chart;
@@ -276,9 +258,62 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 	private void initLegend(JFreeChart chart) {
 		LegendTitle legend = chart.getLegend();
-		legend.setPosition(RectangleEdge.RIGHT);
-		legend.setVerticalAlignment(VerticalAlignment.TOP);
-		legend.setMargin(7, 5, 0, 7);
+
+		TextTitle legendText = new TextTitle("Fontes");
+		chart.addSubtitle(legendText);
+		RectangleEdge hpos = RectangleEdge.RIGHT;
+		VerticalAlignment vpos = VerticalAlignment.TOP;
+
+		legendText.setPosition(hpos);
+		legend.setPosition(hpos);
+		legend.setVerticalAlignment(vpos);
+		legendText.setVerticalAlignment(vpos);
+
+		// BlockContainer itemContainer = legend.getItemContainer();
+		// itemContainer.add(titleText);
+		// BlockFrame frame = legend.getFrame();
+
+		legendText.setHorizontalAlignment(HorizontalAlignment.CENTER);
+		legendText.setTextAlignment(HorizontalAlignment.CENTER);
+		legendText.setWidth(100);
+		// Font font = legendText.getFont();
+		legendText.setExpandToFitSpace(true);
+		// legendText.setMargin(7, 5, 0, 7);
+		// chart.addSubtitle(legendText);
+
+		// BlockContainer container = legend.getWrapper();
+		// container.add(new TextTitle("Fontes"));
+
+		/*
+		 * 
+		 * 
+		 * LegendTitle(chart.getXYPlot());
+		 * 
+		 * LegendItemSource[] s = legend.getSources();
+		 * 
+		 * LegendItemSource[] sources = Arrays.copyOf(s, s.length + 1);
+		 * 
+		 * sources[s.length] = new LegendItemSource() {
+		 * 
+		 * @Override public LegendItemCollection getLegendItems() {
+		 * LegendItemCollection c = new LegendItemCollection(); c.add(new
+		 * LegendItem("My title")); return c; } }; legend.setSources(sources);
+		 * legend.setPosition(RectangleEdge.RIGHT);
+		 * legend.setVerticalAlignment(VerticalAlignment.TOP);
+		 * legend.setMargin(7, 5, 0, 7);
+		 */
+
+		// CompositeTitle t = new CompositeTitle();
+		// t.setPosition(RectangleEdge.RIGHT);
+		// t.setVerticalAlignment(VerticalAlignment.TOP);
+		// BlockContainer container = t.getContainer();
+		// container.add(legendText);
+		// container.add(legend);
+		// // t.setTitleContainer(container);
+		//
+		// chart.addSubtitle(t);
+		// chart.addLegend(legend);
+
 	}
 
 	/**
@@ -292,4 +327,36 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		domainAxis.setNumberFormatOverride(format);
 	}
 
+	private void initYAxis(final XYPlot plot) {
+		if (maxValue.isString()) {
+			initYAxisForString(plot);
+		} else {
+			// change the auto tick unit selection to integer units only...
+			final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
+			rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+		}
+	}
+
+	private void initYAxisForString(XYPlot plot) {
+		String[] grade = new String[] { "< 10", "10 - 25", "25 - 50",
+				"50 - 100", "100 - 250", "> 250" };
+		SymbolAxis rangeAxis = new SymbolAxis(field.getLongName(), grade);
+		plot.setRangeAxis(rangeAxis);
+
+	}
+
+	/*
+	 * public static void main(String[] args) { JFrame f = new JFrame("Test");
+	 * f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); JPanel pane =
+	 * getPane(); f.getContentPane().add(pane, BorderLayout.CENTER); f.pack();
+	 * f.setVisible(true);
+	 * 
+	 * }
+	 * 
+	 * private static JPanel getPane() { Field testField = new Field("foo");
+	 * Map<String, Number[]> testSources = new HashMap<String, Number[]>();
+	 * testSources.put("AA1", new Number[] { 2, 4, 6, 8, 10 }); JPanel pane =
+	 * new AnalyticsChartPanel(testSources, 2012, 2016, testField); return pane;
+	 * }
+	 */
 }

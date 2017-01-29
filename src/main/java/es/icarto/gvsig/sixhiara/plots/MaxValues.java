@@ -15,6 +15,35 @@ public class MaxValues {
 			this.max = max;
 			this.min = min;
 		}
+
+		public Integer stringToIndex(String s) {
+			switch (s) {
+			case "< 10":
+				return 0;
+
+			case "10 - 25":
+
+				return 1;
+			case "25 - 50":
+
+				return 2;
+			case "50 - 100":
+
+				return 3;
+			case "100 - 250":
+
+				return 4;
+			case "> 250":
+
+				return 5;
+			default:
+				return -100;
+			}
+		}
+
+		public boolean isString() {
+			return k.equals("c_nitrat") || k.equals("c_nitrit");
+		}
 	}
 
 	private final ArrayList<MaxValue> maxValues;
@@ -23,8 +52,8 @@ public class MaxValues {
 		maxValues = new ArrayList<MaxValue>();
 		add("c_conduct", 2000, 50);
 		add("c_ph", 8.5, 6.5);
-		// add("c_nitrat", 50, null);
-		// add("c_nitrit", 3, null);
+		add("c_nitrat", 50, null);
+		add("c_nitrit", 3, null);
 		add("turbidez", 5, null);
 		add("conductiv", 2000, 50);
 		add("ph", 8.5, 6.5);

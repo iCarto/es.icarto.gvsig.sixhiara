@@ -75,9 +75,8 @@ public class AnalyticActionListener implements ActionListener {
 		return newFields;
 	}
 
-	private Map<String, Number[]> sourcesToPlot() {
-		Map<String, Number[]> selectedFontes = new HashMap<String, Number[]>();
-
+	private List<String> sourcesToPlot() {
+		List<String> selectedFontes = new ArrayList<String>();
 		DisposableIterator it = null;
 		FeatureSet set = null;
 		try {
@@ -88,21 +87,13 @@ public class AnalyticActionListener implements ActionListener {
 				return selectedFontes;
 			}
 
-			if (sel.getSelectedCount() > 10) {
-				for (int i = 0; i <= 10; i++) {
-					selectedFontes.put(i + "", null);
-				}
-				return selectedFontes;
-			}
-
 			set = store.getFeatureSet();
 			it = set.fastIterator();
 			while (it.hasNext()) {
 				Feature feat = (Feature) it.next();
 				if (sel.isSelected(feat)) {
 					String codFonte = feat.getString(FK_FIELD);
-					int numberOfYears = currentYear - firstYear + 1;
-					selectedFontes.put(codFonte, new Number[numberOfYears]);
+					selectedFontes.add(codFonte);
 				}
 			}
 		} catch (DataException e) {
@@ -113,13 +104,21 @@ public class AnalyticActionListener implements ActionListener {
 		}
 
 		return selectedFontes;
+	}
 
+	private Map<String, Object[]> sourcesToPlotAsMap() {
+		List<String> sourcesToPlot = sourcesToPlot();
+		int numberOfYears = currentYear - firstYear + 1;
+		Map<String, Object[]> selectedFontes = new HashMap<String, Object[]>();
+		for (String s : sourcesToPlot) {
+			selectedFontes.put(s, new Object[numberOfYears]);
+		}
+		return selectedFontes;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
-		Map<String, Number[]> sourcesToPlot = sourcesToPlot();
+		Map<String, Object[]> sourcesToPlot = sourcesToPlotAsMap();
 		if (sourcesToPlot.isEmpty()) {
 			showError("not_selected_features");
 			return;
@@ -145,31 +144,23 @@ public class AnalyticActionListener implements ActionListener {
 
 	}
 
-	private void doIt(Map<String, Number[]> sourcesToPlot, Field field) {
+	private void doIt(Map<String, Object[]> sourcesToPlot, Field field) {
 		FeatureSet analiseSet = null;
 		DisposableIterator analiseIt = null;
 		try {
 
-			TOCTableManager toc = new TOCTableManager();
-			TableDocument tableDocument = toc.getTableDocumentByName(TABLE);
-			FeatureStore analiseStore = tableDocument.getStore();
-			FeatureQuery query = analiseStore.createFeatureQuery();
-			FeatureQueryOrder order = new FeatureQueryOrder();
-			order.add(DATE_FIELD, true);
-			query.setOrder(order);
-
-			analiseSet = analiseStore.getFeatureSet();
+			analiseSet = getAnaliseSet();
 			analiseIt = analiseSet.fastIterator();
 			while (analiseIt.hasNext()) {
 				Feature feat = (Feature) analiseIt.next();
 				String codFonte = feat.getString(FK_FIELD);
-				Number[] list = sourcesToPlot.get(codFonte);
+				Object[] list = sourcesToPlot.get(codFonte);
 				if (list != null) {
 					int year = yearFromDate(feat);
 					if (feat.get(field.getKey()) == null) {
 						list[year - firstYear] = null;
 					} else {
-						list[year - firstYear] = feat.getDouble(field.getKey());
+						list[year - firstYear] = feat.get(field.getKey());
 					}
 				}
 			}
@@ -186,6 +177,18 @@ public class AnalyticActionListener implements ActionListener {
 			DisposeUtils.disposeQuietly(analiseIt);
 		}
 
+	}
+
+	private FeatureSet getAnaliseSet() throws DataException {
+		TOCTableManager toc = new TOCTableManager();
+		TableDocument tableDocument = toc.getTableDocumentByName(TABLE);
+		FeatureStore analiseStore = tableDocument.getStore();
+		FeatureQuery query = analiseStore.createFeatureQuery();
+		FeatureQueryOrder order = new FeatureQueryOrder();
+		order.add(DATE_FIELD, true);
+		query.setOrder(order);
+		FeatureSet analiseSet = analiseStore.getFeatureSet(query);
+		return analiseSet;
 	}
 
 	private int yearFromDate(Feature feat) {
