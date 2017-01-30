@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +36,7 @@ import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.ui.HorizontalAlignment;
 import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.RectangleEdge;
+import org.jfree.ui.Size2D;
 import org.jfree.ui.VerticalAlignment;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -201,7 +204,6 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 				false // urls
 				);
 		initLegend(chart);
-
 		chart.setBackgroundPaint(Color.white);
 
 		final XYPlot plot = chart.getXYPlot();
@@ -256,64 +258,79 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		return chart;
 	}
 
+	private class MyTextTitle extends TextTitle {
+
+		private LegendTitle legend;
+
+		public MyTextTitle(String s, LegendTitle legend) {
+			super(s);
+			this.legend = legend;
+		}
+
+		@Override
+		public Size2D arrange(Graphics2D g2) {
+			System.out.println("arrange");
+			return super.arrange(g2);
+		}
+
+		@Override
+		protected Size2D arrangeFN(Graphics2D g2, double w) {
+			System.out.println("arrange fn");
+			return super.arrangeFN(g2, w);
+		}
+
+		@Override
+		protected Size2D arrangeRN(Graphics2D g2, Range widthRange) {
+			System.out.println("arrange rn");
+			return super.arrangeRN(g2, widthRange);
+		}
+
+		@Override
+		protected Size2D arrangeNN(Graphics2D g2) {
+			System.out.println("arrange nn");
+			return super.arrangeNN(g2);
+		}
+
+		@Override
+		protected Size2D arrangeRR(Graphics2D g2, Range widthRange,
+				Range heightRange) {
+			return super.arrangeRR(g2, widthRange, heightRange);
+		}
+
+		@Override
+		public Object draw(Graphics2D g2, Rectangle2D area, Object params) {
+			return super.draw(g2, area, params);
+
+		}
+
+		@Override
+		protected void drawVertical(Graphics2D g2, Rectangle2D area) {
+			// super.drawHorizontal(g2, area);
+			super.drawVertical(g2, area);
+		}
+	}
+
 	private void initLegend(JFreeChart chart) {
-		LegendTitle legend = chart.getLegend();
 
-		TextTitle legendText = new TextTitle("Fontes");
-		chart.addSubtitle(legendText);
 		RectangleEdge hpos = RectangleEdge.RIGHT;
-		VerticalAlignment vpos = VerticalAlignment.TOP;
+		VerticalAlignment vpos = VerticalAlignment.CENTER;
 
-		legendText.setPosition(hpos);
+		LegendTitle legend = chart.getLegend();
 		legend.setPosition(hpos);
 		legend.setVerticalAlignment(vpos);
-		legendText.setVerticalAlignment(vpos);
 
-		// BlockContainer itemContainer = legend.getItemContainer();
-		// itemContainer.add(titleText);
-		// BlockFrame frame = legend.getFrame();
+		TextTitle legendText = new MyTextTitle("Fontes", legend);
+
+		chart.addSubtitle(0, legendText);
+
+		legendText.setPosition(hpos);
+		legendText.setVerticalAlignment(vpos);
 
 		legendText.setHorizontalAlignment(HorizontalAlignment.CENTER);
 		legendText.setTextAlignment(HorizontalAlignment.CENTER);
-		legendText.setWidth(100);
-		// Font font = legendText.getFont();
+		// legendText.setWidth(300);
+		// legendText.setHeight(100);
 		legendText.setExpandToFitSpace(true);
-		// legendText.setMargin(7, 5, 0, 7);
-		// chart.addSubtitle(legendText);
-
-		// BlockContainer container = legend.getWrapper();
-		// container.add(new TextTitle("Fontes"));
-
-		/*
-		 * 
-		 * 
-		 * LegendTitle(chart.getXYPlot());
-		 * 
-		 * LegendItemSource[] s = legend.getSources();
-		 * 
-		 * LegendItemSource[] sources = Arrays.copyOf(s, s.length + 1);
-		 * 
-		 * sources[s.length] = new LegendItemSource() {
-		 * 
-		 * @Override public LegendItemCollection getLegendItems() {
-		 * LegendItemCollection c = new LegendItemCollection(); c.add(new
-		 * LegendItem("My title")); return c; } }; legend.setSources(sources);
-		 * legend.setPosition(RectangleEdge.RIGHT);
-		 * legend.setVerticalAlignment(VerticalAlignment.TOP);
-		 * legend.setMargin(7, 5, 0, 7);
-		 */
-
-		// CompositeTitle t = new CompositeTitle();
-		// t.setPosition(RectangleEdge.RIGHT);
-		// t.setVerticalAlignment(VerticalAlignment.TOP);
-		// BlockContainer container = t.getContainer();
-		// container.add(legendText);
-		// container.add(legend);
-		// // t.setTitleContainer(container);
-		//
-		// chart.addSubtitle(t);
-		// chart.addLegend(legend);
-
 	}
 
 	/**
@@ -344,19 +361,4 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		plot.setRangeAxis(rangeAxis);
 
 	}
-
-	/*
-	 * public static void main(String[] args) { JFrame f = new JFrame("Test");
-	 * f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); JPanel pane =
-	 * getPane(); f.getContentPane().add(pane, BorderLayout.CENTER); f.pack();
-	 * f.setVisible(true);
-	 * 
-	 * }
-	 * 
-	 * private static JPanel getPane() { Field testField = new Field("foo");
-	 * Map<String, Number[]> testSources = new HashMap<String, Number[]>();
-	 * testSources.put("AA1", new Number[] { 2, 4, 6, 8, 10 }); JPanel pane =
-	 * new AnalyticsChartPanel(testSources, 2012, 2016, testField); return pane;
-	 * }
-	 */
 }
