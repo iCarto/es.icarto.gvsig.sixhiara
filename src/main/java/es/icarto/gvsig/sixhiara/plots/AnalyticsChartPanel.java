@@ -350,7 +350,12 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		} else {
 			// change the auto tick unit selection to integer units only...
 			final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-			rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+			// rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+			if (maxValue.yAxisMax != null) {
+				double lower = maxValue.yAxisMin.doubleValue();
+				double upper = maxValue.yAxisMax.doubleValue();
+				rangeAxis.setRange(lower, upper);
+			}
 		}
 	}
 

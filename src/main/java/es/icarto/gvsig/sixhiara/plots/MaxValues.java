@@ -9,11 +9,24 @@ public class MaxValues {
 		public final String k;
 		public final Number max;
 		public final Number min;
+		public final Number yAxisMin;
+		public final Number yAxisMax;
 
 		public MaxValue(String k, Number max, Number min) {
 			this.k = k;
 			this.max = max;
 			this.min = min;
+			this.yAxisMax = null;
+			this.yAxisMin = null;
+		}
+
+		public MaxValue(String k, Number max, Number min, Number yAxisMax,
+				Number yAxisMin) {
+			this.k = k;
+			this.max = max;
+			this.min = min;
+			this.yAxisMax = yAxisMax;
+			this.yAxisMin = yAxisMin;
 		}
 
 		public Integer stringToIndex(String s) {
@@ -44,6 +57,7 @@ public class MaxValues {
 		public boolean isString() {
 			return k.equals("c_nitrat") || k.equals("c_nitrit");
 		}
+
 	}
 
 	private final ArrayList<MaxValue> maxValues;
@@ -51,12 +65,12 @@ public class MaxValues {
 	public MaxValues() {
 		maxValues = new ArrayList<MaxValue>();
 		add("c_conduct", 2000, 50);
-		add("c_ph", 8.5, 6.5);
+		add("c_ph", 8.5, 6.5, 5, 9);
 		add("c_nitrat", 50, null);
 		add("c_nitrit", 3, null);
 		add("turbidez", 5, null);
 		add("conductiv", 2000, 50);
-		add("ph", 8.5, 6.5);
+		add("ph", 8.5, 6.5, 5, 9);
 		add("alcalin_f", null, null);
 		add("alcalinid", null, null);
 		add("carbonato", null, null);
@@ -90,6 +104,11 @@ public class MaxValues {
 		add("ni", 0.02, null);
 		add("zn", 3, null);
 
+	}
+
+	private void add(String k, Number max, Number min, Number minY, Number maxY) {
+		MaxValue maxValue = new MaxValue(k, max, min, maxY, minY);
+		maxValues.add(maxValue);
 	}
 
 	private void add(String k, Number max, Number min) {
