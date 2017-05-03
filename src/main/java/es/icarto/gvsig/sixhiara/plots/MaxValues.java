@@ -30,28 +30,46 @@ public class MaxValues {
 		}
 
 		public Integer stringToIndex(String s) {
-			switch (s) {
-			case "< 10":
-				return 0;
-
-			case "10 - 25":
-
-				return 1;
-			case "25 - 50":
-
-				return 2;
-			case "50 - 100":
-
-				return 3;
-			case "100 - 250":
-
-				return 4;
-			case "> 250":
-
-				return 5;
-			default:
-				return -100;
+			if (k.equals("c_nitrit")) {
+				switch (s) {
+				case "3":
+					return 0;
+				case "< 10":
+					return 1;
+				case "10 - 25":
+					return 2;
+				case "25 - 50":
+					return 3;
+				case "50 - 100":
+					return 4;
+				case "100 - 250":
+					return 5;
+				case "> 250":
+					return 6;
+				default:
+					return -100;
+				}
+			} else if (k.equals("c_nitrat")) {
+				switch (s) {
+				case "< 10":
+					return 0;
+				case "10 - 25":
+					return 1;
+				case "25 - 50":
+					return 2;
+				case "50":
+					return 3;
+				case "50 - 100":
+					return 4;
+				case "100 - 250":
+					return 5;
+				case "> 250":
+					return 6;
+				default:
+					return -100;
+				}
 			}
+			return null;
 		}
 
 		public boolean isString() {

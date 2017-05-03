@@ -134,14 +134,16 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 			if (maxValue.max != null) {
 				maxSeries = new XYSeries("Máximo");
 				for (int i = 0; i < years.length; i++) {
-					maxSeries.add(years[i], maxValue.max);
+					Number v = maxValue.stringToIndex(maxValue.max.toString());
+					maxSeries.add(years[i], v == null ? maxValue.max : v);
 				}
 				dataset.addSeries(maxSeries);
 			}
 			if (maxValue.min != null) {
 				minSeries = new XYSeries("Mínimo");
 				for (int i = 0; i < years.length; i++) {
-					minSeries.add(years[i], maxValue.min);
+					Number v = maxValue.stringToIndex(maxValue.min.toString());
+					minSeries.add(years[i], v == null ? maxValue.min : v);
 				}
 				dataset.addSeries(minSeries);
 			}
@@ -360,8 +362,15 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 	}
 
 	private void initYAxisForString(XYPlot plot) {
-		String[] grade = new String[] { "< 10", "10 - 25", "25 - 50",
-				"50 - 100", "100 - 250", "> 250" };
+		String[] grade = null;
+		if (maxValue.k.equals("c_nitrit")) {
+			grade = new String[] { "3", "< 10", "10 - 25", "25 - 50",
+					"50 - 100", "100 - 250", "> 250" };
+		} else if (maxValue.k.equals("c_nitrat")) {
+			grade = new String[] { "< 10", "10 - 25", "25 - 50", "50",
+					"50 - 100", "100 - 250", "> 250" };
+		}
+
 		SymbolAxis rangeAxis = new SymbolAxis(field.getLongName(), grade);
 		plot.setRangeAxis(rangeAxis);
 
