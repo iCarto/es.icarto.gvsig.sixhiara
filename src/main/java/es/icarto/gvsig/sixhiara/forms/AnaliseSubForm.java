@@ -5,7 +5,7 @@ import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 @SuppressWarnings("serial")
 public class AnaliseSubForm extends AbstractSubForm {
 
-	public static final String TABLENAME = "analise";
+	public static final String TABLENAME = "fontes_analise";
 	public static String[] colNames = { "cod_fonte", "data_most", "c_ph",
 			"c_nitrit", "c_conduct" };
 	public static String[] colAlias = { "Cod Fonte", "Fecha Muestra", "PH",
