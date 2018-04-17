@@ -77,9 +77,9 @@ mv /tmp/${VERSION}/gvsig-desktop.cmd /tmp/${VERSION}/SIRHAN_Inventario.cmd
 mv /tmp/${VERSION}/gvsig-desktop.vbs /tmp/${VERSION}/SIRHAN_Inventario.vbs
 
 ### Hacked libs. Remove when fixed upstream
-cp ${EXT}/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
+cp portable/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
 rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
-cp ${EXT}/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
+cp portable/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
 
 # cd /tmp
 # zip -r ${VERSION} /tmp/${VERSION}
