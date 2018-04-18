@@ -38,10 +38,10 @@ import es.icarto.gvsig.sixhiara.plots.MaxValues.MaxValue;
 
 public class AnalyticActionListener implements ActionListener {
 
-	private static final String TABLE = "analise";
-	private static final String FK_FIELD = "cod_fonte";
 	private static final String SCHEMA = "inventario";
-	private final String DATE_FIELD = "data_most";
+	private final String table;
+	private final String fkField;
+	private final String dateField;
 	private final FLyrVect layer;
 
 	private static final int currentYear = Calendar.getInstance().get(
@@ -51,15 +51,19 @@ public class AnalyticActionListener implements ActionListener {
 	private static final Logger logger = LoggerFactory
 			.getLogger(AnalyticActionListener.class);
 
-	public AnalyticActionListener(FLyrVect layer) {
+	public AnalyticActionListener(FLyrVect layer, String table, String fkField,
+			String dateField) {
 		this.layer = layer;
+		this.table = table;
+		this.fkField = fkField;
+		this.dateField = dateField;
 	}
 
 	private List<Field> getFields() {
 		URL resource = AnalyticActionListener.this.getClass().getClassLoader()
 				.getResource("columns.properties");
 		List<Field> fields = FieldUtils.getFields(resource.getPath(), SCHEMA,
-				TABLE, Collections.<String> emptyList(), true);
+				table, Collections.<String> emptyList(), true);
 		List<Field> newFields = new ArrayList<Field>();
 		List<MaxValue> maxValues = new MaxValues().getMaxValues();
 		for (Field f : fields) {
@@ -92,7 +96,7 @@ public class AnalyticActionListener implements ActionListener {
 			while (it.hasNext()) {
 				Feature feat = (Feature) it.next();
 				if (sel.isSelected(feat)) {
-					String codFonte = feat.getString(FK_FIELD);
+					String codFonte = feat.getString(fkField);
 					selectedFontes.add(codFonte);
 				}
 			}
@@ -153,7 +157,7 @@ public class AnalyticActionListener implements ActionListener {
 			analiseIt = analiseSet.fastIterator();
 			while (analiseIt.hasNext()) {
 				Feature feat = (Feature) analiseIt.next();
-				String codFonte = feat.getString(FK_FIELD);
+				String codFonte = feat.getString(fkField);
 				Object[] list = sourcesToPlot.get(codFonte);
 				if (list != null) {
 					int year = yearFromDate(feat);
@@ -181,18 +185,18 @@ public class AnalyticActionListener implements ActionListener {
 
 	private FeatureSet getAnaliseSet() throws DataException {
 		TOCTableManager toc = new TOCTableManager();
-		TableDocument tableDocument = toc.getTableDocumentByName(TABLE);
+		TableDocument tableDocument = toc.getTableDocumentByName(table);
 		FeatureStore analiseStore = tableDocument.getStore();
 		FeatureQuery query = analiseStore.createFeatureQuery();
 		FeatureQueryOrder order = new FeatureQueryOrder();
-		order.add(DATE_FIELD, true);
+		order.add(dateField, true);
 		query.setOrder(order);
 		FeatureSet analiseSet = analiseStore.getFeatureSet(query);
 		return analiseSet;
 	}
 
 	private int yearFromDate(Feature feat) {
-		java.util.Date date = feat.getDate(DATE_FIELD);
+		java.util.Date date = feat.getDate(dateField);
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
 		int year = cal.get(Calendar.YEAR);

@@ -52,8 +52,10 @@ public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
     @Override
     public AbstractSubForm createSubForm(String tableName) {
 	if (tableName != null) {
-	    if (tableName.equals(AnaliseSubForm.TABLENAME)) {
-		return new AnaliseSubForm();
+	    if (tableName.equals(FontesAnaliseSubForm.TABLENAME)) {
+		return new FontesAnaliseSubForm();
+	    } else if (tableName.equals(EstacoesAnaliseSubForm.TABLENAME)) {
+	    return new EstacoesAnaliseSubForm();	
 	    } else if (tableName
 		    .equals(QuantidadeAguaSubForm.TABLENAME)) {
 		return new QuantidadeAguaSubForm();

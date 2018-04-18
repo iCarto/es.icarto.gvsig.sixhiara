@@ -3,7 +3,7 @@ package es.icarto.gvsig.sixhiara.forms;
 import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 
 @SuppressWarnings("serial")
-public class AnaliseSubForm extends AbstractSubForm {
+public class FontesAnaliseSubForm extends AbstractSubForm {
 
 	public static final String TABLENAME = "fontes_analise";
 	public static String[] colNames = { "cod_fonte", "data_most", "c_ph",

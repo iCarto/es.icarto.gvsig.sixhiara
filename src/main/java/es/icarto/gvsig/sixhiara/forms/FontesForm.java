@@ -13,14 +13,15 @@ public class FontesForm extends BasicAbstractForm {
 
 	public static final String LAYERNAME = "fontes";
 	public static final String PKFIELD = "cod_fonte";
+	public static final String DATE_FIELD = "data_most";
 
 	public FontesForm(FLyrVect layer) {
 		super(layer);
 		addChained("distrito", "provincia");
 		addChained("posto_adm", "distrito");
-		addTableHandler(new AlphanumericTableHandler(AnaliseSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD, AnaliseSubForm.colNames,
-				AnaliseSubForm.colAlias));
+		addTableHandler(new AlphanumericTableHandler(FontesAnaliseSubForm.TABLENAME,
+				getWidgetComponents(), PKFIELD, FontesAnaliseSubForm.colNames,
+				FontesAnaliseSubForm.colAlias));
 		addTableHandler(new AlphanumericTableHandler(
 				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, QuantidadeAguaSubForm.colNames,
@@ -34,7 +35,8 @@ public class FontesForm extends BasicAbstractForm {
 		JButton jButton = new JButton(new ImageIcon(imgURL));
 		jButton.setToolTipText("Analise de fontes");
 
-		jButton.addActionListener(new AnalyticActionListener(layer));
+		jButton.addActionListener(new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME,
+				PKFIELD, DATE_FIELD));
 		getActionsToolBar().add(jButton);
 	}
 
