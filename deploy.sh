@@ -1,12 +1,20 @@
 #!/bin/bash
 
+
+
 VERSION=`date +%g%m%d`_SIRHAN_Inventario
 
-EXT=/home/fpuga/development/gvsig-desktop2.3.1-2501/org.gvsig.desktop-2.0.157/target/product/gvSIG/extensiones/
+while IFS='' read -r line || [[ -n "$line" ]]; do
+    if [[ $line == gvsig.product.folder.path* ]]; then
+	gvsig_product_folder_path=$(echo "$line" | cut -d '=' -f2)
+    fi
+done < ~/.gvsig-devel.properties
+
+EXT="${gvsig_product_folder_path}/gvSIG/extensiones/"
+
 
 # unzip /var/tmp/gvsig-desktop-2.2.0-2313-final-win-x86.zip -d /tmp
 cp -r /var/tmp/gvSIG-desktop-2.3.1-2501-final-win-x86_64/ /tmp/${VERSION}
-
 
 rm -rf /tmp/${VERSION}/install/*
 rm -rf /tmp/${VERSION}/gvSIG/extensiones/CSVWizard
