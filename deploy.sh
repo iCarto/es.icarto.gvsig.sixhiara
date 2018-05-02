@@ -13,9 +13,13 @@ done < ~/.gvsig-devel.properties
 EXT="${gvsig_product_folder_path}/gvSIG/extensiones/"
 
 
-# unzip /var/tmp/gvsig-desktop-2.2.0-2313-final-win-x86.zip -d /tmp
-cp -r /var/tmp/gvSIG-desktop-2.3.1-2501-final-win-x86_64/ /tmp/${VERSION}
+#unzip /var/tmp/gvsig-desktop-2.2.0-2313-final-win-x86.zip -d /tmp
+if [ -d /tmp/${VERSION} ]; then
+    rm -rf /tmp/${VERSION}
+fi
 
+cp -r /var/tmp/gvSIG-desktop-2.3.1-2501-final-win-x86_64/ /tmp/${VERSION}
+    
 rm -rf /tmp/${VERSION}/install/*
 rm -rf /tmp/${VERSION}/gvSIG/extensiones/CSVWizard
 rm -rf /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.animation3d.app
@@ -89,8 +93,8 @@ cp portable/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/ex
 rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
 cp portable/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
 
-# cd /tmp
-# zip -r ${VERSION} /tmp/${VERSION}
+cd /tmp
+zip -r ${VERSION} /tmp/${VERSION}
 
 
 
