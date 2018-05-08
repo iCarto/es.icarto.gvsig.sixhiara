@@ -103,6 +103,7 @@ public class MaxValues {
 		add("e_coli", 0, null);
 		add("cl_resid", 0.2, 0.5);
 		add("cloruros", 250, null);
+		add("sulfatos", 1.5, null);
 		add("ca", 50, null);
 		add("mg", 50, null);
 		add("amonio", 1.5, null);

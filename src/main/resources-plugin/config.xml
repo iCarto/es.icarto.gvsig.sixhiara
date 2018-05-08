@@ -45,7 +45,7 @@
 		<extension class-name="es.icarto.gvsig.sixhiara.AcuiferosFormExtension" active="true">
 			<menu text="sixhiara/aquifers" action-command="" position="30040" icon="es.icarto.gvsig.sixhiara.AcuiferosFormExtension"/>
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.AcuiferosFormExtension" tooltip="aquifers" action-command="" position="5"/>
+				<action-tool icon="es.icarto.gvsig.sixhiara.AcuiferosFormExtension" tooltip="aquifers" action-command="" position="30040"/>
 			</tool-bar>
 		</extension>
 		<extension class-name="es.icarto.gvsig.sixhiara.ExploracoesFormExtension" active="true">

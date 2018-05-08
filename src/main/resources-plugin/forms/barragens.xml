@@ -24,9 +24,9 @@
     </at>
     <at name="componentclass">com.jeta.forms.gui.form.FormComponent</at>
    </super>
-   <at name="id">C:\Users\Antón AP\Desktop\Formularios\barragens.xml</at>
+   <at name="id">/home/fpuga/development/sixhiara/es.icarto.gvsig.sixhiara/src/main/resources-plugin/forms/barragens.xml</at>
    <at name="rowspecs">CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE</at>
-   <at name="colspecs">FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE</at>
+   <at name="colspecs">FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:13DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:21DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:14DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE</at>
    <at name="components">
     <object classname="java.util.LinkedList">
      <item >
@@ -73,9 +73,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">94</at>
+            <at name="height">85</at>
            </object>
           </at>
          </object>
@@ -128,9 +128,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">94</at>
+            <at name="height">85</at>
            </object>
           </at>
          </object>
@@ -182,7 +182,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Nome:</at>
@@ -198,7 +198,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -250,7 +250,7 @@
               </at>
              </object>
             </at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -304,7 +304,7 @@
               </at>
              </object>
             </at>
-            <at name="width">290</at>
+            <at name="width">257</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">BARRAGEM</at>
@@ -320,7 +320,7 @@
               <at name="size">18</at>
              </object>
             </at>
-            <at name="height">69</at>
+            <at name="height">60</at>
            </object>
           </at>
          </object>
@@ -372,7 +372,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Código:</at>
@@ -388,7 +388,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -440,7 +440,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Tipo:</at>
             <at name="fill">
@@ -455,7 +455,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -498,7 +498,7 @@
              </object>
             </at>
             <at name="name">tip_barra</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
@@ -514,7 +514,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -567,7 +567,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Localização:</at>
@@ -578,7 +578,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -630,7 +630,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Provincia:</at>
             <at name="fill">
@@ -645,7 +645,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -697,7 +697,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Distrito:</at>
             <at name="fill">
@@ -712,7 +712,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -764,7 +764,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Posto administrativo:</at>
             <at name="fill">
@@ -779,7 +779,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -832,9 +832,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -886,7 +886,7 @@
               </at>
              </object>
             </at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -940,9 +940,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -995,7 +995,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">302</at>
+            <at name="width">267</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="font">
@@ -1057,7 +1057,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Localidade:</at>
             <at name="fill">
@@ -1072,7 +1072,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1125,7 +1125,7 @@
              </object>
             </at>
             <at name="name">nucleo</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -1133,7 +1133,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1185,7 +1185,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Rio:</at>
             <at name="fill">
@@ -1200,7 +1200,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1253,7 +1253,7 @@
              </object>
             </at>
             <at name="name">rio</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -1261,7 +1261,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1313,7 +1313,7 @@
               </at>
              </object>
             </at>
-            <at name="width">2</at>
+            <at name="width">1</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -1368,9 +1368,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">7</at>
             <at name="name"/>
-            <at name="height">256</at>
+            <at name="height">226</at>
            </object>
           </at>
          </object>
@@ -1423,7 +1423,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">302</at>
+            <at name="width">304</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Características técnicas:</at>
@@ -1434,7 +1434,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1487,9 +1487,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">256</at>
+            <at name="height">226</at>
            </object>
           </at>
          </object>
@@ -1541,9 +1541,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">256</at>
+            <at name="height">226</at>
            </object>
           </at>
          </object>
@@ -1595,9 +1595,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">7</at>
             <at name="name"/>
-            <at name="height">256</at>
+            <at name="height">226</at>
            </object>
           </at>
          </object>
@@ -1649,7 +1649,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Altitude (m):</at>
             <at name="fill">
@@ -1664,7 +1664,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1718,7 +1718,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">altitude</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -1726,7 +1726,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1778,7 +1778,7 @@
               </at>
              </object>
             </at>
-            <at name="width">290</at>
+            <at name="width">294</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Localização hidrologica:</at>
@@ -1794,7 +1794,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1846,7 +1846,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Bacia hidrografica:</at>
             <at name="fill">
@@ -1861,7 +1861,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1913,7 +1913,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Subacia:</at>
             <at name="fill">
@@ -1928,7 +1928,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -1980,8 +1980,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
-            <at name="width">140</at>
+            <at name="width">152</at>
+            <at name="name"/>
             <at name="text">Características Barragem:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -1995,7 +1995,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -2047,7 +2047,7 @@
               </at>
              </object>
             </at>
-            <at name="width">290</at>
+            <at name="width">294</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Capacidade da albufeira:</at>
@@ -2063,7 +2063,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -2117,7 +2117,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">vol_total</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -2125,7 +2125,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2179,7 +2179,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">vol_act</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -2187,7 +2187,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2239,7 +2239,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">&lt;html&gt;Volume total (m&lt;sup style=&quot;font-size:10&quot;&gt;3&lt;/sup&gt;):&lt;/html&gt;</at>
             <at name="fill">
@@ -2254,7 +2254,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">16</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2306,7 +2306,7 @@
               </at>
              </object>
             </at>
-            <at name="width">122</at>
+            <at name="width">136</at>
             <at name="name"/>
             <at name="text">&lt;html&gt;Volume actual (m&lt;sup style=&quot;font-size:10&quot;&gt;3&lt;/sup&gt;):&lt;/html&gt;</at>
             <at name="fill">
@@ -2321,7 +2321,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">16</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2373,7 +2373,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">&lt;html&gt;Altitude da barragem -Ener. potencial-H (m)&lt;/html&gt;</at>
             <at name="fill">
@@ -2388,7 +2388,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">38</at>
+            <at name="height">32</at>
            </object>
           </at>
          </object>
@@ -2442,7 +2442,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">h_altitud</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -2450,7 +2450,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">38</at>
+            <at name="height">32</at>
            </object>
           </at>
          </object>
@@ -2502,7 +2502,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Usos:</at>
@@ -2518,7 +2518,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -2573,7 +2573,7 @@
             <at name="actionCommand">Arcén</at>
             <at name="horizontalAlignment">2</at>
             <at name="name">u_hidroel</at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="text">Hidroelectrico</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
@@ -2582,7 +2582,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2637,7 +2637,7 @@
             <at name="actionCommand">Arcén</at>
             <at name="horizontalAlignment">2</at>
             <at name="name">u_abast</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="text">Abastecimento</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
@@ -2646,7 +2646,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2698,7 +2698,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Tipo de estrutura:</at>
             <at name="fill">
@@ -2713,7 +2713,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -2766,7 +2766,7 @@
              </object>
             </at>
             <at name="name">estrutura</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -2774,7 +2774,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2826,7 +2826,7 @@
               </at>
              </object>
             </at>
-            <at name="width">302</at>
+            <at name="width">304</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -2880,7 +2880,7 @@
               </at>
              </object>
             </at>
-            <at name="width">302</at>
+            <at name="width">267</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -2935,7 +2935,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Comentarios:</at>
@@ -2946,7 +2946,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -2998,9 +2998,9 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
-            <at name="width">8</at>
-            <at name="height">95</at>
+            <at name="width">6</at>
+            <at name="name"/>
+            <at name="height">89</at>
            </object>
           </at>
          </object>
@@ -3053,9 +3053,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">95</at>
+            <at name="height">89</at>
            </object>
           </at>
          </object>
@@ -3111,7 +3111,7 @@
             <at name="scrollableTracksViewportHeight">true</at>
             <at name="scrollableTracksViewportWidth">true</at>
             <at name="name">coment</at>
-            <at name="width">624</at>
+            <at name="width">590</at>
             <at name="wrapStyleWord">true</at>
             <at name="scollBars">
              <object classname="com.jeta.forms.store.properties.ScrollBarsProperty">
@@ -3147,7 +3147,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">57</at>
+            <at name="height">54</at>
            </object>
           </at>
          </object>
@@ -3199,7 +3199,7 @@
               </at>
              </object>
             </at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -3256,7 +3256,7 @@
             <at name="disabledTextColor" object="color">80,80,80</at>
             <at name="background" object="color">236,233,216</at>
             <at name="name">barragem</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -3264,7 +3264,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3319,7 +3319,7 @@
             <at name="disabledTextColor" object="color">80,80,80</at>
             <at name="background" object="color">236,233,216</at>
             <at name="name">cod_barra</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -3327,7 +3327,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3380,8 +3380,8 @@
              </object>
             </at>
             <at name="name">tip_bar_2</at>
-            <at name="width">140</at>
-            <at name="height">17</at>
+            <at name="width">133</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3434,13 +3434,13 @@
              </object>
             </at>
             <at name="name">provincia</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3493,13 +3493,13 @@
              </object>
             </at>
             <at name="name">distrito</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3552,13 +3552,13 @@
              </object>
             </at>
             <at name="name">posto_adm</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3611,13 +3611,13 @@
              </object>
             </at>
             <at name="name">bacia</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3670,13 +3670,13 @@
              </object>
             </at>
             <at name="name">subacia</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -3728,7 +3728,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Estado da barragem:</at>
             <at name="fill">
@@ -3743,7 +3743,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -3795,7 +3795,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Ano de construção:</at>
             <at name="fill">
@@ -3810,7 +3810,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -3862,7 +3862,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Gestão:</at>
             <at name="fill">
@@ -3877,7 +3877,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -3929,7 +3929,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Responsável:</at>
             <at name="fill">
@@ -3944,7 +3944,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -3996,7 +3996,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="name"/>
             <at name="text">Telefone:</at>
             <at name="fill">
@@ -4011,7 +4011,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -4054,7 +4054,7 @@
              </object>
             </at>
             <at name="name">estado</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
@@ -4070,7 +4070,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4124,7 +4124,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">ano_const</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -4132,7 +4132,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4175,7 +4175,7 @@
              </object>
             </at>
             <at name="name">gestao</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
@@ -4191,7 +4191,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4244,7 +4244,7 @@
              </object>
             </at>
             <at name="name">responsab</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -4252,7 +4252,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4306,7 +4306,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">telefone</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -4314,7 +4314,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4367,7 +4367,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">302</at>
+            <at name="width">267</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Caracteristicas gerais</at>
@@ -4378,7 +4378,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4431,9 +4431,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">7</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -4485,7 +4485,7 @@
               </at>
              </object>
             </at>
-            <at name="width">302</at>
+            <at name="width">267</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -4539,9 +4539,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -4594,7 +4594,7 @@
              </object>
             </at>
             <at name="titleColor" object="color">0,50,150</at>
-            <at name="width">302</at>
+            <at name="width">304</at>
             <at name="name"/>
             <at name="foreground" object="color">0,50,150</at>
             <at name="text">Fontes de informação:</at>
@@ -4605,7 +4605,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -4658,9 +4658,9 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="width">8</at>
+            <at name="width">6</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -4712,9 +4712,9 @@
               </at>
              </object>
             </at>
-            <at name="width">8</at>
+            <at name="width">7</at>
             <at name="name"/>
-            <at name="height">157</at>
+            <at name="height">139</at>
            </object>
           </at>
          </object>
@@ -4766,7 +4766,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Fonte de localização:</at>
             <at name="fill">
@@ -4781,7 +4781,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -4833,7 +4833,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Fonte dados tecnicos:</at>
             <at name="fill">
@@ -4848,69 +4848,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">43</at>
-           </object>
-          </at>
-         </object>
-        </at>
-       </object>
-      </at>
-     </item>
-     <item >
-      <at name="value">
-       <object classname="com.jeta.forms.store.memento.BeanMemento">
-        <super classname="com.jeta.forms.store.memento.ComponentMemento">
-         <at name="cellconstraints">
-          <object classname="com.jeta.forms.store.memento.CellConstraintsMemento">
-           <at name="column">36</at>
-           <at name="row">53</at>
-           <at name="colspan">8</at>
-           <at name="rowspan">3</at>
-           <at name="halign">default</at>
-           <at name="valign">default</at>
-           <at name="insets" object="insets">0,0,0,0</at>
-          </object>
-         </at>
-         <at name="componentclass">com.jeta.forms.gui.form.StandardComponent</at>
-        </super>
-        <at name="jetabeanclass">com.jeta.forms.gui.beans.JETABean</at>
-        <at name="beanclass">javax.swing.JTextField</at>
-        <at name="beanproperties">
-         <object classname="com.jeta.forms.store.memento.PropertiesMemento">
-          <at name="classname">javax.swing.JTextField</at>
-          <at name="properties">
-           <object classname="com.jeta.forms.store.support.PropertyMap">
-            <at name="border">
-             <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
-              <super classname="com.jeta.forms.store.properties.BorderProperty">
-               <at name="name">border</at>
-              </super>
-              <at name="borders">
-               <object classname="java.util.LinkedList">
-                <item >
-                 <at name="value">
-                  <object classname="com.jeta.forms.store.properties.DefaultBorderProperty">
-                   <super classname="com.jeta.forms.store.properties.BorderProperty">
-                    <at name="name">border</at>
-                   </super>
-                  </object>
-                 </at>
-                </item>
-               </object>
-              </at>
-             </object>
-            </at>
-            <at name="horizontalAlignment">2</at>
-            <at name="name">fonte_inf</at>
-            <at name="width">140</at>
-            <at name="font">
-             <object classname="com.jeta.forms.store.properties.FontProperty">
-              <at name="family">Arial</at>
-              <at name="style">0</at>
-              <at name="size">11</at>
-             </object>
-            </at>
-            <at name="height">43</at>
+            <at name="height">37</at>
            </object>
           </at>
          </object>
@@ -4963,7 +4901,7 @@
              </object>
             </at>
             <at name="name">fonte_loc</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -4971,7 +4909,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5026,7 +4964,7 @@
             <at name="actionCommand">Arcén</at>
             <at name="horizontalAlignment">2</at>
             <at name="name">inspecoes</at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="text">Inspecções (Nº):</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
@@ -5035,7 +4973,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5089,7 +5027,7 @@
             </at>
             <at name="horizontalAlignment">4</at>
             <at name="name">n_inspec</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Arial</at>
@@ -5097,7 +5035,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5149,7 +5087,7 @@
               </at>
              </object>
             </at>
-            <at name="width">140</at>
+            <at name="width">152</at>
             <at name="name"/>
             <at name="text">Confiabilidade:</at>
             <at name="fill">
@@ -5164,7 +5102,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">13</at>
            </object>
           </at>
          </object>
@@ -5207,7 +5145,7 @@
              </object>
             </at>
             <at name="name">fiab_info</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="items">
              <object classname="com.jeta.forms.store.properties.ItemsProperty">
               <at name="name">items</at>
@@ -5223,7 +5161,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5275,7 +5213,7 @@
               </at>
              </object>
             </at>
-            <at name="width">302</at>
+            <at name="width">304</at>
             <at name="name"/>
             <at name="height">1</at>
            </object>
@@ -5332,7 +5270,7 @@
             <at name="actionCommand">Arcén</at>
             <at name="horizontalAlignment">2</at>
             <at name="name">u_irriga</at>
-            <at name="width">140</at>
+            <at name="width">133</at>
             <at name="text">Agrícola-Irrigação</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
@@ -5341,7 +5279,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5395,9 +5333,9 @@
             </at>
             <at name="horizontalAlignment">1</at>
             <at name="name">element_image</at>
-            <at name="width">290</at>
+            <at name="width">257</at>
             <at name="verticalAlignment">1</at>
-            <at name="height">194</at>
+            <at name="height">170</at>
            </object>
           </at>
          </object>
@@ -5451,9 +5389,9 @@
             </at>
             <at name="actionCommand">JButton</at>
             <at name="name">add_image_button</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="text">Engadir imagem</at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5507,9 +5445,9 @@
             </at>
             <at name="actionCommand">JButton</at>
             <at name="name">delete_image_button</at>
-            <at name="width">140</at>
+            <at name="width">124</at>
             <at name="text">Apagar imagem</at>
-            <at name="height">17</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -5562,9 +5500,101 @@
              </object>
             </at>
             <at name="name"></at>
-            <at name="width">638</at>
+            <at name="width">602</at>
             <at name="text"></at>
             <at name="height">6</at>
+           </object>
+          </at>
+         </object>
+        </at>
+       </object>
+      </at>
+     </item>
+     <item >
+      <at name="value">
+       <object classname="com.jeta.forms.store.memento.BeanMemento">
+        <super classname="com.jeta.forms.store.memento.ComponentMemento">
+         <at name="cellconstraints">
+          <object classname="com.jeta.forms.store.memento.CellConstraintsMemento">
+           <at name="column">36</at>
+           <at name="row">53</at>
+           <at name="colspan">8</at>
+           <at name="rowspan">3</at>
+           <at name="halign">default</at>
+           <at name="valign">default</at>
+           <at name="insets" object="insets">0,0,0,0</at>
+          </object>
+         </at>
+         <at name="componentclass">com.jeta.forms.gui.form.StandardComponent</at>
+        </super>
+        <at name="jetabeanclass">com.jeta.forms.gui.beans.JETABean</at>
+        <at name="beanclass">javax.swing.JTextArea</at>
+        <at name="beanproperties">
+         <object classname="com.jeta.forms.store.memento.PropertiesMemento">
+          <at name="classname">javax.swing.JTextArea</at>
+          <at name="properties">
+           <object classname="com.jeta.forms.store.support.PropertyMap">
+            <at name="border">
+             <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
+              <super classname="com.jeta.forms.store.properties.BorderProperty">
+               <at name="name">border</at>
+              </super>
+              <at name="borders">
+               <object classname="java.util.LinkedList">
+                <item >
+                 <at name="value">
+                  <object classname="com.jeta.forms.store.properties.DefaultBorderProperty">
+                   <super classname="com.jeta.forms.store.properties.BorderProperty">
+                    <at name="name">border</at>
+                   </super>
+                  </object>
+                 </at>
+                </item>
+               </object>
+              </at>
+             </object>
+            </at>
+            <at name="lineWrap">true</at>
+            <at name="scrollableTracksViewportHeight">true</at>
+            <at name="scrollableTracksViewportWidth">true</at>
+            <at name="name">fonte_inf</at>
+            <at name="width">131</at>
+            <at name="wrapStyleWord">true</at>
+            <at name="scollBars">
+             <object classname="com.jeta.forms.store.properties.ScrollBarsProperty">
+              <at name="name">scollBars</at>
+              <at name="verticalpolicy">20</at>
+              <at name="horizontalpolicy">30</at>
+              <at name="border">
+               <object classname="com.jeta.forms.store.properties.CompoundBorderProperty">
+                <super classname="com.jeta.forms.store.properties.BorderProperty">
+                 <at name="name">border</at>
+                </super>
+                <at name="borders">
+                 <object classname="java.util.LinkedList">
+                  <item >
+                   <at name="value">
+                    <object classname="com.jeta.forms.store.properties.DefaultBorderProperty">
+                     <super classname="com.jeta.forms.store.properties.BorderProperty">
+                      <at name="name">border</at>
+                     </super>
+                    </object>
+                   </at>
+                  </item>
+                 </object>
+                </at>
+               </object>
+              </at>
+             </object>
+            </at>
+            <at name="font">
+             <object classname="com.jeta.forms.store.properties.FontProperty">
+              <at name="family">Arial</at>
+              <at name="style">0</at>
+              <at name="size">11</at>
+             </object>
+            </at>
+            <at name="height">35</at>
            </object>
           </at>
          </object>
@@ -5589,7 +5619,7 @@
          </at>
         </object>
        </at>
-       <at name="name"></at>
+       <at name="name"/>
        <at name="fill">
         <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
          <at name="name">fill</at>
