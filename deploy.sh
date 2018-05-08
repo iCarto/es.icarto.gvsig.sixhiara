@@ -92,9 +92,11 @@ mv /tmp/${VERSION}/gvsig-desktop.vbs /tmp/${VERSION}/SIRHAN_Inventario.vbs
 cp portable/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
 rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
 cp portable/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
+cp portable/patches/org.gvsig.datalocator.app.mainplugin-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.datalocator.app.mainplugin/lib/org.gvsig.datalocator.app.mainplugin-2.0.157.jar
+
 
 cd /tmp
-zip -r ${VERSION} /tmp/${VERSION}
+zip -r9 ${VERSION}.zip ${VERSION}
 
 
 
