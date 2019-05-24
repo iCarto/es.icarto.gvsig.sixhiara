@@ -6,9 +6,9 @@ import es.icarto.gvsig.navtableforms.gui.tables.AbstractSubForm;
 public class QuantidadeAguaSubForm extends AbstractSubForm {
 
 	public static final String TABLENAME = "quantidade_agua";
-	public static String[] colNames = { "cod_fonte", "data", "hora",
+	public static String[] colNames = { "cadastro", "data", "hora",
 			"quan_agua" };
-	public static String[] colAlias = { "Cod Fonte", "Data", "Hora",
+	public static String[] colAlias = { "Cadastro", "Data", "Hora",
 			"Quantidade agua" };
 	
 	public QuantidadeAguaSubForm() {

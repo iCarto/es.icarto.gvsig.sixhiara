@@ -12,7 +12,7 @@ import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 public class FontesForm extends BasicAbstractForm {
 
 	public static final String LAYERNAME = "fontes";
-	public static final String PKFIELD = "cod_fonte";
+	public static final String PKFIELD = "cadastro";
 	public static final String DATE_FIELD = "data_most";
 
 	public FontesForm(FLyrVect layer) {
