@@ -26,6 +26,13 @@ public class FontesForm extends BasicAbstractForm {
 				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, QuantidadeAguaSubForm.colNames,
 				QuantidadeAguaSubForm.colAlias));
+		addTableHandler(new AlphanumericTableHandler(FontesLitologiaSubForm.TABLENAME,
+				getWidgetComponents(), PKFIELD, FontesLitologiaSubForm.colNames,
+				FontesLitologiaSubForm.colAlias));
+		addTableHandler(new AlphanumericTableHandler(
+				FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, FontesCaracHidroSubForm.colNames,
+				FontesCaracHidroSubForm.colAlias));
 		addAnalyticsButton();
 	}
 

@@ -8,7 +8,7 @@ public class FontesLitologiaSubForm extends AbstractSubForm {
 	public static final String TABLENAME = "fontes_litologia";
 	public static String[] colNames = { "cadastro", "data_lit", "camada",
 			"litologia", "profundid", "carac_lit" };
-	public static String[] colAlias = { "Cadastro", "Data Ensadio", "Camada",
+	public static String[] colAlias = { "Cadastro", "Data Ensaio", "Camada",
 			"Litologia", "Profundidade (m)", "Característica" };
 
 	@Override

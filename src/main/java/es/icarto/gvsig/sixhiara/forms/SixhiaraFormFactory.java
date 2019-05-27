@@ -65,7 +65,13 @@ public class SixhiaraFormFactory extends DBConnectionBaseFormFactory {
 	    } else if (tableName
 		    .equals(DadosHidrometricosSubForm.TABLENAME)) {
 		return new DadosHidrometricosSubForm();
-	    }
+	    } else if (tableName
+			 .equals(FontesLitologiaSubForm.TABLENAME)) {
+		return new FontesLitologiaSubForm();
+		} else if (tableName
+			 .equals(FontesCaracHidroSubForm.TABLENAME)) {
+		return new FontesCaracHidroSubForm();
+		}
 	}
 	return null;
     }
