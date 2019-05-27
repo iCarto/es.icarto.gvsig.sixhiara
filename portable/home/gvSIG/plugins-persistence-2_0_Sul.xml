@@ -3,13 +3,13 @@
     <xml-tag><property key="DefaultProjection" value="EPSG:32737"/><property key="com.iver.andami.pluginName" value="org.gvsig.app.mainplugin"/></xml-tag>
     <xml-tag>
     	<property key="com.iver.andami.pluginName" value="es.udc.cartolab.gvsig.users"/>
-    	<property key="host" value="192.168.12.7"/>
-    	<property key="port" value="CHEQUEAR"/>
-    	<property key="database" value="arasul"/>
-    	<property key="user" value=""/>
-    	<property key="pwd" value=""/>
+    	<property key="host" value="127.0.0.1"/>
+    	<property key="port" value="5432"/>
+    	<property key="database" value="aranorte"/>
+    	<property key="user" value="postgres"/>
+    	<property key="pwd" value="postgres"/>
     	<property key="schema" value=""/>
-    	<property key="OPEN_CONNECTION_DIALOG_AT_STARTUP" value="true"/>
-    	<property key="AUTOCONNECT_AT_STARTUP" value="false"/>
+    	<property key="OPEN_CONNECTION_DIALOG_AT_STARTUP" value="false"/>
+    	<property key="AUTOCONNECT_AT_STARTUP" value="true"/>
     </xml-tag>
 </xml-tag>
