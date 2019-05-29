@@ -2778,7 +2778,7 @@
             </at>
             <at name="width">200</at>
             <at name="name"/>
-            <at name="text">Localidade:</at>
+            <at name="text">Nucleo:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>

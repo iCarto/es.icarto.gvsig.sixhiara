@@ -112,7 +112,7 @@
             </configuration>
         </plugin>
          -->
-
+<!--
        <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -122,7 +122,8 @@
           <target>1.7</target>
           <encoding>ISO-8859-1</encoding>
         </configuration>
-      </plugin>
+       </plugin>
+       -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>

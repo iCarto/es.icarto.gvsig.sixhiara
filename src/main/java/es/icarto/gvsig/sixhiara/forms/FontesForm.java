@@ -19,6 +19,8 @@ public class FontesForm extends BasicAbstractForm {
 		super(layer);
 		addChained("distrito", "provincia");
 		addChained("posto_adm", "distrito");
+		addChained("bacia", "loc_unidad");
+		addChained("subacia", "bacia");
 		addTableHandler(new AlphanumericTableHandler(FontesAnaliseSubForm.TABLENAME,
 				getWidgetComponents(), PKFIELD, FontesAnaliseSubForm.colNames,
 				FontesAnaliseSubForm.colAlias));
