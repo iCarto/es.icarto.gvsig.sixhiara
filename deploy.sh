@@ -1,9 +1,9 @@
 #!/bin/bash
 
+set -e
 
-
-VERSION=`date +%g%m%d`_SIRHAN_Inventario
-VERSION_SUL=`date +%g%m%d`_SIRHAS_Inventario
+VERSION=$(date +%y%m%d)_SIRHAN_Inventario
+VERSION_SUL=$(date +%y%m%d)_SIRHAS_Inventario
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
     if [[ $line == gvsig.product.folder.path* ]]; then
@@ -80,33 +80,35 @@ cp -R ${EXT}/es.icarto.gvsig.sixhiara /tmp/${VERSION}/gvSIG/extensiones/
 cp -R ${EXT}/es.udc.cartolab.gvsig.elle /tmp/${VERSION}/gvSIG/extensiones/
 cp -R ${EXT}/es.udc.cartolab.gvsig.users /tmp/${VERSION}/gvSIG/extensiones/
 
-cp -R portable/home /tmp/${VERSION}/
-cp -R portable/gvSIG /tmp/${VERSION}/
+cp -R portable/common/home /tmp/${VERSION}/
+cp -R portable/common/gvSIG /tmp/${VERSION}/
+cp -R portable/common/i18n/ /tmp/${VERSION}/
 
-cp -R portable/i18n/ /tmp/${VERSION}/
+### Hacked libs. Remove when fixed upstream
+cp portable/common/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
+rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
+cp portable/common/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
+cp portable/common/patches/org.gvsig.datalocator.app.mainplugin-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.datalocator.app.mainplugin/lib/org.gvsig.datalocator.app.mainplugin-2.0.157.jar
+
+
+
+cp -R portable/norte/* /tmp/${VERSION}/
 
 # mv /tmp/${VERSION}/gvsig-desktop.exe /tmp/${VERSION}/SIRHAN_Inventario.exe
 mv /tmp/${VERSION}/gvsig-desktop.cmd /tmp/${VERSION}/SIRHAN_Inventario.cmd
 mv /tmp/${VERSION}/gvsig-desktop.vbs /tmp/${VERSION}/SIRHAN_Inventario.vbs
 
-### Hacked libs. Remove when fixed upstream
-cp portable/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
-rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
-cp portable/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
-cp portable/patches/org.gvsig.datalocator.app.mainplugin-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.datalocator.app.mainplugin/lib/org.gvsig.datalocator.app.mainplugin-2.0.157.jar
 
 cp -R /tmp/${VERSION} /tmp/${VERSION_SUL}
 
-cp /tmp/${VERSION}/SIRHAN_Inventario.cmd /tmp/${VERSION_SUL}/SIRHAS_Inventario.cmd
-cp /tmp/${VERSION}/SIRHAN_Inventario.vbs /tmp/${VERSION_SUL}/SIRHAS_Inventario.vbs
+cp -R portable/sul/* /tmp/${VERSION_SUL}/
 
-cp portable/home/gvSIG/plugins-persistence-2_0_Sul.xml /tmp/${VERSION_SUL}/home/gvSIG/plugins-persistence-2_0.xml
-cp portable/theme/andami-theme_Sul.xml /tmp/${VERSION_SUL}/gvSIG/extensiones/es.icarto.gvsig.sixhiara/theme/andami-theme.xml
-cp portable/theme/splash_Sul.png /tmp/${VERSION_SUL}/gvSIG/extensiones/es.icarto.gvsig.sixhiara/theme/splash.png
+mv /tmp/${VERSION_SUL}/SIRHAN_Inventario.cmd /tmp/${VERSION_SUL}/SIRHAS_Inventario.cmd
+mv /tmp/${VERSION_SUL}/SIRHAN_Inventario.vbs /tmp/${VERSION_SUL}/SIRHAS_Inventario.vbs
+
 
 cd /tmp
 zip -r9 ${VERSION}.zip ${VERSION}
 zip -r9 ${VERSION_SUL}.zip ${VERSION_SUL}
-
 
 
