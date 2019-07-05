@@ -84,12 +84,8 @@ cp -R portable/common/home /tmp/${VERSION}/
 cp -R portable/common/gvSIG /tmp/${VERSION}/
 cp -R portable/common/i18n/ /tmp/${VERSION}/
 
-### Hacked libs. Remove when fixed upstream
-cp portable/common/patches/org.gvsig.fmap.dal.impl-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.app.mainplugin/lib/org.gvsig.fmap.dal.impl-2.0.157.jar
-rm /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.30.jar
-cp portable/common/patches/org.gvsig.gdal.prov.ogr-1.0.32.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.gdal.app.ogr.mainplugin/lib/org.gvsig.gdal.prov.ogr-1.0.32.jar
-cp portable/common/patches/org.gvsig.datalocator.app.mainplugin-2.0.157.jar /tmp/${VERSION}/gvSIG/extensiones/org.gvsig.datalocator.app.mainplugin/lib/org.gvsig.datalocator.app.mainplugin-2.0.157.jar
-
+BASE_PATCHES_PATH=/tmp/${VERSION}/
+bash apply_patches.sh ${BASE_PATCHES_PATH}
 
 
 cp -R portable/norte/* /tmp/${VERSION}/
