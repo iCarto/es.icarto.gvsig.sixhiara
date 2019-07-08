@@ -1849,7 +1849,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Bacia</at>
+            <at name="text">Bacia:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -1916,7 +1916,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Sub-bacia</at>
+            <at name="text">Sub-bacia:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -2113,7 +2113,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Capacidade (m3)</at>
+            <at name="text">Capacidade (m3):</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -2180,7 +2180,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Altura da barragem (m)</at>
+            <at name="text">Altura da barragem (m):</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -2505,7 +2505,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Tipo de estructura</at>
+            <at name="text">Tipo de estructura:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -3548,7 +3548,7 @@
             </at>
             <at name="width">140</at>
             <at name="name"/>
-            <at name="text">Ano de construcção</at>
+            <at name="text">Ano de construcção:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -3682,7 +3682,7 @@
             </at>
             <at name="width">140</at>
             <at name="name"/>
-            <at name="text">Persoa responsável</at>
+            <at name="text">Persoa responsável:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -5399,7 +5399,7 @@
             </at>
             <at name="width">172</at>
             <at name="name"/>
-            <at name="text">Comprimento (m)</at>
+            <at name="text">Comprimento (m):</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
