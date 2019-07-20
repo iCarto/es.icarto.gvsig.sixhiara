@@ -13,6 +13,8 @@
 	<extensions>
 		<extension class-name="es.icarto.gvsig.sixhiara.ConfigExtension" active="true">
 		</extension>
+		<extension class-name="es.icarto.gvsig.sixhiara.FeatureSwitcherExtension" active="true">
+		</extension>
 
 		<extension class-name="es.icarto.gvsig.sixhiara.LoadDefaultViewExtension" active="true">
 

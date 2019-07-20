@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
 import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
+import es.icarto.gvsig.sixhiara.FeatureSwitcherExtension;
 import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
@@ -35,7 +36,9 @@ public class FontesForm extends BasicAbstractForm {
 				FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, FontesCaracHidroSubForm.colNames,
 				FontesCaracHidroSubForm.colAlias));
-		addAnalyticsButton();
+		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
+			addAnalyticsButton();			
+		}
 	}
 
 	private void addAnalyticsButton() {
