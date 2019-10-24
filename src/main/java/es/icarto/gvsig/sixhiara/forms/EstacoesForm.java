@@ -32,17 +32,13 @@ public class EstacoesForm extends BasicAbstractForm {
 				PKFIELD, DadosHidrometricosSubForm.colNames,
 				DadosHidrometricosSubForm.colAlias));
 		addAnalyticsButton();
+		addCoordinatesButton();
 	}
 	
 	private void addAnalyticsButton() {
-		java.net.URL imgURL = getClass().getClassLoader().getResource(
-				"images/analytics.png");
-		JButton jButton = new JButton(new ImageIcon(imgURL));
-		jButton.setToolTipText("Analise de estacoes");
-
-		jButton.addActionListener(new AnalyticActionListener(layer, EstacoesAnaliseSubForm.TABLENAME,
+		JButton button = addButton("images/analytics.png", "Analise de estacoes");
+		button.addActionListener(new AnalyticActionListener(layer, EstacoesAnaliseSubForm.TABLENAME,
 				PKFIELD, DATE_FIELD));
-		getActionsToolBar().add(jButton);
 	}
 
 	@Override

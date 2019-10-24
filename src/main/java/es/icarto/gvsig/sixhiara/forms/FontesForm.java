@@ -39,17 +39,13 @@ public class FontesForm extends BasicAbstractForm {
 		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
 			addAnalyticsButton();			
 		}
+		addCoordinatesButton();
 	}
 
 	private void addAnalyticsButton() {
-		java.net.URL imgURL = getClass().getClassLoader().getResource(
-				"images/analytics.png");
-		JButton jButton = new JButton(new ImageIcon(imgURL));
-		jButton.setToolTipText("Analise de fontes");
-
-		jButton.addActionListener(new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME,
+		JButton button = addButton("images/analytics.png", "Analise de fontes");
+		button.addActionListener(new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME,
 				PKFIELD, DATE_FIELD));
-		getActionsToolBar().add(jButton);
 	}
 
 	@Override

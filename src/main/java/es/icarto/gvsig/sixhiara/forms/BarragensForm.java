@@ -13,6 +13,8 @@ public class BarragensForm extends BasicAbstractForm {
 		addChained("distrito", "provincia");
 		addChained("posto_adm", "distrito");
 		addChained("subacia", "bacia");
+		addNewFeatureButton();
+		addCoordinatesButton();
 	}
 
 	@Override

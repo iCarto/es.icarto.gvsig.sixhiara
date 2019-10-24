@@ -11,6 +11,8 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import org.gvsig.fmap.geom.Geometry;
+import org.gvsig.fmap.geom.primitive.Point;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,11 +42,8 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	}
 
 	protected void addSorterButton() {
-		URL imgURL = getClass().getClassLoader().getResource("images/sort.png");
-		JButton jButton = new JButton(new ImageIcon(imgURL));
-		jButton.setToolTipText("sort_features");
-
-		jButton.addActionListener(new ActionListener() {
+		JButton button = addButton("images/sort.png", "sort_features");
+		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				URL resource = BasicAbstractForm.this.getClass()
@@ -59,7 +58,26 @@ public abstract class BasicAbstractForm extends AbstractForm {
 				}
 			}
 		});
-		getActionsToolBar().add(jButton);
+	}
+	
+	protected void addNewFeatureButton() {
+		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar feature");
+		ActionListener btListener = new CoordinateListener(this);
+		button.addActionListener(btListener);
+	}
+	
+	protected void addCoordinatesButton() {
+		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar ponto baseado em coordenadas");
+		ActionListener btListener = new CoordinateListener(this);
+		button.addActionListener(btListener);
+	}
+	
+	protected JButton addButton(String imagePath, String tooltip) {
+		URL imgURL = getClass().getClassLoader().getResource(imagePath);
+		JButton button = new JButton(new ImageIcon(imgURL));
+		button.setToolTipText(tooltip);
+		getActionsToolBar().add(button);
+		return button;
 	}
 
 	@Override
