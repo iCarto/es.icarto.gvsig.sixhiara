@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,6 +34,7 @@ import org.slf4j.LoggerFactory;
 import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
 import es.icarto.gvsig.navtableforms.utils.TOCTableManager;
+import es.icarto.gvsig.sixhiara.forms.EstacoesAnaliseSubForm;
 import es.icarto.gvsig.sixhiara.forms.FieldUtils;
 import es.icarto.gvsig.sixhiara.plots.MaxValues.MaxValue;
 
@@ -67,6 +69,14 @@ public class AnalyticActionListener implements ActionListener {
 		List<Field> newFields = new ArrayList<Field>();
 		List<MaxValue> maxValues = new MaxValues().getMaxValues();
 		for (Field f : fields) {
+			if (this.table.equals(EstacoesAnaliseSubForm.TABLENAME)) {
+				List<String> notForEstacoes = Arrays.asList(new String[] {
+						"nitratos", "nitritos", "coli_feca", "coli_tot",
+				"amonio" });
+				if (notForEstacoes.contains(f.getKey())) {
+					continue;
+				}
+			}
 			for (MaxValue m : maxValues) {
 				if (m.k.equals(f.getKey())) {
 					f.setValue(m);
@@ -161,6 +171,9 @@ public class AnalyticActionListener implements ActionListener {
 				Object[] list = sourcesToPlot.get(codFonte);
 				if (list != null) {
 					int year = yearFromDate(feat);
+					if ((year - firstYear) < 0) {
+						continue;
+					}
 					if (feat.get(field.getKey()) == null) {
 						list[year - firstYear] = null;
 					} else {
