@@ -1,11 +1,10 @@
 package es.icarto.gvsig.sixhiara.forms;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
-import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
+import es.icarto.gvsig.sixhiara.navtableforms.SortedAlphanumericTableHandler;
 import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
@@ -20,25 +19,27 @@ public class EstacoesForm extends BasicAbstractForm {
 		addChained("distrito", "provincia");
 		addChained("posto_adm", "distrito");
 		addChained("subacia", "bacia");
-		addTableHandler(new AlphanumericTableHandler(EstacoesAnaliseSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD, EstacoesAnaliseSubForm.colNames,
+		addTableHandler(new SortedAlphanumericTableHandler(
+				EstacoesAnaliseSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, EstacoesAnaliseSubForm.colNames,
 				EstacoesAnaliseSubForm.colAlias));
-		addTableHandler(new AlphanumericTableHandler(
+		addTableHandler(new SortedAlphanumericTableHandler(
 				DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosPluviometricosSubForm.colNames,
 				DadosPluviometricosSubForm.colAlias));
-		addTableHandler(new AlphanumericTableHandler(
+		addTableHandler(new SortedAlphanumericTableHandler(
 				DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosHidrometricosSubForm.colNames,
 				DadosHidrometricosSubForm.colAlias));
 		addAnalyticsButton();
 		addCoordinatesButton();
 	}
-	
+
 	private void addAnalyticsButton() {
-		JButton button = addButton("images/analytics.png", "Analise de estacoes");
-		button.addActionListener(new AnalyticActionListener(layer, EstacoesAnaliseSubForm.TABLENAME,
-				PKFIELD, DATE_FIELD));
+		JButton button = addButton("images/analytics.png",
+				"Analise de estacoes");
+		button.addActionListener(new AnalyticActionListener(layer,
+				EstacoesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override

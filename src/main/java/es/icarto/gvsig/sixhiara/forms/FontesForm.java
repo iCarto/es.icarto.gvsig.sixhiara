@@ -1,12 +1,11 @@
 package es.icarto.gvsig.sixhiara.forms;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
-import es.icarto.gvsig.navtableforms.gui.tables.handler.AlphanumericTableHandler;
 import es.icarto.gvsig.sixhiara.FeatureSwitcherExtension;
+import es.icarto.gvsig.sixhiara.navtableforms.SortedAlphanumericTableHandler;
 import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
@@ -22,30 +21,31 @@ public class FontesForm extends BasicAbstractForm {
 		addChained("posto_adm", "distrito");
 		addChained("bacia", "loc_unidad");
 		addChained("subacia", "bacia");
-		addTableHandler(new AlphanumericTableHandler(FontesAnaliseSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD, FontesAnaliseSubForm.colNames,
-				FontesAnaliseSubForm.colAlias));
-		addTableHandler(new AlphanumericTableHandler(
+		addTableHandler(new SortedAlphanumericTableHandler(
+				FontesAnaliseSubForm.TABLENAME, getWidgetComponents(), PKFIELD,
+				FontesAnaliseSubForm.colNames, FontesAnaliseSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(
 				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, QuantidadeAguaSubForm.colNames,
 				QuantidadeAguaSubForm.colAlias));
-		addTableHandler(new AlphanumericTableHandler(FontesLitologiaSubForm.TABLENAME,
-				getWidgetComponents(), PKFIELD, FontesLitologiaSubForm.colNames,
+		addTableHandler(new SortedAlphanumericTableHandler(
+				FontesLitologiaSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, FontesLitologiaSubForm.colNames,
 				FontesLitologiaSubForm.colAlias));
-		addTableHandler(new AlphanumericTableHandler(
+		addTableHandler(new SortedAlphanumericTableHandler(
 				FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, FontesCaracHidroSubForm.colNames,
 				FontesCaracHidroSubForm.colAlias));
 		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
-			addAnalyticsButton();			
+			addAnalyticsButton();
 		}
 		addCoordinatesButton();
 	}
 
 	private void addAnalyticsButton() {
 		JButton button = addButton("images/analytics.png", "Analise de fontes");
-		button.addActionListener(new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME,
-				PKFIELD, DATE_FIELD));
+		button.addActionListener(new AnalyticActionListener(layer,
+				FontesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override
