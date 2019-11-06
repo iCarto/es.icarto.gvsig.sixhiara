@@ -39,6 +39,7 @@ public class FontesForm extends BasicAbstractForm {
 		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
 			addAnalyticsButton();
 		}
+		addNewFeatureButton();
 		addCoordinatesButton();
 	}
 

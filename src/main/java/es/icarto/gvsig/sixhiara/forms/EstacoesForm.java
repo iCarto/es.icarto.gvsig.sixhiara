@@ -32,6 +32,7 @@ public class EstacoesForm extends BasicAbstractForm {
 				PKFIELD, DadosHidrometricosSubForm.colNames,
 				DadosHidrometricosSubForm.colAlias));
 		addAnalyticsButton();
+		addNewFeatureButton();
 		addCoordinatesButton();
 	}
 

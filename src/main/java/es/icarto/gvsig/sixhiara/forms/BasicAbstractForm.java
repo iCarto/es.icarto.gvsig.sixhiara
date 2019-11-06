@@ -11,7 +11,9 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import org.gvsig.fmap.dal.exception.DataException;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+import org.gvsig.tools.exception.BaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,8 +22,10 @@ import com.jeta.forms.gui.common.FormException;
 
 import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
+import es.icarto.gvsig.navtable.edition.LayerEdition;
 import es.icarto.gvsig.navtableforms.AbstractForm;
 import es.icarto.gvsig.sixhiara.forms.actions.CoordinateListener;
+import es.icarto.gvsig.sixhiara.forms.actions.NewFeatureListener;
 import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 import es.udc.cartolab.gvsig.navtable.contextualmenu.ChooseSortFieldDialog;
 
@@ -31,6 +35,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	private static final Logger logger = LoggerFactory
 			.getLogger(BasicAbstractForm.class);
 	private ImagesInForms images;
+	private boolean autoediting;
 
 	public BasicAbstractForm(FLyrVect layer) {
 		super(layer);
@@ -60,9 +65,9 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	}
 
 	protected void addNewFeatureButton() {
-		JButton button = addButton("images/add_coordinates_icon.png",
+		JButton button = addButton("images/new_feature.png",
 				"Adicionar feature");
-		ActionListener btListener = new CoordinateListener(this);
+		ActionListener btListener = new NewFeatureListener(this);
 		button.addActionListener(btListener);
 	}
 
@@ -133,5 +138,35 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	public abstract String getBasicName();
 
 	protected abstract String getPrimaryKey();
+
+	/*
+	 * Desde la funcionalidad de crear una nueva feature se puede poner la capa
+	 * en edición automaticamente, pero no se puede cerrar del mismo modo,
+	 * porqué hay que esperar a que el usuario rellene los valores obligatorios.
+	 *
+	 * Aquí marcamos que la edición se ha abierto de forma automática, de modo
+	 * que si tras darle al botón guardar se detecta esa situación se cierra la
+	 * edición también de forma automática
+	 */
+	public void setAutoEditing() {
+		this.autoediting = true;
+	}
+
+	@Override
+	public boolean saveRecord() throws DataException {
+		boolean flag = super.saveRecord();
+		if (this.autoediting) {
+			LayerEdition le = new LayerEdition();
+			if (layer.isEditing()) {
+				le.stopEditing(layer, false);
+			}
+			this.autoediting = false;
+		}
+		return flag;
+	}
+
+	public void insertEmptyFeature() throws BaseException {
+		navigation.insertFeature();
+	}
 
 }
