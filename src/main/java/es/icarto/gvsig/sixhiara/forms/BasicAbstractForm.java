@@ -11,8 +11,6 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import org.gvsig.fmap.geom.Geometry;
-import org.gvsig.fmap.geom.primitive.Point;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +21,7 @@ import com.jeta.forms.gui.common.FormException;
 import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
 import es.icarto.gvsig.navtableforms.AbstractForm;
+import es.icarto.gvsig.sixhiara.forms.actions.CoordinateListener;
 import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
 import es.udc.cartolab.gvsig.navtable.contextualmenu.ChooseSortFieldDialog;
 
@@ -59,19 +58,21 @@ public abstract class BasicAbstractForm extends AbstractForm {
 			}
 		});
 	}
-	
+
 	protected void addNewFeatureButton() {
-		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar feature");
+		JButton button = addButton("images/add_coordinates_icon.png",
+				"Adicionar feature");
 		ActionListener btListener = new CoordinateListener(this);
 		button.addActionListener(btListener);
 	}
-	
+
 	protected void addCoordinatesButton() {
-		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar ponto baseado em coordenadas");
+		JButton button = addButton("images/add_coordinates_icon.png",
+				"Adicionar ponto baseado em coordenadas");
 		ActionListener btListener = new CoordinateListener(this);
 		button.addActionListener(btListener);
 	}
-	
+
 	protected JButton addButton(String imagePath, String tooltip) {
 		URL imgURL = getClass().getClassLoader().getResource(imagePath);
 		JButton button = new JButton(new ImageIcon(imgURL));
