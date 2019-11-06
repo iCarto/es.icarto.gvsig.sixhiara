@@ -111,7 +111,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	}
 
 	@Override
-	protected String getPrimaryKeyValue() {
+	public String getPrimaryKeyValue() {
 		return getFormController().getValue(getPrimaryKey());
 	}
 
@@ -129,7 +129,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 
 	protected abstract String getSchema();
 
-	protected abstract String getBasicName();
+	public abstract String getBasicName();
 
 	protected abstract String getPrimaryKey();
 

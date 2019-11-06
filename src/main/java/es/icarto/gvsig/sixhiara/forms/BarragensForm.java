@@ -23,7 +23,7 @@ public class BarragensForm extends BasicAbstractForm {
 	}
 
 	@Override
-	protected String getBasicName() {
+	public String getBasicName() {
 		return "barragens";
 	}
 

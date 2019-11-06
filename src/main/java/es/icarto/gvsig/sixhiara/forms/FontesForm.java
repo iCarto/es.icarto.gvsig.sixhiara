@@ -54,7 +54,7 @@ public class FontesForm extends BasicAbstractForm {
 	}
 
 	@Override
-	protected String getBasicName() {
+	public String getBasicName() {
 		return "fontes";
 	}
 

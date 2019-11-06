@@ -48,7 +48,7 @@ public class EstacoesForm extends BasicAbstractForm {
 	}
 
 	@Override
-	protected String getBasicName() {
+	public String getBasicName() {
 		return "estacoes";
 	}
 

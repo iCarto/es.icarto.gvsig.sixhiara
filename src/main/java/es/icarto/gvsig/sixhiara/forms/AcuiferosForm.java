@@ -18,7 +18,7 @@ public class AcuiferosForm extends BasicAbstractForm {
 	}
 
 	@Override
-	protected String getBasicName() {
+	public String getBasicName() {
 		return "acuiferos";
 	}
 
