@@ -36,10 +36,23 @@ public class LocatorBytCoordsAddButton extends LocatorByCoordsButton {
 		Action action = new AbstractAction("Gravar") {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				GPoint point = new GPoint(lModel.getPoint());
-				point.reProject(form.getLayer().getProjection());
 				LayerController layerController = (LayerController) form
 						.getFormController();
+				boolean geomExists = layerController.getGeom() != null;
+				if (geomExists) {
+					int showConfirmDialog = JOptionPane
+							.showConfirmDialog(
+									dialog,
+									"A feature já possui coordenadas. Se continuar, eles serão modificados",
+									"Substituir coordenadas",
+									JOptionPane.OK_CANCEL_OPTION);
+					if (showConfirmDialog != JOptionPane.OK_OPTION) {
+						return;
+					}
+				}
+				GPoint point = new GPoint(lModel.getPoint());
+				point.reProject(form.getLayer().getProjection());
+
 				layerController.setGeom(point.getPoint());
 				boolean wellSaved = true;
 				try {
@@ -63,7 +76,9 @@ public class LocatorBytCoordsAddButton extends LocatorByCoordsButton {
 
 	@Override
 	public void modelChanged(LocatorByCoordsModel model, String event) {
-		this.getAction().setEnabled(model.isZoomed());
+		// this.getAction().setEnabled(model.isZoomed());
+		boolean enabled = model.getPoint() != null;
+		this.getAction().setEnabled(enabled);
 	}
 
 }

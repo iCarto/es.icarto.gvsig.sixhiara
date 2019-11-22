@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import es.icarto.gvsig.commons.AbstractExtension;
 import es.icarto.gvsig.commons.locatorbycoords.CoordProvider;
 import es.icarto.gvsig.commons.locatorbycoords.CoordProviderFactory;
+import es.icarto.gvsig.commons.locatorbycoords.LocatonByCoordsZoomButton;
 import es.icarto.gvsig.commons.locatorbycoords.LocatorByCoordsDialog;
 import es.icarto.gvsig.commons.locatorbycoords.LocatorByCoordsModel;
 import es.icarto.gvsig.commons.map.ZoomTo;
@@ -53,6 +54,7 @@ public class LocatorByCoordsExtension extends AbstractExtension {
 	@Override
 	public void execute(String actionCommand) {
 		LocatorByCoordsDialog dialog = getDialog();
+		dialog.addButton(new LocatonByCoordsZoomButton(dialog.getModel()));
 		if (dialog != null) {
 			dialog.openDialog();
 		}
