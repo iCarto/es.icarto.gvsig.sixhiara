@@ -50,7 +50,7 @@ public class ImportExploracoesExtension extends AbstractExtension {
 			return;
 		}
 		try {
-
+			// TODO: Usar funcionalidades de gvSIG. https://redmine.gvsig.net/redmine/issues/4327
 			String tmpDir = System.getProperty("java.io.tmpdir");
 			Unzip.unzip(zipFile, new File(tmpDir));
 			// Comprobar que tiene el formato correcto

@@ -1,7 +1,0 @@
-cd /var/development/gvsig-desktop2.3.1-2501/org.gvsig.desktop-2.0.157
-cp org.gvsig.desktop.compat.cdc/org.gvsig.fmap.dal/org.gvsig.fmap.dal.db/org.gvsig.fmap.dal.db.jdbc/src/main/java/org/gvsig/fmap/dal/store/jdbc/JDBCHelper.java org.gvsig.desktop.compat.cdc/org.gvsig.fmap.dal/org.gvsig.fmap.dal.impl/src/main/java/org/gvsig/fmap/dal/feature/impl/featureset/FastOrderedIterator.java org.gvsig.desktop.compat.cdc/org.gvsig.fmap.mapcontext/org.gvsig.fmap.mapcontext.api/src/main/java/org/gvsig/fmap/mapcontext/impl/CachedImage.java org.gvsig.desktop.compat.cdc/org.gvsig.fmap.mapcontext/org.gvsig.fmap.mapcontext.api/src/main/java/org/gvsig/fmap/mapcontext/impl/DefaultMapContextDrawer.java org.gvsig.desktop.compat.cdc/org.gvsig.fmap.mapcontext/org.gvsig.fmap.mapcontext.api/src/main/java/org/gvsig/fmap/mapcontext/impl/DrawList.java org.gvsig.desktop.plugin/org.gvsig.app/org.gvsig.app.mainplugin/src/main/java/org/gvsig/app/extension/ProjectExtension.java org.gvsig.desktop.plugin/org.gvsig.datalocator.app/org.gvsig.datalocator.app.mainplugin/src/main/java/org/gvsig/datalocator/gui/DataSelectionPanel.java /var/development/sixhiara/es.icarto.gvsig.sixhiara/portable/common/patches/modified_files
-
-cd /var/development/gvsig-desktop2.3.1-2501/org.gvsig.gdal-1.0.32
- cp org.gvsig.gdal.prov/org.gvsig.gdal.prov.ogr/src/main/java/org/gvsig/gdal/prov/ogr/OGRDataStoreProvider.java /var/development/sixhiara/es.icarto.gvsig.sixhiara/portable/common/patches/modified_files
- 
- 

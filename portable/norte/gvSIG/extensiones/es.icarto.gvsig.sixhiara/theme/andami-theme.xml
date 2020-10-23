@@ -41,5 +41,5 @@
         <Icon path="gvsig-icon16x16.png"/>
     </ApplicationImages>
     <ApplicationName value="SIRHAN: Inventario"/>
-    <priority value="1000"/>
+    <priority value="1001"/>
 </AndamiProperties>

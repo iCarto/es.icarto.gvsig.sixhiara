@@ -25,8 +25,6 @@ public class LoadGPXExtension extends AbstractExtension {
 	private static final Logger logger = LoggerFactory
 			.getLogger(LoadGPXExtension.class);
 
-	private IView view;
-
 	@Override
 	public void execute(String actionCommand) {
 		String homeFolder = System.getProperty("user.home");
@@ -49,7 +47,7 @@ public class LoadGPXExtension extends AbstractExtension {
 		try {
 			FLyrVect f = GPXFactory.getWaypointLyrFromGPX(selectedFile,
 					"EPSG:4326");
-			FLayers layers = view.getMapControl().getMapContext().getLayers();
+			FLayers layers = getView().getMapControl().getMapContext().getLayers();
 			layers.add(f);
 		} catch (LoadLayerException e) {
 			logger.error(e.getMessage(), e);

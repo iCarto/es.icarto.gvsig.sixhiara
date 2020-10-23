@@ -25,6 +25,7 @@ import org.gvsig.fmap.dal.feature.FeatureQueryOrder;
 import org.gvsig.fmap.dal.feature.FeatureSelection;
 import org.gvsig.fmap.dal.feature.FeatureSet;
 import org.gvsig.fmap.dal.feature.FeatureStore;
+import org.gvsig.fmap.dal.feature.impl.DefaultFeatureQueryOrder;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 import org.gvsig.tools.dispose.DisposableIterator;
 import org.gvsig.tools.dispose.DisposeUtils;
@@ -200,10 +201,7 @@ public class AnalyticActionListener implements ActionListener {
 		TOCTableManager toc = new TOCTableManager();
 		TableDocument tableDocument = toc.getTableDocumentByName(table);
 		FeatureStore analiseStore = tableDocument.getStore();
-		FeatureQuery query = analiseStore.createFeatureQuery();
-		FeatureQueryOrder order = new FeatureQueryOrder();
-		order.add(dateField, true);
-		query.setOrder(order);
+		FeatureQuery query = analiseStore.createFeatureQuery("", dateField, true);
 		FeatureSet analiseSet = analiseStore.getFeatureSet(query);
 		return analiseSet;
 	}

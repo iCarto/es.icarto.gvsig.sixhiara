@@ -101,6 +101,7 @@ public class ExportFontes {
 	}
 
 	private String getFile() {
+		// TODO: Usar funcionalidades de gvSIG. https://redmine.gvsig.net/redmine/issues/4327
 		String tmpDir = System.getProperty("java.io.tmpdir");
 		String filePath = tmpDir + File.separator + "fontes.shp";
 		return filePath;
