@@ -82,10 +82,17 @@
 			</tool-bar>
 		</extension>
 		
-		<extension class-name="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" active="true">
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LocatorByCoordsExtension.menu" action-command="" position="30092" icon="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" />
+		<extension class-name="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" active="true">
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportToUtentesExtension" action-command="" position="30092" icon="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" />
 			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" tooltip="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension.tooltip" action-command="" position="30092" />
+				<action-tool icon="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" tooltip="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" action-command="" position="30092"/>
+			</tool-bar>
+		</extension>
+		
+		<extension class-name="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" active="true">
+			<menu text="sixhiara/es.icarto.gvsig.sixhiara.LocatorByCoordsExtension.menu" action-command="" position="30094" icon="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" />
+			<tool-bar name="sixhiara" position="70">
+				<action-tool icon="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension" tooltip="es.icarto.gvsig.sixhiara.LocatorByCoordsExtension.tooltip" action-command="" position="30094" />
 			</tool-bar>
 		</extension>
 		

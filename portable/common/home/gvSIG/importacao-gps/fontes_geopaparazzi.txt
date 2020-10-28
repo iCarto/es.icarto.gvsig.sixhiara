@@ -1,0 +1,11 @@
+cadastro=cadastro
+altitude=altim
+tipo_agua=tipo_agua
+tip_fonte=tipo_fonte
+d_dado=d_dado
+sist_med=sist_med
+c_max=c_max
+c_soli=c_soli
+c_real=c_real
+nome_prop=exp_name
+red_monit:constant(NO)

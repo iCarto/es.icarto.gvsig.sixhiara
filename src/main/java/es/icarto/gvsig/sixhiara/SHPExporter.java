@@ -2,12 +2,10 @@ package es.icarto.gvsig.sixhiara;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.gvsig.fmap.dal.DALLocator;
 import org.gvsig.fmap.dal.DataManager;
 import org.gvsig.fmap.dal.exception.DataException;
@@ -22,45 +20,62 @@ import org.gvsig.fmap.dal.feature.FeatureType;
 import org.gvsig.fmap.geom.Geometry;
 import org.gvsig.fmap.geom.type.GeometryType;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
+import org.gvsig.tools.ToolsLocator;
 import org.gvsig.tools.dispose.DisposableIterator;
 import org.gvsig.tools.dispose.DisposeUtils;
 import org.gvsig.tools.exception.BaseException;
+import org.gvsig.tools.folders.FoldersManager;
 
 import es.icarto.gvsig.commons.datasources.SHPFactory;
 import es.icarto.gvsig.commons.utils.FileNameUtils;
 import es.icarto.gvsig.commons.utils.Zip;
 
-public class ExportFontes {
+public class SHPExporter {
 
 	private final FLyrVect layer;
+	private String epsg;
+	private List<String> acceptedFields = new ArrayList<String>();
 
-	public ExportFontes(FLyrVect layer) {
+	public SHPExporter(FLyrVect layer) {
 		this.layer = layer;
 	}
 
 	public void execute(String outputFolder) throws Exception {
-		String filePath = getFile();
+		outputFolder = outputFolder.endsWith(File.separator) ? outputFolder : outputFolder + File.separator;
+		
+		FoldersManager manager = ToolsLocator.getFoldersManager();
+		File tmpDir = manager.getTemporaryFolder();
+		String filePath = tmpDir.getAbsolutePath() + File.separator + layer.getName() + ".shp";
 		File file = new File(filePath);
 		exportTo(file);
-		createPRJ(filePath);
-
-		String zipFile = getZipFile(outputFolder);
-		zipTo(file, zipFile);
+//		createPRJ(filePath);
+		String zipFile = outputFolder + layer.getName() + ".zip";
+		zipTo(file, zipFile);			
 	}
 
-	private void createPRJ(String filePath) throws IOException {
-		String out = FileNameUtils.replaceExtension(filePath, ".prj");
-		URL url = this.getClass().getResource("/assets/fontes.prj");
-		FileUtils.copyFile(new File(url.getPath()), new File(out));
+	// TODO: Esto parece arreglado. Eliminar
+//	private void createPRJ(String filePath) throws IOException {
+//		String out = FileNameUtils.replaceExtension(filePath, ".prj");
+//		URL url = this.getClass().getResource("/assets/fontes.prj");
+//		FileUtils.copyFile(new File(url.getPath()), new File(out));
+//	}
+
+	
+	public void setEPSG(String epsg) {
+		/**
+		 * When set will reproject the exported shape
+		 */
+		this.epsg = epsg;
+	}
+	
+	public void setAcceptedFields(List<String> acceptedFields) {
+		/**
+		 * If set, only the fields in this list will be exported
+		 */
+		this.acceptedFields = acceptedFields;
 	}
 
-	private String getZipFile(String outputFolder) {
-		if (outputFolder.endsWith(File.separator)) {
-			return outputFolder + "fontes.zip";
-		} else {
-			return outputFolder + File.separator + "fontes.zip";
-		}
-	}
+	
 
 	public void exportTo(File file) throws BaseException {
 		FeatureStore shpStore = null;
@@ -68,11 +83,9 @@ public class ExportFontes {
 		DisposableIterator dbIt = null;
 		try {
 			EditableFeatureType targetType = getTargetType(layer);
-			String crs = layer.getProjection().getAbrev();
+			String crs = this.epsg != null ? this.epsg : layer.getProjection().getAbrev();
 			SHPFactory.createSHP(file, targetType, crs);
-
 			shpStore = SHPFactory.getFeatureStore(file, crs);
-
 			shpStore.edit(FeatureStore.MODE_APPEND);
 			dbSet = layer.getFeatureStore().getFeatureSet();
 			dbIt = dbSet.fastIterator();
@@ -100,16 +113,9 @@ public class ExportFontes {
 		zip.zipIt(target);
 	}
 
-	private String getFile() {
-		// TODO: Usar funcionalidades de gvSIG. https://redmine.gvsig.net/redmine/issues/4327
-		String tmpDir = System.getProperty("java.io.tmpdir");
-		String filePath = tmpDir + File.separator + "fontes.shp";
-		return filePath;
-	}
-
 	private EditableFeatureType getTargetType(FLyrVect layer)
 			throws DataException {
-		final List<String> acceptFields = Arrays.asList("geom", "red_monit");
+		
 		FeatureType srcType = layer.getFeatureStore().getDefaultFeatureType();
 		DataManager manager = DALLocator.getDataManager();
 		EditableFeatureType targetType = manager.createFeatureType();
@@ -117,17 +123,29 @@ public class ExportFontes {
 		while (it.hasNext()) {
 			FeatureAttributeDescriptor attDesc = it.next();
 			String attName = attDesc.getName();
-			if (!acceptFields.contains(attName)) {
+			if (!acceptedFields.isEmpty() && !acceptedFields.contains(attName)) {
 				continue;
 			}
 			int attType = attDesc.getType();
 			if (attType == org.gvsig.fmap.geom.DataTypes.GEOMETRY) {
 				GeometryType geomType = attDesc.getGeomType();
 				EditableFeatureAttributeDescriptor add = targetType.add(
-						attName, attType);
+						"geometry", attType);
 				add.setGeometryType(geomType);
-				targetType.setDefaultGeometryAttributeName(attName);
+				targetType.setDefaultGeometryAttributeName("geometry");
 			} else {
+//				String newName = attName;
+//				if (attName.length() > 9) {
+//					newName = attName.substring(0, 9);
+//					int i = 1;
+//					while (targetType.get(newName) != null) {
+//						newName = attName.substring(0, 7) + "_" + i;
+//						i += 1;
+//					}
+//				}
+				if (attName.length() > 9) {
+					continue;
+				}
 				EditableFeatureAttributeDescriptor add = targetType.add(
 						attName, attType);
 				add.setSize(attDesc.getSize());
