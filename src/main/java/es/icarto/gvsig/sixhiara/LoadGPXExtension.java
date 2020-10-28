@@ -9,7 +9,6 @@ import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import org.gvsig.andami.PluginServices;
-import org.gvsig.app.project.documents.view.gui.IView;
 import org.gvsig.fmap.mapcontext.exceptions.LoadLayerException;
 import org.gvsig.fmap.mapcontext.layers.FLayers;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;

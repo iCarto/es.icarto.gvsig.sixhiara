@@ -4,7 +4,7 @@ import static es.icarto.gvsig.sixhiara.ConfigExtension.NAME;
 
 import javax.swing.JSplitPane;
 
-import org.gvsig.andami.PluginServices;
+import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
 import org.gvsig.app.project.documents.view.MapOverview;
 import org.gvsig.app.project.documents.view.gui.IView;
 import org.gvsig.fmap.dal.exception.ReadException;
@@ -24,44 +24,43 @@ import es.udc.cartolab.gvsig.users.utils.DBSession;
 
 public class LoadDefaultViewExtension extends AbstractExtension {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(LoadDefaultViewExtension.class);
+	private static final Logger logger = LoggerFactory.getLogger(LoadDefaultViewExtension.class);
 
 	@Override
 	public void execute(String actionCommand) {
-		PluginServices.getMDIManager().setWaitCursor();
+		MDIManagerFactory.getManager().setWaitCursor();
 		try {
-			IView view = Andami.createViewIfNeeded(NAME, "EPSG:32737");
+			final IView view = Andami.createViewIfNeeded(NAME, "EPSG:32737");
 			resizeOverview(view);
 			loadVectorial(view);
 			zoomToBacias(view);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			logger.error(e.getMessage(), e);
 		} finally {
-			PluginServices.getMDIManager().restoreCursor();
+			MDIManagerFactory.getManager().restoreCursor();
 		}
 	}
 
 	private void resizeOverview(IView iView) {
-		MapOverview mapOverview = iView.getMapOverview();
-		JSplitPane parent = (JSplitPane) mapOverview.getParent();
+		final MapOverview mapOverview = iView.getMapOverview();
+		final JSplitPane parent = (JSplitPane) mapOverview.getParent();
 		parent.setDividerLocation(0.95);
 	}
 
 	private void loadVectorial(IView view) throws Exception {
-		MapDAO mapDAO = MapDAO.getInstance();
-		ELLEMap map = mapDAO.getMap(view, NAME, LoadLegend.DB_LEGEND, NAME);
+		final MapDAO mapDAO = MapDAO.getInstance();
+		final ELLEMap map = mapDAO.getMap(view, NAME, LoadLegend.DB_LEGEND, NAME);
 		map.load(view.getMapControl().getProjection());
 	}
 
 	private void zoomToBacias(IView view) {
-		MapControl mapControl = view.getMapControl();
-		TOCLayerManager tocManager = new TOCLayerManager(mapControl);
-		FLyrVect bacias = tocManager.getLayerByName("bacias");
+		final MapControl mapControl = view.getMapControl();
+		final TOCLayerManager tocManager = new TOCLayerManager(mapControl);
+		final FLyrVect bacias = tocManager.getLayerByName("bacias");
 		try {
-			Envelope baciasEnvelope = bacias.getFullEnvelope();
+			final Envelope baciasEnvelope = bacias.getFullEnvelope();
 			mapControl.getMapContext().zoomToEnvelope(baciasEnvelope);
-		} catch (ReadException e) {
+		} catch (final ReadException e) {
 			logger.error(e.getMessage(), e);
 		}
 	}

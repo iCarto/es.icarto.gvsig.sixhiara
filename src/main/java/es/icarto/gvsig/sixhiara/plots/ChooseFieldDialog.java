@@ -8,14 +8,13 @@ import java.util.List;
 
 import javax.swing.JButton;
 
-import net.miginfocom.swing.MigLayout;
-
-import org.gvsig.andami.PluginServices;
+import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
 
 import es.icarto.gvsig.commons.gui.AbstractIWindow;
 import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.gui.WidgetFactory;
 import es.icarto.gvsig.commons.utils.Field;
+import net.miginfocom.swing.MigLayout;
 
 @SuppressWarnings("serial")
 public class ChooseFieldDialog extends AbstractIWindow implements
@@ -47,7 +46,7 @@ public class ChooseFieldDialog extends AbstractIWindow implements
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		status = e.getActionCommand();
-		PluginServices.getMDIManager().closeWindow(this);
+		MDIManagerFactory.getManager().closeWindow(this);
 	}
 
 	public String open() {

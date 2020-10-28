@@ -17,15 +17,14 @@ import java.util.Map;
 import javax.swing.JOptionPane;
 
 import org.gvsig.andami.PluginServices;
+import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
 import org.gvsig.app.project.documents.table.TableDocument;
 import org.gvsig.fmap.dal.exception.DataException;
 import org.gvsig.fmap.dal.feature.Feature;
 import org.gvsig.fmap.dal.feature.FeatureQuery;
-import org.gvsig.fmap.dal.feature.FeatureQueryOrder;
 import org.gvsig.fmap.dal.feature.FeatureSelection;
 import org.gvsig.fmap.dal.feature.FeatureSet;
 import org.gvsig.fmap.dal.feature.FeatureStore;
-import org.gvsig.fmap.dal.feature.impl.DefaultFeatureQueryOrder;
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 import org.gvsig.tools.dispose.DisposableIterator;
 import org.gvsig.tools.dispose.DisposeUtils;
@@ -185,7 +184,7 @@ public class AnalyticActionListener implements ActionListener {
 
 			AnalyticsChartPanel window = new AnalyticsChartPanel(sourcesToPlot,
 					firstYear, currentYear, field);
-			PluginServices.getMDIManager().addCentredWindow(window);
+			MDIManagerFactory.getManager().addCentredWindow(window);
 
 		} catch (Exception ex) {
 			logger.error(ex.getMessage(), ex);

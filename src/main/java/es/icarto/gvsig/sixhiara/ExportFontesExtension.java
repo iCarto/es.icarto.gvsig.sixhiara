@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
-
 import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 import es.icarto.gvsig.sixhiara.forms.FontesForm;
 

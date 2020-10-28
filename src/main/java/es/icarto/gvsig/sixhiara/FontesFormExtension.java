@@ -1,7 +1,7 @@
 package es.icarto.gvsig.sixhiara;
 
 
-import org.gvsig.andami.PluginServices;
+import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
 
 import es.icarto.gvsig.sixhiara.forms.FontesForm;
 
@@ -11,7 +11,7 @@ public class FontesFormExtension extends AbstractFormExtension {
     public void execute(String actionCommand) {
 	FontesForm form = new FontesForm(getLayer());
 	if (form != null && form.init()) {
-	    PluginServices.getMDIManager().addWindow(form);
+		MDIManagerFactory.getManager().addWindow(form);
 	}
     }
 

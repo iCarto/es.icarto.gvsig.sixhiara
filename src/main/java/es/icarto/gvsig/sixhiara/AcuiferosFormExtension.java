@@ -1,7 +1,7 @@
 package es.icarto.gvsig.sixhiara;
 
 
-import org.gvsig.andami.PluginServices;
+import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
 
 import es.icarto.gvsig.sixhiara.forms.AcuiferosForm;
 
@@ -11,7 +11,7 @@ public class AcuiferosFormExtension extends AbstractFormExtension {
     public void execute(String actionCommand) {
 	AcuiferosForm form = new AcuiferosForm(getLayer());
 	if (form != null && form.init()) {
-	    PluginServices.getMDIManager().addWindow(form);
+		MDIManagerFactory.getManager().addWindow(form);
 	}
     }
 
