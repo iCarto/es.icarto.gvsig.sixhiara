@@ -21,21 +21,14 @@ public class FontesForm extends BasicAbstractForm {
 		addChained("posto_adm", "distrito");
 		addChained("bacia", "loc_unidad");
 		addChained("subacia", "bacia");
-		addTableHandler(new SortedAlphanumericTableHandler(
-				FontesAnaliseSubForm.TABLENAME, getWidgetComponents(), PKFIELD,
-				FontesAnaliseSubForm.colNames, FontesAnaliseSubForm.colAlias));
-		addTableHandler(new SortedAlphanumericTableHandler(
-				QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, QuantidadeAguaSubForm.colNames,
-				QuantidadeAguaSubForm.colAlias));
-		addTableHandler(new SortedAlphanumericTableHandler(
-				FontesLitologiaSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, FontesLitologiaSubForm.colNames,
-				FontesLitologiaSubForm.colAlias));
-		addTableHandler(new SortedAlphanumericTableHandler(
-				FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, FontesCaracHidroSubForm.colNames,
-				FontesCaracHidroSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(FontesAnaliseSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, FontesAnaliseSubForm.colNames, FontesAnaliseSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, QuantidadeAguaSubForm.colNames, QuantidadeAguaSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(FontesLitologiaSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, FontesLitologiaSubForm.colNames, FontesLitologiaSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, FontesCaracHidroSubForm.colNames, FontesCaracHidroSubForm.colAlias));
 		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
 			addAnalyticsButton();
 		}
@@ -45,8 +38,8 @@ public class FontesForm extends BasicAbstractForm {
 
 	private void addAnalyticsButton() {
 		JButton button = addButton("images/analytics.png", "Analise de fontes");
-		button.addActionListener(new AnalyticActionListener(layer,
-				FontesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
+		button.addActionListener(
+				new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override

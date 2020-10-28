@@ -20,8 +20,7 @@ public class MaxValues {
 			this.yAxisMin = null;
 		}
 
-		public MaxValue(String k, Number max, Number min, Number yAxisMax,
-				Number yAxisMin) {
+		public MaxValue(String k, Number max, Number min, Number yAxisMax, Number yAxisMin) {
 			this.k = k;
 			this.max = max;
 			this.min = min;

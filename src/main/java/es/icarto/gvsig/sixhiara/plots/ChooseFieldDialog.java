@@ -17,8 +17,7 @@ import es.icarto.gvsig.commons.utils.Field;
 import net.miginfocom.swing.MigLayout;
 
 @SuppressWarnings("serial")
-public class ChooseFieldDialog extends AbstractIWindow implements
-		ActionListener {
+public class ChooseFieldDialog extends AbstractIWindow implements ActionListener {
 
 	List<ChooseFieldPanel> list = new ArrayList<ChooseFieldPanel>();
 	private String status = OkCancelPanel.CANCEL_ACTION_COMMAND;

@@ -19,8 +19,7 @@ import es.icarto.gvsig.commons.gui.WidgetFactory;
 
 public abstract class BaseExportExtension extends AbstractExtension {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(BaseExportExtension.class);
+	private static final Logger logger = LoggerFactory.getLogger(BaseExportExtension.class);
 
 	@Override
 	public void execute(String actionCommand) {
@@ -41,11 +40,10 @@ public abstract class BaseExportExtension extends AbstractExtension {
 			MDIManagerFactory.getManager().restoreCursor();
 		}
 	}
-	
+
 	protected abstract SHPExporter getExporter();
 
-	private final static class ChooseFolder extends AbstractIWindow implements
-			ActionListener {
+	private final static class ChooseFolder extends AbstractIWindow implements ActionListener {
 
 		private FolderChooser chooser;
 		private String folderPath;
@@ -54,8 +52,7 @@ public abstract class BaseExportExtension extends AbstractExtension {
 
 		public ChooseFolder() {
 			ok = WidgetFactory.okCancelPanel(this, this, this);
-			chooser = new FolderChooser(this, "Escolha o diretório de destino",
-					initFile);
+			chooser = new FolderChooser(this, "Escolha o diretório de destino", initFile);
 		}
 
 		@Override

@@ -20,8 +20,7 @@ import es.udc.cartolab.gvsig.users.utils.DBSession;
 
 public class ShowImageAction {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ShowImageAction.class);
+	private static final Logger logger = LoggerFactory.getLogger(ShowImageAction.class);
 
 	private final ImageComponent imageComponent;
 	private final JButton addImageButton;
@@ -33,11 +32,9 @@ public class ShowImageAction {
 
 	private final ImageIcon NO_IMAGE;
 
-	public ShowImageAction(ImageComponent imageComponent,
-			JButton addImageButton, String schema, String tablename,
+	public ShowImageAction(ImageComponent imageComponent, JButton addImageButton, String schema, String tablename,
 			String pkField, String pkValue) {
-		URL url = this.getClass().getClassLoader()
-				.getResource("images/img_no_disponible.jpg");
+		URL url = this.getClass().getClassLoader().getResource("images/img_no_disponible.jpg");
 		this.NO_IMAGE = new ImageIcon(url);
 		this.imageComponent = imageComponent;
 		this.addImageButton = addImageButton;
@@ -57,14 +54,12 @@ public class ShowImageAction {
 	public boolean showImage() {
 		ImagesDAO dao = new ImagesDAO();
 		try {
-			byte[] elementImageBytes = dao.readImageFromDb(connection, schema,
-					tablename, pkField, pkValue);
+			byte[] elementImageBytes = dao.readImageFromDb(connection, schema, tablename, pkField, pkValue);
 			if (elementImageBytes == null) {
 				imageComponent.setIcon(NO_IMAGE);
 				return false;
 			}
-			BufferedImage elementImage = ImageUtils
-					.convertByteaToImage(elementImageBytes);
+			BufferedImage elementImage = ImageUtils.convertByteaToImage(elementImageBytes);
 			ImageIcon elementIcon = new ImageIcon(elementImage);
 			imageComponent.setIcon(elementIcon);
 		} catch (SQLException e) {

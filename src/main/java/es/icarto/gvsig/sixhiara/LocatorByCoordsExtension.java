@@ -28,12 +28,9 @@ public class LocatorByCoordsExtension extends AbstractExtension {
 		FLyrVect provincias = getLayer();
 
 		try {
-			CoordProvider epsg32737 = CoordProviderFactory.fromLayer(
-					provincias, "UTM 37S");
-			CoordProvider epsg32736 = CoordProviderFactory
-					.fromReprojectedLayer(provincias, "EPSG:32736", "UTM 36S");
-			CoordProvider epsg4326 = CoordProviderFactory.fromReprojectedLayer(
-					provincias, "EPSG:4326", "WGS84");
+			CoordProvider epsg32737 = CoordProviderFactory.fromLayer(provincias, "UTM 37S");
+			CoordProvider epsg32736 = CoordProviderFactory.fromReprojectedLayer(provincias, "EPSG:32736", "UTM 36S");
+			CoordProvider epsg4326 = CoordProviderFactory.fromReprojectedLayer(provincias, "EPSG:4326", "WGS84");
 
 			LocatorByCoordsModel model = new LocatorByCoordsModel();
 			model.addCoordProvider(epsg32737);

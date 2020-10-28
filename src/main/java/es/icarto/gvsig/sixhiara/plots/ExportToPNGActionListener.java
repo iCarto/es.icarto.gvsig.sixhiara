@@ -13,8 +13,7 @@ import org.slf4j.LoggerFactory;
 import es.icarto.gvsig.commons.gui.SaveFileDialog;
 
 final class ExportToPNGActionListener implements ActionListener {
-	private static final Logger logger = LoggerFactory
-			.getLogger(ExportToPNGActionListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(ExportToPNGActionListener.class);
 
 	private int height;
 	private int width;

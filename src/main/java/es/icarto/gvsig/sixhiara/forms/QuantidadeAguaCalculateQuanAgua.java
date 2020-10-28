@@ -24,7 +24,7 @@ public class QuantidadeAguaCalculateQuanAgua extends Calculation {
 	@Override
 	protected String calculate() {
 		BigDecimal value = operandValue("prof_campo").subtract(operandValue("nivel_agua"));
-		
+
 		if (value.floatValue() < 0) {
 			value = new BigDecimal("0");
 		}

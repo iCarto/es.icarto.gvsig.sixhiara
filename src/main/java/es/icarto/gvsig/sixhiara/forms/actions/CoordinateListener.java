@@ -25,14 +25,11 @@ public class CoordinateListener implements ActionListener {
 				.getExtension(LocatorByCoordsExtension.class);
 		LocatorByCoordsDialog dialog = ext.getDialog();
 
-		String title = "Gerador de pontos. " + form.getBasicName() + ": "
-				+ form.getPrimaryKeyValue();
+		String title = "Gerador de pontos. " + form.getBasicName() + ": " + form.getPrimaryKeyValue();
 		dialog.setWindowTitle(title);
-		dialog.setWindowInfoProperties(WindowInfo.MODALDIALOG
-				| WindowInfo.PALETTE);
+		dialog.setWindowInfoProperties(WindowInfo.MODALDIALOG | WindowInfo.PALETTE);
 		LocatorByCoordsModel model = dialog.getModel();
-		LocatorBytCoordsAddButton bt = new LocatorBytCoordsAddButton(model,
-				form, dialog);
+		LocatorBytCoordsAddButton bt = new LocatorBytCoordsAddButton(model, form, dialog);
 		dialog.addButton(bt);
 		dialog.openDialog();
 	}

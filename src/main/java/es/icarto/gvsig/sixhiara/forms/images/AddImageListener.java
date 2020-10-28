@@ -28,8 +28,7 @@ import es.udc.cartolab.gvsig.users.utils.DBSession;
 
 public class AddImageListener implements ActionListener {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AddImageListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(AddImageListener.class);
 
 	private final Connection connection;
 	private final ImagesDAO dao;
@@ -48,8 +47,7 @@ public class AddImageListener implements ActionListener {
 		this.pkValue = pkValue;
 	}
 
-	public AddImageListener(ImageComponent imageComponent,
-			JButton addImageButton, String schema, String tablename,
+	public AddImageListener(ImageComponent imageComponent, JButton addImageButton, String schema, String tablename,
 			String pkField) {
 		this.imageComponent = imageComponent;
 		this.addImageButton = addImageButton;
@@ -77,11 +75,9 @@ public class AddImageListener implements ActionListener {
 			try {
 				BufferedImage image = ImageIO.read(fileImage);
 				BufferedImage imageResized = resizeImage(image);
-				dao.insertImageIntoDb(connection, schema, tablename, pkField,
-						pkValue, imageResized, update);
+				dao.insertImageIntoDb(connection, schema, tablename, pkField, pkValue, imageResized, update);
 				JOptionPane.showMessageDialog(null, _("image_msg_added"));
-				new ShowImageAction(imageComponent, addImageButton, schema,
-						tablename, pkField, pkValue);
+				new ShowImageAction(imageComponent, addImageButton, schema, tablename, pkField, pkValue);
 			} catch (SQLException e) {
 				logger.error(e.getMessage(), e);
 				showWarning(_("image_msg_error"));
@@ -94,24 +90,21 @@ public class AddImageListener implements ActionListener {
 	}
 
 	private void showWarning(String msg) {
-		JOptionPane.showMessageDialog(
-				(Component) PluginServices.getMainFrame(), msg, _("warning"),
+		JOptionPane.showMessageDialog((Component) PluginServices.getMainFrame(), msg, _("warning"),
 				JOptionPane.WARNING_MESSAGE);
 	}
 
 	private BufferedImage resizeImage(BufferedImage image) {
 		int width = imageComponent.getWidth();
 		int height = imageComponent.getHeight();
-		Dimension scaledDim = ImageUtils.getScaledDimension(
-				new Dimension(image.getWidth(), image.getHeight()),
+		Dimension scaledDim = ImageUtils.getScaledDimension(new Dimension(image.getWidth(), image.getHeight()),
 				new Dimension(width, height));
 		BufferedImage imageResized;
 		if ((image.getWidth() < width) && (image.getHeight() < height)) {
 			return image;
 		}
 
-		imageResized = ImageUtils.resizeImageWithHint(image,
-				(int) scaledDim.getWidth(), (int) scaledDim.getHeight());
+		imageResized = ImageUtils.resizeImageWithHint(image, (int) scaledDim.getWidth(), (int) scaledDim.getHeight());
 		// if (image.getWidth() > image.getHeight()) {
 		// } else {
 		// imageResized = ImageUtils.resizeImageWithHint(image, 136, 241);
@@ -121,8 +114,7 @@ public class AddImageListener implements ActionListener {
 
 	private boolean hasAlreadyImage() {
 		try {
-			byte[] image = dao.readImageFromDb(connection, schema, tablename,
-					pkField, pkValue);
+			byte[] image = dao.readImageFromDb(connection, schema, tablename, pkField, pkValue);
 			if (image != null) {
 				return true;
 			} else {

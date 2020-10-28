@@ -35,8 +35,7 @@ import es.icarto.gvsig.navtableforms.utils.TOCLayerManager;
 
 public class ImportExploracoesExtension extends AbstractExtension {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ImportExploracoesExtension.class);
+	private static final Logger logger = LoggerFactory.getLogger(ImportExploracoesExtension.class);
 
 	private FLyrVect layer;
 
@@ -50,7 +49,8 @@ public class ImportExploracoesExtension extends AbstractExtension {
 			return;
 		}
 		try {
-			// TODO: Usar funcionalidades de gvSIG. https://redmine.gvsig.net/redmine/issues/4327
+			// TODO: Usar funcionalidades de gvSIG.
+			// https://redmine.gvsig.net/redmine/issues/4327
 			String tmpDir = System.getProperty("java.io.tmpdir");
 			Unzip.unzip(zipFile, new File(tmpDir));
 			// Comprobar que tiene el formato correcto
@@ -62,16 +62,13 @@ public class ImportExploracoesExtension extends AbstractExtension {
 			JOptionPane.showMessageDialog(mainFrame, msg);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
-			JOptionPane.showMessageDialog(mainFrame, "Erro importando dados",
-					"", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(mainFrame, "Erro importando dados", "", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
 	private long doImport(String tmpDir, FLyrVect layer) throws Exception {
-		File shpFile = new File(tmpDir + File.separator + "exploracoes"
-				+ File.separator + "exploracoes.shp");
-		FeatureStore shpStore = SHPFactory
-				.getFeatureStore(shpFile, "EPSG:4326");
+		File shpFile = new File(tmpDir + File.separator + "exploracoes" + File.separator + "exploracoes.shp");
+		FeatureStore shpStore = SHPFactory.getFeatureStore(shpFile, "EPSG:4326");
 		FeatureSet shpSet = null;
 		DisposableIterator shpIt = null;
 		long nfeats = 0;
@@ -99,14 +96,12 @@ public class ImportExploracoesExtension extends AbstractExtension {
 		return nfeats;
 	}
 
-	private EditableFeature createNewFeature(FeatureStore shpStore,
-			Feature srcFeat) throws DataException {
+	private EditableFeature createNewFeature(FeatureStore shpStore, Feature srcFeat) throws DataException {
 		FeatureType srcType = srcFeat.getType();
 
 		EditableFeature targetFeat = shpStore.createNewFeature();
 		FeatureType targetType = targetFeat.getType();
-		FeatureAttributeDescriptor[] atts = targetType
-				.getAttributeDescriptors();
+		FeatureAttributeDescriptor[] atts = targetType.getAttributeDescriptors();
 		ICoordTrans ct = srcType.getDefaultSRS().getCT(layer.getProjection());
 		for (int i = 0; i < atts.length; i++) {
 			int attType = atts[i].getType();
@@ -153,8 +148,7 @@ public class ImportExploracoesExtension extends AbstractExtension {
 	}
 
 	@SuppressWarnings("serial")
-	private final class ChooseFile extends AbstractIWindow implements
-			ActionListener {
+	private final class ChooseFile extends AbstractIWindow implements ActionListener {
 
 		private FileChooser chooser;
 		private File file;
@@ -163,8 +157,7 @@ public class ImportExploracoesExtension extends AbstractExtension {
 		public ChooseFile() {
 			String initFile = System.getProperty("user.home");
 			ok = WidgetFactory.okCancelPanel(this, this, this);
-			chooser = new FileChooser(this, "Escolha o zip coas explorações",
-					initFile);
+			chooser = new FileChooser(this, "Escolha o zip coas explorações", initFile);
 		}
 
 		@Override

@@ -19,28 +19,21 @@ public class EstacoesForm extends BasicAbstractForm {
 		addChained("distrito", "provincia");
 		addChained("posto_adm", "distrito");
 		addChained("subacia", "bacia");
-		addTableHandler(new SortedAlphanumericTableHandler(
-				EstacoesAnaliseSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, EstacoesAnaliseSubForm.colNames,
-				EstacoesAnaliseSubForm.colAlias));
-		addTableHandler(new SortedAlphanumericTableHandler(
-				DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, DadosPluviometricosSubForm.colNames,
-				DadosPluviometricosSubForm.colAlias));
-		addTableHandler(new SortedAlphanumericTableHandler(
-				DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
-				PKFIELD, DadosHidrometricosSubForm.colNames,
-				DadosHidrometricosSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(EstacoesAnaliseSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, EstacoesAnaliseSubForm.colNames, EstacoesAnaliseSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(DadosPluviometricosSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, DadosPluviometricosSubForm.colNames, DadosPluviometricosSubForm.colAlias));
+		addTableHandler(new SortedAlphanumericTableHandler(DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
+				PKFIELD, DadosHidrometricosSubForm.colNames, DadosHidrometricosSubForm.colAlias));
 		addAnalyticsButton();
 		addNewFeatureButton();
 		addCoordinatesButton();
 	}
 
 	private void addAnalyticsButton() {
-		JButton button = addButton("images/analytics.png",
-				"Analise de estacoes");
-		button.addActionListener(new AnalyticActionListener(layer,
-				EstacoesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
+		JButton button = addButton("images/analytics.png", "Analise de estacoes");
+		button.addActionListener(
+				new AnalyticActionListener(layer, EstacoesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override

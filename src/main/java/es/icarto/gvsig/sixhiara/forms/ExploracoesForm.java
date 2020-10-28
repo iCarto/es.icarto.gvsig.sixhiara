@@ -13,8 +13,7 @@ import es.udc.cartolab.gvsig.navtable.NavTable;
 @SuppressWarnings("serial")
 public class ExploracoesForm extends NavTable {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ExploracoesForm.class);
+	private static final Logger logger = LoggerFactory.getLogger(ExploracoesForm.class);
 
 	public static final String LAYERNAME = "exploracoes";
 	public static final String PKFIELD = "gid";
@@ -43,8 +42,7 @@ public class ExploracoesForm extends NavTable {
 
 	// Probably should be removed and use a factory instead
 	// is duplicated with NavigationHandler
-	private JButton getNavTableButton(JButton button, String iconName,
-			String toolTipName) {
+	private JButton getNavTableButton(JButton button, String iconName, String toolTipName) {
 		JButton but = new JButton(getIcon(iconName));
 		but.setToolTipText(_(toolTipName));
 		but.addActionListener(this);

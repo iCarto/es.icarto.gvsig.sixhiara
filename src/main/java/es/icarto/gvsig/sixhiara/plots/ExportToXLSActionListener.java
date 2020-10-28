@@ -23,16 +23,15 @@ import es.icarto.gvsig.commons.utils.Field;
 
 public class ExportToXLSActionListener implements ActionListener {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ExportToXLSActionListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(ExportToXLSActionListener.class);
 
 	private final Map<String, Object[]> data;
 	private final int firstYear;
 	private final int currentYear;
 	private final Field field;
 
-	public ExportToXLSActionListener(Map<String, Object[]> selectedFontes,
-			int firstYear, int currentYear, Field field) {
+	public ExportToXLSActionListener(Map<String, Object[]> selectedFontes, int firstYear, int currentYear,
+			Field field) {
 		this.data = selectedFontes;
 		this.firstYear = firstYear;
 		this.currentYear = currentYear;
@@ -111,8 +110,7 @@ public class ExportToXLSActionListener implements ActionListener {
 		try {
 			doIt(file);
 		} catch (IOException e1) {
-			JOptionPane.showMessageDialog(null, "Error exportando datos", "",
-					JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Error exportando datos", "", JOptionPane.ERROR_MESSAGE);
 			logger.error(e1.getMessage(), e1);
 		}
 	}

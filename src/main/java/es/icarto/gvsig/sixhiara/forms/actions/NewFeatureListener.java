@@ -14,8 +14,7 @@ import es.icarto.gvsig.sixhiara.forms.BasicAbstractForm;
 
 public class NewFeatureListener implements ActionListener {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(NewFeatureListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(NewFeatureListener.class);
 
 	private final BasicAbstractForm form;
 
@@ -39,8 +38,7 @@ public class NewFeatureListener implements ActionListener {
 			if (layer.isEditing()) {
 				le.stopEditing(layer, true);
 			}
-			JOptionPane.showMessageDialog(form,
-					"Erro creando feature. Cerre e volva abrir", "Error",
+			JOptionPane.showMessageDialog(form, "Erro creando feature. Cerre e volva abrir", "Error",
 					JOptionPane.ERROR_MESSAGE);
 
 		}

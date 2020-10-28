@@ -32,8 +32,7 @@ import es.udc.cartolab.gvsig.navtable.contextualmenu.ChooseSortFieldDialog;
 @SuppressWarnings("serial")
 public abstract class BasicAbstractForm extends AbstractForm {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(BasicAbstractForm.class);
+	private static final Logger logger = LoggerFactory.getLogger(BasicAbstractForm.class);
 	private ImagesInForms images;
 	private boolean autoediting;
 
@@ -41,8 +40,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 		super(layer);
 		addSorterButton();
 		setTitle(_(this.getBasicName()));
-		images = new ImagesInForms(getFormPanel(), getSchema(), getBasicName()
-				+ "_imagenes", getPrimaryKey());
+		images = new ImagesInForms(getFormPanel(), getSchema(), getBasicName() + "_imagenes", getPrimaryKey());
 	}
 
 	protected void addSorterButton() {
@@ -50,10 +48,8 @@ public abstract class BasicAbstractForm extends AbstractForm {
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				URL resource = BasicAbstractForm.this.getClass()
-						.getClassLoader().getResource("columns.properties");
-				List<Field> fields = FieldUtils.getFields(resource.getPath(),
-						getSchema(), getBasicName());
+				URL resource = BasicAbstractForm.this.getClass().getClassLoader().getResource("columns.properties");
+				List<Field> fields = FieldUtils.getFields(resource.getPath(), getSchema(), getBasicName());
 				ChooseSortFieldDialog dialog = new ChooseSortFieldDialog(fields);
 
 				if (dialog.open().equals(OkCancelPanel.OK_ACTION_COMMAND)) {
@@ -65,15 +61,13 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	}
 
 	protected void addNewFeatureButton() {
-		JButton button = addButton("images/new_feature.png",
-				"Adicionar feature");
+		JButton button = addButton("images/new_feature.png", "Adicionar feature");
 		ActionListener btListener = new NewFeatureListener(this);
 		button.addActionListener(btListener);
 	}
 
 	protected void addCoordinatesButton() {
-		JButton button = addButton("images/add_coordinates_icon.png",
-				"Adicionar ponto baseado em coordenadas");
+		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar ponto baseado em coordenadas");
 		ActionListener btListener = new CoordinateListener(this);
 		button.addActionListener(btListener);
 	}
@@ -89,11 +83,9 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	@Override
 	public FormPanel getFormBody() {
 		if (formBody == null) {
-			InputStream stream = getClass().getClassLoader()
-					.getResourceAsStream("/forms/" + getBasicName() + ".jfrm");
+			InputStream stream = getClass().getClassLoader().getResourceAsStream("/forms/" + getBasicName() + ".jfrm");
 			if (stream == null) {
-				stream = getClass().getClassLoader().getResourceAsStream(
-						"/forms/" + getBasicName() + ".xml");
+				stream = getClass().getClassLoader().getResourceAsStream("/forms/" + getBasicName() + ".xml");
 			}
 			try {
 				formBody = new FormPanel(stream);
@@ -106,8 +98,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 
 	@Override
 	public String getXMLPath() {
-		return this.getClass().getClassLoader()
-				.getResource("rules/" + getBasicName() + ".xml").getPath();
+		return this.getClass().getClassLoader().getResource("rules/" + getBasicName() + ".xml").getPath();
 	}
 
 	@Override
@@ -140,13 +131,13 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	protected abstract String getPrimaryKey();
 
 	/*
-	 * Desde la funcionalidad de crear una nueva feature se puede poner la capa
-	 * en edición automaticamente, pero no se puede cerrar del mismo modo,
-	 * porqué hay que esperar a que el usuario rellene los valores obligatorios.
+	 * Desde la funcionalidad de crear una nueva feature se puede poner la capa en
+	 * edición automaticamente, pero no se puede cerrar del mismo modo, porqué hay
+	 * que esperar a que el usuario rellene los valores obligatorios.
 	 *
-	 * Aquí marcamos que la edición se ha abierto de forma automática, de modo
-	 * que si tras darle al botón guardar se detecta esa situación se cierra la
-	 * edición también de forma automática
+	 * Aquí marcamos que la edición se ha abierto de forma automática, de modo que
+	 * si tras darle al botón guardar se detecta esa situación se cierra la edición
+	 * también de forma automática
 	 */
 	public void setAutoEditing() {
 		this.autoediting = true;

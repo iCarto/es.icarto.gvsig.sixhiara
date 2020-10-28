@@ -21,25 +21,24 @@ public class ConfigExtension extends Extension {
 	@Override
 	public void initialize() {
 		SixhiaraFormFactory.registerFormFactory();
-		String defaultPath = Launcher.getAppHomeDir() + File.separator
-				+ "importacao-gps";
+		String defaultPath = Launcher.getAppHomeDir() + File.separator + "importacao-gps";
 		CopyFeaturesExtension.setDefaultPath(defaultPath);
 		skipFeatureValidation();
 	}
-	
+
 	private void skipFeatureValidation() {
 		EditingNotificationManager editingNotificationManager = DALSwingLocator.getEditingNotificationManager();
-		  observer = new Observer() {
-		      @Override
-		      public void update(Observable observable, Object notification) {
-		          EditingNotification n = (EditingNotification) notification;
-		          n.setSkipFeatureValidation(true);
+		observer = new Observer() {
+			@Override
+			public void update(Observable observable, Object notification) {
+				EditingNotification n = (EditingNotification) notification;
+				n.setSkipFeatureValidation(true);
 //		          if (n.isOfType(EditingNotification.AFTER_INSERT_FEATURE)) {
 //		              Abrir formulario navtable
 //		          }
-		      }
-		  };
-		  editingNotificationManager.addObserver(observer);
+			}
+		};
+		editingNotificationManager.addObserver(observer);
 	}
 
 	@Override

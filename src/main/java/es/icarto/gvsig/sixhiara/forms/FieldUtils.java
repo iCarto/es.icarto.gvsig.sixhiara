@@ -19,15 +19,14 @@ public class FieldUtils {
 
 	private static final Logger logger = Logger.getLogger(FieldUtils.class);
 
-	private final static List<String> reservedColumns = Arrays
-			.asList(new String[] { "gid", "the_geom", "geom" });
+	private final static List<String> reservedColumns = Arrays.asList(new String[] { "gid", "the_geom", "geom" });
 
 	private FieldUtils() {
 		throw new AssertionError("Non instantiable class");
 	}
 
-	public static List<Field> getFields(String filePath, String schema,
-			String table, List<String> ignoreColumns, boolean notNull) {
+	public static List<Field> getFields(String filePath, String schema, String table, List<String> ignoreColumns,
+			boolean notNull) {
 		List<Field> fields = new ArrayList<Field>();
 		try {
 			DBSession session = DBSession.getCurrentSession();
@@ -36,8 +35,7 @@ public class FieldUtils {
 			props.load(input);
 			String[] columns;
 			if (notNull) {
-				List<String> columnList = session.getColumnsWithNotNulls(
-						schema, table);
+				List<String> columnList = session.getColumnsWithNotNulls(schema, table);
 				columns = columnList.toArray(new String[0]);
 			} else {
 				columns = session.getColumns(schema, table);
@@ -48,8 +46,7 @@ public class FieldUtils {
 				if (ignoreColumns.contains(c)) {
 					continue;
 				}
-				String longname = props.getProperty(schema + "." + table + "."
-						+ c, c);
+				String longname = props.getProperty(schema + "." + table + "." + c, c);
 				fields.add(new Field(c, longname));
 			}
 		} catch (FileNotFoundException e) {
@@ -62,8 +59,7 @@ public class FieldUtils {
 		return fields;
 	}
 
-	public static List<Field> getFields(String filePath, String schema,
-			String table) {
+	public static List<Field> getFields(String filePath, String schema, String table) {
 		return getFields(filePath, schema, table, reservedColumns, false);
 	}
 }

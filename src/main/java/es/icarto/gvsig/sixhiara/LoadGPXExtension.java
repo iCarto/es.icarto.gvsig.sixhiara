@@ -21,17 +21,14 @@ import es.icarto.gvsig.commons.datasources.GPXFactory;
 
 public class LoadGPXExtension extends AbstractExtension {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(LoadGPXExtension.class);
+	private static final Logger logger = LoggerFactory.getLogger(LoadGPXExtension.class);
 
 	@Override
 	public void execute(String actionCommand) {
 		String homeFolder = System.getProperty("user.home");
-		JFileChooser fileChooser = new JFileChooser(getClass().getName(),
-				homeFolder);
+		JFileChooser fileChooser = new JFileChooser(getClass().getName(), homeFolder);
 		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		FileFilter gpxFilter = new FileNameExtensionFilter(_("gps_files"),
-				"gpx");
+		FileFilter gpxFilter = new FileNameExtensionFilter(_("gps_files"), "gpx");
 		fileChooser.setFileFilter(gpxFilter);
 		Component parent = (Component) PluginServices.getMainFrame();
 		if (fileChooser.showDialog(parent, _("load")) == JFileChooser.APPROVE_OPTION) {
@@ -44,8 +41,7 @@ public class LoadGPXExtension extends AbstractExtension {
 
 	private void loadGPX(File selectedFile) {
 		try {
-			FLyrVect f = GPXFactory.getWaypointLyrFromGPX(selectedFile,
-					"EPSG:4326");
+			FLyrVect f = GPXFactory.getWaypointLyrFromGPX(selectedFile, "EPSG:4326");
 			FLayers layers = getView().getMapControl().getMapContext().getLayers();
 			layers.add(f);
 		} catch (LoadLayerException e) {

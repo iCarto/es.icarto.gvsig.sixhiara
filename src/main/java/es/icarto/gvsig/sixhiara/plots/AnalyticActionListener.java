@@ -46,15 +46,12 @@ public class AnalyticActionListener implements ActionListener {
 	private final String dateField;
 	private final FLyrVect layer;
 
-	private static final int currentYear = Calendar.getInstance().get(
-			Calendar.YEAR);
+	private static final int currentYear = Calendar.getInstance().get(Calendar.YEAR);
 	private static final int firstYear = Math.max(2012, currentYear - 10);
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AnalyticActionListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(AnalyticActionListener.class);
 
-	public AnalyticActionListener(FLyrVect layer, String table, String fkField,
-			String dateField) {
+	public AnalyticActionListener(FLyrVect layer, String table, String fkField, String dateField) {
 		this.layer = layer;
 		this.table = table;
 		this.fkField = fkField;
@@ -62,17 +59,15 @@ public class AnalyticActionListener implements ActionListener {
 	}
 
 	private List<Field> getFields() {
-		URL resource = AnalyticActionListener.this.getClass().getClassLoader()
-				.getResource("columns.properties");
-		List<Field> fields = FieldUtils.getFields(resource.getPath(), SCHEMA,
-				table, Collections.<String> emptyList(), true);
+		URL resource = AnalyticActionListener.this.getClass().getClassLoader().getResource("columns.properties");
+		List<Field> fields = FieldUtils.getFields(resource.getPath(), SCHEMA, table, Collections.<String>emptyList(),
+				true);
 		List<Field> newFields = new ArrayList<Field>();
 		List<MaxValue> maxValues = new MaxValues().getMaxValues();
 		for (Field f : fields) {
 			if (this.table.equals(EstacoesAnaliseSubForm.TABLENAME)) {
-				List<String> notForEstacoes = Arrays.asList(new String[] {
-						"nitratos", "nitritos", "coli_feca", "coli_tot",
-				"amonio" });
+				List<String> notForEstacoes = Arrays
+						.asList(new String[] { "nitratos", "nitritos", "coli_feca", "coli_tot", "amonio" });
 				if (notForEstacoes.contains(f.getKey())) {
 					continue;
 				}
@@ -182,8 +177,7 @@ public class AnalyticActionListener implements ActionListener {
 				}
 			}
 
-			AnalyticsChartPanel window = new AnalyticsChartPanel(sourcesToPlot,
-					firstYear, currentYear, field);
+			AnalyticsChartPanel window = new AnalyticsChartPanel(sourcesToPlot, firstYear, currentYear, field);
 			MDIManagerFactory.getManager().addCentredWindow(window);
 
 		} catch (Exception ex) {
@@ -216,8 +210,7 @@ public class AnalyticActionListener implements ActionListener {
 	private void showError(String message) {
 		String msg = _(message);
 		Component parent = (Component) PluginServices.getMainFrame();
-		JOptionPane.showMessageDialog(parent, msg, "",
-				JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog(parent, msg, "", JOptionPane.ERROR_MESSAGE);
 
 	}
 

@@ -16,14 +16,12 @@ import es.udc.cartolab.gvsig.navtable.format.DateFormatNT;
 
 public class SortedAlphanumericTableHandler extends AlphanumericTableHandler {
 
-	public SortedAlphanumericTableHandler(String tableName,
-			HashMap<String, JComponent> widgets, String foreignKeyId,
+	public SortedAlphanumericTableHandler(String tableName, HashMap<String, JComponent> widgets, String foreignKeyId,
 			String[] colNames) {
 		super(tableName, widgets, foreignKeyId, colNames);
 	}
 
-	public SortedAlphanumericTableHandler(String tableName,
-			HashMap<String, JComponent> widgets, String foreignKeyId,
+	public SortedAlphanumericTableHandler(String tableName, HashMap<String, JComponent> widgets, String foreignKeyId,
 			String[] colNames, String[] colAliases) {
 		super(tableName, widgets, foreignKeyId, colNames, colAliases);
 	}
@@ -31,8 +29,7 @@ public class SortedAlphanumericTableHandler extends AlphanumericTableHandler {
 	@Override
 	public void fillValues(String foreignKeyValue) {
 		super.fillValues(foreignKeyValue);
-		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(
-				jtable.getModel());
+		TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(jtable.getModel());
 		sorter.setSortsOnUpdates(true);
 		for (int i = 0; i < colNames.length; i++) {
 			if (colNames[i].startsWith("data")) {
@@ -51,10 +48,8 @@ public class SortedAlphanumericTableHandler extends AlphanumericTableHandler {
 						return d1.compareTo(d2);
 					}
 				});
-				javax.swing.RowSorter.SortKey sk = new RowSorter.SortKey(i,
-						SortOrder.ASCENDING);
-				sorter.setSortKeys(Arrays
-						.asList(new RowSorter.SortKey[] { sk }));
+				javax.swing.RowSorter.SortKey sk = new RowSorter.SortKey(i, SortOrder.ASCENDING);
+				sorter.setSortKeys(Arrays.asList(new RowSorter.SortKey[] { sk }));
 				break;
 			}
 		}

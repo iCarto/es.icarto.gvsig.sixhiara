@@ -42,7 +42,7 @@ public class SHPExporter {
 
 	public void execute(String outputFolder) throws Exception {
 		outputFolder = outputFolder.endsWith(File.separator) ? outputFolder : outputFolder + File.separator;
-		
+
 		FoldersManager manager = ToolsLocator.getFoldersManager();
 		File tmpDir = manager.getTemporaryFolder();
 		String filePath = tmpDir.getAbsolutePath() + File.separator + layer.getName() + ".shp";
@@ -50,7 +50,7 @@ public class SHPExporter {
 		exportTo(file);
 //		createPRJ(filePath);
 		String zipFile = outputFolder + layer.getName() + ".zip";
-		zipTo(file, zipFile);			
+		zipTo(file, zipFile);
 	}
 
 	// TODO: Esto parece arreglado. Eliminar
@@ -60,22 +60,19 @@ public class SHPExporter {
 //		FileUtils.copyFile(new File(url.getPath()), new File(out));
 //	}
 
-	
 	public void setEPSG(String epsg) {
 		/**
 		 * When set will reproject the exported shape
 		 */
 		this.epsg = epsg;
 	}
-	
+
 	public void setAcceptedFields(List<String> acceptedFields) {
 		/**
 		 * If set, only the fields in this list will be exported
 		 */
 		this.acceptedFields = acceptedFields;
 	}
-
-	
 
 	public void exportTo(File file) throws BaseException {
 		FeatureStore shpStore = null;
@@ -113,9 +110,8 @@ public class SHPExporter {
 		zip.zipIt(target);
 	}
 
-	private EditableFeatureType getTargetType(FLyrVect layer)
-			throws DataException {
-		
+	private EditableFeatureType getTargetType(FLyrVect layer) throws DataException {
+
 		FeatureType srcType = layer.getFeatureStore().getDefaultFeatureType();
 		DataManager manager = DALLocator.getDataManager();
 		EditableFeatureType targetType = manager.createFeatureType();
@@ -129,8 +125,7 @@ public class SHPExporter {
 			int attType = attDesc.getType();
 			if (attType == org.gvsig.fmap.geom.DataTypes.GEOMETRY) {
 				GeometryType geomType = attDesc.getGeomType();
-				EditableFeatureAttributeDescriptor add = targetType.add(
-						"geometry", attType);
+				EditableFeatureAttributeDescriptor add = targetType.add("geometry", attType);
 				add.setGeometryType(geomType);
 				targetType.setDefaultGeometryAttributeName("geometry");
 			} else {
@@ -146,8 +141,7 @@ public class SHPExporter {
 				if (attName.length() > 9) {
 					continue;
 				}
-				EditableFeatureAttributeDescriptor add = targetType.add(
-						attName, attType);
+				EditableFeatureAttributeDescriptor add = targetType.add(attName, attType);
 				add.setSize(attDesc.getSize());
 				add.setPrecision(attDesc.getPrecision());
 			}
@@ -156,12 +150,10 @@ public class SHPExporter {
 		return targetType;
 	}
 
-	private EditableFeature createNewFeature(FeatureStore shpStore,
-			Feature srcFeat) throws DataException {
+	private EditableFeature createNewFeature(FeatureStore shpStore, Feature srcFeat) throws DataException {
 		EditableFeature targetFeat = shpStore.createNewFeature();
 		FeatureType targetType = targetFeat.getType();
-		FeatureAttributeDescriptor[] atts = targetType
-				.getAttributeDescriptors();
+		FeatureAttributeDescriptor[] atts = targetType.getAttributeDescriptors();
 		for (int i = 0; i < atts.length; i++) {
 			int attType = atts[i].getType();
 			if (attType == org.gvsig.fmap.geom.DataTypes.GEOMETRY) {

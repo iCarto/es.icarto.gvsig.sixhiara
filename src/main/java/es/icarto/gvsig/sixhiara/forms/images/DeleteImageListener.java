@@ -19,8 +19,7 @@ import es.udc.cartolab.gvsig.users.utils.DBSession;
 
 public class DeleteImageListener implements ActionListener {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(DeleteImageListener.class);
+	private static final Logger logger = LoggerFactory.getLogger(DeleteImageListener.class);
 
 	private final Connection connection;
 	private final JButton deleteImageButton;
@@ -31,9 +30,8 @@ public class DeleteImageListener implements ActionListener {
 	private final String pkField;
 	private String pkValue;
 
-	public DeleteImageListener(ImageComponent imageComponent,
-			JButton deleteImageButton, String schema, String tablename,
-			String pkField) {
+	public DeleteImageListener(ImageComponent imageComponent, JButton deleteImageButton, String schema,
+			String tablename, String pkField) {
 		this.imageComponent = imageComponent;
 		this.deleteImageButton = deleteImageButton;
 		this.schema = schema;
@@ -56,15 +54,11 @@ public class DeleteImageListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		try {
 			Object[] options = { _("delete"), _("cancel") };
-			int response = JOptionPane.showOptionDialog(null,
-					_("img_delete_warning"), _("delete"),
-					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE,
-					null, options, options[0]);
+			int response = JOptionPane.showOptionDialog(null, _("img_delete_warning"), _("delete"),
+					JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
 			if (response == JOptionPane.YES_OPTION) {
-				dao.deleteImageFromDb(connection, schema, tablename, pkField,
-						pkValue);
-				new ShowImageAction(imageComponent, deleteImageButton, schema,
-						tablename, pkField, pkValue);
+				dao.deleteImageFromDb(connection, schema, tablename, pkField, pkValue);
+				new ShowImageAction(imageComponent, deleteImageButton, schema, tablename, pkField, pkValue);
 			}
 		} catch (SQLException e1) {
 			logger.error(e1.getMessage(), e1);

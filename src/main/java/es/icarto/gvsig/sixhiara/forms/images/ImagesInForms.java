@@ -20,8 +20,7 @@ public class ImagesInForms {
 	private final String fk;
 	private final String schema;
 
-	public ImagesInForms(FormPanel formPanel, String schema, String tablename,
-			String fk) {
+	public ImagesInForms(FormPanel formPanel, String schema, String tablename, String fk) {
 		this.formPanel = formPanel;
 		this.schema = schema;
 		this.tablename = tablename;
@@ -36,23 +35,18 @@ public class ImagesInForms {
 	protected DeleteImageListener deleteImageListener;
 
 	public void setListeners() {
-		imageComponent = (ImageComponent) formPanel
-				.getComponentByName(IMAGE_COMPONENT);
-		addImageButton = (JButton) formPanel
-				.getComponentByName(ADD_IMAGE_BUTTON);
-		deleteImageButton = (JButton) formPanel
-				.getComponentByName(DELETE_IMAGE_BUTTON);
+		imageComponent = (ImageComponent) formPanel.getComponentByName(IMAGE_COMPONENT);
+		addImageButton = (JButton) formPanel.getComponentByName(ADD_IMAGE_BUTTON);
+		deleteImageButton = (JButton) formPanel.getComponentByName(DELETE_IMAGE_BUTTON);
 
 		if (addImageListener == null) {
-			addImageListener = new AddImageListener(imageComponent,
-					addImageButton, schema, tablename, fk);
+			addImageListener = new AddImageListener(imageComponent, addImageButton, schema, tablename, fk);
 			addImageButton.setText(_("add_image"));
 			addImageButton.addActionListener(addImageListener);
 		}
 
 		if (deleteImageListener == null) {
-			deleteImageListener = new DeleteImageListener(imageComponent,
-					deleteImageButton, schema, tablename, fk);
+			deleteImageListener = new DeleteImageListener(imageComponent, deleteImageButton, schema, tablename, fk);
 			deleteImageButton.setText(_("delete_image"));
 			deleteImageButton.addActionListener(deleteImageListener);
 		}
@@ -91,8 +85,7 @@ public class ImagesInForms {
 		}
 
 		// Element image
-		new ShowImageAction(imageComponent, addImageButton, schema, tablename,
-				fk, fkValue);
+		new ShowImageAction(imageComponent, addImageButton, schema, tablename, fk, fkValue);
 	}
 
 }

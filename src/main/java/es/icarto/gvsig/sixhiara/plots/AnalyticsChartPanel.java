@@ -50,8 +50,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 	private static final Dimension CHART_SIZE = new java.awt.Dimension(800, 600);
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(AnalyticsChartPanel.class);
+	private static final Logger logger = LoggerFactory.getLogger(AnalyticsChartPanel.class);
 
 	private final Field field;
 	private final MaxValue maxValue;
@@ -63,8 +62,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 	private XYSeries maxSeries = null;
 	private XYSeries minSeries;
 
-	public AnalyticsChartPanel(Map<String, Object[]> selectedFontes,
-			int firstYear, int currentYear, Field field) {
+	public AnalyticsChartPanel(Map<String, Object[]> selectedFontes, int firstYear, int currentYear, Field field) {
 		super();
 		this.data = selectedFontes;
 		this.firstYear = firstYear;
@@ -74,8 +72,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		final XYDataset dataset = createDataset();
 		chart = createChart(dataset);
 		customizeLimits();
-		final ChartPanel chartPanel = new ChartPanel(chart, true, true, true,
-				true, true);
+		final ChartPanel chartPanel = new ChartPanel(chart, true, true, true, true, true);
 		chartPanel.setPreferredSize(CHART_SIZE);
 		add(chartPanel);
 		initToolbar();
@@ -86,11 +83,9 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		JLabel label = new JLabel("Gravar em formato: ");
 		toolbar.add(label);
 		JButton pngBt = new JButton("PNG");
-		pngBt.addActionListener(new ExportToPNGActionListener(chart,
-				CHART_SIZE.width, CHART_SIZE.height));
+		pngBt.addActionListener(new ExportToPNGActionListener(chart, CHART_SIZE.width, CHART_SIZE.height));
 		JButton xlsBt = new JButton("XLS");
-		xlsBt.addActionListener(new ExportToXLSActionListener(data, firstYear,
-				currentYear, field));
+		xlsBt.addActionListener(new ExportToXLSActionListener(data, firstYear, currentYear, field));
 		toolbar.add(pngBt);
 		toolbar.add(xlsBt);
 		this.add(toolbar, "dock south");
@@ -158,8 +153,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 			textTitle.setPaint(Color.RED);
 			textTitle.setPadding(0, 0, 5, 0);
 			double yyy = relativeRangeValue(maxSeries.getMaxY());
-			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5,
-					yyy, textTitle, RectangleAnchor.BOTTOM);
+			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5, yyy, textTitle, RectangleAnchor.BOTTOM);
 			plot.addAnnotation(xyTitleAnnotation);
 		}
 
@@ -169,8 +163,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 			textTitle.setPadding(5, 0, 0, 0);
 			double yyy = relativeRangeValue(minSeries.getMinY());
 
-			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5,
-					yyy, textTitle, RectangleAnchor.TOP);
+			XYTitleAnnotation xyTitleAnnotation = new XYTitleAnnotation(0.5, yyy, textTitle, RectangleAnchor.TOP);
 			plot.addAnnotation(xyTitleAnnotation);
 		}
 	}
@@ -196,15 +189,14 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 
 	private JFreeChart createChart(final XYDataset dataset) {
 
-		final JFreeChart chart = ChartFactory.createXYLineChart(
-				field.getLongName(), // chart title
+		final JFreeChart chart = ChartFactory.createXYLineChart(field.getLongName(), // chart title
 				"Ano", // x axis label
 				field.getLongName(), // y axis label
 				dataset, // data
 				PlotOrientation.VERTICAL, true, // include legend
 				true, // tooltips
 				false // urls
-				);
+		);
 		initLegend(chart);
 		chart.setBackgroundPaint(Color.white);
 
@@ -248,8 +240,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		colors.add(new Color(255, 255, 191));
 		colors.add(new Color(224, 243, 248));
 
-		for (int i = firstSeriesData; i < data.keySet().size()
-				+ firstSeriesData; i++) {
+		for (int i = firstSeriesData; i < data.keySet().size() + firstSeriesData; i++) {
 			renderer.setSeriesPaint(i, colors.get(i - firstSeriesData));
 		}
 
@@ -294,8 +285,7 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 		}
 
 		@Override
-		protected Size2D arrangeRR(Graphics2D g2, Range widthRange,
-				Range heightRange) {
+		protected Size2D arrangeRR(Graphics2D g2, Range widthRange, Range heightRange) {
 			return super.arrangeRR(g2, widthRange, heightRange);
 		}
 
@@ -364,11 +354,9 @@ public class AnalyticsChartPanel extends AbstractIWindow {
 	private void initYAxisForString(XYPlot plot) {
 		String[] grade = null;
 		if (maxValue.k.equals("c_nitrit")) {
-			grade = new String[] { "3", "< 10", "10 - 25", "25 - 50",
-					"50 - 100", "100 - 250", "> 250" };
+			grade = new String[] { "3", "< 10", "10 - 25", "25 - 50", "50 - 100", "100 - 250", "> 250" };
 		} else if (maxValue.k.equals("c_nitrat")) {
-			grade = new String[] { "< 10", "10 - 25", "25 - 50", "50",
-					"50 - 100", "100 - 250", "> 250" };
+			grade = new String[] { "< 10", "10 - 25", "25 - 50", "50", "50 - 100", "100 - 250", "> 250" };
 		}
 
 		SymbolAxis rangeAxis = new SymbolAxis(field.getLongName(), grade);

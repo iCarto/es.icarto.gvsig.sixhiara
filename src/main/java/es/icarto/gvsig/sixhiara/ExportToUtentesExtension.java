@@ -13,8 +13,6 @@ public class ExportToUtentesExtension extends BaseExportExtension {
 		return activeLayers.length == 1;
 	}
 
-
-
 	@Override
 	protected SHPExporter getExporter() {
 		FLyrVect layer = new TOCLayerManager().getActiveLayer();
@@ -22,6 +20,5 @@ public class ExportToUtentesExtension extends BaseExportExtension {
 		exporter.setEPSG("EPSG:4326");
 		return exporter;
 	}
-
 
 }

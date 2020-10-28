@@ -20,15 +20,14 @@ import es.udc.cartolab.gvsig.navtable.dataacces.LayerController;
 @SuppressWarnings("serial")
 public class LocatorBytCoordsAddButton extends LocatorByCoordsButton {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(LocatorBytCoordsAddButton.class);
+	private static final Logger logger = LoggerFactory.getLogger(LocatorBytCoordsAddButton.class);
 
 	private final LocatorByCoordsModel lModel;
 	private final BasicAbstractForm form;
 	private final LocatorByCoordsDialog dialog;
 
-	public LocatorBytCoordsAddButton(LocatorByCoordsModel lModel_,
-			BasicAbstractForm form_, LocatorByCoordsDialog dialog_) {
+	public LocatorBytCoordsAddButton(LocatorByCoordsModel lModel_, BasicAbstractForm form_,
+			LocatorByCoordsDialog dialog_) {
 		super();
 		this.lModel = lModel_;
 		this.form = form_;
@@ -36,16 +35,12 @@ public class LocatorBytCoordsAddButton extends LocatorByCoordsButton {
 		Action action = new AbstractAction("Gravar") {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				LayerController layerController = (LayerController) form
-						.getFormController();
+				LayerController layerController = (LayerController) form.getFormController();
 				boolean geomExists = layerController.getGeom() != null;
 				if (geomExists) {
-					int showConfirmDialog = JOptionPane
-							.showConfirmDialog(
-									dialog,
-									"A feature já possui coordenadas. Se continuar, eles serão modificados",
-									"Substituir coordenadas",
-									JOptionPane.OK_CANCEL_OPTION);
+					int showConfirmDialog = JOptionPane.showConfirmDialog(dialog,
+							"A feature já possui coordenadas. Se continuar, eles serão modificados",
+							"Substituir coordenadas", JOptionPane.OK_CANCEL_OPTION);
 					if (showConfirmDialog != JOptionPane.OK_OPTION) {
 						return;
 					}
@@ -63,9 +58,7 @@ public class LocatorBytCoordsAddButton extends LocatorByCoordsButton {
 				}
 
 				if (!wellSaved) {
-					JOptionPane.showMessageDialog(dialog,
-							"Erro gravando os dados", "Error",
-							JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(dialog, "Erro gravando os dados", "Error", JOptionPane.ERROR_MESSAGE);
 				}
 				dialog.closeDialog();
 			}
