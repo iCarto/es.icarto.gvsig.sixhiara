@@ -25,12 +25,12 @@ rm -rf "/tmp/${VERSION_SUL}"
 
 cp -r "${WINDOWS_GVSIG_APP}" "/tmp/${VERSION}"
 
-extensions_to_remove=(org.gvsig.animation3d.app org.gvsig.annotation.app.mainplugin org.gvsig.annotation.app.mainplugin org.gvsig.attributeeditor.app.mainplugin    org.gvsig.catalog.extension org.gvsig.derivedgeometries.app.mainplugin org.gvsig.dgn.app.mainplugin org.gvsig.dwg.app.mainplugin org.gvsig.dxf.app.mainplugin org.gvsig.educa.portableview.app.viewer org.gvsig.gazetteer.extension org.gvsig.geoprocess.app.algorithm org.gvsig.geoprocess.app.mainplugin org.gvsig.geoprocess.app.sextante org.gvsig.googlemaps.app.streetview org.gvsig.hyperlink.app.extension org.gvsig.lidar.app.mainplugin org.gvsig.oracle.app.mainplugin org.gvsig.raster.georeferencing.app.georeferencingclient  org.gvsig.raster.netcdf.app.netcdfclient org.gvsig.raster.wcs.app.wcsclient org.gvsig.raster.wms.app.wmsclient org.gvsig.raster.wmts.app.wmtsclient org.gvsig.selectiontools.app.mainplugin org.gvsig.symbology.app.importsymbols org.gvsig.symbology.app.symbolinstaller org.gvsig.timesupport.app.animation org.gvsig.timesupport.app.viewfilter org.gvsig.wfs.app.mainplugin)
+extensions_to_remove=(org.gvsig.animation3d.app org.gvsig.annotation.app.mainplugin org.gvsig.annotation.app.mainplugin org.gvsig.attributeeditor.app.mainplugin org.gvsig.catalog.extension org.gvsig.derivedgeometries.app.mainplugin org.gvsig.dgn.app.mainplugin org.gvsig.dwg.app.mainplugin org.gvsig.dxf.app.mainplugin org.gvsig.educa.portableview.app.viewer org.gvsig.gazetteer.extension org.gvsig.geoprocess.app.algorithm org.gvsig.geoprocess.app.mainplugin org.gvsig.geoprocess.app.sextante org.gvsig.googlemaps.app.streetview org.gvsig.hyperlink.app.extension org.gvsig.lidar.app.mainplugin org.gvsig.oracle.app.mainplugin org.gvsig.raster.georeferencing.app.georeferencingclient  org.gvsig.raster.netcdf.app.netcdfclient org.gvsig.raster.wcs.app.wcsclient org.gvsig.raster.wms.app.wmsclient org.gvsig.raster.wmts.app.wmtsclient org.gvsig.selectiontools.app.mainplugin org.gvsig.symbology.app.importsymbols org.gvsig.symbology.app.symbolinstaller org.gvsig.timesupport.app.animation org.gvsig.timesupport.app.viewfilter org.gvsig.wfs.app.mainplugin)
     
 rm -rf /tmp/${VERSION}/install/*
-rm -rf /tmp/${VERSION}/home/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/
+rm -rf /tmp/${VERSION}/preferences/gvSIG/plugins/org.gvsig.app.mainplugin/Symbols/
 
-for item in ${array[*]}; do
+for item in ${extensions_to_remove[*]}; do
     full_path="/tmp/${VERSION}/gvSIG/extensiones/${item}"
     
     if [ -d "${full_path}" ]; then
@@ -49,7 +49,7 @@ cp -R ${EXT}/es.icarto.gvsig.sixhiara /tmp/${VERSION}/gvSIG/extensiones/
 cp -R ${EXT}/es.udc.cartolab.gvsig.elle /tmp/${VERSION}/gvSIG/extensiones/
 cp -R ${EXT}/es.udc.cartolab.gvsig.users /tmp/${VERSION}/gvSIG/extensiones/
 
-cp -R portable/common/home /tmp/${VERSION}/
+cp -R portable/common/preferences /tmp/${VERSION}/
 cp -R portable/common/gvSIG /tmp/${VERSION}/
 cp -R portable/common/i18n/ /tmp/${VERSION}/
 
