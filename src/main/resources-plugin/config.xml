@@ -74,13 +74,6 @@
 				<action-tool icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" tooltip="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30081"/>
 			</tool-bar>
 		</extension>
-
-		<extension class-name="es.icarto.gvsig.sixhiara.ExportFontesExtension" active="true">
-			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30090" icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" />
-			<tool-bar name="sixhiara" position="70">
-				<action-tool icon="es.icarto.gvsig.sixhiara.ExportFontesExtension" tooltip="es.icarto.gvsig.sixhiara.ExportFontesExtension" action-command="" position="30090"/>
-			</tool-bar>
-		</extension>
 		
 		<extension class-name="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" active="true">
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportToUtentesExtension" action-command="" position="30092" icon="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" />
