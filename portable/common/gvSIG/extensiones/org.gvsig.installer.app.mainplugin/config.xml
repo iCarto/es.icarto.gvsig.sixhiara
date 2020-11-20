@@ -39,14 +39,15 @@
 				tooltip="Create_installation_package"
 				action-command="tools-devel-create-package" 
 				icon="tools-devel-create-package"
-				position="908500600"/>
+				position="908500200"/>
 
 			<menu
 				name="tools-devel-create-package" 
 				text="tools/Development/Create_installation_package"
 				 />			
 		</extension>
-	-->	
+		-->
+		
 			<extension class-name="org.gvsig.installer.app.extension.execution.InstallPackageExtension"
 			description="This extension is used to install a package from a bundle in gvSIG"
 			active="true">

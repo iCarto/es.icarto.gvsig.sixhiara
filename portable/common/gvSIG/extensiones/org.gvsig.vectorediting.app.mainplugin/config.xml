@@ -29,18 +29,17 @@
       <menu text="Layer/start_editing" name="start-editing" />
       <menu text="Layer/end_editing" name="end-editing" />
 
-<!--
-      <tool-bar name="vector_editing" position="600800000">
+      <tool-bar name="vector_editing" position="4000">
         <action-tool name="start-editing" />
         <action-tool name="end-editing" />
       </tool-bar>
--->
+
     </extension>
 
     <extension class-name="org.gvsig.vectorediting.app.mainplugin.ServiceExtension"
       description="" active="true" priority="1">
 
-      <action name="remove" label="remove" tooltip="remove"
+      <action name="remove" label="remove_selected_geometries" tooltip="remove_selected_geometries"
         action-command="remove" icon="remove" position="601002000"
         accelerator="delete" />
         <!-- accelerator="" /> -->
@@ -61,13 +60,37 @@
         position="601002060" action-command="insert-arc" icon="insert-arc"
         accelerator="" />
 
+      <action name="insert-arc-by-center" label="insert_arc_by_center" tooltip="insert_arc_by_center"
+        position="601002070" action-command="insert-arc-by-center" icon="insert-arc-by-center"
+        accelerator="" />
+
+      <action name="insert-arc-three-points" label="insert_arc_three_points" tooltip="insert_arc_three_points"
+        position="601002080" action-command="insert-arc-three-points" icon="insert-arc-three-points"
+        accelerator="" />
+
       <action name="insert-circle-cr" label="insert_circle_cr" tooltip="insert_circle_cr"
         position="601002100" action-command="insert-circle-cr" icon="insert-circle-cr"
+        accelerator="" />
+
+      <action name="insert-circle-2tg1p" label="insert_circle_2tg1p" tooltip="insert_circle_2tg1p"
+        position="601002110" action-command="insert-circle-2tg1p" icon="insert-circle-2tg1p"
+        accelerator="" />
+
+      <action name="insert-circle-tantanradius" label="insert_circle_tantanradius" tooltip="insert_circle_tantanradius"
+        position="601002120" action-command="insert-circle-tantanradius" icon="insert-circle-tantanradius"
         accelerator="" />
 
       <action name="insert-circumference-cr" label="insert_circumference_cr"
         tooltip="insert_circumference_cr" position="601002101" action-command="insert-circumference-cr"
         icon="insert-circumference-cr" accelerator="" />
+
+      <action name="insert-circumference-2tg1p" label="insert_circumference_2tg1p" tooltip="insert_circumference_2tg1p"
+        position="601002111" action-command="insert-circumference-2tg1p" icon="insert-circumference-2tg1p"
+        accelerator="" />
+
+      <action name="insert-circumference-tantanradius" label="insert_circumference_tantanradius" tooltip="insert_circumference_tantanradius"
+        position="601002121" action-command="insert-circumference-tantanradius" icon="insert-circumference-tantanradius"
+        accelerator="" />
 
       <action name="insert-circle-3p" label="insert_circle_3p" tooltip="insert_circle_3p"
         position="601002125" action-command="insert-circle-3p" icon="insert-circle-3p"
@@ -81,9 +104,17 @@
         position="601002150" action-command="insert-ellipse" icon="insert-ellipse"
         accelerator="" />
 
+        <action name="insert-ellipse-center-axes" label="insert_ellipse_center_axes" tooltip="insert_ellipse_center_axes"
+        position="601002160" action-command="insert-ellipse-center-axes" icon="insert-ellipse-center-axes"
+        accelerator="" />
+
       <action name="insert-filled-ellipse" label="insert_filled_ellipse"
         tooltip="insert_filled_ellipse" position="601002160" action-command="insert-filled-ellipse"
         icon="insert-filled-ellipse" accelerator="" />
+
+      <action name="insert-filled-ellipse-center-axes" label="insert_filled_ellipse_center_axes"
+        tooltip="insert_filled_ellipse_center_axes" position="601002170" action-command="insert-filled-ellipse-center-axes"
+        icon="insert-filled-ellipse-center-axes" accelerator="" />
 
       <action name="insert-polygon" label="insert_polygon" tooltip="insert_polygon"
         position="601002200" action-command="insert-polygon" icon="insert-polygon"
@@ -189,26 +220,34 @@
       <action name="insert-polar-matrix" label="insert_polar_matrix"
         tooltip="insert_polar_matrix" position="601004100" action-command="insert-polar-matrix"
         icon="insert-polar-matrix" accelerator="" />
-        
+
       <action name="modify-convert-to-polyline" label="modify_convert_to_polyline"
         tooltip="modify_convert_to_polyline" position="601004200" action-command="modify-convert-to-polyline"
         icon="modify-convert-to-polyline" accelerator="" />
-        
+
       <action name="modify-reverse-direction" label="modify_reverse_direction"
         tooltip="modify_reverse_direction" position="601004300" action-command="modify-reverse-direction"
         icon="modify-reverse-direction" accelerator="" />
 
-      <menu text="Layer/Remove/remove" name="remove" />
+      <menu text="Layer/Remove/remove_selected_geometries" name="remove" />
       <menu text="Layer/Insert/insert_point" name="insert-point" />
       <menu text="Layer/Insert/insert_multipoint" name="insert-multipoint" />
       <menu text="Layer/Insert/insert_line" name="insert-line" />
       <menu text="Layer/Insert/insert_arc" name="insert-arc" />
+      <menu text="Layer/Insert/insert_arc_by_center" name="insert-arc-by-center" />
+      <menu text="Layer/Insert/insert_arc_three_points" name="insert-arc-three-points" />
       <menu text="Layer/Insert/insert_circle_cr" name="insert-circle-cr" />
       <menu text="Layer/Insert/insert_circumference_cr" name="insert-circumference-cr" />
       <menu text="Layer/Insert/insert_circle_3p" name="insert-circle-3p" />
       <menu text="Layer/Insert/insert_circumference_3p" name="insert-circumference-3p" />
+      <menu text="Layer/Insert/insert_circle_2tg1p" name="insert-circle-2tg1p" />
+      <menu text="Layer/Insert/insert_circumference_2tg1p" name="insert-circumference-2tg1p" />
+      <menu text="Layer/Insert/insert_circle_tantanradius" name="insert-circle-tantanradius" />
+      <menu text="Layer/Insert/insert_circumference_tantanradius" name="insert-circumference-tantanradius" />
       <menu text="Layer/Insert/insert_ellipse" name="insert-ellipse" />
       <menu text="Layer/Insert/insert_filled_ellipse" name="insert-filled-ellipse" />
+      <menu text="Layer/Insert/insert_ellipse_center_axes" name="insert-ellipse-center-axes" />
+      <menu text="Layer/Insert/insert_filled_ellipse_center_axes" name="insert-filled-ellipse-center-axes" />
       <menu text="Layer/Insert/insert_polyline" name="insert-polyline" />
       <menu text="Layer/Insert/insert_polygon" name="insert-polygon" />
       <menu text="Layer/Insert/insert_regular_polygon" name="insert-regular-polygon" />
@@ -238,18 +277,26 @@
       <menu text="Layer/Modify/modify_convert_to_polyline" name="modify-convert-to-polyline" />
       <menu text="Layer/Modify/modify_reverse_direction" name="modify-reverse-direction" />
 
-      <tool-bar name="vector_editing" position="600800000">
+      <tool-bar name="vector_editing" position="4000">
         <selectable-tool name="remove" />
         <selectable-tool name="insert-point" />
         <selectable-tool name="insert-multipoint" />
         <selectable-tool name="insert-line" />
-        <selectable-tool name="insert-arc" />
+        <selectable-tool name="insert-arc" dropdowngroup="arc" />
+        <selectable-tool name="insert-arc-by-center" dropdowngroup="arc" />
+        <selectable-tool name="insert-arc-three-points" dropdowngroup="arc" />
         <selectable-tool name="insert-circumference-cr" dropdowngroup="circle" />
         <selectable-tool name="insert-circle-cr" dropdowngroup="circle" />
+        <selectable-tool name="insert-circle-2tg1p" dropdowngroup="circle" />
+        <selectable-tool name="insert-circle-tantanradius" dropdowngroup="circle" />
         <selectable-tool name="insert-circumference-3p" dropdowngroup="circle" />
         <selectable-tool name="insert-circle-3p" dropdowngroup="circle" />
+        <selectable-tool name="insert-circumference-2tg1p" dropdowngroup="circle" />
+        <selectable-tool name="insert-circumference-tantanradius" dropdowngroup="circle" />
         <selectable-tool name="insert-ellipse" dropdowngroup="ellipse" />
         <selectable-tool name="insert-filled-ellipse" dropdowngroup="ellipse" />
+        <selectable-tool name="insert-ellipse-center-axes" dropdowngroup="ellipse" />
+        <selectable-tool name="insert-filled-ellipse-center-axes" dropdowngroup="ellipse" />
         <selectable-tool name="insert-polyline" dropdowngroup="polygon"/>
         <selectable-tool name="insert-polygon" dropdowngroup="polygon"/>
         <selectable-tool name="insert-regular-polygon" dropdowngroup="regularpolygon"/>

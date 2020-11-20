@@ -58,6 +58,11 @@
       priority="1">
     </extension>
 
+    <extension class-name="org.gvsig.app.extension.selectioncount.SelectionCountExtension"
+      description="Counts selected features"
+      active="false">
+    </extension>
+
     <extension class-name="org.gvsig.app.extension.CheckSOAndArquitectureExtension"
       description="Check OS and architecture of installed packages"
       active="true"
@@ -147,26 +152,49 @@
         position="650700000"
         is_separator="true"/>
 
-<!--
       <menu text="tools"
         position="900000000"
         is_separator="true"/>
-      <menu text="tools/Development"
+
+<!--
+        <menu text="tools/Development"
         position="908500000"
         is_separator="true"/>
-      <menu text="tools/Development/Disposables"
-        position="908500200"
+
+      <menu text="tools/Development/sep1"
+        position="908500190"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep2"
+        position="908500290"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep3"
+        position="908500590"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep4"
+        position="908500690"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep5"
+        position="908500990"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep6"
+        position="908501390"
+        is_separator="true"/>
+
+      <menu text="tools/Development/sep7"
+        position="908501490"
         is_separator="true"/>
 -->
-
       <menu text="Window"
         position="960000000"
         is_separator="true"/>
-<!--
       <menu text="Help"
         position="990000000"
         is_separator="true"/>
--->
 
       <menu
         text="File/nuevo_proyecto"
@@ -185,11 +213,25 @@
         name="application-project-saveas"
         />
 
-      <tool-bar name="project" position="1">
+      <tool-bar name="project" position="100" description="Project management tools">
         <action-tool name="application-project-new"/>
         <action-tool name="application-project-open"/>
         <action-tool name="application-project-save"/>
       </tool-bar>
+
+      <tool-bar name="view" position="200" description="Add layers to the view tools"/>
+      <tool-bar name="view_navigation" position="300" description="Tools to navigate in the view"/>
+      <tool-bar name="view_tools" position="400" description="Generics tools for the view"/>
+      <tool-bar name="view_tools_query" position="500" description="Query tools for the view"/>
+      <tool-bar name="selection" position="600" description="Selection tools for the view"/>
+      <tool-bar name="layer" position="650" description="Layer tools"/>
+      <tool-bar name="table" position="700" description="Core table tools"/>
+      <tool-bar name="table_tools" position="800" description="Generic tools for the table"/>
+      <tool-bar name="table_tools_addmeasurement" position="900"/>
+      <tool-bar name="edit" position="1000" description="Edit/copy/paste/undo/redo tools"/>
+      <tool-bar name="editing" position="1100" description="Tools for editing, start/end editing and vectorial tools"/>
+      <tool-bar name="core" position="10000" description="Core tools like preferences or console of errores"/>
+
     </extension>
 
     <extension class-name="org.gvsig.app.extension.ViewProjectWindow"
@@ -236,9 +278,34 @@
         name="view-layer-add"
         text="View/Add_layer"
         />
-      <tool-bar name="view" position="30010">
+      <tool-bar name="view">
         <action-tool name="view-layer-add"/>
       </tool-bar>
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.AddToLocatorExtension"
+      description="Extensión encargada de añadir una capa al locator."
+      active="true"
+      priority="20">
+      <action
+        name="layer-addtolocator"
+        label="add_to_locator"
+        tooltip="add_to_locator"
+        action-command="layer-addtolocator"
+        position="606000000"
+        icon="layer-addtolocator"
+        accelerator=""
+        />
+
+      <menu
+        name="layer-addtolocator"
+        text="Layer/add_to_locator"
+       />
+      <!--
+      <tool-bar name="view">
+        <action-tool name="add-to-locator"/>
+      </tool-bar>
+       -->
     </extension>
 
     <extension class-name="org.gvsig.app.extension.BasicSymbologyExtension"
@@ -264,11 +331,11 @@
         name="view-navigation-zoom-back"
         text="View/Navigation/Zoom_back"
         />
-      <tool-bar name="view_navigation" position ="3">
+      <tool-bar name="view_navigation">
         <action-tool name="view-navigation-zoom-back"/>
       </tool-bar>
-    </extension>    
-    
+    </extension>
+
     <extension class-name="org.gvsig.app.extension.ZoomNext"
       description="Extensión encargada de gestionar los zooms siguientes al actual."
       active="true">
@@ -286,11 +353,11 @@
         name="view-navigation-zoom-next"
         text="View/Navigation/Zoom_next"
         />
-      <tool-bar name="view_navigation" position ="3">
+      <tool-bar name="view_navigation">
         <action-tool name="view-navigation-zoom-next"/>
       </tool-bar>
     </extension>
-    
+
     <extension class-name="org.gvsig.app.extension.InfoToolExtension"
       description="Extensión encargada de gestionar la herramienta de info."
       active="true"
@@ -308,7 +375,7 @@
         name="layer-info-by-point"
         text="Layer/Query/_Information_by_point"
         />
-      <tool-bar name="view_tools_query" position="5">
+      <tool-bar name="view_tools_query">
         <selectable-tool name="layer-info-by-point" />
       </tool-bar>
     </extension>
@@ -363,7 +430,6 @@
         tooltip="Zoom_all"
         accelerator=""
         />
-        <!--
       <action
         name="view-navigation-zoom-in-center"
         label="Zoom_in_to_center"
@@ -382,7 +448,6 @@
         icon="view-navigation-zoom-out-center"
         accelerator=""
         />
-        -->
       <action
         name="view-navigation-pan"
         label="Pan"
@@ -392,7 +457,6 @@
         tooltip="Pan"
         accelerator=""
         />
-        <!--
       <action
         name="view-navigation-frame-manager"
         label="Frame_manager"
@@ -402,8 +466,62 @@
         tooltip="Frame_manager"
         accelerator=""
         />
--->
 
+      <action
+        name="active-layer-set-visible"
+        label="_Visible_active_layers"
+        position="600100400"
+        action-command="active-layer-set-visible"
+        icon="active-layer-set-visible"
+        tooltip="_Show_active_layers"
+        accelerator=""
+        />
+            <action
+        name="active-layer-set-hide"
+        label="_Hide_active_layers"
+        position="600100500"
+        action-command="active-layer-set-hide"
+        icon="active-layer-set-hide"
+        tooltip="_Hide_active_layers"
+        accelerator=""
+        />
+                  <action
+        name="active-layer-bring-front"
+        label="_Bring_to_front"
+        position="600100600"
+        action-command="active-layer-bring-front"
+        icon="active-layer-bring-front"
+        tooltip="_Bring_to_front"
+        accelerator=""
+        />
+            <action
+        name="active-layer-send-back"
+        label="_Send_to_back"
+        position="600100700"
+        action-command="active-layer-send-back"
+        icon="active-layer-send-back"
+        tooltip="_Send_back"
+        accelerator=""
+        />
+                       <action
+        name="active-layer-move-ahead"
+        label="_Move_ahead"
+        position="600100800"
+        action-command="active-layer-move-ahead"
+        icon="active-layer-move-ahead"
+        tooltip="_Move_ahead"
+        accelerator=""
+        />
+                                  <action
+        name="active-layer-move-behind"
+        label="_Move_behind"
+        position="600100900"
+        action-command="active-layer-move-behind"
+        icon="active-layer-move-behind"
+        tooltip="_Move_behind"
+        accelerator=""
+        />  
+            
       <action
         name="layer-set-visible"
         label="_Show_layers"
@@ -463,7 +581,6 @@
         name="view-navigation-zoom-all"
         text="View/Navigation/Zoom_all"
         />
-        <!--
       <menu
         name="view-navigation-zoom-in-center"
         text="View/Navigation/Zoom_in_to_center"
@@ -472,18 +589,42 @@
         name="view-navigation-zoom-out-center"
         text="View/Navigation/Zoom_out_to_center"
         />
-        -->
       <menu
         name="view-navigation-pan"
         text="View/Navigation/Pan"
         />
-        <!--
       <menu
         name="view-navigation-frame-manager"
         text="View/Navigation/Frame_manager"
         />
--->
 
+      <menu
+        name="active-layer-set-visible"
+        text="View/_Set_active_layers_to/visible"
+        />
+      <menu
+        name="active-layer-set-hide"
+        text="View/_Set_active_layers_to/Hidden"
+        />
+      
+      
+             <menu
+        name="active-layer-bring-front" 
+        text="View/_Set_active_layers_to/_Bring_to_front"
+        />
+        <menu
+        name="active-layer-send-back" 
+        text="View/_Set_active_layers_to/_Send_to_back"
+        />
+        <menu
+        name="active-layer-move-ahead" 
+        text="View/_Set_active_layers_to/_Move_ahead"
+        />
+        <menu
+        name="active-layer-move-behind" 
+        text="View/_Set_active_layers_to/_Move_behind"
+        />
+      
       <menu
         name="layer-set-visible"
         text="View/_Set_all_layers_to/visible"
@@ -507,22 +648,25 @@
         />
 
 
-      <tool-bar name="view_navigation" position="3">
+      <tool-bar name="view_navigation">
         <selectable-tool name="view-navigation-zoom-in-topoint" is-default="true" />
         <selectable-tool name="view-navigation-zoom-out-topoint" />
         <action-tool name="view-navigation-zoom-all"  />
-        <!--
         <action-tool name="view-navigation-zoom-in-center"  />
         <action-tool name="view-navigation-zoom-out-center"  />
-        -->
+        <action-tool name="active-layer-set-visible" dropdowngroup="toc-layers-visibility"/>
+        <action-tool name="active-layer-set-hide" dropdowngroup="toc-layers-visibility"/>
+        <action-tool name="active-layer-bring-front" dropdowngroup="toc-layers-visibility"/>
+        <action-tool name="active-layer-send-back" dropdowngroup="toc-layers-visibility"/>
+        <action-tool name="active-layer-move-ahead" dropdowngroup="toc-layers-visibility"/>
+        <action-tool name="active-layer-move-behind" dropdowngroup="toc-layers-visibility"/>
       </tool-bar>
 
-
-      <tool-bar name="view_navigation" position ="4">
+      <tool-bar name="view_navigation">
         <selectable-tool name="view-navigation-pan"/>
-<!--        <action-tool name="view-navigation-frame-manager" /> -->
+        <action-tool name="view-navigation-frame-manager" />
       </tool-bar>
-
+               
     </extension>
 
     <extension class-name="org.gvsig.app.extension.MeasureExtension"
@@ -547,7 +691,15 @@
         tooltip="_Query_area"
         accelerator=""
         />
-
+      <action
+        name="view-query-feature-angle"
+        label="_Query_features_angles"
+        position="650700300"
+        action-command="view-query-feature-angle"
+        icon="view-query-feature-angle"
+        tooltip="_Query_feature_angle"
+        accelerator=""
+        />
 
       <menu
         name="view-query-distance"
@@ -557,10 +709,14 @@
         name="view-query-area"
         text="Layer/Query/Area"
         />
-
-      <tool-bar name="view_tools_query" position="5">
+      <menu
+        name="view-query-feature-angle"
+        text="Layer/Query/Angle"
+        />
+      <tool-bar name="view_tools_query">
         <selectable-tool name="view-query-distance" />
         <selectable-tool name="view-query-area" />
+        <selectable-tool name="view-query-feature-angle" />
       </tool-bar>
 
     </extension>
@@ -593,15 +749,14 @@
         name="selection-select-by-rectangle-view"
         text="Selection/Select_by_rectangle"
         />
-   <!--
       <menu
         name="selection-select-by-polygon"
         text="Selection/Select_by_polygon"
         />
-    -->
-      <tool-bar name="view_selection" position="6">
+
+      <tool-bar name="selection">
         <selectable-tool name="selection-select-by-rectangle-view" />
-       <!-- <selectable-tool name="selection-select-by-polygon" /> -->
+        <selectable-tool name="selection-select-by-polygon" />
       </tool-bar>
 
     </extension>
@@ -627,13 +782,13 @@
         text="Selection/Simple"
         />
 
-      <tool-bar name="view_selection" position="6">
+      <tool-bar name="selection">
         <selectable-tool name="selection-simple-select-view" />
       </tool-bar>
 
     </extension>
 
-<!--
+
     <extension class-name="org.gvsig.app.extension.ViewSelectionByTheme"
       description="Extensión encargada de la selección por tema."
       active="true"
@@ -641,10 +796,10 @@
       <action
         name="selection-select-by-layer"
         position="300070000"
-        label="_Select_by_layer"
+        label="Select_by_layer"
         action-command="selection-select-by-layer"
         icon="selection-select-by-layer"
-        tooltip="_Select_by_layer"
+        tooltip="Select_by_layer"
         accelerator=""
         />
 
@@ -652,8 +807,11 @@
         name="selection-select-by-layer"
         text="Selection/Select_by_layer"
         />
+
+      <tool-bar name="selection">
+        <action-tool name="selection-select-by-layer" />
+      </tool-bar>
     </extension>
--->
 
     <extension class-name="org.gvsig.app.extension.ViewInvertSelection"
       description="Extensión encargada de hacer la selección inversa."
@@ -674,7 +832,7 @@
         text="Selection/Reverse"
         />
 
-      <tool-bar name="view_selection" position="6">
+      <tool-bar name="selection">
           <action-tool name="selection-reverse-view" />
       </tool-bar>
 
@@ -720,7 +878,7 @@
         text="View/Navigation/Zoom_to_selection"
         />
 
-      <tool-bar name="view_navigation" position="3">
+      <tool-bar name="view_navigation">
         <action-tool name="view-navigation-zoom-to-selection" />
       </tool-bar>
 
@@ -745,7 +903,7 @@
         text="Selection/_Clear"
         />
 
-      <tool-bar name="view_selection" position="6">
+      <tool-bar name="selection" position="6">
         <action-tool name="selection-clear-view" />
       </tool-bar>
 
@@ -756,9 +914,19 @@
       active="true">
 
       <action
+        name="selection-by-attributes-layer-old"
+        label="_Select_by_attributes_old"
+        position="300080000"
+        icon="selection-by-attributes"
+        tooltip="_Select_by_attributes_old"
+        action-command="selection-by-attributes-layer-old"
+        accelerator=""
+        />
+
+      <action
         name="selection-by-attributes-layer"
         label="_Select_by_attributes"
-        position="300080000"
+        position="300080001"
         icon="selection-by-attributes"
         tooltip="_Select_by_attributes"
         action-command="selection-by-attributes-layer"
@@ -766,16 +934,45 @@
         />
 
       <menu
+        name="selection-by-attributes-layer-old"
+        text="Selection/_Select_by_attributes_old"
+        />
+
+      <menu
         name="selection-by-attributes-layer"
         text="Selection/_Select_by_attributes"
         />
 
-      <tool-bar name="view_selection" position="12">
+      <tool-bar name="selection">
         <action-tool name="selection-by-attributes-layer" />
       </tool-bar>
 
     </extension>
 
+    <extension class-name="org.gvsig.app.extension.SearchByAttributesExtension"
+      description=""
+      active="true">
+
+      <action
+        name="search-by-attributes-layer"
+        label="_Search_by_attributes"
+        position="601400000"
+        icon="search-by-attributes-layer"
+        tooltip="_Search_by_attributes"
+        action-command="search-by-attributes-layer"
+        accelerator=""
+        />
+
+      <menu
+        name="search-by-attributes-layer"
+        text="Layer/_Search_by_attributes"
+        />
+
+      <tool-bar name="edit">
+        <action-tool name="search-by-attributes-layer" />
+      </tool-bar>
+
+    </extension>
 <!--
     <extension class-name="org.gvsig.app.extension.dispose.DisposableManagementExtension"
       description="Extensión con información sobre disposables."
@@ -785,7 +982,7 @@
       <action
         name="tools-devel-disposables-show-pendings"
         label="_Show_pendings_disposables"
-        position="908500200"
+        position="908500701"
         tooltip="_Show_pendings_disposables"
         action-command="tools-devel-disposables-show-pendings"
         icon="tools-devel-disposables-show-pendings"
@@ -794,7 +991,7 @@
       <action
         name="tools-devel-disposables-free-all"
         label="_Free_all_disposables"
-        position="908500201"
+        position="908500702"
         action-command="tools-devel-disposables-free-all"
         icon="tools-devel-disposables-free-all"
         tooltip="_Free_all_disposables"
@@ -820,7 +1017,7 @@
       <action
         name="tools-devel-translations-package"
         label="_Translations_package"
-        position="908500200"
+        position="908500300"
         tooltip="_Translations_package"
         action-command="tools-devel-translations-package"
         icon="tools-devel-translations-package"
@@ -844,7 +1041,7 @@
       <action
         name="tools-devel-show-editing-listener"
         label="Show editing monitor"
-        position="908500200"
+        position="908500600"
         tooltip="Show editing monitor"
         action-command="tools-devel-show-editing-listener"
         icon="tools-devel-show-editing-listener"
@@ -865,7 +1062,7 @@
         name="tools-devel-show-persistencefactories"
         label="_Show_persistence_factories"
         tooltip="_Show_persistence_factories"
-        position="908500400"
+        position="908501500"
         action-command="tools-devel-show-persistencefactories"
         icon="tools-devel-show-persistencefactories"
         accelerator=""
@@ -874,7 +1071,7 @@
         name="tools-devel-show-icontheme"
         label="_Show_icon_theme_information"
         tooltip="_Show_icon_theme_information"
-        position="908500300"
+        position="908501400"
         action-command="tools-devel-show-icontheme"
         icon="tools-devel-show-icontheme"
         accelerator=""
@@ -883,16 +1080,25 @@
         name="tools-devel-show-actions"
         label="_Show_actions_information"
         tooltip="_Show_actions_information"
-        position="908500100"
+        position="908501000"
         action-command="tools-devel-show-actions"
         icon="tools-devel-show-actions"
+        accelerator=""
+        />
+      <action
+        name="tools-devel-show-toolbars"
+        label="_Show_toolbars_information"
+        tooltip="_Show_toolbars_information"
+        position="908501001"
+        action-command="tools-devel-show-toolbars"
+        icon="tools-devel-show-toolbars"
         accelerator=""
         />
       <action
         name="tools-devel-show-plugin-report"
         label="_Show_plugin_report"
         tooltip="_Show_plugin_report_of_actions_menus_and_icons"
-        position="908500100"
+        position="908501300"
         action-command="tools-devel-show-plugin-report"
         icon="tools-devel-show-plugin-report"
         accelerator=""
@@ -901,7 +1107,7 @@
         name="tools-devel-show-menus"
         label="_Show_menu_information"
         tooltip="_Show_menu_information"
-        position="908500200"
+        position="908501100"
         action-command="tools-devel-show-menus"
         icon="tools-devel-show-menus"
         accelerator=""
@@ -910,7 +1116,7 @@
         name="tools-devel-show-menus-by-plugin"
         label="_Show_menu_by_plugin_information"
         tooltip="_Show_menu_ordered_by_plugin_information"
-        position="908500300"
+        position="908501200"
         action-command="tools-devel-show-menus-by-plugin"
         icon="tools-devel-show-menus-by-plugin"
         accelerator=""
@@ -930,6 +1136,10 @@
       <menu
         name="tools-devel-show-actions"
         text="tools/Development/Show_actions_information"
+        />
+      <menu
+        name="tools-devel-show-toolbars"
+        text="tools/Development/Show_toolbars_information"
         />
       <menu
         name="tools-devel-show-menus"
@@ -986,7 +1196,6 @@
 
     </extension>
 
-<!--
     <extension class-name="org.gvsig.app.extension.About"
       description="Extensión encargada de abrir una ventana con la información relativa al programa."
       active="true"
@@ -1009,6 +1218,65 @@
 
     </extension>
 
+    <extension class-name="org.gvsig.app.extension.HelpExtension"
+      description="Extensión encargada presentar la ayuda en linea."
+      active="true"
+      priority="90090">
+
+      <action
+        name="help-contents"
+        label="_Help_contents"
+        tooltip="_Show_help_contents"
+        position="996000000"
+        action-command="help-contents"
+        icon="help-contents"
+        accelerator=""
+        />
+
+      <action
+        name="help-search"
+        label="_Help_search"
+        tooltip="_Show_help_search_page"
+        position="997000000"
+        action-command="help-search"
+        icon="help-search"
+        accelerator=""
+        />
+
+      <menu
+        name="help-contents"
+        text="Help/_Help_contents"
+        />
+
+      <menu
+        name="help-search"
+        text="Help/_Help_contents_search"
+        />
+
+    </extension>
+
+    <extension class-name="org.gvsig.app.extension.logviewer.LogViewerExtension"
+      description="Muestra el registro de errores de la aplicacion."
+      active="true"
+      priority="90090">
+
+      <action
+        name="help-logview"
+        label="_Log_view"
+        tooltip="_Log_view"
+        position="908500100"
+        action-command="log-view"
+        icon="help-logview"
+        accelerator=""
+        />
+
+      <menu
+        name="help-logview"
+        text="tools/Development/Show error log"
+        />
+
+    </extension>
+
     <extension
             class-name="org.gvsig.app.extension.BrowseSymbolsExtension"
             description="" active="true">
@@ -1027,7 +1295,7 @@
                  text="tools/Symbols/Browse_symbols"
             />
         </extension>
--->
+
 
             <extension class-name="org.gvsig.app.extension.UndoViewExtension"
       description="Extensión encargada de deshacer la edición sobre la capa activa."
@@ -1048,7 +1316,7 @@
                 text="Edit/_Undo"
                 />
 
-            <tool-bar name="edit_tools">
+            <tool-bar name="edit">
                 <action-tool name="edit-undo-layer"/>
             </tool-bar>
 
@@ -1073,7 +1341,7 @@
                 text="Edit/_Redo"
                 />
 
-            <tool-bar name="edit_tools">
+            <tool-bar name="edit">
                 <action-tool name="edit-redo-layer"/>
             </tool-bar>
 
@@ -1098,7 +1366,7 @@
                 text="Edit/_Undo_redo_history"
                 />
 
-            <tool-bar name="edit_tools">
+            <tool-bar name="edit">
                 <action-tool name="edit-undo-redo-actions-layer"/>
             </tool-bar>
 
@@ -1131,7 +1399,7 @@
                 text="Layer/Modify/_Copy_selected_features_to_clipboard"
                 />
 
-            <tool-bar name="layer_modify">
+            <tool-bar name="edit">
                 <action-tool
                     name="layer-modify-clipboard-copy"
                     />
@@ -1157,13 +1425,38 @@
                 text="Layer/Modify/_Paste_features_from_clipboard"
                 />
 
-            <tool-bar name="layer_modify">
+            <tool-bar name="edit">
                 <action-tool
                     name="layer-modify-clipboard-paste"
                     />
             </tool-bar>
         </extension>
+       <extension class-name="org.gvsig.app.extension.clipboard.PasteAlphanumericValuesFromClipboardExtension"
+            description="Paste alphanumeric values from system clipboard into editing feature"
+            active="true">
 
+            <action
+                name="layer-modify-clipboard-paste-alphanumeric"
+                label="_Paste_alphanumeric_values_from_clipboard"
+                tooltip="_Paste_alphanumeric_values_from_clipboard"
+                position="601105200"
+                action-command="layer-modify-clipboard-paste-alphanumeric"
+                icon="layer-modify-clipboard-paste-alphanumeric"
+                accelerator=""
+                />
+
+            <menu
+                name="layer-modify-clipboard-paste-alphanumeric"
+                text="Layer/Modify/_Paste_alphanumeric_values_from_clipboard"
+                />
+
+            <tool-bar name="edit">
+                <action-tool
+                    name="layer-modify-clipboard-paste-alphanumeric"
+                    />
+            </tool-bar>
+        </extension>
+        
         <extension class-name="org.gvsig.app.extension.LayerPropertiesExtension"
             description=""
             active="true">
@@ -1184,6 +1477,49 @@
                 />
 
         </extension>
+
+        <extension class-name="org.gvsig.app.extension.CreateSpatialIndexExtension"
+            description=""
+            active="true">
+
+            <action
+                name="layer-create-spatialindex"
+                label="_Create_spatial_index"
+                tooltip="_Create_spatial_index"
+                position="608000000"
+                action-command="layer-create-spatialindex"
+                icon="layer-create-spatialindex"
+                accelerator=""
+                />
+
+            <menu
+                name="layer-create-spatialindex"
+                text="Layer/_Create_spatial_index"
+                />
+
+        </extension>
+
+        <extension class-name="org.gvsig.app.extension.ShowLayerAsForm"
+                           description="Muestra la tabla asociada a la capa en modo formulario."
+                           active="true">
+
+            <action
+                name="layer-show-form"
+                label="_Show_layer_form"
+                tooltip="_Show_layer_form"
+                position="601300000"
+                action-command="layer-show-form"
+                icon="layer-show-form"
+                accelerator=""
+            />
+
+            <menu
+                name="layer-show-form"
+                text="Layer/Show form"
+            />
+
+        </extension>
+
   </extensions>
 
 </plugin-config>
