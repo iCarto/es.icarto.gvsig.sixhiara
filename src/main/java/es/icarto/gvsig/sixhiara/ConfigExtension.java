@@ -1,6 +1,7 @@
 package es.icarto.gvsig.sixhiara;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 
 import org.gvsig.andami.Launcher;
 import org.gvsig.andami.plugins.Extension;
@@ -11,7 +12,9 @@ import org.gvsig.tools.observer.Observable;
 import org.gvsig.tools.observer.Observer;
 
 import es.icarto.gvsig.sixhiara.forms.SixhiaraFormFactory;
+import es.udc.cartolab.gvsig.navtable.format.DateFormatNT;
 import es.udc.cartolab.gvsig.tools.CopyFeaturesExtension;
+
 
 public class ConfigExtension extends Extension {
 
@@ -24,6 +27,7 @@ public class ConfigExtension extends Extension {
 		String defaultPath = Launcher.getAppHomeDir() + File.separator + "importacao-gps";
 		CopyFeaturesExtension.setDefaultPath(defaultPath);
 		skipFeatureValidation();
+		configDateFormat();
 	}
 
 	private void skipFeatureValidation() {
@@ -40,6 +44,12 @@ public class ConfigExtension extends Extension {
 		};
 		editingNotificationManager.addObserver(observer);
 	}
+	
+	private void configDateFormat() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		DateFormatNT.setDateFormat(dateFormat);
+	}
+	
 
 	@Override
 	public void execute(String actionCommand) {
