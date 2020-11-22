@@ -67,6 +67,7 @@
 			</tool-bar>
 		</extension>
 
+<!-- 
 		<extension class-name="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" active="true">
 			<menu text="sixhiara" is_separator="true" position="30080"/>
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30081" icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension"/>
@@ -74,7 +75,7 @@
 				<action-tool icon="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" tooltip="es.icarto.gvsig.sixhiara.ImportExploracoesExtension" action-command="" position="30081"/>
 			</tool-bar>
 		</extension>
-		
+ -->		
 		<extension class-name="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" active="true">
 			<menu text="sixhiara/es.icarto.gvsig.sixhiara.ExportToUtentesExtension" action-command="" position="30092" icon="es.icarto.gvsig.sixhiara.ExportToUtentesExtension" />
 			<tool-bar name="sixhiara" position="70">
