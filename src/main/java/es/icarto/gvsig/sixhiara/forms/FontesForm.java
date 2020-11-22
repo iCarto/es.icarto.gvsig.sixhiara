@@ -21,6 +21,7 @@ public class FontesForm extends BasicAbstractForm {
 		addChained("posto_adm", "distrito");
 		addChained("bacia", "loc_unidad");
 		addChained("subacia", "bacia");
+		addChained("tip_fonte", "tipo_agua");
 		addTableHandler(new SortedAlphanumericTableHandler(FontesAnaliseSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, FontesAnaliseSubForm.colNames, FontesAnaliseSubForm.colAlias));
 		addTableHandler(new SortedAlphanumericTableHandler(QuantidadeAguaSubForm.TABLENAME, getWidgetComponents(),
