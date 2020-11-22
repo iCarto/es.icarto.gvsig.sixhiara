@@ -14,10 +14,10 @@ cd ..
 
 mkdir gvsig2-plugins && cd gvsig2-plugins
 
-git clone git@github.com:iCarto/es.icarto.gvsig.commons.git && cd es.icarto.gvsig.commons && git checkout gvsig2
+git clone git@gitlab.com:icarto/es.icarto.gvsig.commons.git && cd es.icarto.gvsig.commons && git checkout gvsig2
 git clone git@github.com:cartolab/extCopyFeatures.git && cd extCopyFeatures && git checkout gvsig2
-git clone git@github.com:iCarto/extDBConnection.git && cd extDBConnection && git checkout gvsig2
-git clone git@github.com:iCarto/extELLE.git && cd extELLE && git checkout gvsig2
+git clone git@gitlab.com:icarto/extDBConnection.git && cd extDBConnection && git checkout gvsig2
+git clone git@gitlab.com:icarto/extELLE.git && cd extELLE && git checkout gvsig2
 git clone git@github.com:navtable/navtable.git && cd navtable && git checkout gvsig2
 git clone git@github.com:navtable/navtableforms.git && cd navtableforms && git checkout gvsig2
 
@@ -26,7 +26,7 @@ git clone https://github.com/TheHortonMachine/hydrologis4gvsig
 cd ..
 cd sixhiara
 
-git clone git@github.com:iCarto/sixhiara.git && cd sixhiara && git checkout gvsig2
+git clone git@gitlab.com:icarto/sixhiara.git && cd sixhiara && git checkout gvsig2
 ```
 
 
