@@ -1,0 +1,7 @@
+estazon=estazon
+cod_estac=cod_estac
+altitude=altim
+tip_estac=tip_estac
+estado=estado
+gestao=gestao
+recolha=recolha

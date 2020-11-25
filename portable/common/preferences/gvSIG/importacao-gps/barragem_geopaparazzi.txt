@@ -1,0 +1,7 @@
+barragem=barragem
+cod_barra=cod_barra
+altitude=altim
+tip_barra=tip_barra
+estado=estado
+gestao=gestao
+comprimen=comprimen
