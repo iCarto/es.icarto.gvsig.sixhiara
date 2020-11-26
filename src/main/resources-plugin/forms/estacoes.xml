@@ -2190,9 +2190,9 @@
               </at>
              </object>
             </at>
+            <at name="name"></at>
             <at name="width">148</at>
-            <at name="name"/>
-            <at name="text">Nº anos funcionando:</at>
+            <at name="text">Número de anos funcionando:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -2387,8 +2387,8 @@
              </object>
             </at>
             <at name="orientation">1</at>
-            <at name="name"></at>
             <at name="width">8</at>
+            <at name="name"/>
             <at name="height">204</at>
            </object>
           </at>
@@ -2871,8 +2871,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">8</at>
+            <at name="name"/>
             <at name="height">204</at>
            </object>
           </at>
@@ -3115,7 +3115,7 @@
             <at name="horizontalAlignment">2</at>
             <at name="name">molinetes</at>
             <at name="width">148</at>
-            <at name="text">Molinetes (Nº):</at>
+            <at name="text">Número de molinetes:</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Dialog</at>
@@ -3175,8 +3175,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Tipo de pluviómetro:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -3242,9 +3242,9 @@
               </at>
              </object>
             </at>
+            <at name="name"></at>
             <at name="width">148</at>
-            <at name="name"/>
-            <at name="text">Nº de pluviómetros:</at>
+            <at name="text">Número de pluviómetros:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -3309,9 +3309,9 @@
               </at>
              </object>
             </at>
+            <at name="name"></at>
             <at name="width">130</at>
-            <at name="name"/>
-            <at name="text">Nº linnimetros EM:</at>
+            <at name="text">Número linnimetros EM:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -3567,8 +3567,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Precisão:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -3948,7 +3948,7 @@
             <at name="horizontalAlignment">2</at>
             <at name="name">nivel</at>
             <at name="width">298</at>
-            <at name="text">Medidor de nivel de auga</at>
+            <at name="text">Medidor de nível de auga</at>
             <at name="font">
              <object classname="com.jeta.forms.store.properties.FontProperty">
               <at name="family">Dialog</at>
@@ -6364,8 +6364,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Precisão:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -6431,8 +6431,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Recolha de dados:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -6613,8 +6613,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Estado da estação:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -6680,8 +6680,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Ano de construção:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -6747,8 +6747,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Gestão:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -7122,7 +7122,7 @@
             </at>
             <at name="name"></at>
             <at name="width">148</at>
-            <at name="text">Nº de técnicos:</at>
+            <at name="text">Número de técnicos:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -7189,7 +7189,7 @@
             </at>
             <at name="name"></at>
             <at name="width">148</at>
-            <at name="text">Responsável:</at>
+            <at name="text">Pessoa responsável:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -7254,8 +7254,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">148</at>
+            <at name="name"/>
             <at name="text">Telefone:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
@@ -7321,8 +7321,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">310</at>
+            <at name="name"/>
             <at name="height">1</at>
            </object>
           </at>

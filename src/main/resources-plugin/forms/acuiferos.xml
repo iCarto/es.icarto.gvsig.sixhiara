@@ -24,7 +24,7 @@
     </at>
     <at name="componentclass">com.jeta.forms.gui.form.FormComponent</at>
    </super>
-   <at name="id">/home/fpuga/development/sixhiara/es.icarto.gvsig.sixhiara/src/main/resources-plugin/forms/acuiferos.xml</at>
+   <at name="id">C:\Users\mire\Documents\trabajo\ICARTO\Proyectos\2005_SIXHIARA_VII\05_PROCESO\05_04_APLICACION\02_SIRH_Inventario\02_formularios\acuiferos.xml</at>
    <at name="rowspecs">CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:DEFAULT:NONE,CENTER:3DLU:NONE,CENTER:12DLU:NONE,CENTER:3DLU:NONE,CENTER:3DLU:NONE</at>
    <at name="colspecs">FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:14DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:6DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:9DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE,FILL:3DLU:NONE</at>
    <at name="components">
@@ -75,7 +75,7 @@
             </at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">85</at>
+            <at name="height">94</at>
            </object>
           </at>
          </object>
@@ -130,7 +130,7 @@
             <at name="orientation">1</at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">85</at>
+            <at name="height">94</at>
            </object>
           </at>
          </object>
@@ -198,7 +198,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">13</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -250,9 +250,8 @@
               </at>
              </object>
             </at>
-            <at name="name"></at>
             <at name="width">648</at>
-            <at name="text"></at>
+            <at name="name"/>
             <at name="height">6</at>
            </object>
           </at>
@@ -370,7 +369,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -438,7 +437,7 @@
               <at name="size">18</at>
              </object>
             </at>
-            <at name="height">65</at>
+            <at name="height">74</at>
            </object>
           </at>
          </object>
@@ -502,7 +501,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -665,7 +664,7 @@
             <at name="orientation">1</at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">211</at>
+            <at name="height">241</at>
            </object>
           </at>
          </object>
@@ -719,7 +718,7 @@
             </at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">211</at>
+            <at name="height">241</at>
            </object>
           </at>
          </object>
@@ -780,7 +779,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -847,7 +846,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">13</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -911,7 +910,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -965,7 +964,7 @@
             </at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">89</at>
+            <at name="height">95</at>
            </object>
           </at>
          </object>
@@ -1020,7 +1019,7 @@
             <at name="orientation">1</at>
             <at name="width">8</at>
             <at name="name"/>
-            <at name="height">89</at>
+            <at name="height">95</at>
            </object>
           </at>
          </object>
@@ -1112,7 +1111,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">54</at>
+            <at name="height">57</at>
            </object>
           </at>
          </object>
@@ -1218,9 +1217,9 @@
               </at>
              </object>
             </at>
+            <at name="name"></at>
             <at name="width">140</at>
-            <at name="name"/>
-            <at name="text">&lt;html&gt;Profundidade do nivel piezométrico (m):&lt;html&gt;</at>
+            <at name="text">&lt;html&gt;Profundidade do nível piezométrico (m):&lt;html&gt;</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -1233,7 +1232,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">32</at>
+            <at name="height">38</at>
            </object>
           </at>
          </object>
@@ -1294,7 +1293,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -1349,7 +1348,7 @@
             <at name="name"></at>
             <at name="width">140</at>
             <at name="foreground" object="color">0,50,150</at>
-            <at name="text">Código Acuífero:</at>
+            <at name="text">Código do Acuífero:</at>
             <at name="fill">
              <object classname="com.jeta.forms.store.properties.effects.PaintProperty">
               <at name="name">fill</at>
@@ -1362,7 +1361,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">13</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1421,7 +1420,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -1488,7 +1487,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">13</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1551,7 +1550,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -1618,7 +1617,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">32</at>
+            <at name="height">38</at>
            </object>
           </at>
          </object>
@@ -1677,7 +1676,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">32</at>
+            <at name="height">38</at>
            </object>
           </at>
          </object>
@@ -1744,7 +1743,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">13</at>
+            <at name="height">14</at>
            </object>
           </at>
          </object>
@@ -1803,7 +1802,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -1870,7 +1869,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">55</at>
+            <at name="height">64</at>
            </object>
           </at>
          </object>
@@ -1926,7 +1925,7 @@
             <at name="name">element_image</at>
             <at name="width">300</at>
             <at name="verticalAlignment">1</at>
-            <at name="height">160</at>
+            <at name="height">184</at>
            </object>
           </at>
          </object>
@@ -1982,7 +1981,7 @@
             <at name="name">add_image_button</at>
             <at name="width">140</at>
             <at name="text">Engadir imagem</at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -2038,7 +2037,7 @@
             <at name="name">delete_image_button</at>
             <at name="width">150</at>
             <at name="text">Apagar imagem</at>
-            <at name="height">14</at>
+            <at name="height">17</at>
            </object>
           </at>
          </object>
@@ -2130,7 +2129,7 @@
               <at name="size">11</at>
              </object>
             </at>
-            <at name="height">53</at>
+            <at name="height">62</at>
            </object>
           </at>
          </object>
