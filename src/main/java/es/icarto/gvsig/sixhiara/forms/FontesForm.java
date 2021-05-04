@@ -1,12 +1,8 @@
 package es.icarto.gvsig.sixhiara.forms;
 
-import javax.swing.JButton;
-
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
-import es.icarto.gvsig.sixhiara.FeatureSwitcherExtension;
 import es.icarto.gvsig.sixhiara.navtableforms.SortedAlphanumericTableHandler;
-import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
 public class FontesForm extends BasicAbstractForm {
@@ -30,17 +26,9 @@ public class FontesForm extends BasicAbstractForm {
 				PKFIELD, FontesLitologiaSubForm.colNames, FontesLitologiaSubForm.colAlias));
 		addTableHandler(new SortedAlphanumericTableHandler(FontesCaracHidroSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, FontesCaracHidroSubForm.colNames, FontesCaracHidroSubForm.colAlias));
-		if (FeatureSwitcherExtension.fontesAnalyticsButton()) {
-			addAnalyticsButton();
-		}
+		addExportAnalyticsButton(FontesAnaliseSubForm.TABLENAME);
 		addNewFeatureButton();
 		addCoordinatesButton();
-	}
-
-	private void addAnalyticsButton() {
-		JButton button = addButton("images/analytics.png", "Analise de fontes");
-		button.addActionListener(
-				new AnalyticActionListener(layer, FontesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override

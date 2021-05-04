@@ -1,11 +1,8 @@
 package es.icarto.gvsig.sixhiara.forms;
 
-import javax.swing.JButton;
-
 import org.gvsig.fmap.mapcontext.layers.vectorial.FLyrVect;
 
 import es.icarto.gvsig.sixhiara.navtableforms.SortedAlphanumericTableHandler;
-import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 
 @SuppressWarnings("serial")
 public class EstacoesForm extends BasicAbstractForm {
@@ -25,15 +22,9 @@ public class EstacoesForm extends BasicAbstractForm {
 				PKFIELD, DadosPluviometricosSubForm.colNames, DadosPluviometricosSubForm.colAlias));
 		addTableHandler(new SortedAlphanumericTableHandler(DadosHidrometricosSubForm.TABLENAME, getWidgetComponents(),
 				PKFIELD, DadosHidrometricosSubForm.colNames, DadosHidrometricosSubForm.colAlias));
-		addAnalyticsButton();
+		addExportAnalyticsButton(EstacoesAnaliseSubForm.TABLENAME);
 		addNewFeatureButton();
 		addCoordinatesButton();
-	}
-
-	private void addAnalyticsButton() {
-		JButton button = addButton("images/analytics.png", "Analise de estacoes");
-		button.addActionListener(
-				new AnalyticActionListener(layer, EstacoesAnaliseSubForm.TABLENAME, PKFIELD, DATE_FIELD));
 	}
 
 	@Override

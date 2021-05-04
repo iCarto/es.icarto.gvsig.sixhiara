@@ -4,7 +4,6 @@ import static es.icarto.gvsig.commons.i18n.I18n._;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,10 +17,8 @@ import javax.swing.JOptionPane;
 
 import org.gvsig.andami.PluginServices;
 import org.gvsig.andami.ui.mdiManager.MDIManagerFactory;
-import org.gvsig.app.project.documents.table.TableDocument;
 import org.gvsig.fmap.dal.exception.DataException;
 import org.gvsig.fmap.dal.feature.Feature;
-import org.gvsig.fmap.dal.feature.FeatureQuery;
 import org.gvsig.fmap.dal.feature.FeatureSelection;
 import org.gvsig.fmap.dal.feature.FeatureSet;
 import org.gvsig.fmap.dal.feature.FeatureStore;
@@ -33,15 +30,15 @@ import org.slf4j.LoggerFactory;
 
 import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
-import es.icarto.gvsig.navtableforms.utils.TOCTableManager;
+import es.icarto.gvsig.sixhiara.forms.BasicAbstractForm;
 import es.icarto.gvsig.sixhiara.forms.EstacoesAnaliseSubForm;
 import es.icarto.gvsig.sixhiara.forms.FieldUtils;
+import es.icarto.gvsig.sixhiara.forms.actions.BaseActionForSubForms;
 import es.icarto.gvsig.sixhiara.plots.MaxValues.MaxValue;
 
-public class AnalyticActionListener implements ActionListener {
+public class AnalyticActionListener extends BaseActionForSubForms {
 
 	private static final String SCHEMA = "inventario";
-	private final String table;
 	private final String fkField;
 	private final String dateField;
 	private final FLyrVect layer;
@@ -51,28 +48,28 @@ public class AnalyticActionListener implements ActionListener {
 
 	private static final Logger logger = LoggerFactory.getLogger(AnalyticActionListener.class);
 
-	public AnalyticActionListener(FLyrVect layer, String table, String fkField, String dateField) {
-		this.layer = layer;
-		this.table = table;
+	public AnalyticActionListener(BasicAbstractForm form, String subTableName, String fkField, String dateField) {
+		super(form, subTableName);
+		this.layer = form.getLayer();
 		this.fkField = fkField;
 		this.dateField = dateField;
 	}
 
 	private List<Field> getFields() {
-		URL resource = AnalyticActionListener.this.getClass().getClassLoader().getResource("columns.properties");
-		List<Field> fields = FieldUtils.getFields(resource.getPath(), SCHEMA, table, Collections.<String>emptyList(),
-				true);
-		List<Field> newFields = new ArrayList<Field>();
-		List<MaxValue> maxValues = new MaxValues().getMaxValues();
-		for (Field f : fields) {
-			if (this.table.equals(EstacoesAnaliseSubForm.TABLENAME)) {
-				List<String> notForEstacoes = Arrays
-						.asList(new String[] { "nitratos", "nitritos", "coli_feca", "coli_tot", "amonio" });
+		final URL resource = AnalyticActionListener.this.getClass().getClassLoader().getResource("columns.properties");
+		final List<Field> fields = FieldUtils.getFields(resource.getPath(), SCHEMA, this.subTableName,
+				Collections.<String>emptyList(), true);
+		final List<Field> newFields = new ArrayList<>();
+		final List<MaxValue> maxValues = new MaxValues().getMaxValues();
+		for (final Field f : fields) {
+			if (this.subTableName.equals(EstacoesAnaliseSubForm.TABLENAME)) {
+				final List<String> notForEstacoes = Arrays.asList("nitratos", "nitritos", "coli_feca", "coli_tot",
+						"amonio");
 				if (notForEstacoes.contains(f.getKey())) {
 					continue;
 				}
 			}
-			for (MaxValue m : maxValues) {
+			for (final MaxValue m : maxValues) {
 				if (m.k.equals(f.getKey())) {
 					f.setValue(m);
 					newFields.add(f);
@@ -85,13 +82,13 @@ public class AnalyticActionListener implements ActionListener {
 	}
 
 	private List<String> sourcesToPlot() {
-		List<String> selectedFontes = new ArrayList<String>();
+		final List<String> selectedFontes = new ArrayList<>();
 		DisposableIterator it = null;
 		FeatureSet set = null;
 		try {
-			FeatureStore store = layer.getFeatureStore();
+			final FeatureStore store = this.layer.getFeatureStore();
 
-			FeatureSelection sel = store.getFeatureSelection();
+			final FeatureSelection sel = store.getFeatureSelection();
 			if (sel.isEmpty()) {
 				return selectedFontes;
 			}
@@ -99,13 +96,13 @@ public class AnalyticActionListener implements ActionListener {
 			set = store.getFeatureSet();
 			it = set.fastIterator();
 			while (it.hasNext()) {
-				Feature feat = (Feature) it.next();
+				final Feature feat = (Feature) it.next();
 				if (sel.isSelected(feat)) {
-					String codFonte = feat.getString(fkField);
+					final String codFonte = feat.getString(this.fkField);
 					selectedFontes.add(codFonte);
 				}
 			}
-		} catch (DataException e) {
+		} catch (final DataException e) {
 
 		} finally {
 			DisposeUtils.disposeQuietly(it);
@@ -116,10 +113,10 @@ public class AnalyticActionListener implements ActionListener {
 	}
 
 	private Map<String, Object[]> sourcesToPlotAsMap() {
-		List<String> sourcesToPlot = sourcesToPlot();
-		int numberOfYears = currentYear - firstYear + 1;
-		Map<String, Object[]> selectedFontes = new HashMap<String, Object[]>();
-		for (String s : sourcesToPlot) {
+		final List<String> sourcesToPlot = sourcesToPlot();
+		final int numberOfYears = currentYear - firstYear + 1;
+		final Map<String, Object[]> selectedFontes = new HashMap<>();
+		for (final String s : sourcesToPlot) {
 			selectedFontes.put(s, new Object[numberOfYears]);
 		}
 		return selectedFontes;
@@ -127,7 +124,7 @@ public class AnalyticActionListener implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Map<String, Object[]> sourcesToPlot = sourcesToPlotAsMap();
+		final Map<String, Object[]> sourcesToPlot = sourcesToPlotAsMap();
 		if (sourcesToPlot.isEmpty()) {
 			showError("not_selected_features");
 			return;
@@ -137,13 +134,13 @@ public class AnalyticActionListener implements ActionListener {
 			return;
 		}
 
-		List<Field> allFields = getFields();
-		ChooseFieldDialog dialog = new ChooseFieldDialog(allFields);
+		final List<Field> allFields = getFields();
+		final ChooseFieldDialog dialog = new ChooseFieldDialog(allFields);
 
 		if (!dialog.open().equals(OkCancelPanel.OK_ACTION_COMMAND)) {
 			return;
 		}
-		Field field = dialog.getField();
+		final Field field = dialog.getField();
 		if (field == null) {
 			showError("not_selected_field");
 			return;
@@ -158,15 +155,15 @@ public class AnalyticActionListener implements ActionListener {
 		DisposableIterator analiseIt = null;
 		try {
 
-			analiseSet = getAnaliseSet();
+			analiseSet = getSubFormFeatureSet(this.dateField);
 			analiseIt = analiseSet.fastIterator();
 			while (analiseIt.hasNext()) {
-				Feature feat = (Feature) analiseIt.next();
-				String codFonte = feat.getString(fkField);
-				Object[] list = sourcesToPlot.get(codFonte);
+				final Feature feat = (Feature) analiseIt.next();
+				final String codFonte = feat.getString(this.fkField);
+				final Object[] list = sourcesToPlot.get(codFonte);
 				if (list != null) {
-					int year = yearFromDate(feat);
-					if ((year - firstYear) < 0) {
+					final int year = yearFromDate(feat);
+					if (year - firstYear < 0) {
 						continue;
 					}
 					if (feat.get(field.getKey()) == null) {
@@ -177,39 +174,29 @@ public class AnalyticActionListener implements ActionListener {
 				}
 			}
 
-			AnalyticsChartPanel window = new AnalyticsChartPanel(sourcesToPlot, firstYear, currentYear, field);
+			final AnalyticsChartPanel window = new AnalyticsChartPanel(sourcesToPlot, firstYear, currentYear, field);
 			MDIManagerFactory.getManager().addCentredWindow(window);
 
-		} catch (Exception ex) {
+		} catch (final Exception ex) {
 			logger.error(ex.getMessage(), ex);
 		} finally {
 
 			DisposeUtils.disposeQuietly(analiseSet);
 			DisposeUtils.disposeQuietly(analiseIt);
 		}
-
-	}
-
-	private FeatureSet getAnaliseSet() throws DataException {
-		TOCTableManager toc = new TOCTableManager();
-		TableDocument tableDocument = toc.getTableDocumentByName(table);
-		FeatureStore analiseStore = tableDocument.getStore();
-		FeatureQuery query = analiseStore.createFeatureQuery("", dateField, true);
-		FeatureSet analiseSet = analiseStore.getFeatureSet(query);
-		return analiseSet;
 	}
 
 	private int yearFromDate(Feature feat) {
-		java.util.Date date = feat.getDate(dateField);
-		Calendar cal = Calendar.getInstance();
+		final java.util.Date date = feat.getDate(this.dateField);
+		final Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		int year = cal.get(Calendar.YEAR);
+		final int year = cal.get(Calendar.YEAR);
 		return year;
 	}
 
 	private void showError(String message) {
-		String msg = _(message);
-		Component parent = (Component) PluginServices.getMainFrame();
+		final String msg = _(message);
+		final Component parent = (Component) PluginServices.getMainFrame();
 		JOptionPane.showMessageDialog(parent, msg, "", JOptionPane.ERROR_MESSAGE);
 
 	}

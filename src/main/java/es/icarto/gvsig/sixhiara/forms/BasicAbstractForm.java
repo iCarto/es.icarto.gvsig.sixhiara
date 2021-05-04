@@ -24,57 +24,70 @@ import es.icarto.gvsig.commons.gui.OkCancelPanel;
 import es.icarto.gvsig.commons.utils.Field;
 import es.icarto.gvsig.navtable.edition.LayerEdition;
 import es.icarto.gvsig.navtableforms.AbstractForm;
+import es.icarto.gvsig.sixhiara.analytics.ExportAnalyticsActionListener;
 import es.icarto.gvsig.sixhiara.forms.actions.CoordinateListener;
 import es.icarto.gvsig.sixhiara.forms.actions.NewFeatureListener;
 import es.icarto.gvsig.sixhiara.forms.images.ImagesInForms;
+import es.icarto.gvsig.sixhiara.plots.AnalyticActionListener;
 import es.udc.cartolab.gvsig.navtable.contextualmenu.ChooseSortFieldDialog;
 
 @SuppressWarnings("serial")
 public abstract class BasicAbstractForm extends AbstractForm {
 
 	private static final Logger logger = LoggerFactory.getLogger(BasicAbstractForm.class);
-	private ImagesInForms images;
+	private final ImagesInForms images;
 	private boolean autoediting;
 
 	public BasicAbstractForm(FLyrVect layer) {
 		super(layer);
 		addSorterButton();
 		setTitle(_(this.getBasicName()));
-		images = new ImagesInForms(getFormPanel(), getSchema(), getBasicName() + "_imagenes", getPrimaryKey());
+		this.images = new ImagesInForms(getFormPanel(), getSchema(), getBasicName() + "_imagenes", getPrimaryKey());
 	}
 
 	protected void addSorterButton() {
-		JButton button = addButton("images/sort.png", "sort_features");
+		final JButton button = addButton("images/sort.png", "sort_features");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				URL resource = BasicAbstractForm.this.getClass().getClassLoader().getResource("columns.properties");
-				List<Field> fields = FieldUtils.getFields(resource.getPath(), getSchema(), getBasicName());
-				ChooseSortFieldDialog dialog = new ChooseSortFieldDialog(fields);
+				final URL resource = BasicAbstractForm.this.getClass().getClassLoader()
+						.getResource("columns.properties");
+				final List<Field> fields = FieldUtils.getFields(resource.getPath(), getSchema(), getBasicName());
+				final ChooseSortFieldDialog dialog = new ChooseSortFieldDialog(fields);
 
 				if (dialog.open().equals(OkCancelPanel.OK_ACTION_COMMAND)) {
-					List<Field> sortedFields = dialog.getFields();
+					final List<Field> sortedFields = dialog.getFields();
 					setSortKeys(sortedFields);
 				}
 			}
 		});
 	}
 
+	protected void addAnalyticsButton(String analyticsTable, String pkfield, String dateField) {
+		final JButton button = addButton("images/analytics.png", "Analise de fontes");
+		button.addActionListener(new AnalyticActionListener(this, analyticsTable, pkfield, dateField));
+	}
+
+	protected void addExportAnalyticsButton(String analyticsTable) {
+		final JButton button = addButton("images/analytics.png", "Exportar Analise");
+		button.addActionListener(new ExportAnalyticsActionListener(this, analyticsTable));
+	}
+
 	protected void addNewFeatureButton() {
-		JButton button = addButton("images/new_feature.png", "Adicionar feature");
-		ActionListener btListener = new NewFeatureListener(this);
+		final JButton button = addButton("images/new_feature.png", "Adicionar feature");
+		final ActionListener btListener = new NewFeatureListener(this);
 		button.addActionListener(btListener);
 	}
 
 	protected void addCoordinatesButton() {
-		JButton button = addButton("images/add_coordinates_icon.png", "Adicionar ponto baseado em coordenadas");
-		ActionListener btListener = new CoordinateListener(this);
+		final JButton button = addButton("images/add_coordinates_icon.png", "Adicionar ponto baseado em coordenadas");
+		final ActionListener btListener = new CoordinateListener(this);
 		button.addActionListener(btListener);
 	}
 
 	protected JButton addButton(String imagePath, String tooltip) {
-		URL imgURL = getClass().getClassLoader().getResource(imagePath);
-		JButton button = new JButton(new ImageIcon(imgURL));
+		final URL imgURL = getClass().getClassLoader().getResource(imagePath);
+		final JButton button = new JButton(new ImageIcon(imgURL));
 		button.setToolTipText(tooltip);
 		getActionsToolBar().add(button);
 		return button;
@@ -82,18 +95,18 @@ public abstract class BasicAbstractForm extends AbstractForm {
 
 	@Override
 	public FormPanel getFormBody() {
-		if (formBody == null) {
+		if (this.formBody == null) {
 			InputStream stream = getClass().getClassLoader().getResourceAsStream("/forms/" + getBasicName() + ".jfrm");
 			if (stream == null) {
 				stream = getClass().getClassLoader().getResourceAsStream("/forms/" + getBasicName() + ".xml");
 			}
 			try {
-				formBody = new FormPanel(stream);
-			} catch (FormException e) {
+				this.formBody = new FormPanel(stream);
+			} catch (final FormException e) {
 				logger.error(e.getMessage(), e);
 			}
 		}
-		return formBody;
+		return this.formBody;
 	}
 
 	@Override
@@ -104,7 +117,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	@Override
 	protected void fillSpecificValues() {
 		super.fillSpecificValues();
-		images.fillSpecificValues(getPrimaryKeyValue());
+		this.images.fillSpecificValues(getPrimaryKeyValue());
 	}
 
 	@Override
@@ -115,13 +128,13 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	@Override
 	protected void setListeners() {
 		super.setListeners();
-		images.setListeners();
+		this.images.setListeners();
 	}
 
 	@Override
 	protected void removeListeners() {
 		super.removeListeners();
-		images.removeListeners();
+		this.images.removeListeners();
 	}
 
 	protected abstract String getSchema();
@@ -145,11 +158,11 @@ public abstract class BasicAbstractForm extends AbstractForm {
 
 	@Override
 	public boolean saveRecord() throws DataException {
-		boolean flag = super.saveRecord();
+		final boolean flag = super.saveRecord();
 		if (this.autoediting) {
-			LayerEdition le = new LayerEdition();
-			if (layer.isEditing()) {
-				le.stopEditing(layer, false);
+			final LayerEdition le = new LayerEdition();
+			if (this.layer.isEditing()) {
+				le.stopEditing(this.layer, false);
 			}
 			this.autoediting = false;
 		}
@@ -157,7 +170,7 @@ public abstract class BasicAbstractForm extends AbstractForm {
 	}
 
 	public void insertEmptyFeature() throws BaseException {
-		navigation.insertFeature();
+		this.navigation.insertFeature();
 	}
 
 }
